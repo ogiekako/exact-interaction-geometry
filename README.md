@@ -28,9 +28,14 @@ The name **Interaction Reconstruction** is the endpoint viewpoint, not a Phase-V
 - [`book/COUNTEREXAMPLE_ATLAS.md`](book/COUNTEREXAMPLE_ATLAS.md) — anti-theorems that shaped the theory.
 - [`book/DEPENDENCY_GRAPH.md`](book/DEPENDENCY_GRAPH.md) — mathematical dependency DAG.
 - [`STATUS.md`](STATUS.md) — conservative current disposition.
+- [`RESEARCH_FRONTIER.md`](RESEARCH_FRONTIER.md) — only the load-bearing open theorems and promotion gates.
 - [`AUDIT_PROTOCOL.md`](AUDIT_PROTOCOL.md) — how a claim is promoted.
 - [`PUBLICATION_MAP.md`](PUBLICATION_MAP.md) — standalone consequences and paper readiness.
 - [`bibliography/README.md`](bibliography/README.md) — closest prior art and novelty boundaries.
+- [`verification/README.md`](verification/README.md) — what the finite certificates establish.
+- [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — exact source-ledger synchronization map.
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — curation, verifier, and concurrent-work discipline.
+- [`RELEASE_CHECKLIST.md`](RELEASE_CHECKLIST.md) — checklist before making the repository/public result a release artifact.
 
 ## Machine-checkable core
 
@@ -48,6 +53,14 @@ or execute the files under [`verification/`](verification/). The current compact
 4. finite interaction-CRT and residual-nerve reconstructions.
 
 Every evidentiary verifier is also run under `python -O` in CI so that language-level `assert` removal cannot silently erase checks.
+
+Build the standalone source-pair paper locally with
+
+```bash
+make paper
+```
+
+when `pdflatex` is available. Verification CI remains independent of a heavyweight TeX installation.
 
 ## First standalone consequence: both ranks
 

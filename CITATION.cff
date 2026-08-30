@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this research compendium or its verification code, please cite this repository and the relevant standalone paper/result."
+title: "Interaction Reconstruction"
+type: software
+authors:
+  - family-names: "Oka"
+    given-names: "Keigo"
+date-released: 2026-08-30
+repository-code: "https://github.com/ogiekako/interaction-reconstruction"
+url: "https://github.com/ogiekako/interaction-reconstruction"
+keywords:
+  - interaction reconstruction
+  - recurrent processes
+  - compositional semantics
+  - graph products
+  - profunctors
+  - arities
+  - Boolean rank
+  - binary rank
