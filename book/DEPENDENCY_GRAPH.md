@@ -33,7 +33,8 @@
           |
           +--> recurrent torsos / structural orders / opacity atoms
           |
-          `--> [IV.5 protected G1--G7 candidate]
+          `--> [IV.5 protected G1--G7]
+               second-run audited; canonical promotion pending
                      |
                      v
 [V.1 exact interaction before valuation]
@@ -48,14 +49,14 @@
           |
           +--> [VI.2 Conduche/pseudo]
           |
-          `--> [VI.3 reduced noncopying stack]  OPEN
+          `--> [VI.3 reduced noncopying stack]  OPEN/REDUCED
                      |
                      v
 [VII.1 finite residual nerve]
           |
           +--> [VII.2 presentable/nervous arities] ---- prior-art shell
           |
-          `--> [VII.3 actual interaction arities] OPEN
+          `--> [VII.3 actual process-generated interaction arities] OPEN/REDUCED
 ```
 
 ## Why each arrow is load-bearing
@@ -69,8 +70,11 @@ The coastline theorems succeed for reasons that are not captured by one scalar w
 ### III -> IV
 Exact composition fails if residual storage/action state is projected away before gluing. The graph-storage object makes complete operational ports primitive. Phase IV then asks whether those complete ports factor through small, noncopying, structurally meaningful interfaces.
 
+### IV internal closure
+GPSH supplies an explicit reduced storage compatibility proarrow; operational codescent supplies exact raw reconstruction; no-choice explains why an atlas may be canonical when a single chart is not. In the normalized native protected/certifiable domain, the later G1--G7 chain derives protected structure, recurrent torsos, structural order, evaluator residual cores, and optimal opacity. The corrected G7 endpoint has survived a provenance-distinct second-run audit, while final canonical promotion remains a governance step in the original ledger.
+
 ### IV -> V
-GPSH separators and protected codescent show that exact interaction exists as a mathematical object, but not necessarily as one scalar. Phase V asks for the geometry of this interaction object and the conditions under which numerical uncrossing laws emerge.
+Exact interface objects now exist in substantial sectors. The next question is not merely whether a separator exists but why its resource geometry has the laws it has, which valuations are intrinsic, and exactly when uncrossing succeeds or fails.
 
 ### V -> VI
 Once interaction is understood as intensional witness/proarrow data, the generic dynamic question becomes: which abstract interaction systems are realizable as execution categories? The classical answer is the normal-lax `Prof` / generalized Grothendieck shell.
