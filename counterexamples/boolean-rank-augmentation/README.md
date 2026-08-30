@@ -1,23 +1,23 @@
-# Boolean-rank augmentation counterexample
+# Historical Boolean-only certificate branch
 
-This directory contains the machine-readable certificate for the four-row Boolean-rank counterexample.
+This directory preserves the original four-row Boolean certificate found first in the search.
 
-The human proof is in [`../../papers/boolean-rank-augmentation/`](../../papers/boolean-rank-augmentation/).
+The canonical combined result now lives at:
 
-Verify with:
+[`../source-pair-augmentation/`](../source-pair-augmentation/)
+
+and is verified by:
 
 ```bash
-python3 verification/verify_boolean_rank_augmentation.py
+python3 verification/verify_source_pair_augmentation.py
 ```
 
-Expected output includes:
+The Boolean certificate here remains valid:
 
 ```text
-PASS
-Boolean rank(A)=3
-U and V are source bases
-Boolean rank(A|U|V)=4
-all 9 one-from-each augmentations have rank 3
+A = {3,7,15}
+U = {3,5,8}
+V = {3,5,12}
 ```
 
-The verifier exhaustively enumerates Boolean spanning sets on four rows and is independent of the Interaction Reconstruction programme.
+but the current theorem resolves the source-pair question for **both Boolean and binary rank**. `counterexample.json` and the older Boolean-only verifier are retained for provenance/regression only.
