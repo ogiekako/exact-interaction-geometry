@@ -22,11 +22,13 @@ Parnas and Shraibman asked whether, when two source bases witness failure of the
 
 For a binary matrix, Parnas and Shraibman introduced the augmentation property for Boolean and binary rank and characterized it in terms of the directed graph of optimal bases \cite{PS}. If a matrix has at least two source bases, augmenting by all vectors from two sources raises the rank. In Section~6 they ask whether this failure is always witnessed more locally: given two source bases $U,V$, must there exist $u\in U$ and $v\in V$ such that adjoining only $u,v$ already raises the rank?
 
-We show that the answer is no for both ranks.
+We show that the answer is no for both ranks.\footnote{The examples were found while experimenting with the \emph{Interaction Reconstruction} research programme, \url{https://github.com/ogiekako/interaction-reconstruction}. The broader programme is discovery provenance only and is not used in either proof; its components carry separate audit statuses in that repository.}
 
 We encode a binary column by its bitmask, with the least significant bit corresponding to row~1. For Boolean rank, spanning means closure under coordinatewise OR. For binary rank, spanning is by ordinary $0/1$ linear combinations; any selected summands in a representation of a binary target necessarily have pairwise disjoint supports.
 
 A base is a minimum-cardinality spanning set. The base graph has one vertex for each base and an arrow $B\to C$ when $B$ spans every vector of $C$; a source has no incoming arrow from a distinct base.
+
+A literature search performed on August~30, 2026 located the original Section~6 question but no prior published resolution of this specific source-pair problem. We state this only as a bibliographic search result; it should be refreshed immediately before submission.
 
 \section{Boolean rank}
 
@@ -162,7 +164,7 @@ The computations are not needed for the two counterexample theorems themselves; 
 
 \section{Discovery provenance}
 
-The examples were found while experimenting with the Interaction Reconstruction programme. The broader programme is not used in either proof. The relevant heuristic was to regard the base graph as a finite factorization atlas and search for source-interface incompatibility that is jointly expensive but pairwise invisible.
+The programme connection is heuristic, not logical. The relevant search idea was to regard the base graph as a finite factorization atlas and look for source-interface incompatibility that is jointly expensive but pairwise invisible. The explicit examples and proofs above stand on their own.
 
 \begin{thebibliography}{9}
 \bibitem{PS}
