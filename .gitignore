@@ -4,4 +4,8 @@ __pycache__/
 *.log
 *.out
 *.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+papers/**/paper.pdf
 .DS_Store
