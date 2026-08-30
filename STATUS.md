@@ -3,12 +3,21 @@
 ## Synchronization
 
 ```text
-original migration baseline: ogiekako/test@3806b8ea4851f6edfa7073085e929bdd868442b9
-latest ledger snapshot inspected here: ogiekako/test@79f64b1a7634341f66482ae19250aa9fa8677d7d
+original migration baseline:
+  ogiekako/test@3806b8ea4851f6edfa7073085e929bdd868442b9
+
+latest ledger snapshot inspected here:
+  ogiekako/test@c25815e82faba9beb8b9deb96d740ee345138872
+
+latest phase-status-changing checkpoint:
+  ogiekako/test@79f64b1a7634341f66482ae19250aa9fa8677d7d
+
 snapshot date: 2026-08-30 JST
 ```
 
-The original research ledger is live and may advance after this snapshot. This file uses the most conservative status supported by the latest inspected canonical state and provenance-distinct audits.
+The original research ledger is live and may advance after this snapshot. The `c25815e...` delta adds a standalone `xc(COR(4))=16` certificate and does not change the Phase-I--VII status imported from `79f64b1...`.
+
+This file uses the most conservative status supported by the latest inspected canonical state and provenance-distinct audits.
 
 ## Phase I — REACHED / AUDITED
 
@@ -22,11 +31,11 @@ The effective-structure coastline is independently audited: finite future-legali
 
 The independently challenged transactional graph-storage theorem is the terminal Phase-III object: complete residual storage/action ports, operational composition before neutralization, process-bijective recodings, recursive graph-monoid capacity structure, and proof-bearing affine charts.
 
-## Phase IV — protected/certifiable G1--G7 is now second-run audited; canonical promotion pending
+## Phase IV — protected/certifiable G1--G7 is second-run audited; canonical promotion pending
 
-Earlier versions of this repository conservatively said “full Grand Book OPEN”. The latest ledger materially improves that picture.
+Earlier versions of this repository conservatively said “full Grand Book OPEN”. The `79f64b1...` checkpoint materially improves that picture.
 
-At `79f64b1...`, literal G1 in the normalized native protected/certifiable domain has survived three local-main repair passes. A corrected terminal G7 bundle then survived a **provenance-distinct second-run adversarial audit**. That audit reports no remaining mathematical blocker in literal G7 under the declared domain, after repairing two overclaims:
+Literal G1 in the normalized native protected/certifiable domain survived three local-main repair passes. A corrected terminal G7 bundle then survived a **provenance-distinct second-run adversarial audit**. That audit reports no remaining mathematical blocker in literal G7 under the declared domain, after repairing two overclaims:
 
 1. an infinite descending non-LOW chain by itself does not imply absence of a minimal face; the corrected doubling-loop theorem supplies the stronger proper-subdomain property;
 2. `NO-MAX-DOCTRINE` remains scoped to sound c.e. semantic LOW/HIGH doctrines in the fixed non-c.e. family, not all complete-port evaluator doctrines.
@@ -57,6 +66,47 @@ The finite residual interaction-nerve theorem is accepted. Dense/presentable ari
 
 ## Standalone source-pair augmentation result
 
-The source-pair question of Parnas--Shraibman has explicit finite counterexamples for both Boolean and binary rank. The mathematical certificates were independently replayed in this curation run using exact integer enumeration, including normal mode, `python -O`, and bytecode compilation. The binary example is exhaustively row-minimal for this form (`n<=4` has no example).
+The source-pair question of Parnas--Shraibman has explicit finite counterexamples for both Boolean and binary rank. The mathematical certificates were independently replayed in this curation using exact integer enumeration, including normal mode, `python -O`, and bytecode compilation. The binary example is exhaustively row-minimal for this form (`n<=4` has no example).
 
 A publication-level novelty statement should still refresh the post-2018 literature search immediately before submission.
+
+## Standalone `COR(4)` extension-complexity certificate
+
+At the latest inspected source commit, the programme also produced an explicit exact certificate that
+
+```text
+xc(COR(4)) = 16.
+```
+
+The curation independently replayed the 16-facet / 16-entry fooling-set verifier:
+
+```text
+normal Python: PASS
+python -O:     PASS
+py_compile:    PASS
+explicit exact checks: 186
+```
+
+Therefore the **mathematical finite certificate is accepted as replayed evidence in this repository**. Historical novelty is not accepted: the complete `CUTP_5` facet-incidence structure is classical, and a targeted search found no explicit prior statement but cannot rule out folklore or an implicit consequence in older tables.
+
+Publication posture:
+
+```text
+mathematics: exact finite certificate;
+historical novelty / priority: UNVERIFIED;
+specialist literature audit: required before any novelty claim.
+```
+
+## General rule for public claims
+
+A programme-level theorem and a harvested standalone result have separate trust paths.
+
+```text
+programme claim:
+  depends on its exact audit chain;
+
+standalone finite result:
+  depends only on its explicit object, proof/certificate, and verifier.
+```
+
+A green finite verifier does not promote an infinite theorem, and a programme-wide `AUDIT PENDING` statement is never required merely to validate a small external certificate.

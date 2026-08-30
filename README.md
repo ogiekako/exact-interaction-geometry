@@ -31,6 +31,7 @@ The name **Interaction Reconstruction** is the endpoint viewpoint, not a Phase-V
 - [`RESEARCH_FRONTIER.md`](RESEARCH_FRONTIER.md) — only the load-bearing open theorems and promotion gates.
 - [`AUDIT_PROTOCOL.md`](AUDIT_PROTOCOL.md) — how a claim is promoted.
 - [`PUBLICATION_MAP.md`](PUBLICATION_MAP.md) — standalone consequences and paper readiness.
+- [`external-results/`](external-results/) — theorem harvests independent of programme correctness.
 - [`bibliography/README.md`](bibliography/README.md) — closest prior art and novelty boundaries.
 - [`verification/README.md`](verification/README.md) — what the finite certificates establish.
 - [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — exact source-ledger synchronization map.
@@ -48,9 +49,10 @@ make verify
 or execute the files under [`verification/`](verification/). The current compact verification suite checks:
 
 1. the Boolean and binary source-pair augmentation counterexamples;
-2. operational codescent boundary fixtures and mixed-return behaviour;
-3. the four-state no-choice / no-collapse calibrations;
-4. finite interaction-CRT and residual-nerve reconstructions.
+2. the exact sixteen-facet fooling-set certificate for `xc(COR(4))=16`;
+3. operational codescent boundary fixtures and mixed-return behaviour;
+4. the four-state no-choice / no-collapse calibrations;
+5. finite interaction-CRT and residual-nerve reconstructions.
 
 Every evidentiary verifier is also run under `python -O` in CI so that language-level `assert` removal cannot silently erase checks.
 
@@ -62,9 +64,11 @@ make paper
 
 when `pdflatex` is available. Verification CI remains independent of a heavyweight TeX installation.
 
-## First standalone consequence: both ranks
+## Harvested standalone results
 
-The programme's first harvested external consequence is now stronger than the initial Boolean-only note. The Parnas--Shraibman Section-6 source-pair question has explicit counterexamples for **both Boolean rank and binary rank**:
+### Source-pair augmentation — both ranks
+
+The Parnas--Shraibman Section-6 source-pair question has explicit counterexamples for **both Boolean rank and binary rank**:
 
 - four rows for Boolean rank;
 - five rows for binary rank, with exhaustive verification that no binary example exists on at most four rows.
@@ -77,9 +81,26 @@ See:
 
 The proofs are standalone and elementary. Their correctness does **not** depend on the broader Interaction Reconstruction programme; the programme is discovery provenance only.
 
+### Exact extension complexity of `COR(4)`
+
+An exact sixteen-facet / sixteen-entry fooling-set certificate gives
+
+```text
+xc(COR(4)) = 16.
+```
+
+The finite mathematics has been independently replayed in this curation. Historical novelty remains under specialist literature audit because the complete `CUTP_5` incidence structure is classical.
+
+See:
+
+- [`external-results/cor4-extension-complexity/README.md`](external-results/cor4-extension-complexity/README.md)
+- [`verification/verify_cor4_extension_complexity.py`](verification/verify_cor4_extension_complexity.py)
+
 ## Current Phase-IV caveat
 
-The original research ledger is advancing concurrently. At the latest synchronized snapshot (`ogiekako/test@79f64b1a7634341f66482ae19250aa9fa8677d7d`), a corrected terminal G7 bundle has survived a provenance-distinct second-run adversarial audit in the normalized native protected/certifiable domain, with no identified mathematical blocker remaining in literal G7. However, that handoff explicitly says it is **not yet canonical local-main promotion**. This repository therefore records the protected G1--G7 result as `SECOND-RUN AUDITED / CANONICAL PROMOTION PENDING`, rather than silently declaring the unrestricted Grand Book closed.
+At the phase-status checkpoint `ogiekako/test@79f64b1a7634341f66482ae19250aa9fa8677d7d`, a corrected terminal G7 bundle survived a provenance-distinct second-run adversarial audit in the normalized native protected/certifiable domain, with no identified mathematical blocker remaining in literal G7. The handoff explicitly says it is **not yet canonical local-main promotion**. This repository therefore records the protected G1--G7 result as `SECOND-RUN AUDITED / CANONICAL PROMOTION PENDING`, rather than silently declaring the unrestricted Grand Book closed.
+
+The latest inspected research-ledger commit is newer (`c25815e82faba9beb8b9deb96d740ee345138872`) because it adds the standalone `COR(4)` result; it does not change the imported phase disposition.
 
 ## Provenance
 

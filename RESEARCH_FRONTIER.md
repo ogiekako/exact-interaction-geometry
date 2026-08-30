@@ -2,11 +2,17 @@
 
 This file contains only **load-bearing next theorems / governance gates**. It is not a wishlist of every possible extension.
 
-Current source-ledger snapshot used here:
+Synchronization:
 
 ```text
-ogiekako/test@79f64b1a7634341f66482ae19250aa9fa8677d7d
+latest source-ledger snapshot inspected:
+  ogiekako/test@c25815e82faba9beb8b9deb96d740ee345138872
+
+latest phase-status-changing checkpoint:
+  ogiekako/test@79f64b1a7634341f66482ae19250aa9fa8677d7d
 ```
+
+The later `c25815e...` commit adds the standalone `xc(COR(4))=16` certificate and does not change the phase frontier below.
 
 ## F0 — canonical promotion of the protected/certifiable G1--G7 theorem
 
@@ -88,29 +94,35 @@ Do not re-prove generic abstract tangle machinery; prove that the actual interac
 
 ## F4 — standalone consequence harvesting
 
-Continue attacking published open conjectures for which a finite explicit counterexample would be independently publishable.
+Continue attacking published open conjectures for which a finite explicit counterexample or exact finite theorem would be independently publishable.
 
-The preferred pattern is
+The preferred counterexample pattern is
 
 ```text
 local / pairwise data look harmless,
 but the full factorization atlas is jointly expensive or incompatible.
 ```
 
+Current harvests validate two complementary modes:
+
+- **counterexample:** source-pair augmentation fails for both Boolean and binary rank;
+- **exact finite theorem:** a 16-fooling-set certificate gives `xc(COR(4))=16`.
+
 Current target families include:
 
 - Boolean/binary/nonnegative factorization rank;
 - extension-complexity product/additivity questions;
 - augmentation and basis-exchange principles;
+- exact small-instance questions whose combinatorial slack structure can be certified;
 - other local-to-global conjectures vulnerable to collective latent interaction.
 
 Every harvested result follows a separate trust path:
 
 ```text
 explicit object
-+ standalone proof
++ standalone proof/certificate
 + independent verifier
-+ fresh literature audit.
++ fresh specialist literature audit.
 ```
 
 Programme-wide audit status is discovery provenance, never a correctness dependency.

@@ -9,8 +9,13 @@ original migration baseline:
   3806b8ea4851f6edfa7073085e929bdd868442b9
 
 latest inspected synchronization snapshot:
+  c25815e82faba9beb8b9deb96d740ee345138872
+
+latest phase-status-changing checkpoint:
   79f64b1a7634341f66482ae19250aa9fa8677d7d
 ```
+
+The later `c25815e...` commit adds a standalone exact `xc(COR(4))=16` certificate and does not alter the imported Phase-I--VII dispositions from `79f64b1...`.
 
 When a source below existed at the original baseline, links may still point to that immutable commit. Later status corrections are explicitly keyed to the later snapshot.
 
@@ -39,7 +44,7 @@ When a source below existed at the original baseline, links may still point to t
 - `docs/AUDIT_UNIVERSAL_BOOK_MAXIMALITY_MAIN_20260830.md`
 - protected G1 repair/audit chain recorded in `.handoff/STATE.md`
 
-## Latest protected G7 state at `79f64b1...`
+## Protected G7 status checkpoint at `79f64b1...`
 
 - `.handoff/20260830-2020-jst-terminal-g7-second-run-audit.md`
 - `docs/AUDIT_TERMINAL_G7_SECOND_RUN_20260830.md`
@@ -69,4 +74,30 @@ At `b2601fdb...` and later:
 - `docs/AUGMENTATION_SOURCE_PAIR_COUNTEREXAMPLES_BOTH_RANKS_20260830.md`
 - `verification/verify_augmentation_source_pair_both_ranks_20260830.py`
 
-The curation independently replayed the exact enumeration and additionally rewrote the combined paper so that both displayed counterexample theorems have elementary proof bodies independent of exhaustive search.
+The curation independently replayed the exact enumeration and rewrote the combined paper so that both displayed counterexample theorems have elementary proof bodies independent of exhaustive search.
+
+## Exact `COR(4)` extension complexity harvest
+
+At `c25815e82faba9beb8b9deb96d740ee345138872`:
+
+- `docs/COR4_EXACT_EXTENSION_COMPLEXITY_16_20260830.md`
+- `verification/verify_cor4_extension_complexity_16_20260830.py`
+- `.handoff/20260830-2037-jst-cor4-exact-extension-complexity.md`
+
+Source disposition:
+
+```text
+mathematics:
+  CLAIMED-PROVED / exact 16-fooling-set certificate;
+
+curation replay:
+  normal Python PASS;
+  python -O PASS;
+  py_compile PASS;
+  186 explicit exact checks;
+
+historical novelty:
+  UNVERIFIED; specialist CUTP_5 / correlation-polytope literature audit pending.
+```
+
+This is an external theorem harvest, not a dependency of the Grand Book.

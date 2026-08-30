@@ -9,6 +9,14 @@ This is a targeted map of the closest established mathematics. It is not an exha
 
 The Section-6 source-pair question is the target of the explicit counterexamples in `papers/source-pair-augmentation/`.
 
+## Correlation-polytope extension complexity
+
+- V. Kaibel and S. Weltge, **A Short Proof that the Extension Complexity of the Correlation Polytope Grows Exponentially**, arXiv:1307.3543 — exponential lower bound via rectangle-cover/unique-disjointness arguments.
+- P. Aboulker, S. Fiorini, T. Huynh, M. Macchia, J. Seif, **Extension complexity of the correlation polytope**, *Operations Research Letters* 47 (2019), 47--51, DOI `10.1016/j.orl.2018.12.001` — graph/treewidth upper and lower bounds.
+- Classical `CUTP_5` facet classifications are relevant because `COR(4)` is affinely equivalent to the five-vertex cut polytope.
+
+The external-result certificate in `external-results/cor4-extension-complexity/` proves `xc(COR(4))=16` from sixteen explicit facets/fooling entries. A targeted 2026-08-30 search did not surface that exact equality in the literature, but **historical novelty is unresolved** because the complete `CUTP_5` incidence structure is old and the consequence may be folklore or implicit.
+
 ## Graph products and storage normal forms
 
 - Dandan--Gould, **On graph products of monoids**, arXiv:2102.06409 — Foata/reduction theory for arbitrary graph products.
@@ -58,7 +66,7 @@ These calibrate recurrent decoration transport and canonical behavioural quotien
 
 ## Curation rule for novelty claims
 
-A future paper should phrase novelty around the **bridge** joining several mature theories while simultaneously respecting:
+A future programme paper should phrase novelty around the **bridge** joining several mature theories while simultaneously respecting:
 
 1. partial storage legality;
 2. recurrent boundary recrossing;
@@ -67,4 +75,4 @@ A future paper should phrase novelty around the **bridge** joining several matur
 5. same-query active hardness / exact opaque residuals;
 6. process-generated arities.
 
-No single ambient categorical ingredient above should be advertised as new.
+For harvested external results, exact certificate validity and historical novelty are separate audit questions. No single ambient categorical ingredient or old incidence table should be advertised as new merely because the programme rediscovered a consequence from it.

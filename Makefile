@@ -5,6 +5,7 @@ PDFLATEX ?= pdflatex
 
 VERIFIERS := \
 	verification/verify_source_pair_augmentation.py \
+	verification/verify_cor4_extension_complexity.py \
 	verification/verify_operational_codescent.py \
 	verification/verify_no_choice.py \
 	verification/verify_phase_v_vii_finite_core.py

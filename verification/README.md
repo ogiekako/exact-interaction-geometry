@@ -2,7 +2,7 @@
 
 The verifier suite has two roles:
 
-1. **proof certificate** for explicit finite counterexamples;
+1. **proof certificate** for explicit finite counterexamples / finite theorem certificates;
 2. **finite regression/calibration** for theorem statements whose proof is mathematical rather than exhaustive.
 
 Run everything with
@@ -16,6 +16,18 @@ make verify
 Exact integer-only exhaustive verification of the Boolean and binary Parnas--Shraibman source-pair counterexamples. It reconstructs optimal bases/source bases, checks the full augmentation rank and every cross pair, and exhausts all binary column sets on `n<=4` rows to certify row-minimality of the five-row binary example.
 
 This is a genuine finite certificate for the displayed examples and the stated finite minimality result.
+
+## `verify_cor4_extension_complexity.py`
+
+Exact rational certificate for
+
+```text
+xc(COR(4)) = 16.
+```
+
+It checks `dim(COR(4))=10`, validity and facet dimension of sixteen explicit inequalities, positivity of the designated sixteen slack entries, and all 120 fooling-pair conditions. Together with the trivial sixteen-vertex simplex upper bound, this is a complete finite proof certificate of the displayed equality.
+
+Historical novelty is a separate literature question and is **not** certified by this program.
 
 ## `verify_operational_codescent.py`
 
@@ -43,3 +55,7 @@ Checks:
 ## Optimizer safety
 
 CI executes maintained verifiers in normal and `python -O` modes and compiles them with `py_compile`. Evidence must not disappear when Python strips language-level `assert` statements.
+
+## Trust boundary
+
+A green CI run means the maintained finite certificates/regressions passed. It does **not** promote an audit-pending infinite theorem, settle literature priority, or replace the mathematical proof skeletons recorded in the dossiers.
