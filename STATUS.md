@@ -1,54 +1,62 @@
 # Status and epistemic boundary
 
-Migration baseline: `ogiekako/test@3806b8ea4851f6edfa7073085e929bdd868442b9` (2026-08-30).
-
-This file intentionally uses the **most conservative current dispositions** rather than the strongest claim ever written in a side-session note.
-
-## Canonical predecessor
-
-The unrestricted North Star is **REACHED** in its stated relative/effective sense. Its authoritative content includes:
-
-- an exact same-query context construction for the declared atlas/query setting;
-- `Omega_O`, the fully abstract finite-path feedback quotient for a declared observer family;
-- localization of hard recurrent behavior to edge-minimal complete cores;
-- a two-sided non-r.e. theorem showing that no exhaustive sound c.e. LOW/HIGH proof atlas can classify the unrestricted transparent scalar family;
-- nontrivial complete positive sectors, so the endpoint is not merely an impossibility theorem.
-
-## Phase IV Grand Book
-
-The full Graph-Minors-scale Grand Book remains **OPEN** as the top-level structural objective. The old repo has audited major components: operational codescent, graph-product storage separators/proarrows, protected/certified process lifting, structural connectivity/order packages, recurrent torso objects, and fibred globalization.
-
-A `TERMINAL_PROTECTED_GRAND_BOOK_SYNTHESIS_20260830.md` candidate claims G1–G7 in a normalized protected/certified exposed-process domain. It is useful and substantial, but in this repository it remains **CLAIMED-PROVED; AUDIT PENDING** unless a later independent canonical audit explicitly promotes it.
-
-## Phase V–VII audit correction
-
-An independent audit of the claimed terminal Phase V–VII closure reached the following disposition:
+## Synchronization
 
 ```text
-ACCEPT:
-  finite residual interaction-arity nerve theorem;
-  full faithfulness on the stated typed-recoding groupoid;
-  Cat/B <-> normal-lax Prof shell (up to variance convention);
-  pseudo-Prof <-> Conduché/exponentiable shell, with factorization
-    uniqueness only up to coend/fibre-zigzag equivalence;
-  finitely/presentably generated dense arities and nervous-monad shell;
-  support-flat hidden-middle no-go;
-  equivalence-relation CRT/permutability theorem;
-  modular-valuation submodular sufficient sector.
-
-DO NOT CALL CLOSED:
-  the original strong Phase V V-C programme;
-  the reduced/noncopying/cofinal strong Phase VI stack;
-  the project-specific Phase VII theorem that actual reduced interfaces
-    are dense/nervous arities for the recurrent-process world.
+original migration baseline: ogiekako/test@3806b8ea4851f6edfa7073085e929bdd868442b9
+latest ledger snapshot inspected here: ogiekako/test@79f64b1a7634341f66482ae19250aa9fa8677d7d
+snapshot date: 2026-08-30 JST
 ```
 
-Thus the correct summary is:
+The original research ledger is live and may advance after this snapshot. This file uses the most conservative status supported by the latest inspected canonical state and provenance-distinct audits.
 
-- **Phase V generic/meta shell:** substantially closed; strong original programme open/reduced.
-- **Phase VI generic raw shell:** closed/known; strong reduced form open/reduced.
-- **Phase VII generic arity shell:** closed/known; project-specific interaction-arity identification open/reduced.
+## Phase I — REACHED / AUDITED
 
-## Standalone Boolean-rank counterexample
+The unrestricted predecessor North Star is reached in its stated relative/effective sense. Its accepted spine includes exact finite-path feedback semantics, the fully abstract observer quotient `Omega_O`, semantic hard-core localization, a two-sided non-r.e. boundary forbidding exhaustive sound c.e. LOW/HIGH classification of the transparent scalar family, and nontrivial positive sectors.
 
-The Boolean-rank augmentation example in this repository has a direct elementary proof and an independent exhaustive verifier. Its mathematical validity is independent of the programme. A final publication claim should still include a current literature check for prior resolution of the specific 2018 open question.
+## Phase II — AUDITED SCOPED THEOREMS
+
+The effective-structure coastline is independently audited: finite future-legality, one-counter-net affine lifting, and the LCRP-style semidirect-product abstraction survive independent reconstruction with sharp near-misses recorded.
+
+## Phase III — REACHED IN THE DECLARED RELATIVE BOOK SENSE
+
+The independently challenged transactional graph-storage theorem is the terminal Phase-III object: complete residual storage/action ports, operational composition before neutralization, process-bijective recodings, recursive graph-monoid capacity structure, and proof-bearing affine charts.
+
+## Phase IV — protected/certifiable G1--G7 is now second-run audited; canonical promotion pending
+
+Earlier versions of this repository conservatively said “full Grand Book OPEN”. The latest ledger materially improves that picture.
+
+At `79f64b1...`, literal G1 in the normalized native protected/certifiable domain has survived three local-main repair passes. A corrected terminal G7 bundle then survived a **provenance-distinct second-run adversarial audit**. That audit reports no remaining mathematical blocker in literal G7 under the declared domain, after repairing two overclaims:
+
+1. an infinite descending non-LOW chain by itself does not imply absence of a minimal face; the corrected doubling-loop theorem supplies the stronger proper-subdomain property;
+2. `NO-MAX-DOCTRINE` remains scoped to sound c.e. semantic LOW/HIGH doctrines in the fixed non-c.e. family, not all complete-port evaluator doctrines.
+
+The second-run handoff explicitly requests one final canonical local-main promotion before marking normalized protected/certifiable G1--G7 `REACHED`. Accordingly this repository uses:
+
+```text
+Phase IV protected/certifiable G1--G7:
+  SECOND-RUN AUDITED / CANONICAL PROMOTION PENDING
+
+unrestricted bare-semantics / arbitrary-recoding Grand Book:
+  NOT CLAIMED
+```
+
+This distinction is important: the theorem is about a normalized native exposed process domain, not arbitrary semantic presentations.
+
+## Phase V — generic interaction geometry accepted; strongest external programme remains broader
+
+Accepted pieces include exact-interaction-before-valuation, the hidden-middle support-flatness no-go, the equivalence-relation CRT/permutability theorem, modular uncrossing, and explicit failures of universal submodularity. These give a sharp universal/meta boundary. Claims that every original Phase-V external prediction/decomposition ambition is closed should still be read with scope.
+
+## Phase VI — generic raw shell KNOWN; reduced process-generated realization remains project-specific
+
+`Cat/B <-> normal-lax Prof` and the Conduche/pseudo shell are prior art. The project-specific mathematical content is the derivation of reduced noncopying interaction stacks from the actual process interfaces, not the existence of the generic Grothendieck correspondence.
+
+## Phase VII — generic arity shell KNOWN; finite residual nerve accepted
+
+The finite residual interaction-nerve theorem is accepted. Dense/presentable arities and nervous monads are prior art. The strongest intrinsic world-level statement must identify the **actual process-generated reduced interfaces** as the relevant arities; choosing all finitely presentable presheaves after the fact is only the generic shell.
+
+## Standalone source-pair augmentation result
+
+The source-pair question of Parnas--Shraibman has explicit finite counterexamples for both Boolean and binary rank. The mathematical certificates were independently replayed in this curation run using exact integer enumeration, including normal mode, `python -O`, and bytecode compilation. The binary example is exhaustively row-minimal for this form (`n<=4` has no example).
+
+A publication-level novelty statement should still refresh the post-2018 literature search immediately before submission.

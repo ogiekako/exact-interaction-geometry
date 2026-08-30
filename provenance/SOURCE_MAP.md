@@ -1,47 +1,72 @@
 # Source map to the original research ledger
 
-Migration baseline:
+This repository is curated. The original chronological ledger is `ogiekako/test`, subtree `experiments/repairable-tropical-north-star`.
+
+## Snapshots
 
 ```text
-repository: ogiekako/test
-subtree: experiments/repairable-tropical-north-star
-commit: 3806b8ea4851f6edfa7073085e929bdd868442b9
+original migration baseline:
+  3806b8ea4851f6edfa7073085e929bdd868442b9
+
+latest inspected synchronization snapshot:
+  79f64b1a7634341f66482ae19250aa9fa8677d7d
 ```
 
-This new repository is curated. The old repository remains the detailed proof/search ledger, including failed candidates, verifier repairs, and cross-session audit history.
+When a source below existed at the original baseline, links may still point to that immutable commit. Later status corrections are explicitly keyed to the later snapshot.
 
 ## Phase I
 
-- [`docs/NORTH_STAR.md`](https://github.com/ogiekako/test/blob/3806b8ea4851f6edfa7073085e929bdd868442b9/experiments/repairable-tropical-north-star/docs/NORTH_STAR.md)
-- canonical terminal synthesis referenced there: `OPTIMAL_RELATIVE_NORTH_STAR_TERMINAL_SYNTHESIS_20260829.md`
+- `docs/NORTH_STAR.md`
+- canonical synthesis referenced there: `OPTIMAL_RELATIVE_NORTH_STAR_TERMINAL_SYNTHESIS_20260829.md`
 
 ## Phase II
 
-- [`docs/AUDIT_EFFECTIVE_STRUCTURE_COASTLINE_MAIN_20260830.md`](https://github.com/ogiekako/test/blob/3806b8ea4851f6edfa7073085e929bdd868442b9/experiments/repairable-tropical-north-star/docs/AUDIT_EFFECTIVE_STRUCTURE_COASTLINE_MAIN_20260830.md)
+- `docs/AUDIT_EFFECTIVE_STRUCTURE_COASTLINE_MAIN_20260830.md`
 - `docs/AUDIT_EFFECTIVE_STRUCTURE_COASTLINE_INDEPENDENT_20260830.md`
 
 ## Phase III
 
-- [`docs/PHASE_III_INTRINSIC_OBJECT_PROGRAM_20260830.md`](https://github.com/ogiekako/test/blob/3806b8ea4851f6edfa7073085e929bdd868442b9/experiments/repairable-tropical-north-star/docs/PHASE_III_INTRINSIC_OBJECT_PROGRAM_20260830.md)
+- `docs/PHASE_III_INTRINSIC_OBJECT_PROGRAM_20260830.md`
 - `docs/PHASE_III_TRANSACTIONAL_GRAPH_STORAGE_BOOK_TERMINAL_20260830.md`
-- `docs/PHASE_III_COMPOSITION_FIRST_CONTEXTUAL_OPACITY_BOUNDARY_20260830.md`
 - `docs/AUDIT_POST_PHASE_III_INTRINSIC_AFFINE_MAP_SPECTRUM_20260830.md`
 
-## Phase IV
+## Phase IV structural spine
 
-- [`docs/GRAPH_MINORS_SCALE_GRAND_BOOK.md`](https://github.com/ogiekako/test/blob/3806b8ea4851f6edfa7073085e929bdd868442b9/experiments/repairable-tropical-north-star/docs/GRAPH_MINORS_SCALE_GRAND_BOOK.md)
-- [`docs/TERMINAL_PROTECTED_GRAND_BOOK_SYNTHESIS_20260830.md`](https://github.com/ogiekako/test/blob/3806b8ea4851f6edfa7073085e929bdd868442b9/experiments/repairable-tropical-north-star/docs/TERMINAL_PROTECTED_GRAND_BOOK_SYNTHESIS_20260830.md) — audit-pending terminal candidate
+- `docs/GRAPH_MINORS_SCALE_GRAND_BOOK.md`
+- `docs/AUDIT_POST_PHASE_III_OPERATIONAL_CODESENT_GRAND_BOOK_REDUCTION_20260830.md`
 - `docs/GRAPH_PRODUCT_SEPARATOR_PROARROW_MINIMALITY_20260830.md`
-- `docs/AUDIT_PROCESS_SENSITIVE_RVGT_MAIN_20260830.md`
-- `docs/PROTECTED_FIBRED_CODESCENT_GLOBALIZATION_WAVE6_MAIN_20260830.md`
+- `docs/UNIVERSAL_BOOK_MAXIMALITY_NO_CHOICE_20260830.md`
+- `docs/AUDIT_UNIVERSAL_BOOK_MAXIMALITY_MAIN_20260830.md`
+- protected G1 repair/audit chain recorded in `.handoff/STATE.md`
 
-## Phase V–VII
+## Latest protected G7 state at `79f64b1...`
+
+- `.handoff/20260830-2020-jst-terminal-g7-second-run-audit.md`
+- `docs/AUDIT_TERMINAL_G7_SECOND_RUN_20260830.md`
+- `docs/TERMINAL_G7_ADVERSARIAL_REPAIR_20260830.md`
+- `docs/CANONICAL_EVALUATOR_CORES_G7_20260830.md`
+- `docs/G7_NONHEREDITARY_EVALUATOR_BOUNDARY_20260830.md`
+
+Disposition imported here: **second-run adversarial audit accepted the corrected literal G7 in `Proc_prot^0`; canonical local-main promotion still requested.**
+
+## Phase V--VII
 
 - `docs/PHASE_V_WHY_STRUCTURE_GOAL_CRITERIA_20260830.md`
-- `docs/PHASE_V_VI_VII_TERMINAL_INTERACTION_ARITY_CLOSURE_20260830.md` — strong terminal claim, not canonical
-- [`docs/AUDIT_PHASE_V_VI_VII_TERMINAL_CLOSURE_20260830.md`](https://github.com/ogiekako/test/blob/3806b8ea4851f6edfa7073085e929bdd868442b9/experiments/repairable-tropical-north-star/docs/AUDIT_PHASE_V_VI_VII_TERMINAL_CLOSURE_20260830.md) — conservative current audit disposition
+- `docs/PHASE_V_VI_VII_TERMINAL_INTERACTION_ARITY_CLOSURE_20260830.md`
+- `docs/AUDIT_PHASE_V_VI_VII_TERMINAL_CLOSURE_20260830.md`
+- `verification/verify_phase_v_vii_interaction_arity_closure_20260830.py`
 
-## First harvested counterexample
+## Literature audit
 
-- [`docs/BOOLEAN_RANK_AUGMENTATION_SINGLE_VECTOR_COUNTEREXAMPLE_20260830.md`](https://github.com/ogiekako/test/blob/3806b8ea4851f6edfa7073085e929bdd868442b9/experiments/repairable-tropical-north-star/docs/BOOLEAN_RANK_AUGMENTATION_SINGLE_VECTOR_COUNTEREXAMPLE_20260830.md)
-- `counterexample_search/boolean_augmentation/`
+- `docs/CATEGORICAL_GRAND_BOOK_LITERATURE_AUDIT_20260830.md`
+
+This audit maps structured decompositions, monoidal width, open Petri/network semantics, Span(Graph), graph-product Foata theory, abstract tangles, bialgebraic semantics, functorial minimization, and Grothendieck/sheaf machinery. It explicitly warns that these ambient theories are prior art.
+
+## Source-pair augmentation counterexamples
+
+At `b2601fdb...` and later:
+
+- `docs/AUGMENTATION_SOURCE_PAIR_COUNTEREXAMPLES_BOTH_RANKS_20260830.md`
+- `verification/verify_augmentation_source_pair_both_ranks_20260830.py`
+
+The curation independently replayed the exact enumeration and additionally rewrote the combined paper so that both displayed counterexample theorems have elementary proof bodies independent of exhaustive search.
