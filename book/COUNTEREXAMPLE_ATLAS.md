@@ -18,19 +18,19 @@ The programme was shaped as much by false stronger statements as by positive the
 
 ## C2. Factor projections lose cross-order
 
-In `B_a * B_b`, words with the same factorwise projections can have different future legality because cross-factor alternation/order is invisible to the two projections.
+In `B_a * B_b`, the configurations `p_a p_b` and `p_b p_a` have the same factorwise projections, but `q_a` is illegal from the former and legal from the latter.
 
-**Kills.** “A separator is just the tuple of shared/factor variables.”
+**Kills.** “A separator is just the tuple of factor/shared variables.”
 
-**Forces.** Alternating owner/zipper synchronization or the equivalent GPSH compatibility proarrow.
+**Forces.** Alternating owner/zipper synchronization or an equivalent compatibility proarrow.
 
 ---
 
 ## C3. State separator is not a dynamic separator
 
-In the storage-separator audit, two configurations can have the same active private list and the same small state-reconstruction base, yet a left push lands in different target shared states.
+Two configurations can have the same active private list and the same small state-reconstruction base, yet the same owner-local push lands in different target shared states.
 
-**Kills.** “If a quotient reconstructs states, it is automatically sufficient for owner-local transition typing.”
+**Kills.** “If a quotient reconstructs states, it automatically types local transitions.”
 
 **Forces.** Dependent/proarrow-like dynamics, or a larger deterministic completion.
 
@@ -38,31 +38,35 @@ In the storage-separator audit, two configurations can have the same active priv
 
 ## C4. No natural choice of one exact chart
 
-A bare four-state null process has three nontrivial `2 x 2` Cartesian coordinate systems permuted transitively by its automorphism group.
+A bare four-state null process has three nontrivial `2 x 2` Cartesian coordinate systems permuted transitively by `S_4`.
 
 **Kills.** “Every process has a canonically selected nontrivial decomposition chart.”
 
-**Forces.** Equivariant atlases/moduli of exact charts.
+**Forces.** Equivariant atlases/moduli of exact charts, unless additional protected structure legitimately breaks the symmetry.
 
 ---
 
 ## C5. Exact structure and fully abstract semantics cannot generally be one object
 
-If contextual equivalence is nontrivial, a lossless exact representation and the least-information fully abstract observer quotient have incompatible universal properties.
+If contextual observer equivalence is nontrivial, lossless raw reconstruction requires distinguishing states that the least-information fully abstract quotient must identify.
 
-**Kills.** “The canonical structural object should already be the observer-minimal semantic quotient.”
+**Kills.** “The canonical structural object should already equal the observer-minimal semantic quotient.”
 
-**Forces.** Two stages: lossless structural representation, then `Omega_O`.
+**Forces.** Two stages:
+
+```text
+lossless structure -> exact raw semantics -> Omega_O.
+```
 
 ---
 
 ## C6. No exhaustive effective LOW/HIGH atlas
 
-A fixed transparent scalar family has both Presburger and non-Presburger truth sides non-r.e.
+A fixed transparent scalar family has both Presburger and non-Presburger truth sides non-c.e.
 
-**Kills.** Any claimed exhaustive sound c.e. classification of unrestricted recurrent presentations.
+**Kills.** Any claimed exhaustive sound c.e. LOW/HIGH classification of unrestricted recurrent presentations.
 
-**Forces.** Exact opaque atoms / residuals and doctrine-relative positive compilers.
+**Forces.** Exact opaque residuals and doctrine-relative positive compilers.
 
 ---
 
@@ -93,7 +97,7 @@ so
 
 **Mechanism.** Different cuts can exploit different disjunctive components.
 
-**Forces.** Structural hypotheses for uncrossing; exact residual defects when submodularity fails.
+**Forces.** Structural hypotheses for uncrossing and an explicit defect/curvature theory outside flat sectors.
 
 ---
 
@@ -105,7 +109,7 @@ Every relation `R subseteq X x Y` factors through its edge set `E=R` as
 R = graph(q) o graph(p)^op.
 ```
 
-Both legs are functional/difunctional.
+Both legs are functional/converse-functional and difunctional.
 
 **Kills.** “Difunctional support relations form a proper compositionally closed universal flat ontology containing ordinary functions.”
 
@@ -121,44 +125,76 @@ The null one-counter radix charts
 d_n(x)=(floor(x/n), x mod n)
 ```
 
-form an infinite shorewise antichain under the nonvacuous comparison notion in the original ledger.
+form an infinite antichain under the nonvacuous comparison notion used in the research ledger.
 
-**Kills.** “There is a finite/cofinal nontrivial atlas covering all possible invented coordinate recodings.”
+**Kills.** “A finite/cofinal nontrivial atlas covers all invented coordinate recodings.”
 
-**Forces.** Declared intrinsic/protected doctrines; whole-state normalization is otherwise vacuous.
+**Forces.** Intrinsic/protected admissibility. Whole-state normalization is otherwise exact but vacuous.
 
 ---
 
 ## C10. Fixed probes cannot reconstruct arbitrary category extensions
 
-Given any fixed probe family `A` in `C`, extend the category by two isolated nonisomorphic objects `x,y`. Then every probe sees the same empty hom-data into both.
+Given fixed probes `A` in `C`, extend the category by two isolated nonisomorphic objects `x,y`. Every probe sees the same empty hom-data into both.
 
-**Kills.** “One fixed probe language reconstructs every possible future mathematical world.”
+**Kills.** “One fixed local probe language reconstructs every arbitrary mathematical category extension.”
 
-**Forces.** World-relative / world-generating arity theorems.
+**Forces.** World-relative/world-generating arity theorems.
 
 ---
 
-## C11. First harvested external counterexample: Boolean-rank augmentation
+## C11. External harvested counterexample: source-pair augmentation fails for both ranks
 
-For
+Parnas--Shraibman ask whether, when two source bases jointly raise Boolean/binary rank, some single vector from each source already raises the rank.
+
+### Boolean rank — four rows
 
 ```text
 A={3,7,15},
 U={3,5,8},
-V={3,5,12}
+V={3,5,12}.
 ```
 
-as four-bit Boolean columns,
+Then
 
 ```text
-rank_B(A)=3,
-rank_B(A | U | V)=4,
-rank_B(A | u | v)=3 for every u in U, v in V,
+rank_bool(A)=3,
+rank_bool(A|U|V)=4,
+rank_bool(A|u|v)=3 for every u in U, v in V,
 ```
 
-while `U,V` are source bases.
+and `U,V` are source bases.
 
-**Consequence.** The one-vector-from-each-source question posed by Parnas--Shraibman has a negative answer for Boolean rank, assuming no prior resolution is found in the final publication audit.
+### Binary rank — five rows
 
-**Why it belongs here.** It was found by searching the factorization atlas for “jointly expensive but pairwise cheap” augmentation patterns — exactly the kind of synergy emphasized in Phase V.
+```text
+A={10,31,27,18},
+U={4,9,10,18},
+V={9,10,18,21}.
+```
+
+Then
+
+```text
+rank_binary(A)=4,
+rank_binary(A|U|V)=5,
+rank_binary(A|u|v)=4 for every u in U, v in V,
+```
+
+and `U,V` are source bases. Exact exhaustive search finds no binary example of this form on at most four rows, so the displayed binary example is row-minimal.
+
+**Consequence.** The Section-6 source-pair strengthening is false for both Boolean and binary rank, subject only to the ordinary final literature/priority refresh before publication.
+
+**Why Phase V found it.** The base graph is a finite factorization atlas. The question asserts that incompatibility of two source interfaces is pairwise visible. The counterexamples realize the opposite pattern:
+
+```text
+jointly expensive,
+pairwise cheap.
+```
+
+This is exactly the no-choice/factorization-synergy mechanism that Phase V suggests searching for.
+
+Standalone paper and verifier:
+
+- `papers/source-pair-augmentation/`
+- `verification/verify_source_pair_augmentation.py`
