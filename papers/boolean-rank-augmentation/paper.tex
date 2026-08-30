@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\newtheorem{theorem}{Theorem}
+\title{A Four-Row Counterexample to a Boolean-Rank Augmentation Question}
+\author{Keigo Oka}
+\date{August 30, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Parnas and Shraibman asked whether, when two source bases witness failure of the augmentation property for Boolean or binary rank, one can always choose one vector from each source base so that augmenting by just those two vectors already increases the rank. We give a negative answer for Boolean rank. The counterexample uses only four rows and the same $4\times3$ matrix used in their original paper. The binary-rank version is not addressed.
+\end{abstract}
+
+\section{The counterexample}
+Identify a four-bit column with the integer whose least significant bit is row~1, and let
+\[
+A=\{3,7,15\},\qquad U=\{3,5,8\},\qquad V=\{3,5,12\}.
+\]
+Equivalently,
+\[
+A=\begin{pmatrix}1&1&1\\1&1&1\\0&1&1\\0&0&1\end{pmatrix}.
+\]
+
+\begin{theorem}
+The sets $U,V$ are distinct source bases of $A$ for Boolean rank,
+\[
+\operatorname{rank}_{\mathrm B}(A)=3,\qquad
+\operatorname{rank}_{\mathrm B}(A\mid U\mid V)=4,
+\]
+but
+\[
+\operatorname{rank}_{\mathrm B}(A\mid u\mid v)=3
+\qquad\text{for every }u\in U,\ v\in V.
+\]
+Consequently the single-vector-from-each-source question of Parnas--Shraibman has a negative answer for Boolean rank.
+\end{theorem}
+
+\begin{proof}
+Boolean span is closure under coordinatewise OR. Both $U$ and $V$ span $A$ since
+\[
+7=3\vee5,\qquad 15=3\vee5\vee8=3\vee5\vee12.
+\]
+The Boolean rank of $A$ is $3$: two generators have nonzero OR-closure contained in $\{p,q,p\vee q\}$ and cannot contain the strict chain $3<7<15$.
+
+Any three generators spanning $U=\{3,5,8\}$ must contain $8$, since $8$ is the only nonzero vector supported only on row~4. The other two generators must then be the incomparable vectors $3,5$. Thus $U$ is the unique rank-$3$ spanning set of itself and is a source.
+
+For $V=\{3,5,12\}$, producing $3$ requires a generator carrying row~2 without rows outside $\{1,2\}$, while producing $12$ requires a distinct generator carrying row~4 without rows outside $\{3,4\}$. Neither can participate in an OR equal to $5=(1,0,1,0)^T$, so the third generator is $5$; the first two are consequently $3$ and $12$. Thus $V$ is also a source.
+
+If $A\cup U\cup V$ had Boolean rank $3$, its three generators would span $U$ and hence equal $U$, but $U$ does not span $12$. Thus the full augmentation has rank at least $4$, and the four coordinate unit vectors give rank at most $4$.
+
+For the cross pairs: if $v\in\{3,5\}$, base $U$ works for every $u\in U$; if $u\in\{3,5\}$ and $v=12$, base $V$ works. The remaining pair $(8,12)$ is handled by $\{3,4,8\}$ because $7=3\vee4$, $12=4\vee8$, and $15=3\vee4\vee8$. Hence every one-from-each augmentation has rank $3$.
+\end{proof}
+
+\section{Literature and provenance}
+The question appears in Section~6 of M.~Parnas and A.~Shraibman, \emph{The augmentation property of binary matrices for the binary and Boolean rank}, Linear Algebra Appl. 556 (2018), 70--99, doi:10.1016/j.laa.2018.07.001. A 2026 survey by Parnas is arXiv:2601.13900. As of August 30, 2026, we are not aware of a published resolution of the specific Section-6 question.
+
+The example was found while experimenting with the Interaction Reconstruction research programme. The broader programme is not used in this proof. Discovery provenance is \texttt{ogiekako/test@3806b8ea4851f6edfa7073085e929bdd868442b9}.
+
+\end{document}
