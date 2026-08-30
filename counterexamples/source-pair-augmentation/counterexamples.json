@@ -1,0 +1,23 @@
+{
+  "question": "Parnas-Shraibman Section-6 single-vector-from-each-source-base augmentation question",
+  "bit_order": "bit 2^i is row i+1",
+  "boolean_rank": {
+    "rows": 4,
+    "A": [3, 7, 15],
+    "U": [3, 5, 8],
+    "V": [3, 5, 12],
+    "rank_A": 3,
+    "rank_full_augmentation": 4,
+    "all_cross_pair_ranks": 3
+  },
+  "binary_rank": {
+    "rows": 5,
+    "A": [10, 31, 27, 18],
+    "U": [4, 9, 10, 18],
+    "V": [9, 10, 18, 21],
+    "rank_A": 4,
+    "rank_full_augmentation": 5,
+    "all_cross_pair_ranks": 4,
+    "row_minimality": "exhaustively no source-pair counterexample on <=4 rows"
+  }
+}
