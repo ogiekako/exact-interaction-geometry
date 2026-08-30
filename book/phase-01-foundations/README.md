@@ -2,34 +2,122 @@
 
 **Status: REACHED / audited predecessor theorem.**
 
-The first phase establishes the semantic object before searching for a structural classification.
+Phase I fixes the semantic problem before any structural classification is attempted. The central lesson is that **exact compositional semantics exists even where an exhaustive effective tame/wild classification does not**.
 
-## Core picture
+## 1. Problem
 
-For the declared finite-interface recurrent setting, the programme separates:
+Start from a finite-interface recurrent presentation with a declared public query/observer family. We want:
+
+1. an exact object closed under finite-path composition and feedback;
+2. the least-information quotient preserving the declared observations;
+3. an exact boundary on what any effective LOW/HIGH doctrine can classify.
+
+These are logically different tasks and must not be collapsed.
+
+## 2. Core semantic pipeline
 
 ```text
 primitive atlas + public query
-    -> exact same-query recurrent context
-    -> raw finite-path / feedback semantics
-    -> observer quotient Omega_O
+      |
+      v
+exact same-query recurrent context
+      |
+      v
+FbCl(T): raw finite-path / feedback closure
+      |
+      v
+Omega_O = FbCl(T) / ==_O
 ```
 
-`Omega_O` is the least-information fully abstract quotient for the declared finitary existential-positive observer family: two raw behaviors are identified exactly when no allowed context/observer distinguishes them.
+The raw object is lossless for the declared execution semantics. `Omega_O` is observer-relative and intentionally forgetful.
 
-The phase also proves an optimal impossibility boundary. A fixed transparent scalar family has both Presburger and non-Presburger truth sides non-r.e. Therefore no exhaustive sound c.e. LOW/HIGH certificate atlas can classify the unrestricted presentation class.
+## 3. Main theorems
 
-The consequence is structural rather than pessimistic: there cannot be one universal scalar tame/wild invariant with an exhaustive effective classifier. Context, packet/realization charge, layout/torso structure, recurrent algebra, and public exposure are genuinely different axes.
+### Theorem I.1 — exact finite-path fully abstract quotient
+**AUDITED / ACCEPTED.**
 
-## Why it matters downstream
+For the declared finitary existential-positive observer family `O`, the star-free one-hole contextual equivalence is already a congruence for the full finite-path feedback signature. The quotient
 
-Phase IV–VII must respect two facts simultaneously:
+```text
+Omega_O(T)=FbCl(T)/==_O
+```
 
-1. exact compositional semantics exists;
-2. exhaustive effective classification of arbitrary recurrent syntax is impossible.
+is fully abstract: two raw behaviours have the same quotient exactly when no allowed observer/context distinguishes them.
 
-The later Book is therefore allowed to isolate exact opaque arithmetic atoms, but not to call compiler failure “hardness” or to erase opacity rhetorically.
+The ordering is essential:
 
-## Primary source
+```text
+raw exact composition -> feedback closure -> observer quotient.
+```
 
-- `docs/NORTH_STAR.md` in the original repository, authoritative status `REACHED` at the migration baseline.
+Quotienting earlier can destroy compositional information.
+
+### Theorem I.2 — hard-core localization
+**AUDITED / ACCEPTED in the terminal North-Star scope.**
+
+The unrestricted same-query theorem localizes non-Presburger recurrence to an edge-minimal complete recurrent core while preserving the same exposed query interface. The point is not that every hard instance has one syntactic normal form; it is that semantic hardness can be isolated without changing the public question.
+
+### Theorem I.3 — two-sided non-r.e. optimality
+**AUDITED / ACCEPTED.**
+
+There is one fixed transparent scalar family for which
+
+```text
+{instances with Presburger exact response}
+```
+
+and
+
+```text
+{instances with non-Presburger exact response}
+```
+
+are both not computably enumerable.
+
+Therefore every total computable sound router, and in particular every sound c.e. LOW/HIGH proof atlas rich enough to include this family, leaves residual mass on both truth sides. An exhaustive c.e. classification is impossible.
+
+## 4. Structural consequences
+
+The negative theorem rules out several misleading endgames:
+
+- one scalar width whose bounded/unbounded split gives an exhaustive effective classification;
+- treating failure of a compiler admission test as a semantic HIGH witness;
+- requiring all exact recurrent arithmetic to disappear inside a structural decomposition.
+
+Instead the terminal predecessor object is typed:
+
+```text
+context / representation
+x packet-realization charge
+x spatial/interface layout
+x recurrent algebra
+x public-query exposure.
+```
+
+These axes can vary independently.
+
+## 5. Counterexample / boundary checks
+
+- Width one can already support universal arithmetic.
+- Large structural width can coexist with query-tame public semantics.
+- Private hard recurrence can be masked by the public observer.
+- A lossy observer quotient cannot generally serve simultaneously as the lossless structural representation.
+
+See [`../COUNTEREXAMPLE_ATLAS.md`](../COUNTEREXAMPLE_ATLAS.md).
+
+## 6. Why Phase II is forced
+
+Phase I says “unrestricted exhaustive classification is impossible”, but it does **not** say “all exact positive structure is hopeless”. The next question is:
+
+> Which natural restricted recurrent interfaces admit complete, proof-bearing, exact structural theorems?
+
+That is Phase II.
+
+## 7. Source map
+
+Primary authoritative source at the migration baseline:
+
+- `docs/NORTH_STAR.md`
+- the terminal synthesis referenced there, `OPTIMAL_RELATIVE_NORTH_STAR_TERMINAL_SYNTHESIS_20260829.md`
+
+See [`../../provenance/SOURCE_MAP.md`](../../provenance/SOURCE_MAP.md) for immutable links.
