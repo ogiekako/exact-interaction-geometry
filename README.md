@@ -69,7 +69,9 @@ A short handwritten argument proves **`rank_bin(A) = 5`**. An explicit 24-bicliq
 
 The lower bound uses only two displayed integer null vectors and one unimodular `4 x 4` minor. The upper bound is a finite list of 24 rectangles partitioning all 196 one-entries of the tensor product exactly once. The search program that found the list is **not** part of the proof.
 
-**Read the complete certificate:** [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md)  
+**Typeset PDF (recommended for reading):** [`discoveries/binary-kronecker-counterexample.pdf`](discoveries/binary-kronecker-counterexample.pdf)  
+**Markdown certificate:** [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md)  
+**TeX source:** [`discoveries/binary-kronecker-counterexample.tex`](discoveries/binary-kronecker-counterexample.tex)  
 **Machine-readable certificate:** [`discoveries/certificates/binary-kronecker-seed5-self-k24.json`](discoveries/certificates/binary-kronecker-seed5-self-k24.json)  
 **Independent checker:** [`verification/verify_binary_kronecker_counterexample.py`](verification/verify_binary_kronecker_counterexample.py)
 
@@ -129,7 +131,7 @@ The detailed boundary is in [`STATUS.md`](STATUS.md).
 ## Read in this order
 
 1. [`FOUNDATIONS.md`](FOUNDATIONS.md) — the minimal interaction-first setup and design constraints.
-2. [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md) — the strongest current external finite discovery and its complete certificate.
+2. [`discoveries/binary-kronecker-counterexample.pdf`](discoveries/binary-kronecker-counterexample.pdf) — the recommended typeset version of the strongest current external finite discovery; the [`Markdown version`](discoveries/binary-kronecker-counterexample.md) is kept for browsing and diffs.
 3. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
 4. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
 5. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
@@ -151,6 +153,8 @@ python3 verification/verify_binary_kronecker_counterexample.py
 ```
 
 The checker is intentionally small and does not import the search code. It verifies the handwritten lower-bound ingredients and the exact-once 24-rectangle partition directly from the displayed data.
+
+The typeset discovery note is generated from [`discoveries/binary-kronecker-counterexample.tex`](discoveries/binary-kronecker-counterexample.tex). The dedicated GitHub Actions workflow recompiles the TeX, uploads the compiled artifact, and publishes the checked-in PDF whenever the TeX source changes on `main`.
 
 See [`verification/README.md`](verification/README.md).
 
