@@ -18,6 +18,43 @@ The finite response calculus, interaction-first objecthood formulation, and cate
 
 The larger research ledger is intentionally not mirrored here. Newer results are imported only when they improve the public mathematical surface without importing unresolved dependencies or programme history.
 
+## Boolean Tucker external case study
+
+The current top-level external case study is extracted from the 2026-08-31 Boolean junction/Tucker lane in the research ledger.
+
+Primary ledger note:
+
+```text
+docs/EIG_EXTERNAL_BOOLEAN_TUCKER_RANK_REGION_20260831.md
+```
+
+Solver-free ledger verifier:
+
+```text
+verification/verify_eig_external_boolean_tucker_rank_region_20260831.py
+```
+
+Follow-up structural note:
+
+```text
+docs/EIG_EXTERNAL_BOOLEAN_SEMILATTICE_FLATNESS_FORBIDDEN_HOOK_20260831.md
+```
+
+Follow-up verifier:
+
+```text
+verification/verify_eig_external_boolean_semilattice_flatness_20260831.py
+```
+
+The public extraction intentionally narrows the story. It presents the explicit `2 x 4 x 4` Boolean Tucker incompatibility, its small blocker certificate, and the EIG question that led to it. It does not rely on a historical `first` claim.
+
+Public files:
+
+- [`../discoveries/boolean-tucker-junction-counterexample.md`](../discoveries/boolean-tucker-junction-counterexample.md)
+- [`../verification/verify_boolean_tucker_junction_counterexample.py`](../verification/verify_boolean_tucker_junction_counterexample.py)
+
+The reduced F/T/three-zero-hook classification remains summarized as structural follow-up rather than being imported wholesale into the public core. The ledger itself records the classical semilattice flatness/distributivity boundary and the remaining universal identification bridge.
+
 ## Binary-Kronecker calibration and priority correction
 
 The EIG search infrastructure was committed in the research ledger at
@@ -38,43 +75,19 @@ A user-executed 48-core run then found a different explicit `5 x 5` binary matri
 ed7cd7fe5e6b02a3e7f65ebf4f3c5b31670fac0f.
 ```
 
-The finite mathematics is correct, but the theorem is **not historically new to EIG**. A later literature check located Yaroslav Shitov's preprint *Factoring Kronecker squares of nonnegative matrices with GPT-5.6 Sol*, publicly posted on **2026-07-25**, which gives another explicit `5 x 5` binary matrix `B` with
-
-```text
-rank_01(B)=5,
-rank_01(B tensor B)<=24<25.
-```
+The finite mathematics is correct, but the theorem is **not historically new to EIG**. A later literature check located Yaroslav Shitov's preprint *Factoring Kronecker squares of nonnegative matrices with GPT-5.6 Sol*, publicly posted on **2026-07-25**, which gives another explicit `5 x 5` binary matrix `B` with `rank_01(B)=5` and `rank_01(B tensor B)<=24<25`.
 
 Therefore the EIG-found example is retained only as an independent rediscovery / calibration of the parallel-witness search heuristic. No priority is claimed for binary-rank Kronecker nonmultiplicativity.
 
-Public files retained for reproducibility:
-
-- [`../discoveries/binary-kronecker-counterexample.md`](../discoveries/binary-kronecker-counterexample.md)
-- [`../discoveries/certificates/binary-kronecker-seed5-self-k24.json`](../discoveries/certificates/binary-kronecker-seed5-self-k24.json)
-- [`../verification/verify_binary_kronecker_counterexample.py`](../verification/verify_binary_kronecker_counterexample.py)
-
-The pre-correction TeX/PDF presentation and its dedicated build workflow were removed from the current tree after the priority correction; Git history preserves them.
-
 ## Current external-search frontier
 
-The private research ledger now prioritizes finite-certificate targets that remained unresolved in the literature checked on 2026-08-31:
+The private research ledger now prioritizes finite-certificate targets that remained unresolved in the literature checked on 2026-08-31, including Parnas--Ron--Shraibman `U_{3,20}` and the exceptional `C_5` / `C_6` crown self-products.
 
-1. Parnas--Ron--Shraibman `U_{3,20}`: an 8-rectangle Boolean cover would refute the conjectured rank `9`.
-2. `C_5 tensor C_5`: a 15-rectangle Boolean cover would settle the exceptional crown self-product strictly.
-3. `C_6 tensor C_6`: same 15-rectangle target.
-
-The corresponding 48-core/CUDA/SAT search infrastructure is kept in the research ledger, not imported into the public foundation unless it produces a new independently audited certificate.
+The search infrastructure remains in the research ledger unless it produces a new independently audited certificate.
 
 ## Earlier source-pair dossier
 
-The source-pair augmentation material remains a secondary candidate track. Public extraction:
-
-- [`../discoveries/boolean-four-row-one-page.md`](../discoveries/boolean-four-row-one-page.md)
-- [`../discoveries/source-pair-augmentation.md`](../discoveries/source-pair-augmentation.md)
-- [`../verification/verify_source_pair_counterexamples.py`](../verification/verify_source_pair_counterexamples.py)
-- [`../verification/verify_unbounded_boolean_augmentation.py`](../verification/verify_unbounded_boolean_augmentation.py)
-
-It is not a headline discovery because the wording of the motivating 2018 source-pair question requires a scope interpretation before any claim of resolving that published question.
+The source-pair augmentation material remains a secondary candidate/calibration track. It is not the public headline because the wording of the motivating 2018 source-pair question requires a scope interpretation before any claim of resolving that published question.
 
 ## Curation principle
 

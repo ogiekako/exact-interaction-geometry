@@ -20,39 +20,17 @@ Categories admit object-free/arrow-only presentations. Semigroup theory also stu
 
 The theorem in [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) uses this classical shell. Its EIG role is narrower: freeze the observation to one-bit composition success, take its full two-sided contextual quotient, identify the quotient classes with endpoint types, then retain the prequotient arrows as witness fibres to reconstruct Hom sets.
 
-## 4. Relations and allegories
+## 4. Relations, allegories, ludics, and Geometry of Interaction
 
-Allegory/relational approaches make relations primary and recover ordinary maps internally using relational equations (for example, total and single-valued relations). Coreflexive relations or related idempotents can encode ordinary subobjects/interfaces.
-
-This is strong prior evidence that map/object structure can be derivative in suitable doctrines.
-
-## 5. Ludics
-
-Girard's ludics makes interaction and orthogonality foundational: designs interact, behaviours/types arise by biorthogonal closure, and typing need not be primitive at the level of designs.
-
-A useful entry point is the ludics literature on interaction/orthogonality and behaviours; for a concise description see:
-
-- Myriam Quatrini and Christophe Fouqueré, *Incarnation in Ludics and maximal cliques of paths*, arXiv:1307.1028.
+Relational/allegorical approaches make relations primary and recover maps internally. Girard's ludics makes interaction and orthogonality foundational. Geometry of Interaction and Seiller's Interaction Graphs study execution, measurement, orthogonality, and observational equivalence.
 
 **EIG therefore does not claim “interaction is primitive” or “types arise by interaction” as unprecedented ideas.**
 
-## 6. Geometry of Interaction and Interaction Graphs
+Representative references include Thomas Seiller, *Interaction Graphs: Additives*, arXiv:1205.6557, and the ludics literature on designs, interaction, and biorthogonality.
 
-Girard's Geometry of Interaction studies the dynamics of cut elimination through execution. Thomas Seiller's Interaction Graphs develops quantitative execution, measurement, orthogonality, observational equivalence, and graph/graphing models.
+## 5. Isbell nuclei: especially close 2026 work
 
-Representative reference:
-
-- Thomas Seiller, *Interaction Graphs: Additives*, arXiv:1205.6557.
-
-The name **Exact Interaction Geometry** is not intended to rename Geometry of Interaction. GoI and Interaction Graphs are close prior art and must be compared explicitly whenever EIG makes a logic/realisability claim.
-
-## 7. Isbell nuclei: especially close 2026 work
-
-The closest currently known recent reference is:
-
-- Juan Luis Gastaldi, Samantha Jarvis, Thomas Seiller, John Terilla, *A calculus of types in Isbell nuclei*, arXiv:2606.03369 (2026).
-
-That work starts from an associative execution and a real-valued measurement, identifies orthogonality-generated types with fixed points of an enriched Isbell adjunction, and derives an associative/residuated type calculus after repairing a naive product.
+Juan Luis Gastaldi, Samantha Jarvis, Thomas Seiller, and John Terilla, *A calculus of types in Isbell nuclei*, arXiv:2606.03369 (2026), starts from execution and measurement and derives an orthogonality-generated type calculus through enriched Isbell nuclei.
 
 This directly blocks any EIG novelty claim of the form
 
@@ -60,15 +38,23 @@ This directly blocks any EIG novelty claim of the form
 execution + measurement -> emergent types.
 ```
 
-The remaining EIG target is different and stronger: simultaneous reconstruction of response-minimal algebra, doctrine-relative interface/object locus, internally selected maps, witness multiplicity/provenance, exact Hom/composition, doctrine change, and local-to-global descent.
+The remaining EIG target is broader: simultaneous reconstruction of response-minimal algebra, doctrine-relative interfaces/objects, internally selected maps, witness multiplicity/provenance, exact Hom/composition, doctrine change, and local-to-global descent.
 
-## 8. Arity/nerve and generic reconstruction machinery
+## 6. Boolean Tucker decomposition
 
-Yoneda density, presheaf reconstruction, monads with arities, nervous monads, Grothendieck constructions, profunctors/equipments, and descent theory provide powerful generic reconstruction shells.
+Boolean tensor factorization, including Boolean Tucker decomposition, is established prior work. A basic reference is:
 
-EIG may use these as representation machinery. It must not count their existence as evidence that the **correct process-generated or interaction-generated arities were derived rather than supplied**.
+- Pauli Miettinen, *Boolean Tensor Factorizations*, ICDM 2011, DOI `10.1109/ICDM.2011.28`.
 
-## 9. Binary-rank Kronecker nonmultiplicativity: Shitov 2026
+The EIG repository does **not** claim Boolean Tucker decomposition itself as new.
+
+The external case study in [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md) asks a narrower structural question: whether the independently minimal Boolean ranks of all mode unfoldings must be jointly realizable by one exact Boolean Tucker core. An explicit `2 x 4 x 4` counterexample is given and checked. No historical `first` claim is required for the role this example plays in the programme.
+
+A nearby warning is also important: constrained Tucker decompositions over other cones are already known to have non-field-like rank behaviour. In particular, nonnegative Tucker literature contains examples where a minimum nonnegative Tucker decomposition need not exist. Therefore EIG does **not** claim the generic statement “constrained Tucker rank need not have a minimum” as new.
+
+The follow-up F/T/three-zero-hook analysis also touches classical semilattice theory. Abstract flatness/distributivity results for join-semilattices are prior art; the public EIG claim is the concrete Boolean junction application and finite obstruction analysis, not the classical theorem.
+
+## 7. Binary-rank Kronecker nonmultiplicativity: Shitov 2026
 
 A priority correction is load-bearing for the external-search lane:
 
@@ -81,9 +67,13 @@ rank_01(B) = 5,
 rank_01(B tensor B) <= 24 < 25.
 ```
 
-The EIG search lane independently found a different `5 x 5` `5 -> 24` example on 2026-08-31. Its finite certificate is correct, but **the theorem that binary rank is nonmultiplicative under Kronecker product is not an EIG novelty claim**. The EIG example is retained only as a calibration of the factorization-atlas / parallel-composition search heuristic.
+The EIG search lane independently found a different `5 x 5` `5 -> 24` example on 2026-08-31. Its finite certificate is correct, but **the theorem that binary rank is nonmultiplicative under Kronecker product is not an EIG novelty claim**. The EIG example is retained only as a calibration of the parallel-composition search heuristic.
 
-This episode is exactly why finite correctness and historical novelty are tracked separately.
+## 8. Arity/nerve and generic reconstruction machinery
+
+Yoneda density, presheaf reconstruction, monads with arities, nervous monads, Grothendieck constructions, profunctors/equipments, and descent theory provide powerful generic reconstruction shells.
+
+EIG may use these as representation machinery. It must not count their existence as evidence that the **correct process-generated or interaction-generated arities were derived rather than supplied**.
 
 ## Novelty policy
 
@@ -91,8 +81,8 @@ A result enters the EIG public core only if its statement separates:
 
 1. the classical theorem being used;
 2. the new operational interpretation or bridge, if any;
-3. the exact project-specific hypothesis;
+3. the exact project-specific finite statement;
 4. what remains conjectural;
 5. whether historical novelty has actually been checked.
 
-At this snapshot, no blanket claim that EIG is a historically new foundation or established field is made.
+At this snapshot, no blanket claim that EIG is a historically new foundation or established field is made. External examples are presented at the narrowest independently supported scope; a short counterexample is useful even without asserting priority.

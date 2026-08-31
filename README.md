@@ -8,7 +8,7 @@ Exact Interaction Geometry (EIG) is an emerging mathematical research programme 
 
 The strongest version of that question is open. This repository is a dated foundational disclosure, not a declaration that a new foundation of mathematics has been completed.
 
-**Jump:** [core idea](#the-core-idea) · [exact calibrations](#two-exact-calibrations) · [external-search evidence](#external-search-evidence) · [open foundation](#what-is-conjectural) · [prior art](#what-is-not-being-claimed) · [status](#current-epistemic-status)
+**Jump:** [core idea](#the-core-idea) · [Boolean Tucker case study](#a-small-external-case-study-boolean-tucker-junction-failure) · [exact calibrations](#two-exact-calibrations) · [open foundation](#what-is-conjectural) · [prior art](#what-is-not-being-claimed) · [status](#current-epistemic-status)
 
 ## The core idea
 
@@ -45,6 +45,59 @@ CONTEXT
 
 Here **exact** means that a reduction is allowed only when every admitted future continuation has the same response. **Witness** means that multiplicity, provenance, cocycles, or higher comparison data are retained when later interaction can distinguish them. **Geometry** refers to the resulting factorization, descent, obstruction, and localization structure; it is not a claim that every EIG invariant is metric geometry.
 
+## A small external case study: Boolean Tucker junction failure
+
+A useful test of EIG is whether its internal questions lead to ordinary mathematics that can be checked without accepting EIG terminology.
+
+One recurring EIG question is:
+
+> **If each boundary admits an independently minimal exact interface, must those minima glue through one common junction witness?**
+
+This leads naturally to exact Boolean Tucker decomposition. For a Boolean tensor `T`, minimize each mode unfolding separately using Boolean matrix rank, then ask whether those minima can be realized simultaneously by one Boolean Tucker core.
+
+They need not be.
+
+There is an explicit `2 x 4 x 4` Boolean tensor with
+
+```text
+mode Boolean ranks = (2,3,3)
+```
+
+but no exact Boolean Tucker decomposition of profile `(2,3,3)`. Its exact feasible profile region is
+
+\[
+\operatorname{Tuck}_{\mathbb B}(T)
+=\uparrow(2,3,4)\cup\uparrow(2,4,3),
+\]
+
+so the exact Boolean Tucker profile poset has two incomparable Pareto minima and no componentwise least element for this tensor.
+
+The obstruction is tiny: one positive tensor entry has only four possible lifts through the two minimum latent interfaces, and four explicitly displayed zeros block all four lifts.
+
+```text
+EIG question
+  independently minimal interfaces: do they jointly descend?
+        |
+        v
+Boolean Tucker translation
+  minimize each unfolding separately
+        |
+        v
+counterexample
+  (2,3,3) local minima cannot share one exact core
+        |
+        v
+small structural obstruction
+  every candidate latent lift of one positive is blocked
+```
+
+This is the role external examples are meant to play here: EIG suggests the structural question and failure mechanism; the resulting mathematical statement is then verified independently in standard language.
+
+**Read the counterexample:** [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md)  
+**Run the solver-free checker:** `python3 verification/verify_boolean_tucker_junction_counterexample.py`
+
+A follow-up analysis in the research ledger identifies two minimal rank-three separator types (`F` and `T`), classifies their reduced fiber/tensor holes, and finds a common three-zero hook obstruction. It also connects the safe side of the phenomenon to classical distributive/flat semilattices. Those structural observations are not needed for the counterexample and are not presented here as a historical-priority claim.
+
 ## Two exact calibrations
 
 ### 1. Finite response tables
@@ -68,35 +121,24 @@ The construction uses classical category consolidation / semigroup ideas; those 
 
 See [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md).
 
-## External-search evidence
+## Other external-search evidence
 
-A foundational programme should eventually generate externally checkable mathematics rather than only reorganize known mathematics. EIG therefore maintains a separate certificate-first external-search lane.
+The repository keeps external-search results separate from foundational claims.
 
-### Binary-Kronecker calibration: correct rediscovery, not a novelty claim
+### Binary-Kronecker calibration
 
-The EIG parallel-composition / witness-sharing heuristic independently led to a `5 x 5` binary matrix `A` with
+The EIG parallel-composition heuristic independently led to a correct `5 x 5` binary matrix with
 
 ```text
 rank_bin(A) = 5,
 rank_bin(A tensor A) <= 24 < 25.
 ```
 
-The proof and 24-rectangle certificate are correct and independently checkable. However, **this is not the first refutation of binary-rank Kronecker multiplicativity**: Yaroslav Shitov publicly posted a different `5 x 5` `5 -> 24` counterexample on **2026-07-25** in *Factoring Kronecker squares of nonnegative matrices with GPT-5.6 Sol*.
+This is **not** a novelty claim: Yaroslav Shitov had publicly posted a different `5 x 5` `5 -> 24` counterexample on 2026-07-25. The EIG-found example is retained only as an independent rediscovery / calibration of the search methodology. See [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md).
 
-Accordingly, the EIG-found example is retained only as an independent rediscovery / calibration of the factorization-atlas search methodology. No historical priority is claimed for the nonmultiplicativity theorem.
+The earlier source-pair augmentation dossier is also retained as secondary evidence because the wording of its motivating 2018 question admits a scope ambiguity. See [`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md).
 
-See [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md).
-
-### Current unresolved targets
-
-The external-search lane is now aimed at targets for which a positive finite certificate would still resolve an explicitly open case:
-
-- **Parnas--Ron--Shraibman `U_{3,20}`.** Their 2019 conjecture predicts Boolean rank `9`; an explicit cover by `8` all-one rectangles would refute it.
-- **Exceptional crown Kronecker cases.** The 2026 Parnas survey records `C_5 tensor C_5` and `C_6 tensor C_6` as the exceptional self-product cases not covered by the known crown-family theorem. Since `rank_B(C_5)=rank_B(C_6)=4`, a `15`-rectangle cover would prove strict submultiplicativity.
-
-The earlier source-pair augmentation dossier remains secondary because the wording of its motivating 2018 question admits a scope ambiguity. See [`discoveries/boolean-four-row-one-page.md`](discoveries/boolean-four-row-one-page.md) and [`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md).
-
-The discovery rule is deliberately strict: **search programs may suggest certificates, but only short standalone proofs or finite positive certificates belong on the public mathematical surface.** Historical novelty is audited separately.
+Current private search lanes target unresolved finite-certificate problems such as Parnas--Ron--Shraibman `U_{3,20}` and the exceptional crown self-products. Search programs do not become public mathematical claims unless they return a short independently checked certificate.
 
 ## What is conjectural
 
@@ -108,7 +150,7 @@ WEIR is **not proved**. It is stated as a falsifiable programme with explicit ac
 
 EIG does **not** claim that objectless category theory, syntactic monoids, Myhill--Nerode minimization, idempotent splitting, relations-as-primary, allegories, ludics, Geometry of Interaction, Interaction Graphs, or Isbell nuclei are new. Nor does it claim that every mathematical object has been reconstructed from interaction, that one doctrine-free notion of objecthood has been identified, or that scalar response suffices to recover witness multiplicity and higher coherence.
 
-Several established lines of work are directly relevant and sharply constrain what can reasonably be claimed as new here. In particular, 2026 work of Gastaldi--Jarvis--Seiller--Terilla derives types from execution and measurement through Isbell nuclei, so **“types emerge from interaction” is not an EIG novelty claim**. The binary-rank Kronecker nonmultiplicativity theorem is also explicitly not claimed as an EIG first discovery after locating Shitov's 2026-07-25 preprint. See [`PRIOR_ART.md`](PRIOR_ART.md).
+Boolean Tucker decomposition is established prior work; constrained Tucker decompositions are also known to exhibit non-field-like rank phenomena in other cones, including nonnegative Tucker models. The EIG case study here is deliberately narrower: it records one explicit exact Boolean junction failure and the interaction-first question that exposed it. See [`PRIOR_ART.md`](PRIOR_ART.md).
 
 ## Current epistemic status
 
@@ -116,8 +158,10 @@ Several established lines of work are directly relevant and sharply constrain wh
 | --- | --- |
 | finite exact residual quotient and elementary factor-rank laws | proved / audited; much of the algebra is classical |
 | exact category reconstruction from untyped consolidation + one-bit continuation success | main-audited recognition theorem; classical ingredients |
-| binary-Kronecker `5 -> 24` example | correct independent rediscovery; theorem priority belongs at least to Shitov's 2026-07-25 preprint |
-| source-pair and other external candidates | exact checks/proofs as stated; independent scope/novelty review pending |
+| explicit Boolean Tucker `(2,3,3)` junction counterexample and displayed rank region for that tensor | finite exact statement with solver-free checker; no historical `first` claim |
+| rank-three `F/T` reduced separator classification and three-zero hook | proved in the research ledger after local-main audit; broader universal converse remains reduced |
+| binary-Kronecker `5 -> 24` example | correct independent rediscovery; no theorem-priority claim |
+| source-pair and current search targets | secondary / candidate evidence; scope or novelty review pending |
 | general witness-enriched, doctrine-relative, cross-domain reconstruction | conjectural / open |
 
 The detailed boundary is in [`STATUS.md`](STATUS.md).
@@ -125,12 +169,12 @@ The detailed boundary is in [`STATUS.md`](STATUS.md).
 ## Read in this order
 
 1. [`FOUNDATIONS.md`](FOUNDATIONS.md) — the minimal interaction-first setup and design constraints.
-2. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
-3. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
-4. [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md) — a correct independent rediscovery retained as a calibration, not a novelty claim.
-5. [`discoveries/boolean-four-row-one-page.md`](discoveries/boolean-four-row-one-page.md) — the minimal handwritten source-pair candidate.
-6. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
-7. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
+2. [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md) — the clearest current example of the EIG-to-external-mathematics workflow.
+3. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
+4. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
+5. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
+6. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
+7. [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md) — a correct rediscovery retained as calibration.
 8. [`ROADMAP.md`](ROADMAP.md) — the main open gates.
 9. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source/audit provenance.
 
@@ -140,13 +184,13 @@ The detailed boundary is in [`STATUS.md`](STATUS.md).
 make verify-all
 ```
 
-The binary-Kronecker certificate alone can be checked with:
+The Boolean Tucker case study alone can be checked with
 
 ```bash
-python3 verification/verify_binary_kronecker_counterexample.py
+python3 verification/verify_boolean_tucker_junction_counterexample.py
 ```
 
-The checker is intentionally small and does not import the search code. A passing certificate establishes the displayed finite statement, not historical novelty.
+The checker uses no external solver, floating point, randomness, or discovery code.
 
 See [`verification/README.md`](verification/README.md).
 
@@ -166,4 +210,4 @@ See [`provenance/RESEARCH_PROCESS.md`](provenance/RESEARCH_PROCESS.md) and [`pro
 
 **Author:** Keigo Oka  
 **Initial EIG public-foundation snapshot:** 2026-08-31  
-**Historical novelty:** not claimed for classical ingredients; external candidates are promoted only after independent literature review.
+**Historical novelty:** not claimed for classical ingredients; external examples are presented at the narrowest independently supported scope.
