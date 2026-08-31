@@ -68,6 +68,23 @@ Yoneda density, presheaf reconstruction, monads with arities, nervous monads, Gr
 
 EIG may use these as representation machinery. It must not count their existence as evidence that the **correct process-generated or interaction-generated arities were derived rather than supplied**.
 
+## 9. Binary-rank Kronecker nonmultiplicativity: Shitov 2026
+
+A priority correction is load-bearing for the external-search lane:
+
+- Yaroslav Shitov, *Factoring Kronecker squares of nonnegative matrices with GPT-5.6 Sol*, publicly posted **2026-07-25**, DOI `10.13140/RG.2.2.26449.90723`.
+
+Shitov gives an explicit `5 x 5` binary matrix `B` with
+
+```text
+rank_01(B) = 5,
+rank_01(B tensor B) <= 24 < 25.
+```
+
+The EIG search lane independently found a different `5 x 5` `5 -> 24` example on 2026-08-31. Its finite certificate is correct, but **the theorem that binary rank is nonmultiplicative under Kronecker product is not an EIG novelty claim**. The EIG example is retained only as a calibration of the factorization-atlas / parallel-composition search heuristic.
+
+This episode is exactly why finite correctness and historical novelty are tracked separately.
+
 ## Novelty policy
 
 A result enters the EIG public core only if its statement separates:
