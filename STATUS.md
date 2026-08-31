@@ -16,11 +16,11 @@ This file is intentionally conservative. It records only claims appropriate for 
 | every small category is exactly reconstructible from its untyped consolidation, one-bit composition success, and retained raw-arrow witness fibres | **PROVED AFTER MAIN AUDIT** | classical consolidation ingredients; EIG operational recognition formulation |
 | exact category reconstruction does not imply ULF/Conduche factorization | **PROVED / explicit counterexample** | boundary theorem |
 
-## External mathematical discoveries
+## External-search calibrations and candidates
 
-These are logically separate from the foundational EIG claims. They are included because they provide externally falsifiable evidence that the interaction/factorization viewpoint can generate concrete mathematics.
+These are logically separate from the foundational EIG claims.
 
-### Binary rank under Kronecker product
+### Binary rank under Kronecker product — corrected prior-art status
 
 For the explicit `5 x 5` matrix in [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md):
 
@@ -29,26 +29,33 @@ rank_bin(A) = 5
 rank_bin(A tensor A) <= 24 < 25 = rank_bin(A)^2.
 ```
 
-Current evidence:
+The finite statement is correct: it has a short handwritten lower bound and an exact 24-biclique certificate.
 
-- a complete handwritten lower-bound proof using two null vectors and one unimodular `4 x 4` minor;
-- a literal 24-biclique partition of all 196 tensor one-entries;
-- an independent small checker that does not import the searcher and passes in normal and optimized Python.
+However, **the nonmultiplicativity theorem is not novel to this project**. Yaroslav Shitov publicly posted a different `5 x 5` binary matrix with the same `5 -> 24` separation on **2026-07-25** in *Factoring Kronecker squares of nonnegative matrices with GPT-5.6 Sol*.
 
-Publication posture: **COMPLETE FINITE ARGUMENT INTERNALLY CHECKED; INDEPENDENT AUTHOR/PROGRAM RECHECK + HISTORICAL-NOVELTY AUDIT PENDING.**
+Publication posture: **CORRECT INDEPENDENT REDISCOVERY / CALIBRATION; NO THEOREM-PRIORITY CLAIM.**
 
-The distinction matters: mathematical correctness of the displayed finite certificate is separate from the historical claim that no earlier counterexample exists.
+The example remains useful only as evidence that the EIG factorization-atlas / parallel-composition heuristic independently selected the right failure mechanism.
+
+### Current unresolved targets
+
+The external-search lane now prioritizes finite certificates that would still resolve explicitly open cases:
+
+1. **Parnas--Ron--Shraibman `U_{3,20}`.** The 2019 conjecture predicts Boolean rank `9`; an `8`-rectangle all-one cover would refute it.
+2. **Exceptional crown Kronecker cases.** The 2026 Parnas survey records `C_5 tensor C_5` and `C_6 tensor C_6` as the exceptional crown self-products not covered by the known strict-submultiplicativity theorem. Since `rank_B(C_5)=rank_B(C_6)=4`, a `15`-rectangle cover would establish strictness.
 
 ### Earlier source-pair augmentation dossier
 
-The four-row Boolean, five-row binary, and unbounded Boolean source-pair results remain available in [`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md). They are secondary on the public surface because the motivating 2018 wording “has two sources” admits an interpretive scope issue for the four-row example.
+The four-row Boolean, five-row binary, and unbounded Boolean source-pair results remain available in [`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md). They are secondary because the motivating 2018 wording “has two sources” admits an interpretive scope issue for the four-row example.
 
 ## Firewall
 
 ```text
-EIG correctness --not a dependency--> external-discovery correctness
-external-discovery correctness --not a dependency--> historical novelty / priority.
+EIG correctness --not a dependency--> finite certificate correctness
+finite certificate correctness --not a dependency--> historical novelty / priority.
 ```
+
+The Shitov correction is a concrete example of why this firewall is necessary.
 
 ## Explicitly open / conjectural
 
@@ -61,14 +68,12 @@ The following are **not** promoted as broad theorems here:
 
 ## Curation boundary
 
-The underlying research ledger contains many broader EIG branches: recurrent-process structure, tensor/doctrine refinements, physical calibrations, Graph-Minors-style obstructions, free-pasting/interface reconstruction, Tucker/nonnegative-rank applications, AQFT/OAQEC directions, and other theorem candidates.
-
-They are deliberately absent from this public core unless needed to state or test the foundational EIG claim. Newer does not imply public-ready.
+The underlying research ledger contains many broader EIG branches. They are deliberately absent from this public core unless needed to state or test the foundational EIG claim. Newer does not imply public-ready.
 
 ## Verification boundary
 
-`make verify` runs foundational regression. `make verify-discoveries` checks the binary-Kronecker certificate and the earlier source-pair dossier. A passing verifier supports the encoded finite claim; it does not establish historical novelty.
+`make verify` runs foundational regression. `make verify-discoveries` checks finite external certificates and the earlier source-pair dossier. A passing verifier supports the encoded finite claim; it does not establish historical novelty.
 
 ## Historical novelty boundary
 
-Many EIG ingredients are established mathematics. This repository claims a dated formulation and research programme, not historical priority over classical ingredients. External-discovery priority is withheld until the dedicated independent literature audit is complete.
+Many EIG ingredients are established mathematics. This repository claims a dated formulation and research programme, not historical priority over classical ingredients. The binary-Kronecker headline was corrected immediately after locating Shitov's 2026-07-25 prior counterexample. Any future external-discovery priority claim requires a dedicated independent literature audit.
