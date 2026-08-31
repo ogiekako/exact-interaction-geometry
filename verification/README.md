@@ -8,7 +8,7 @@ The repository separates proof certificates from search machinery. Search code i
 make verify
 ```
 
-This executes `verification/verify_category_reconstruction.py` in normal Python and with `python -O`, then byte-compiles it. The regression reconstructs contextual quotient classes from the untyped multiplication/response table, builds quotient multiplication, identifies object idempotents, recovers source/target object classes and identity witnesses, reconstructs Hom witness fibres, and only then compares the result with the hidden fixture labels. It is regression evidence for the unbounded proof in `theory/02-category-reconstruction.md`.
+This executes `verification/verify_category_reconstruction.py` in normal Python and with `python -O`, then byte-compiles it. The regression reconstructs contextual quotient classes from the untyped multiplication/response table, builds quotient multiplication, identifies object idempotents, recovers source/target object classes and identity witnesses, reconstructs Hom witness fibres, and only then compares the result with the hidden fixture labels. It also includes a one-object category with a nontrivial endomorphism to ensure that an object class need not be a singleton. It is regression evidence for the unbounded proof in `theory/02-category-reconstruction.md`.
 
 ## Boolean Tucker junction counterexample
 
@@ -22,7 +22,7 @@ Expected output begins
 PASS boolean-tucker-junction
 ```
 
-The checker uses no external solver, floating point, randomness, normalization lemma, or Python `assert`. For each mode it exhausts every nonzero Boolean support mask directly, derives the exact mode Boolean rank and all minimum bases, verifies their uniqueness for the displayed tensor, checks the four blocking zeros, verifies exact profiles `(2,3,4)` and `(2,4,3)`, and checks a same-shape same-mode-ranks tensor for which `(2,3,3)` is feasible.
+The checker uses no external solver, floating point, randomness, normalization lemma, or Python `assert`. For each mode it exhausts every nonzero Boolean support mask directly, derives the exact mode Boolean rank and all minimum bases, verifies their uniqueness for the displayed tensor, checks the four blocking zeros, and exhausts all distinct nonzero support families on the two-point first mode to verify that no Tucker profile with the other two modes both at rank three is exact. It then verifies exact profiles `(2,3,4)` and `(2,4,3)` and checks a same-shape same-mode-ranks tensor for which `(2,3,3)` is feasible.
 
 The complete human-readable counterexample is [`../discoveries/boolean-tucker-junction-counterexample.md`](../discoveries/boolean-tucker-junction-counterexample.md).
 

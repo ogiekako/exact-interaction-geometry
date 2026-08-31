@@ -2,7 +2,7 @@
 
 **Status:** self-contained finite claim; no program is needed for the proof below. Historical novelty and the exact scope of the 2018 open-question wording still require an independent literature check before a priority claim.
 
-Identify a nonzero 4-bit column with a nonempty subset of `{0,1,2,3}`; Boolean addition is union. The Boolean rank of a column family is the minimum number of generators whose unions contain every column. A **base** is a minimum generating family. In the base graph, there is an arrow `B -> C` when base `B` spans base `C`; a **source** has no incoming arrow from a distinct base.
+Identify a nonzero 4-bit column with a nonempty subset of `{0,1,2,3}`; Boolean addition is union. The Boolean rank of a column family is the minimum number of generators whose **union-closure contains every column**. A **base** is a minimum generating family. In the base graph, there is an arrow `B -> C` when base `B` spans base `C`; a **source** has no incoming arrow from a distinct base.
 
 Consider
 

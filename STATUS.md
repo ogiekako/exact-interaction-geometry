@@ -17,7 +17,7 @@ Status vocabulary used here:
 | contextual equality of finite response rows gives the unique coarsest deterministic exact interface | **PROVED / PUBLIC** | elementary / classical minimization pattern |
 | semiring witness factor rank obeys serial data processing and parallel submultiplicativity | **PROVED / PUBLIC** | classical factorization algebra; EIG interpretation is organizational |
 | two-sided syntactic interaction quotient is composition-stable and response-minimal | **PROVED / PUBLIC** | classical syntactic-algebra core |
-| idempotent splitting gives typed interaction categories | **PROVED / PUBLIC** | classical Karoubi/Cauchy core |
+| idempotent splitting gives typed interaction categories | **PROVED / PUBLIC** | classical Karoubi/Cauchy core; concise construction proof in `FOUNDATIONS.md` |
 | changing the response doctrine can change the derived object spectrum | **LEDGER-AUDITED / PUBLIC PROOF NOT IMPORTED** | retained as programme provenance, not a public theorem claim |
 | every small category is exactly reconstructible from its untyped consolidation, one-bit composition success, and retained raw-arrow witness fibres | **PROVED / PUBLIC** | classical consolidation ingredients; EIG operational recognition formulation |
 | exact category reconstruction does not imply ULF/Conduche factorization | **PROVED / PUBLIC** | boundary theorem |
@@ -39,7 +39,7 @@ but profile `(2,3,3)` is not jointly realizable by one exact Boolean Tucker core
 =\uparrow(2,3,4)\cup\uparrow(2,4,3).
 \]
 
-The public checker exhausts every nonzero support mask on each mode, derives the mode ranks and unique minimum bases without a normalization lemma, checks the four blocking zeros excluding the lower corner, verifies the two Pareto profiles, and checks a same-shape same-mode-ranks tensor for which `(2,3,3)` is feasible.
+The public checker exhausts every nonzero support mask on each mode, derives the mode ranks and unique minimum bases without a normalization lemma, checks the four blocking zeros, exhausts every distinct nonzero first-arm support family to rule out all profiles with the two other arms fixed at rank three, verifies the two Pareto profiles, and checks a same-shape same-mode-ranks tensor for which `(2,3,3)` is feasible.
 
 Publication posture: **PROVED / PUBLIC FINITE COUNTEREXAMPLE; NO HISTORICAL `FIRST` CLAIM.**
 
@@ -93,9 +93,9 @@ The following are **not** promoted as broad theorems here:
 
 ## Verification boundary
 
-`make verify` runs foundational regression. `make verify-discoveries` checks the Boolean Tucker case study and retained finite calibrations/candidates. A passing verifier supports the encoded finite claim; it does not establish historical novelty.
+`make verify` runs foundational regression. `make verify-discoveries` checks the Boolean Tucker case study and the finite calibration/examples retained in this public tree. A passing verifier supports the encoded finite claim; it does not establish historical novelty.
 
-The category reconstruction regression now constructs the contextual quotient, quotient multiplication, object idempotents, source/target object classes, identity witnesses, and Hom fibres from the untyped interaction data before comparing them with the hidden fixture labels.
+The category reconstruction regression constructs the contextual quotient, quotient multiplication, object idempotents, source/target object classes, identity witnesses, and Hom fibres from the untyped interaction data before comparing them with the hidden fixture labels.
 
 ## Historical novelty boundary
 

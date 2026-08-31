@@ -49,7 +49,7 @@ iff
 r(x*a*y) = r(x*b*y) for every x,y in P.
 ```
 
-This is a congruence. The quotient
+This is a congruence: multiplying equivalent fragments on either side merely absorbs the multiplier into the quantified contexts. The quotient
 
 ```text
 Syn(P,r) = P / ~_r
@@ -69,6 +69,14 @@ A tempting next step is to call every idempotent of `Syn(P,r)` an object. That g
 objects: e with e^2=e
 arrows e -> f: m with m=f*m*e.
 ```
+
+For completeness, these data really do form a category. If `m:e->f` and `n:f->g`, then
+
+```text
+n*m = g*n*f*m*e = g*(n*m)*e,
+```
+
+so composition is closed. The idempotent `e` is the identity at object `e`, because `m*e=m` and `f*m=m`; associativity is inherited from the ambient monoid. This is the standard Karoubi construction, not a new EIG theorem.
 
 This is useful, but it is not a doctrine-free answer to objecthood.
 

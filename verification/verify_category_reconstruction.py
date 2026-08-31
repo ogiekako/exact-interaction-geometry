@@ -2,8 +2,8 @@
 """End-to-end finite regression for category recovery from untyped interaction.
 
 The reconstruction phase uses only the untyped multiplication table, zero, and
-one-bit success response. Original source/target labels are consulted only at
-the final comparison step.
+one-bit success response. Original source/target labels and the expected object
+count are consulted only in the final comparison step.
 """
 from itertools import product
 
@@ -80,7 +80,6 @@ def verify_category(arrows, comp, ids):
 
     nonzero_classes = tuple(cls for cls in classes if cls != zero_class)
     object_classes = tuple(cls for cls in nonzero_classes if qmul[(cls, cls)] == cls)
-    check(len(object_classes) == len(ids), "wrong number of reconstructed object classes")
 
     recovered_endpoints = {}
     for cls in nonzero_classes:
@@ -109,7 +108,9 @@ def verify_category(arrows, comp, ids):
         check(len(candidates) == 1, f"identity witness not unique: {candidates}")
         recovered_identity[obj] = candidates[0]
 
+    # Only from here on do we consult the hidden fixture labels.
     original_object_class = {obj: q[identity] for obj, identity in ids.items()}
+    check(len(object_classes) == len(ids), "wrong number of reconstructed object classes")
     check(set(original_object_class.values()) == set(object_classes), "object recovery mismatch")
     for obj, identity in ids.items():
         check(recovered_identity[original_object_class[obj]] == identity, "identity recovery mismatch")
@@ -168,6 +169,17 @@ for k in range(1, 8):
         comp[(f, "idA")] = f
     verify_category(arrows, comp, {"A": "idA", "B": "idB"})
 
+# One object with a nontrivial endomorphism: the group C2 as a one-object category.
+arrows = [("id", "A", "A"), ("s", "A", "A")]
+comp = {
+    ("id", "id"): "id",
+    ("id", "s"): "s",
+    ("s", "id"): "s",
+    ("s", "s"): "id",
+}
+verify_category(arrows, comp, {"A": "id"})
+
+# Explicit non-ULF fixture: h:A->C differs from the only two-step composite g f.
 arrows = [
     ("iA", "A", "A"), ("iB", "B", "B"), ("iC", "C", "C"),
     ("f", "A", "B"), ("g", "B", "C"), ("gf", "A", "C"), ("h", "A", "C"),

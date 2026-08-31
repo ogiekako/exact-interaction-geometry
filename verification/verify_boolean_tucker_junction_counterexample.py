@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Solver-free verification of the Boolean Tucker junction counterexample.
-
-All Boolean unfolding bases are enumerated directly from every nonzero support
-mask on the corresponding mode. No normalization lemma, SAT/MIP solver,
-randomness, floating point, or Python assert is used.
-"""
+"""Solver-free verification of the Boolean Tucker junction counterexample."""
 from itertools import combinations, product
 
 DIMS = (2, 4, 4)
@@ -124,6 +119,16 @@ def main():
             require((c_mask >> zero[2]) & 1, "blocker lies in C support")
     require(seen == set(blockers), "exactly four candidate lifts")
 
+    # Duplicated or zero-support states on the first arm add no expressive
+    # power, so enumerate every family of its three distinct nonzero supports.
+    a_supports = (0x01, 0x02, 0x03)
+    feasible = []
+    for size in range(1, 4):
+        for family in combinations(a_supports, size):
+            if maximal_sound_union(bad, family, b_basis, c_basis) == bad:
+                feasible.append(family)
+    require(not feasible, "some first-arm family makes rank-three B/C jointly feasible")
+
     literal2 = (1, 2)
     literal4 = (1, 2, 4, 8)
     require(maximal_sound_union(bad, literal2, b_basis, literal4) == bad, "profile (2,3,4)")
@@ -144,7 +149,8 @@ def main():
     require(rebuilt == good, "good exact (2,3,3) Tucker decomposition")
     print(
         f"PASS boolean-tucker-junction checks={CHECKS} "
-        f"bad={BAD_WORD:#x} good={GOOD_WORD:#x} exhaustive_generators=15"
+        f"bad={BAD_WORD:#x} good={GOOD_WORD:#x} exhaustive_generators=15 "
+        f"first_arm_families_checked={2 ** len(a_supports) - 1}"
     )
 
 
