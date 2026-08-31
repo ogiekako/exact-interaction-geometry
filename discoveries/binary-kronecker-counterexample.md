@@ -6,14 +6,16 @@ This note is deliberately self-contained. The search procedure that found the ce
 
 ## Result
 
-Let
+Let `A` be the following `5 x 5` binary matrix, written explicitly as five rows:
 
 ```text
-A = [0 1 1 0 1
-     1 0 1 0 1
-     1 0 0 1 0
-     0 1 0 1 0
-     1 1 0 1 1].
+A = [
+  [0, 1, 1, 0, 1],
+  [1, 0, 1, 0, 1],
+  [1, 0, 0, 1, 0],
+  [0, 1, 0, 1, 0],
+  [1, 1, 0, 1, 1],
+]
 ```
 
 For a binary matrix, `rank_bin` is the least number of all-one rectangles whose disjoint union is its set of `1` entries; equivalently it is the least `r` for a factorization `A = U V` with binary `U,V` under ordinary integer multiplication.
