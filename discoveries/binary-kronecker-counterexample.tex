@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,longtable,array}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+\definecolor{statusgray}{gray}{0.35}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\setlist[itemize]{leftmargin=1.5em,itemsep=0.25em,topsep=0.25em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Binary rank and Kronecker product}
+\fancyhead[R]{\small Exact Interaction Geometry}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\newcommand{\rankbin}{\operatorname{rank}_{\mathrm{bin}}}
+\newcommand{\rankR}{\operatorname{rank}_{\mathbb{R}}}
+
+\title{\textbf{Binary rank is not multiplicative under Kronecker product}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-2.2em}
+
+{\small\color{statusgray}\textbf{Status:} complete finite proof and exact positive certificate; independent author/program recheck and historical-novelty audit pending before public priority is asserted.}
+
+This note is deliberately self-contained. The search procedure that found the certificate is not part of the proof.
+
+\section*{Result}
+
+Let $A$ be the following $5\times5$ binary matrix, written explicitly as five rows:
+\[
+A=
+\begin{pmatrix}
+0&1&1&0&1\\
+1&0&1&0&1\\
+1&0&0&1&0\\
+0&1&0&1&0\\
+1&1&0&1&1
+\end{pmatrix}.
+\]
+
+For a binary matrix, $\rankbin$ is the least number of all-one rectangles whose disjoint union is its set of $1$ entries; equivalently it is the least $r$ for a factorization $A=UV$ with binary $U,V$ under ordinary integer multiplication.
+
+The claim is
+\[
+\rankbin(A)=5,
+\qquad
+\rankbin(A\otimes A)\le 24,
+\]
+and therefore
+\[
+\boxed{\rankbin(A\otimes A)<\rankbin(A)^2}.
+\]
+Thus binary rank is not multiplicative under Kronecker product.
+
+\section*{A short proof that $\rankbin(A)=5$}
+
+Five row-stars partition the support of $A$, so $\rankbin(A)\le 5$.
+
+Put
+\[
+\ell=(-1,1,-1,1,0)^T,
+\qquad
+r=(-1,-1,0,1,1)^T.
+\]
+Direct calculation gives
+\[
+\ell^T A=0,
+\qquad
+Ar=0.
+\]
+
+The submatrix on rows $1,2,3,5$ and columns $1,2,3,4$ has determinant $-1$, hence the ordinary real rank of $A$ is $4$.
+
+Assume for contradiction that $\rankbin(A)\le4$, so
+\[
+A=UV,
+\qquad
+U\in\{0,1\}^{5\times4},
+\qquad
+V\in\{0,1\}^{4\times5}.
+\]
+Because the real rank of $A$ is $4$, both factors have real rank four. Therefore every column $u$ of $U$ and corresponding row $v^T$ of $V$ obey
+\begin{equation}
+\ell^T u=0,
+\qquad
+v^T r=0.
+\tag{1}
+\end{equation}
+
+Some rank-one term $uv^T$ covers $A_{3,1}=1$, so $u_3=v_1=1$ (one-based indices).
+
+From $\ell^T u=0$,
+\[
+u_2+u_4=u_1+u_3=u_1+1.
+\]
+Since $A_{4,1}=0$ and $v_1=1$, support containment forces $u_4=0$; binary-valuedness then forces $u_1=0$ and $u_2=1$.
+
+Likewise $v^T r=0$ gives
+\[
+v_4+v_5=v_1+v_2=1+v_2.
+\]
+Since $A_{3,5}=0$ and $u_3=1$, support containment forces $v_5=0$; hence $v_2=0$ and $v_4=1$.
+
+But then $u_2=v_4=1$, so the same rank-one term covers $A_{2,4}$, while $A_{2,4}=0$. Contradiction. Thus $\rankbin(A)=5$.
+
+\section*{The 24-rectangle certificate for $A\otimes A$}
+
+Index rows and columns of $A\otimes A$ by $0,\ldots,24$ in lexicographic order on pairs in $\{0,\ldots,4\}^2$. The following 24 all-one rectangles partition all $196=14^2$ ones exactly once:
+
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{@{}r >{\ttfamily}l >{\ttfamily}l@{}}
+\toprule
+\# & \normalfont Row set $R$ & \normalfont Column set $C$ \\
+\midrule
+\endfirsthead
+\toprule
+\# & \normalfont Row set $R$ & \normalfont Column set $C$ \\
+\midrule
+\endhead
+1  & \{2,7,9\}        & \{10,13,20,23\} \\
+2  & \{10,14,20\}     & \{1,4,16,19\} \\
+3  & \{5,9\}          & \{1,4,11,14,21,24\} \\
+4  & \{7,9,12,14,22\} & \{0,3\} \\
+5  & \{18,19\}        & \{6,8,16,18\} \\
+6  & \{13,23,24\}     & \{1,3,16,18\} \\
+7  & \{3,23,24\}      & \{6,8,21,23\} \\
+8  & \{1\}            & \{5,7,9,20,22,24\} \\
+9  & \{8\}            & \{1,3,11,13,21,23\} \\
+10 & \{2,17\}         & \{5,8\} \\
+11 & \{0,1,5,6\}      & \{12\} \\
+12 & \{10,11\}        & \{2,17\} \\
+13 & \{0\}            & \{6,7,9,11,14,21,22,24\} \\
+14 & \{5,6,20,21\}    & \{2,22\} \\
+15 & \{16,19,21,24\}  & \{5,9,15,19\} \\
+16 & \{4,22\}         & \{5,8,20,23\} \\
+17 & \{3,4\}          & \{11,13\} \\
+18 & \{4,20\}         & \{6,9,21,24\} \\
+19 & \{15\}           & \{6,7,9,16,17,19\} \\
+20 & \{11\}           & \{0,4,15,19\} \\
+21 & \{6,21,24\}      & \{0,4,20,24\} \\
+22 & \{16,20,21\}     & \{7,17\} \\
+23 & \{1,4,6\}        & \{10,14\} \\
+24 & \{12,14,17,22\}  & \{15,18\} \\
+\bottomrule
+\end{longtable}
+
+The machine-readable copy is \texttt{certificates/binary-kronecker-seed5-self-k24.json}.
+
+A small independent checker reconstructs the raw Kronecker matrix and verifies that every listed rectangle is contained in the support and every one-entry occurs exactly once:
+\begin{quote}\ttfamily
+python3 verification/verify\_binary\_kronecker\_counterexample.py
+\end{quote}
+
+The checker also verifies the two null vectors, the unimodular $4\times4$ minor, and exhaustively checks the tiny local balance obstruction used in the handwritten lower bound. It does \textbf{not} import or trust the search program that found the certificate.
+
+\section*{Why this belongs here}
+
+The target was selected from the EIG factorization/parallel-composition viewpoint. A product of individually minimal witness atlases always gives a product-size witness family, but EIG specifically suggests testing whether composition permits new cross-factor witness sharing that is invisible in either factor separately. Binary rank under Kronecker product is an exact finite model of that question.
+
+That motivation is provenance only. The proof above is ordinary finite matrix and biclique-partition mathematics and does not depend on EIG being correct.
+
+\section*{Literature and novelty firewall}
+
+A targeted literature check on 2026-08-31 found the integer multiplicativity problem still stated as open in, among other sources:
+\begin{itemize}
+  \item Angikar Ghosal and Andreas Karrenbauer, \emph{Engineering Insights into Biclique Partitions and Fractional Binary Ranks of Matrices}, SEA 2025, LIPIcs 338, Article 18, DOI \href{https://doi.org/10.4230/LIPIcs.SEA.2025.18}{10.4230/LIPIcs.SEA.2025.18};
+  \item Michal Parnas, \emph{Mathematical and computational perspectives on the Boolean and binary rank and their relation to the real rank}, arXiv:\texttt{2601.13900} (2026).
+\end{itemize}
+
+The SEA 2025 paper disproves multiplicativity for the \textbf{fractional} binary rank and explicitly leaves the integer binary-rank question open. The present certificate concerns the integer binary rank.
+
+No historical-priority claim is made here until an independent specialist search has ruled out an earlier unpublished, differently phrased, or insufficiently indexed counterexample.
+
+\end{document}
