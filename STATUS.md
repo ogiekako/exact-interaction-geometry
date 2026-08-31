@@ -4,17 +4,23 @@ Snapshot: **2026-08-31 JST**
 
 This file is intentionally conservative. It records only claims appropriate for the public EIG surface.
 
-## Audited / proved foundation core
+Status vocabulary used here:
+
+- **PROVED / PUBLIC** — the current public tree contains the proof or a directly checkable finite certificate, as appropriate;
+- **LEDGER-AUDITED / PUBLIC PROOF NOT IMPORTED** — the private research ledger records an audit, but a third party cannot reproduce that audit from this repository alone;
+- **OPEN / CONJECTURAL** — not promoted as a theorem.
+
+## Foundation core and public-evidence status
 
 | Claim | Status | Novelty posture |
 | --- | --- | --- |
-| contextual equality of finite response rows gives the unique coarsest deterministic exact interface | **PROVED / MAIN-AUDITED** | elementary / classical minimization pattern |
-| semiring witness factor rank obeys serial data processing and parallel submultiplicativity | **PROVED / MAIN-AUDITED** | classical factorization algebra; EIG interpretation is organizational |
-| two-sided syntactic interaction quotient is composition-stable and response-minimal | **PROVED / MAIN-AUDITED** | classical syntactic-algebra core |
-| idempotent splitting gives typed interaction categories | **PROVED / MAIN-AUDITED** | classical Karoubi/Cauchy core |
-| changing the response doctrine can change the derived object spectrum | **PROVED / MAIN-AUDITED** | strict finite calibration |
-| every small category is exactly reconstructible from its untyped consolidation, one-bit composition success, and retained raw-arrow witness fibres | **PROVED AFTER MAIN AUDIT** | classical consolidation ingredients; EIG operational recognition formulation |
-| exact category reconstruction does not imply ULF/Conduche factorization | **PROVED / explicit counterexample** | boundary theorem |
+| contextual equality of finite response rows gives the unique coarsest deterministic exact interface | **PROVED / PUBLIC** | elementary / classical minimization pattern |
+| semiring witness factor rank obeys serial data processing and parallel submultiplicativity | **PROVED / PUBLIC** | classical factorization algebra; EIG interpretation is organizational |
+| two-sided syntactic interaction quotient is composition-stable and response-minimal | **PROVED / PUBLIC** | classical syntactic-algebra core |
+| idempotent splitting gives typed interaction categories | **PROVED / PUBLIC** | classical Karoubi/Cauchy core |
+| changing the response doctrine can change the derived object spectrum | **LEDGER-AUDITED / PUBLIC PROOF NOT IMPORTED** | retained as programme provenance, not a public theorem claim |
+| every small category is exactly reconstructible from its untyped consolidation, one-bit composition success, and retained raw-arrow witness fibres | **PROVED / PUBLIC** | classical consolidation ingredients; EIG operational recognition formulation |
+| exact category reconstruction does not imply ULF/Conduche factorization | **PROVED / PUBLIC** | boundary theorem |
 
 ## External case study: Boolean Tucker junction failure
 
@@ -33,17 +39,19 @@ but profile `(2,3,3)` is not jointly realizable by one exact Boolean Tucker core
 =\uparrow(2,3,4)\cup\uparrow(2,4,3).
 \]
 
-The public checker derives the mode ranks and minimum bases from the tensor, checks the four blocking zeros excluding the lower corner, verifies the two Pareto profiles, and checks a same-shape same-mode-ranks tensor for which `(2,3,3)` is feasible.
+The public checker exhausts every nonzero support mask on each mode, derives the mode ranks and unique minimum bases without a normalization lemma, checks the four blocking zeros excluding the lower corner, verifies the two Pareto profiles, and checks a same-shape same-mode-ranks tensor for which `(2,3,3)` is feasible.
 
-Publication posture: **EXPLICIT FINITE COUNTEREXAMPLE / SOLVER-FREE CHECKER; NO HISTORICAL `FIRST` CLAIM.**
+Publication posture: **PROVED / PUBLIC FINITE COUNTEREXAMPLE; NO HISTORICAL `FIRST` CLAIM.**
 
 The EIG relevance is the question that selected the phenomenon: independently minimal exact interfaces need not jointly descend through one common junction witness.
 
 ### Structural follow-up in the research ledger
 
-A later main-audited reduced-separator theorem identifies two first rank-three strict-gap separator types `F` and `T`, enumerates the `FF/FT/TF/TT` fiber-versus-tensor holes, and gives a common three-zero hook certificate. A distributive separator semilattice is sufficient for joint descent in the concrete finite setting proved there.
+A later reduced-separator theorem in the private research ledger identifies two first rank-three strict-gap separator types `F` and `T`, enumerates the `FF/FT/TF/TT` fiber-versus-tensor holes, and gives a common three-zero hook certificate. A distributive separator semilattice is sufficient for joint descent in the concrete finite setting proved there.
 
-The ledger correctly keeps two broader points separate:
+Public-evidence posture: **LEDGER-AUDITED / PUBLIC PROOF NOT IMPORTED.** These statements are useful provenance and motivation but are not required for the public Boolean Tucker counterexample.
+
+The ledger also keeps two broader points separate:
 
 - classical abstract semilattice flatness/distributivity is prior art, not an EIG novelty;
 - the universal identification needed to turn the reduced F/T theorem into an unrestricted all-Tucker converse remains a reduced/open bridge.
@@ -86,6 +94,8 @@ The following are **not** promoted as broad theorems here:
 ## Verification boundary
 
 `make verify` runs foundational regression. `make verify-discoveries` checks the Boolean Tucker case study and retained finite calibrations/candidates. A passing verifier supports the encoded finite claim; it does not establish historical novelty.
+
+The category reconstruction regression now constructs the contextual quotient, quotient multiplication, object idempotents, source/target object classes, identity witnesses, and Hom fibres from the untyped interaction data before comparing them with the hidden fixture labels.
 
 ## Historical novelty boundary
 

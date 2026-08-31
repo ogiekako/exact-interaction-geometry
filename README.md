@@ -96,7 +96,7 @@ This is the role external examples are meant to play here: EIG suggests the stru
 **Read the counterexample:** [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md)  
 **Run the solver-free checker:** `python3 verification/verify_boolean_tucker_junction_counterexample.py`
 
-A follow-up analysis in the research ledger identifies two minimal rank-three separator types (`F` and `T`), classifies their reduced fiber/tensor holes, and finds a common three-zero hook obstruction. It also connects the safe side of the phenomenon to classical distributive/flat semilattices. Those structural observations are not needed for the counterexample and are not presented here as a historical-priority claim.
+A follow-up analysis in the private research ledger identifies two minimal rank-three separator types (`F` and `T`), classifies their reduced fiber/tensor holes, and finds a common three-zero hook obstruction. It also connects the safe side of the phenomenon to classical distributive/flat semilattices. The proof/checker for that follow-up is not imported into this public repository, so it is treated here as **ledger-audited provenance**, not as a public independently reproducible theorem. None of it is needed for the Boolean Tucker counterexample above.
 
 ## Two exact calibrations
 
@@ -156,10 +156,10 @@ Boolean Tucker decomposition is established prior work; constrained Tucker decom
 
 | Layer | Status |
 | --- | --- |
-| finite exact residual quotient and elementary factor-rank laws | proved / audited; much of the algebra is classical |
-| exact category reconstruction from untyped consolidation + one-bit continuation success | main-audited recognition theorem; classical ingredients |
-| explicit Boolean Tucker `(2,3,3)` junction counterexample and displayed rank region for that tensor | finite exact statement with solver-free checker; no historical `first` claim |
-| rank-three `F/T` reduced separator classification and three-zero hook | proved in the research ledger after local-main audit; broader universal converse remains reduced |
+| finite exact residual quotient and elementary factor-rank laws | proved / publicly documented; much of the algebra is classical |
+| exact category reconstruction from untyped consolidation + one-bit continuation success | publicly documented theorem with end-to-end finite regression; classical ingredients |
+| explicit Boolean Tucker `(2,3,3)` junction counterexample and displayed rank region for that tensor | finite exact statement with solver-free exhaustive checker; no historical `first` claim |
+| rank-three `F/T` reduced separator classification and three-zero hook | ledger-audited; public proof/checker not imported; broader universal converse remains reduced |
 | binary-Kronecker `5 -> 24` example | correct independent rediscovery; no theorem-priority claim |
 | source-pair and current search targets | secondary / candidate evidence; scope or novelty review pending |
 | general witness-enriched, doctrine-relative, cross-domain reconstruction | conjectural / open |
@@ -190,7 +190,7 @@ The Boolean Tucker case study alone can be checked with
 python3 verification/verify_boolean_tucker_junction_counterexample.py
 ```
 
-The checker uses no external solver, floating point, randomness, or discovery code.
+The checker uses no external solver, floating point, randomness, normalization lemma, or discovery code; it exhausts all nonzero support masks on each mode.
 
 See [`verification/README.md`](verification/README.md).
 

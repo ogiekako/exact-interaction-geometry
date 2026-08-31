@@ -2,6 +2,8 @@
 
 **Status:** correct finite certificate; **not a historical novelty claim**.
 
+Here **binary rank** means the minimum number of binary rank-one matrices whose ordinary integer sum is the given `0/1` matrix; equivalently, the minimum number of all-one rectangles that partition its `1` entries exactly. It is **not** rank over `GF(2)`.
+
 This repository originally presented the following `5 x 5` binary-rank example as a candidate new refutation of Kronecker multiplicativity:
 
 ```text
@@ -49,7 +51,7 @@ and the independent checker is:
 
 - [`../verification/verify_binary_kronecker_counterexample.py`](../verification/verify_binary_kronecker_counterexample.py)
 
-The checker reconstructs the raw Kronecker matrix and checks support containment and exact-once coverage of all 196 ones. It does not import the searcher.
+The JSON file is the single source of rectangle data. The checker reads it directly, reconstructs the raw Kronecker matrix, checks support containment and exact-once coverage of all 196 ones, and independently computes `rank_bin(A)=5` by enumerating all legal rectangles of the `5 x 5` support and solving the resulting exact-cover problem by dynamic programming. Thus the machine check does not depend on the handwritten null-vector lemma or on the discovery searcher.
 
 ## Prior art
 
