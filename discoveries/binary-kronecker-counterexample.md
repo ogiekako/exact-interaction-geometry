@@ -8,7 +8,7 @@ This note is deliberately self-contained. The search procedure that found the ce
 
 Let
 
-\[
+$$
 A=\begin{pmatrix}
 0&1&1&0&1\\
 1&0&1&0&1\\
@@ -16,26 +16,26 @@ A=\begin{pmatrix}
 0&1&0&1&0\\
 1&1&0&1&1
 \end{pmatrix}.
-\]
+$$
 
 For a binary matrix, `rank_bin` is the least number of all-one rectangles whose disjoint union is its set of `1` entries; equivalently it is the least `r` for a factorization `A=UV` with binary `U,V` under ordinary integer multiplication.
 
 Then
 
-\[
-\operatorname{rank}_{\rm bin}(A)=5,
+$$
+\mathrm{rank}_{\mathrm{bin}}(A)=5,
 \qquad
-\operatorname{rank}_{\rm bin}(A\otimes A)\le 24.
-\]
+\mathrm{rank}_{\mathrm{bin}}(A\otimes A)\le 24.
+$$
 
 Consequently
 
-\[
+$$
 \boxed{
-\operatorname{rank}_{\rm bin}(A\otimes A)
-<\operatorname{rank}_{\rm bin}(A)^2
+\mathrm{rank}_{\mathrm{bin}}(A\otimes A)
+<\mathrm{rank}_{\mathrm{bin}}(A)^2
 }
-\]
+$$
 
 and binary rank is not multiplicative under Kronecker product.
 
@@ -45,56 +45,56 @@ Five row-stars partition the support of `A`, so `rank_bin(A) <= 5`.
 
 Put
 
-\[
+$$
 \ell=(-1,1,-1,1,0)^T,
 \qquad
 r=(-1,-1,0,1,1)^T.
-\]
+$$
 
 Direct calculation gives
 
-\[
+$$
 \ell^T A=0,
 \qquad
 Ar=0.
-\]
+$$
 
 The submatrix on rows `1,2,3,5` and columns `1,2,3,4` has determinant `-1`, hence `rank_R(A)=4`.
 
 Assume for contradiction that `rank_bin(A) <= 4`, so
 
-\[
+$$
 A=UV,
 \qquad
 U\in\{0,1\}^{5\times4},
 \quad
 V\in\{0,1\}^{4\times5}.
-\]
+$$
 
 Because `rank_R(A)=4`, both factors have real rank four. Therefore every column `u` of `U` and corresponding row `v^T` of `V` obey
 
-\[
+$$
 \ell^T u=0,
 \qquad
 v^T r=0.
 \tag{1}
-\]
+$$
 
 Some rank-one term `uv^T` covers `A_{3,1}=1`, so `u_3=v_1=1` (one-based indices).
 
 From `ell^T u=0`,
 
-\[
+$$
 u_2+u_4=u_1+u_3=u_1+1.
-\]
+$$
 
 Since `A_{4,1}=0` and `v_1=1`, support containment forces `u_4=0`; binary-valuedness then forces `u_1=0,u_2=1`.
 
 Likewise `v^T r=0` gives
 
-\[
+$$
 v_4+v_5=v_1+v_2=1+v_2.
-\]
+$$
 
 Since `A_{3,5}=0` and `u_3=1`, support containment forces `v_5=0`; hence `v_2=0,v_4=1`.
 
