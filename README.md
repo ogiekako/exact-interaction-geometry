@@ -51,33 +51,19 @@ Here **exact** means that a reduction is allowed only when every admitted future
 
 A useful test of a foundational viewpoint is whether it generates externally checkable mathematics rather than only new vocabulary. The strongest current example in this programme is a finite counterexample to Kronecker multiplicativity of the binary rank.
 
-For
+The counterexample is the following `5 x 5` binary matrix:
 
-$$
-A=\begin{pmatrix}
-0&1&1&0&1\\
-1&0&1&0&1\\
-1&0&0&1&0\\
-0&1&0&1&0\\
-1&1&0&1&1
-\end{pmatrix},
-$$
+```text
+A = [0 1 1 0 1
+     1 0 1 0 1
+     1 0 0 1 0
+     0 1 0 1 0
+     1 1 0 1 1]
+```
 
-there is a short handwritten proof that
+A short handwritten argument proves **`rank_bin(A) = 5`**. An explicit 24-biclique partition of `A ⊗ A` proves the strict inequality
 
-$$
-\mathrm{rank}_{\mathrm{bin}}(A)=5,
-$$
-
-while an explicit 24-biclique partition of $A\otimes A$ gives
-
-$$
-\boxed{
-\mathrm{rank}_{\mathrm{bin}}(A\otimes A)
-\le 24 < 25
-=\mathrm{rank}_{\mathrm{bin}}(A)^2.
-}
-$$
+> **`rank_bin(A ⊗ A) ≤ 24 < 25 = rank_bin(A)^2`.**
 
 The lower bound uses only two displayed integer null vectors and one unimodular `4 x 4` minor. The upper bound is a finite list of 24 rectangles partitioning all 196 one-entries of the tensor product exactly once. The search program that found the list is **not** part of the proof.
 
