@@ -53,7 +53,7 @@ A useful test of a foundational viewpoint is whether it generates externally che
 
 For
 
-\[
+$$
 A=\begin{pmatrix}
 0&1&1&0&1\\
 1&0&1&0&1\\
@@ -61,23 +61,23 @@ A=\begin{pmatrix}
 0&1&0&1&0\\
 1&1&0&1&1
 \end{pmatrix},
-\]
+$$
 
 there is a short handwritten proof that
 
-\[
-\operatorname{rank}_{\rm bin}(A)=5,
-\]
+$$
+\operatorname{rank}_{\mathrm{bin}}(A)=5,
+$$
 
-while an explicit 24-biclique partition of `A tensor A` gives
+while an explicit 24-biclique partition of $A\otimes A$ gives
 
-\[
+$$
 \boxed{
-\operatorname{rank}_{\rm bin}(A\otimes A)
-\le24<25
-=\operatorname{rank}_{\rm bin}(A)^2.
+\operatorname{rank}_{\mathrm{bin}}(A\otimes A)
+\le 24 < 25
+=\operatorname{rank}_{\mathrm{bin}}(A)^2.
 }
-\]
+$$
 
 The lower bound uses only two displayed integer null vectors and one unimodular `4 x 4` minor. The upper bound is a finite list of 24 rectangles partitioning all 196 one-entries of the tensor product exactly once. The search program that found the list is **not** part of the proof.
 
