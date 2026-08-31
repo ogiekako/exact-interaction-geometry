@@ -63,12 +63,11 @@ but there is **no** exact Boolean Tucker decomposition of profile `(2,3,3)`.
 
 In fact the exact feasible profile region is
 
-\[
-\operatorname{Tuck}_{\mathbb B}(T)
-=\uparrow(2,3,4)\cup\uparrow(2,4,3),
-\]
+```text
+Tuck_B(T) = Up(2,3,4) union Up(2,4,3)
+```
 
-so it has two incomparable Pareto-minimal profiles and no componentwise least element.
+where `Up(p,q,r)` denotes the componentwise upward closure. Thus it has two incomparable Pareto-minimal profiles and no componentwise least element.
 
 ## The unfolding ranks and their minimum bases
 
@@ -141,10 +140,9 @@ This obstruction is independent of the width of the first Tucker arm. Any core s
 
 On the other hand, profiles `(2,3,4)` and `(2,4,3)` are exact: keep one of the two rank-three factors and use literal singleton states on the other four-point mode. Every exact Tucker profile must satisfy the unfolding lower bounds `p>=2`, `q>=3`, `r>=3`; the preceding argument excludes precisely the remaining corner `q=r=3`; and feasible profiles are upward closed by adding unused latent states. Hence
 
-\[
-\operatorname{Tuck}_{\mathbb B}(T)
-=\uparrow(2,3,4)\cup\uparrow(2,4,3).
-\]
+```text
+Tuck_B(T) = Up(2,3,4) union Up(2,4,3)
+```
 
 ## What EIG contributed
 
