@@ -74,7 +74,9 @@ exact one-counter transducer
 pointwise comparison is decidable
 ```
 
-**Read the proof:** [`discoveries/two-state-maxplus-comparison.md`](discoveries/two-state-maxplus-comparison.md)  
+**Typeset PDF (recommended):** [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf)  
+**Browser / diff version:** [`discoveries/two-state-maxplus-comparison.md`](discoveries/two-state-maxplus-comparison.md)  
+**TeX source:** [`discoveries/two-state-maxplus-comparison.tex`](discoveries/two-state-maxplus-comparison.tex)  
 **Run the public regression:** `python3 verification/verify_two_state_maxplus.py`  
 **Read the fresh novelty audit:** [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md)
 
@@ -193,7 +195,7 @@ The detailed boundary is in [`STATUS.md`](STATUS.md).
 ## Read in this order
 
 1. [`FOUNDATIONS.md`](FOUNDATIONS.md) — the minimal interaction-first setup and design constraints.
-2. [`discoveries/two-state-maxplus-comparison.md`](discoveries/two-state-maxplus-comparison.md) — the strongest current conventional-mathematics theorem arising from the programme.
+2. [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf) — the preferred typeset statement and proof of the strongest current conventional-mathematics theorem arising from the programme.
 3. [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md) — why the result is treated as a resolution of a published open case, with a conservative priority boundary.
 4. [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md) — a second EIG-to-external-mathematics example.
 5. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
