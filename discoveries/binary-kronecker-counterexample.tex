@@ -91,7 +91,15 @@ U\in\{0,1\}^{5\times4},
 \qquad
 V\in\{0,1\}^{4\times5}.
 \]
-Because the real rank of $A$ is $4$, both factors have real rank four. Therefore every column $u$ of $U$ and corresponding row $v^T$ of $V$ obey
+Because $\rankR(A)=4$, both $U$ and $V$ have real rank four. Moreover
+\[
+\operatorname{col}(A)\subseteq\operatorname{col}(U),
+\]
+and both spaces have dimension four, so $\operatorname{col}(U)=\operatorname{col}(A)$. Since $\ell^T A=0$, every column $u$ of $U$ satisfies $\ell^T u=0$. Symmetrically,
+\[
+\operatorname{row}(A)\subseteq\operatorname{row}(V),
+\]
+and both spaces have dimension four, so $\operatorname{row}(V)=\operatorname{row}(A)$; since $Ar=0$, every row $v^T$ of $V$ satisfies $v^T r=0$. Thus each corresponding rank-one term obeys
 \begin{equation}
 \ell^T u=0,
 \qquad
@@ -99,13 +107,19 @@ v^T r=0.
 \tag{1}
 \end{equation}
 
+Under ordinary integer multiplication,
+\[
+A=\sum_k u_kv_k^T
+\]
+is a sum of entrywise nonnegative binary rank-one matrices. Consequently every individual term satisfies $u_kv_k^T\le A$ entrywise: no term can cover a zero entry of $A$.
+
 Some rank-one term $uv^T$ covers $A_{3,1}=1$, so $u_3=v_1=1$ (one-based indices).
 
 From $\ell^T u=0$,
 \[
 u_2+u_4=u_1+u_3=u_1+1.
 \]
-Since $A_{4,1}=0$ and $v_1=1$, support containment forces $u_4=0$; binary-valuedness then forces $u_1=0$ and $u_2=1$.
+Since $A_{4,1}=0$ and $v_1=1$, the support containment $uv^T\le A$ forces $u_4=0$; binary-valuedness then forces $u_1=0$ and $u_2=1$.
 
 Likewise $v^T r=0$ gives
 \[
@@ -114,6 +128,18 @@ v_4+v_5=v_1+v_2=1+v_2.
 Since $A_{3,5}=0$ and $u_3=1$, support containment forces $v_5=0$; hence $v_2=0$ and $v_4=1$.
 
 But then $u_2=v_4=1$, so the same rank-one term covers $A_{2,4}$, while $A_{2,4}=0$. Contradiction. Thus $\rankbin(A)=5$.
+
+Equivalently, the local obstruction can be checked directly: there is no binary pair $(u,v)$ satisfying
+\[
+\ell^T u=0,
+\qquad
+v^T r=0,
+\qquad
+uv^T\le A,
+\qquad
+u_3=v_1=1.
+\]
+The independent checker below exhausts all binary choices for $u$ and $v$ and verifies that the number of such pairs is zero.
 
 \section*{The 24-rectangle certificate for $A\otimes A$}
 
@@ -163,7 +189,7 @@ A small independent checker reconstructs the raw Kronecker matrix and verifies t
 python3 verification/verify\_binary\_kronecker\_counterexample.py
 \end{quote}
 
-The checker also verifies the two null vectors, the unimodular $4\times4$ minor, and exhaustively checks the tiny local balance obstruction used in the handwritten lower bound. It does \textbf{not} import or trust the search program that found the certificate.
+The checker also verifies the two null vectors, the unimodular $4\times4$ minor, and exhaustively checks the local rank-one obstruction stated above. It does \textbf{not} import or trust the search program that found the certificate.
 
 \section*{Why this belongs here}
 
