@@ -69,7 +69,7 @@ The lower bound uses only two displayed integer null vectors and one unimodular 
 
 **Read the complete certificate:** [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md)  
 **Machine-readable certificate:** [`discoveries/certificates/binary-kronecker-seed5-self-k24.json`](discoveries/certificates/binary-kronecker-seed5-self-k24.json)  
-**Independent checker:** [`verification/verify_binary_kronecker_counterexample.py`](verification/verify_binary_kronecker_counterexample.py)
+**Independent checker:** [`verification/verify_binary_kronecker_counterexample.py`](verification/verify_binary_kronecker-counterexample.py)
 
 The target was selected from the EIG factorization/parallel-composition heuristic: the product of two individually minimal witness atlases need not remain globally minimal after composition because cross-factor witness sharing can appear only after the product is formed. This motivation is provenance, not a logical dependency of the counterexample.
 
@@ -110,7 +110,7 @@ WEIR is **not proved**. It is stated as a falsifiable programme with explicit ac
 
 EIG does **not** claim that objectless category theory, syntactic monoids, Myhill--Nerode minimization, idempotent splitting, relations-as-primary, allegories, ludics, Geometry of Interaction, Interaction Graphs, or Isbell nuclei are new. Nor does it claim that every mathematical object has been reconstructed from interaction, that one doctrine-free notion of objecthood has been identified, or that scalar response suffices to recover witness multiplicity and higher coherence.
 
-The closest prior art is load-bearing. In particular, 2026 work of Gastaldi--Jarvis--Seiller--Terilla derives types from execution and measurement through Isbell nuclei, so **“types emerge from interaction” is not an EIG novelty claim**. See [`PRIOR_ART.md`](PRIOR_ART.md).
+Several established lines of work are directly relevant and sharply constrain what can reasonably be claimed as new here. In particular, 2026 work of Gastaldi--Jarvis--Seiller--Terilla derives types from execution and measurement through Isbell nuclei, so **“types emerge from interaction” is not an EIG novelty claim**. See [`PRIOR_ART.md`](PRIOR_ART.md).
 
 ## Current epistemic status
 
@@ -133,7 +133,7 @@ The detailed boundary is in [`STATUS.md`](STATUS.md).
 5. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
 6. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
 7. [`discoveries/boolean-four-row-one-page.md`](discoveries/boolean-four-row-one-page.md) — an earlier handwritten factorization-atlas counterexample.
-8. [`ROADMAP.md`](ROADMAP.md) — only the load-bearing open gates.
+8. [`ROADMAP.md`](ROADMAP.md) — the main open gates.
 9. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source/audit provenance.
 
 ## Verification
