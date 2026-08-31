@@ -1,12 +1,14 @@
 # Source-pair augmentation: counterexamples from a factorization atlas
 
-**Public status:** candidate external discovery; exact integer verifiers pass; **independent recheck and historical-novelty audit pending**.
+**Public status:** candidate external discovery; exact integer verifiers pass; **independent recheck, wording audit, and historical-novelty audit pending**.
 
-## 1. The published question
+For the smallest fully handwritten certificate, start with [`boolean-four-row-one-page.md`](boolean-four-row-one-page.md). The present file is the broader research dossier.
+
+## 1. The published question and a wording firewall
 
 Parnas and Shraibman, *The Augmentation Property of Binary Matrices for the Binary and Boolean Rank*, Linear Algebra and its Applications **556** (2018), 70--99, study the directed graph of minimum bases of a binary matrix. In Section 6 they ask whether a particular rank-augmentation obstruction must always have a two-vector witness.
 
-In the terminology used here, let `U,V` be source bases of a matrix `A`. Suppose adjoining all vectors in `U union V` raises the relevant rank. Must there exist
+In the formulation tested here, let `U,V` be two selected source bases of a matrix `A`. Suppose adjoining all vectors in `U union V` raises the relevant rank. Must there exist
 
 ```text
 u in U, v in V
@@ -14,11 +16,13 @@ u in U, v in V
 
 such that adjoining only `u,v` already raises the rank?
 
-The research ledger produced candidate counterexamples for **both Boolean rank and binary rank**.
+There is an important publication-scope issue. The paper's prose says that the base graph “has two sources.” If this means **exactly two sources in total**, the source-incidence argument below gives a positive answer. The finite examples in this dossier have more than two total sources and therefore refute only the formulation with **two selected sources among a possibly larger source atlas**. Before claiming that the 2018 open problem itself is resolved, the intended quantifier/scope must be checked against the paper and, ideally, the authors.
+
+Subject to that wording firewall, the research ledger produced candidate obstructions for **both Boolean rank and binary rank**.
 
 All vectors below are encoded as bitmasks, with bit `2^i` representing row `i+1`.
 
-## 2. Four-row Boolean counterexample
+## 2. Four-row Boolean obstruction
 
 Take
 
@@ -28,7 +32,7 @@ U = {3,5,8}
 V = {3,5,12}.
 ```
 
-Direct exhaustive enumeration gives
+A short handwritten proof is in [`boolean-four-row-one-page.md`](boolean-four-row-one-page.md). Direct exhaustive enumeration independently gives
 
 ```text
 rank_B(A) = 3,
@@ -37,11 +41,11 @@ rank_B(A | U | V) = 4,
 rank_B(A | u | v) = 3  for every u in U and v in V.
 ```
 
-Thus the full source-pair augmentation is incompatible while **no one-vector-from-each-source pair detects the incompatibility**.
+Thus the full selected-source-pair augmentation is incompatible while **no one-vector-from-each-source pair detects the incompatibility**.
 
 The standard basis `{1,2,4,8}` witnesses the rank-4 upper bound.
 
-## 3. Five-row binary counterexample
+## 3. Five-row binary obstruction
 
 Take
 
@@ -66,13 +70,13 @@ rank_binary(A | u | v) = 4  for every u in U and v in V.
 
 The standard basis `{1,2,4,8,16}` witnesses the rank-5 upper bound.
 
-No minimal-size claim is made in this public note; the finite counterexample alone answers the proposed two-vector principle if the definitions and sourcehood checks survive independent re-verification.
+No minimal-size claim is made here; this result should remain secondary to the handwritten Boolean certificate until it receives an independent reimplementation.
 
 ## 4. Why the interaction viewpoint suggested this
 
 The key change of viewpoint was to regard the base graph not merely as a collection of alternative factorizations, but as a **factorization atlas**. Its sources are incomparable minimal interfaces through which the same response object can be realized.
 
-The Section-6 question then becomes:
+The selected-source formulation then becomes:
 
 > if two source interfaces are globally incompatible, must that incompatibility already be visible to one generator selected from each interface?
 
@@ -81,8 +85,6 @@ There is no structural reason for such a pairwise Helly principle. Interaction o
 This suggested searching explicitly for higher-order source-incidence obstructions rather than for a special algebraic identity. The finite examples above were found in that search.
 
 ## 5. Source-incidence duality
-
-The same viewpoint gives a simple structural reformulation.
 
 Let `R` be Boolean rank or binary rank, let `R(A)=r`, and let `S(A)` be the source bases in the base graph of `A`. For an individually admissible augmentation vector `x`, define
 
@@ -120,9 +122,11 @@ Conversely, if one source spans every `x in X`, that source is a rank-`r` base f
 
 Thus minimal augmentation cores are exactly minimal set covers of the source atlas by the defects `D_A(x)`.
 
+A useful corollary is the scope warning above: **if `S(A)` consists of exactly two sources `U,V` and augmenting by `U union V` raises rank, then some cross pair raises rank.** Indeed `V` cannot span every vector of `U`, so choose `u in U` with `V notin Sigma_A(u)`; with only two sources and `U in Sigma_A(u)`, this forces `Sigma_A(u)={U}`. Similarly choose `v in V` with `Sigma_A(v)={V}`. Their incidence sets have empty intersection, so `R(A|u|v)>r`.
+
 ## 6. An unbounded Boolean family
 
-The four-row Boolean example is the first nontrivial member of a uniform construction.
+The four-row Boolean example is the first nontrivial member of a uniform construction for the selected-source formulation.
 
 Fix `r>=2`, use rows `0,1,...,r`, and identify a subset of rows with its characteristic column. Set
 
@@ -164,7 +168,7 @@ rank_B(A_r | X_r) = r+1;
 every proper subset Y of X_r satisfies rank_B(A_r | Y) = r.
 ```
 
-Hence the minimum witness to this source-pair incompatibility has size exactly `r`. In particular, in Boolean rank there is **no constant-size local witness principle** of this form.
+Hence the minimum witness to this selected-source-pair incompatibility has size exactly `r`. In particular, in Boolean rank there is **no constant-size local witness principle** for this formulation.
 
 ### Proof skeleton
 
@@ -185,7 +189,7 @@ For `r=3`, this specializes to
 A={3,7,15}, U={3,5,8}, V={3,5,12}, X={5,8,12},
 ```
 
-the four-row Boolean counterexample above.
+the four-row Boolean obstruction above.
 
 ## 7. Exact verification
 
@@ -207,10 +211,10 @@ Discovery sequence in the research ledger:
 
 ```text
 ogiekako/test@3806b8ea4851f6edfa7073085e929bdd868442b9
-    initial four-row Boolean counterexample
+    initial four-row Boolean obstruction
 
 ogiekako/test@b2601fdb843fab9c245967e1695e28419034369b
-    Boolean + binary finite counterexamples
+    Boolean + binary finite obstructions
 
 ogiekako/test@f5ec36c41b5d20ef3cd064097c4ec798381d433b
     source-incidence duality + unbounded Boolean family
@@ -220,10 +224,10 @@ The broader EIG programme is discovery provenance, not a theorem dependency:
 
 ```text
 EIG correctness
-    --not a dependency--> these finite counterexamples
+    --not a dependency--> these finite obstructions
 
-counterexample correctness
+obstruction correctness
     --not a dependency--> historical novelty / priority.
 ```
 
-Before a public priority claim, this dossier should receive two independent checks: (i) reimplementation/reconstruction of the rank and source definitions and the proof, and (ii) a fresh literature search for any post-2018 resolution or equivalent known construction.
+Before a public priority claim, this dossier should receive two independent checks: (i) reimplementation/reconstruction of the rank and source definitions and the proof, and (ii) a fresh literature and wording audit for the intended scope of the 2018 Section-6 question and any post-2018 resolution or equivalent known construction.
