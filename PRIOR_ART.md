@@ -90,7 +90,43 @@ Qinyou Wang, *Fiber Fingerprints of Hidden Learning-State Dynamics*, arXiv:2608.
 
 This is strong prior art for the claim that all-future-response equivalence can canonically produce a minimal predictive quotient and retain informative fibre structure. The distinction is that the execution-context category, state functor, protocols, present readout, and probe doctrine are supplied. EIG's open WEIR target asks when the relevant interface/object/map structure itself is forced downstream of a more primitive interaction laboratory, with exact cross-Hom and witness descent.
 
-## 11. Boolean Tucker decomposition
+## 11. Two-state max-plus comparison
+
+Max-plus and tropical weighted automata are classical, as are projective normalization, one-counter languages, Parikh semilinearity, and Presburger arithmetic. None of those ingredients is claimed new.
+
+The relevant published problem begins with:
+
+- Laure Daviaud, Pierre Guillon, Glenn Merlet, *Comparison of Max-Plus Automata and Joint Spectral Radius of Tropical Matrices*, MFCS 2017, DOI `10.4230/LIPIcs.MFCS.2017.19`.
+
+They prove bounded-state comparison undecidable at 553 states and explicitly ask what happens from 2 through 552 states, noting that even two states appears difficult. The theorem in [`discoveries/two-state-maxplus-comparison.md`](discoveries/two-state-maxplus-comparison.md) closes the `d=2` endpoint and in fact allows the left-hand automaton to be arbitrary.
+
+The closest same-model two-state work found is:
+
+- Laure Daviaud, Marianne Johnson, *The Shortest Identities for Max-Plus Automata with Two States*, MFCS 2017, DOI `10.4230/LIPIcs.MFCS.2017.48`.
+
+That paper studies identities of the full two-state class, not positivity or pointwise comparison. Structural `2 x 2` tropical-matrix semigroup literature is likewise directly relevant background, but no containment theorem equivalent to the staged result was located.
+
+Broader containment and decision-problem references checked include:
+
+- Laure Daviaud, *Containment and Equivalence of Weighted Automata: Probabilistic and Max-Plus Cases*, LATA 2020, DOI `10.1007/978-3-030-40608-0_2`;
+- Shaull Almagor, Udi Boker, Orna Kupferman, *What's decidable about weighted automata?*, Information and Computation 282 (2022), DOI `10.1016/j.ic.2020.104651`;
+- Laure Daviaud, David Purser, Marie Tcheng, *The Big-O Problem for Max-Plus Automata is Decidable (PSPACE-Complete)*, LICS 2023 / arXiv:2304.05229.
+
+The Big-O theorem concerns affine domination rather than exact containment. Known positive results for finitely ambiguous automata do not cover arbitrary two-state automata because state count does not bound ambiguity.
+
+The 2026 tropical/min-plus decision literature was also checked. In particular, Almagor--Arbel--Sheinvald decide **determinisability** and study its complexity, unambiguisability, and register minimisation; those results do not say that every two-state weighted automaton is determinisable. The 2026 one-letter representation theorem fixes alphabet size rather than state count. Nearby few-register cost-register-automata results use different model restrictions and decision problems, and do not translate to the staged theorem while preserving the two-state bound.
+
+The fresh audit is recorded in [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md). Its conclusion is deliberately bounded:
+
+```text
+published d=2 open case:       confirmed
+prior resolution located:      no, in targeted audit through 2026-09-01
+absolute historical firstness: not certified
+```
+
+Accordingly the public claim is the **proved two-state comparison theorem and its resolution of the stated `d=2` open case under a dated literature audit**, not a blanket claim of historical priority over every unpublished or differently indexed source.
+
+## 12. Boolean Tucker decomposition
 
 Boolean tensor factorization, including Boolean Tucker decomposition, is established prior work. A basic reference is:
 
@@ -104,9 +140,9 @@ A nearby warning is also important: constrained Tucker decompositions over other
 
 The follow-up F/T/three-zero-hook analysis also touches classical semilattice theory. Abstract flatness/distributivity results for join-semilattices are prior art; the public EIG claim is the concrete Boolean junction application and finite obstruction analysis, not the classical theorem.
 
-## 12. Binary-rank Kronecker nonmultiplicativity: Shitov 2026
+## 13. Binary-rank Kronecker nonmultiplicativity: Shitov 2026
 
-A priority correction is load-bearing for the external-search lane:
+An important priority correction for the external-search lane is:
 
 - Yaroslav Shitov, *Factoring Kronecker squares of nonnegative matrices with GPT-5.6 Sol*, publicly posted **2026-07-25**, DOI `10.13140/RG.2.2.26449.90723`.
 
@@ -119,7 +155,7 @@ rank_01(B tensor B) <= 24 < 25.
 
 The EIG search lane independently found a different `5 x 5` `5 -> 24` example on 2026-08-31. Its finite certificate is correct, but **the theorem that binary rank is nonmultiplicative under Kronecker product is not an EIG novelty claim**. The EIG example is retained only as a calibration of the parallel-composition search heuristic.
 
-## 13. Arity/nerve and generic reconstruction machinery
+## 14. Arity/nerve and generic reconstruction machinery
 
 Yoneda density, presheaf reconstruction, monads with arities, nervous monads, Grothendieck constructions, profunctors/equipments, sheaves/stacks, and descent theory provide powerful generic reconstruction shells.
 
@@ -148,8 +184,8 @@ A result enters the EIG public core only if its statement separates:
 
 1. the classical theorem being used;
 2. the new operational interpretation or bridge, if any;
-3. the exact project-specific finite statement;
+3. the exact project-specific statement;
 4. what remains conjectural;
 5. whether historical novelty has actually been checked.
 
-At this snapshot, no blanket claim that EIG is a historically new foundation or established field is made. External examples are presented at the narrowest independently supported scope; a short counterexample is useful even without asserting priority.
+At this snapshot, no blanket claim that EIG is a historically new foundation or established field is made. External results are presented at the narrowest independently supported scope, with dated novelty audits where priority matters.
