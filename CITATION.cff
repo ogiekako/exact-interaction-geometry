@@ -1,19 +1,18 @@
 cff-version: 1.2.0
-message: "If you use this research compendium or its verification code, please cite this repository and the relevant standalone paper/result."
-title: "Interaction Reconstruction"
+message: "If you use this research programme or its verification code, please cite this repository and the specific theorem note you rely on."
+title: "Exact Interaction Geometry"
 type: software
 authors:
   - family-names: "Oka"
     given-names: "Keigo"
-date-released: 2026-08-30
-repository-code: "https://github.com/ogiekako/interaction-reconstruction"
-url: "https://github.com/ogiekako/interaction-reconstruction"
+date-released: 2026-08-31
+repository-code: "https://github.com/ogiekako/exact-interaction-geometry"
+url: "https://github.com/ogiekako/exact-interaction-geometry"
 keywords:
-  - interaction reconstruction
-  - recurrent processes
+  - exact interaction geometry
+  - interaction-first foundations
+  - contextual equivalence
+  - objecthood reconstruction
   - compositional semantics
-  - graph products
-  - profunctors
-  - arities
-  - Boolean rank
-  - binary rank
+  - witness reconstruction
+  - category theory

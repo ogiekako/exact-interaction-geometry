@@ -1,126 +1,140 @@
-# Interaction Reconstruction
+# Exact Interaction Geometry
 
-**Local interactions, exact interfaces, and reconstruction of mathematical structure.**
+**Interaction-first reconstruction of interfaces, objects, and compositional structure.**
 
-This repository is the curated, audit-oriented home of a research programme that began with finite-interface recurrent dynamics and evolved toward a broader question:
+Exact Interaction Geometry (EIG) is an emerging mathematical research programme built around a deliberately basic question:
 
-> **When can a mathematical object, process, or mathematical world be reconstructed from its local interactions, interfaces, and gluing laws?**
+> **How much of mathematical structure can be reconstructed from interaction itself — from what can be composed, what future contexts can distinguish, and what witness data must survive exact gluing — rather than being supplied in advance as objects, states, types, or interfaces?**
 
-The programme is a seven-phase chain:
+The strongest version of that question is open. This repository is a dated foundational disclosure, not a declaration that a new foundation of mathematics has been completed.
+
+## The core idea
+
+For an interaction fragment `a`, do not begin by assigning it a primitive source object, target object, state type, or semantic label. Instead ask which left and right continuations remain possible and what closed experiments return.
+
+The basic reduction is contextual:
 
 ```text
-I    exact feedback semantics and optimal no-go boundaries
-II   effective structural coastlines
-III  intrinsic transactional/compositional object
-IV   Grand Book: interfaces, decomposition, reconstruction, torsos, obstructions
-V    interaction geometry: exact resource first, scalar second
-VI   realizability: Grothendieck / normal-lax Prof
-VII  interaction arities: reconstruction from small local probes
+interaction execution
+        +
+closed continuation response
+        |
+        v
+coarsest response-exact contextual quotient
+        |
+        v
+interfaces / objecthood / witness fibres
+        |
+        v
+composition + descent + reconstructed structure
 ```
 
-The name **Interaction Reconstruction** is the endpoint viewpoint, not a Phase-VII-only label. Phases I--IV are load-bearing: they explain why the later proarrow, factorization, profunctor, residual, and arity structures are forced.
+The working EIG architecture is:
 
-## Start here
+```text
+CONTEXT
+  -> REDUCE
+  -> WITNESS
+  -> COMPOSE
+  -> GLUE / CODESCEND
+  -> PROJECT
+  -> STRUCTURE
+  -> REFLECT
+  -> RECONSTRUCT
+```
 
-- [`book/README.md`](book/README.md) — seven-phase mathematical narrative.
-- [`book/THEOREM_INDEX.md`](book/THEOREM_INDEX.md) — theorem-scale inventory.
-- [`book/dossiers/`](book/dossiers/) — exact hypotheses, statements, proof skeletons, boundaries, and audit provenance.
-- [`book/COUNTEREXAMPLE_ATLAS.md`](book/COUNTEREXAMPLE_ATLAS.md) — anti-theorems that shaped the theory.
-- [`book/DEPENDENCY_GRAPH.md`](book/DEPENDENCY_GRAPH.md) — mathematical dependency DAG.
-- [`STATUS.md`](STATUS.md) — conservative current disposition.
-- [`RESEARCH_FRONTIER.md`](RESEARCH_FRONTIER.md) — only the load-bearing open theorems and promotion gates.
-- [`AUDIT_PROTOCOL.md`](AUDIT_PROTOCOL.md) — how a claim is promoted.
-- [`PUBLICATION_MAP.md`](PUBLICATION_MAP.md) — standalone consequences and paper readiness.
-- [`external-results/`](external-results/) — theorem harvests independent of programme correctness.
-- [`bibliography/README.md`](bibliography/README.md) — closest prior art and novelty boundaries.
-- [`verification/README.md`](verification/README.md) — what the finite certificates establish.
-- [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — exact source-ledger synchronization map.
-- [`CONTRIBUTING.md`](CONTRIBUTING.md) — curation, verifier, and concurrent-work discipline.
-- [`RELEASE_CHECKLIST.md`](RELEASE_CHECKLIST.md) — checklist before making the repository/public result a release artifact.
+Here **exact** means that a reduction is allowed only when every admitted future continuation has the same response. **Witness** means that multiplicity, provenance, cocycles, or higher comparison data are retained when later interaction can distinguish them. **Geometry** refers to the resulting factorization, descent, obstruction, and localization structure; it is not a claim that every EIG invariant is a metric or curvature.
 
-## Machine-checkable core
+## Two exact calibrations
 
-Run
+### 1. Finite response tables
+
+For a finite response table `M : X x Y -> K`, two left states are contextually equivalent exactly when they have identical response rows. The quotient by this equivalence is the **unique coarsest surjective deterministic exact interface**. If interfaces are instead allowed to carry latent witnesses, exact mediation becomes semiring factorization; serial composition satisfies a data-processing inequality and parallel composition is submultiplicative.
+
+See [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md).
+
+### 2. Categories from untyped interaction
+
+Let `C` be any small category. Erase its objects and every source/target label. Keep only the raw arrows, add an absorbing failure `0`, compose two arrows when they are composable and return `0` otherwise, and observe just one bit:
+
+```text
+success = composite is nonzero.
+```
+
+Then two-sided continuation success recovers the ordered source/target pair of every arrow. The resulting contextual quotient has one nonzero idempotent for every original object. If the raw arrows are retained as witness fibres over the recovered endpoint classes, the original Hom sets, identities, and composition are recovered exactly.
+
+In this precise category-sector sense,
+
+```text
+untyped interaction execution + one-bit success/failure
+    -> objects + typing + Hom witnesses + identities + composition.
+```
+
+The construction uses classical category consolidation / semigroup ideas; those ingredients are not claimed novel. The point is the operational recognition theorem and its role as a calibration of the broader EIG question.
+
+See [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md).
+
+## What is conjectural
+
+The main foundational target is **WEIR — Witness-Enriched Interaction Reconstruction**. Roughly, it asks for natural classes of interaction laboratories in which exact contextual reduction, interface/object selection, map selection, witness reconstruction, composition, doctrine change, and local-to-global descent are all derived from interaction data, up to unavoidable Cauchy/Morita/doctrine moduli.
+
+WEIR is **not proved**. It is stated as a falsifiable programme with explicit acceptance gates in [`theory/03-weir.md`](theory/03-weir.md).
+
+## What is not being claimed
+
+EIG does **not** claim that:
+
+- objectless category theory is new;
+- syntactic monoids or Myhill--Nerode minimization are new;
+- idempotent splitting / Karoubi completion is new;
+- relations-as-primary, allegories, ludics, Geometry of Interaction, Interaction Graphs, or Isbell nuclei are new;
+- every mathematical object has already been reconstructed from interaction;
+- one doctrine-free notion of objecthood has been identified;
+- scalar response is sufficient to recover witness multiplicity or higher coherence;
+- category reconstruction automatically gives ULF/Conduche factorization or descent.
+
+The closest prior art is load-bearing. In particular, 2026 work of Gastaldi--Jarvis--Seiller--Terilla derives types from execution and measurement through Isbell nuclei, so **“types emerge from interaction” is not an EIG novelty claim**. See [`PRIOR_ART.md`](PRIOR_ART.md).
+
+## Current epistemic status
+
+This repository deliberately separates three layers:
+
+| Layer | Status |
+| --- | --- |
+| finite exact residual quotient and elementary factor-rank laws | proved / audited; much of the algebra is classical |
+| exact category reconstruction from untyped consolidation + one-bit continuation success | main-audited recognition theorem; classical ingredients |
+| general witness-enriched, doctrine-relative, cross-domain reconstruction | conjectural / open |
+
+The detailed boundary is in [`STATUS.md`](STATUS.md).
+
+## Read in this order
+
+1. [`FOUNDATIONS.md`](FOUNDATIONS.md) — the minimal interaction-first setup and design constraints.
+2. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
+3. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
+4. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
+5. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
+6. [`ROADMAP.md`](ROADMAP.md) — only the load-bearing open gates.
+7. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source/audit provenance.
+
+## Verification
+
+A finite regression suite checks the category reconstruction theorem on all preorders on up to three labelled objects, non-thin two-object categories with parallel arrows, intrinsic identity recovery, Hom-fibre recovery, and an explicit non-ULF counterexample.
 
 ```bash
 make verify
 ```
 
-or execute the files under [`verification/`](verification/). The current compact verification suite checks:
+The verifier is regression evidence only; the theorem itself is unbounded and proved mathematically.
 
-1. the Boolean and binary source-pair augmentation counterexamples;
-2. the exact sixteen-facet fooling-set certificate for `xc(COR(4))=16`;
-3. operational codescent boundary fixtures and mixed-return behaviour;
-4. the four-state no-choice / no-collapse calibrations;
-5. finite interaction-CRT and residual-nerve reconstructions.
+## Research process and provenance
 
-Every evidentiary verifier is also run under `python -O` in CI so that language-level `assert` removal cannot silently erase checks.
+The programme was developed through extended AI-assisted mathematical research, with theorem-generation, counterexample-search, repair, and independent adversarial audit lanes. Model-generated claims are not promoted merely because they were generated or computationally checked. Failed and superseded formulations remain in Git history and in the original research ledger; this repository keeps only the current public mathematical surface.
 
-Build the standalone source-pair paper locally with
+See [`provenance/RESEARCH_PROCESS.md`](provenance/RESEARCH_PROCESS.md) and [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md).
 
-```bash
-make paper
-```
+---
 
-when `pdflatex` is available. Verification CI remains independent of a heavyweight TeX installation.
-
-## Harvested standalone results
-
-### Source-pair augmentation — both ranks
-
-The Parnas--Shraibman Section-6 source-pair question has explicit counterexamples for **both Boolean rank and binary rank**:
-
-- four rows for Boolean rank;
-- five rows for binary rank, with exhaustive verification that no binary example exists on at most four rows.
-
-See:
-
-- [`papers/source-pair-augmentation/README.md`](papers/source-pair-augmentation/README.md)
-- [`papers/source-pair-augmentation/paper.tex`](papers/source-pair-augmentation/paper.tex)
-- [`verification/verify_source_pair_augmentation.py`](verification/verify_source_pair_augmentation.py)
-
-The proofs are standalone and elementary. Their correctness does **not** depend on the broader Interaction Reconstruction programme; the programme is discovery provenance only.
-
-### Exact extension complexity of `COR(4)`
-
-An exact sixteen-facet / sixteen-entry fooling-set certificate gives
-
-```text
-xc(COR(4)) = 16.
-```
-
-The finite mathematics has been independently replayed in this curation. Historical novelty remains under specialist literature audit because the complete `CUTP_5` incidence structure is classical.
-
-See:
-
-- [`external-results/cor4-extension-complexity/README.md`](external-results/cor4-extension-complexity/README.md)
-- [`verification/verify_cor4_extension_complexity.py`](verification/verify_cor4_extension_complexity.py)
-
-## Current Phase-IV caveat
-
-At the phase-status checkpoint `ogiekako/test@79f64b1a7634341f66482ae19250aa9fa8677d7d`, a corrected terminal G7 bundle survived a provenance-distinct second-run adversarial audit in the normalized native protected/certifiable domain, with no identified mathematical blocker remaining in literal G7. The handoff explicitly says it is **not yet canonical local-main promotion**. This repository therefore records the protected G1--G7 result as `SECOND-RUN AUDITED / CANONICAL PROMOTION PENDING`, rather than silently declaring the unrestricted Grand Book closed.
-
-The latest inspected research-ledger commit is newer (`c25815e82faba9beb8b9deb96d740ee345138872`) because it adds the standalone `COR(4)` result; it does not change the imported phase disposition.
-
-## Provenance
-
-The detailed chronological research ledger remains:
-
-```text
-ogiekako/test
-experiments/repairable-tropical-north-star
-```
-
-This repository is a **curated reconstruction**, not a mirror. Its original migration baseline was `3806b8e...`; its current synchronized ledger snapshot is recorded in [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md).
-
-## Status vocabulary
-
-- `AUDITED / ACCEPTED`
-- `SECOND-RUN AUDITED / CANONICAL PROMOTION PENDING`
-- `CLAIMED-PROVED; AUDIT PENDING`
-- `KNOWN / PRIOR ART`
-- `REFUTATION`
-- `COMPUTATIONAL EVIDENCE`
-- `OPEN / REDUCED`
-
-The repository prefers a narrower theorem with a clean audit trail to a stronger slogan whose scope is ambiguous.
+**Author:** Keigo Oka  
+**Initial EIG public-foundation snapshot:** 2026-08-31  
+**Historical novelty:** not claimed for classical ingredients; the novelty and scope of the unified EIG programme remain subject to external specialist review.

@@ -1,61 +1,31 @@
-# Verification suite
+# Verification
 
-The verifier suite has two roles:
+The checked-in verifier is deliberately small and tied to a theorem whose proof is also written out.
 
-1. **proof certificate** for explicit finite counterexamples / finite theorem certificates;
-2. **finite regression/calibration** for theorem statements whose proof is mathematical rather than exhaustive.
-
-Run everything with
+Run:
 
 ```bash
 make verify
 ```
 
-## `verify_source_pair_augmentation.py`
+This executes `verification/verify_category_reconstruction.py` in normal Python and with `python -O`, then byte-compiles it.
 
-Exact integer-only exhaustive verification of the Boolean and binary Parnas--Shraibman source-pair counterexamples. It reconstructs optimal bases/source bases, checks the full augmentation rank and every cross pair, and exhausts all binary column sets on `n<=4` rows to certify row-minimality of the five-row binary example.
+The regression checks:
 
-This is a genuine finite certificate for the displayed examples and the stated finite minimality result.
+- associativity of finite category consolidations;
+- equality of two-sided success profiles exactly at equal endpoint pairs;
+- separation of failure `0`;
+- recovery of one quotient idempotent per object;
+- intrinsic local identity recovery;
+- exact Hom witness fibres;
+- all preorders on 1, 2, and 3 labelled objects (`1, 4, 29` cases);
+- non-thin two-object categories with 1 through 7 parallel arrows;
+- an explicit category where object reconstruction holds but ULF factorization fails.
 
-## `verify_cor4_extension_complexity.py`
-
-Exact rational certificate for
+The expected final line is:
 
 ```text
-xc(COR(4)) = 16.
+PASS category-reconstruction checks=14659 preorders={1: 1, 2: 4, 3: 29}
 ```
 
-It checks `dim(COR(4))=10`, validity and facet dimension of sixteen explicit inequalities, positivity of the designated sixteen slack entries, and all 120 fooling-pair conditions. Together with the trivial sixteen-vertex simplex upper bound, this is a complete finite proof certificate of the displayed equality.
-
-Historical novelty is a separate literature question and is **not** certified by this program.
-
-## `verify_operational_codescent.py`
-
-Finite regression for the operational-codescent dossier:
-
-- 256 two-piece quiver fixtures through bounded path length;
-- premature neutralization;
-- unsealed macro interleaving;
-- empty-separator factor projections not future-complete.
-
-The free-category adjunction theorem is proved mathematically; bounded path enumeration is not its proof.
-
-## `verify_no_choice.py`
-
-Checks the `S_4` action on the three nontrivial `2 x 2` charts of a four-state null process, no-collapse calibration, and finite Cartesian-refinement closure fixtures.
-
-## `verify_phase_v_vii_finite_core.py`
-
-Checks:
-
-- CRT bijectivity iff finite equivalence relations permute, for all partition pairs up to size five;
-- difunctionality/rectangle-component calibration on all `3 x 3` relations;
-- representative-independent residual products and root reconstruction on every Boolean three-bit tensor.
-
-## Optimizer safety
-
-CI executes maintained verifiers in normal and `python -O` modes and compiles them with `py_compile`. Evidence must not disappear when Python strips language-level `assert` statements.
-
-## Trust boundary
-
-A green CI run means the maintained finite certificates/regressions passed. It does **not** promote an audit-pending infinite theorem, settle literature priority, or replace the mathematical proof skeletons recorded in the dossiers.
+Finite regression is supporting evidence, not the proof of the unbounded theorem.
