@@ -15,17 +15,12 @@ The strongest version of that question is open. This repository is a dated found
 For an interaction fragment `a`, do not begin by assigning it a primitive source object, target object, state type, or semantic label. Instead ask which left and right continuations remain possible and what closed experiments return.
 
 ```text
-interaction execution
-        +
-closed continuation response
-        |
-        v
+interaction execution + closed continuation response
+                        ↓
 coarsest response-exact contextual quotient
-        |
-        v
+                        ↓
 interfaces / objecthood / witness fibres
-        |
-        v
+                        ↓
 composition + descent + reconstructed structure
 ```
 
@@ -74,20 +69,13 @@ where `Up(p,q,r)` denotes the componentwise upward closure. Thus the exact Boole
 The obstruction is tiny: one positive tensor entry has only four possible lifts through the two minimum latent interfaces, and four explicitly displayed zeros block all four lifts.
 
 ```text
-EIG question
-  independently minimal interfaces: do they jointly descend?
-        |
-        v
-Boolean Tucker translation
-  minimize each unfolding separately
-        |
-        v
-counterexample
-  (2,3,3) local minima cannot share one exact core
-        |
-        v
-small structural obstruction
-  every candidate latent lift of one positive is blocked
+EIG question: independently minimal interfaces — do they jointly descend?
+                                ↓
+Boolean Tucker translation: minimize each unfolding separately
+                                ↓
+counterexample: (2,3,3) local minima cannot share one exact core
+                                ↓
+small obstruction: every candidate latent lift of one positive is blocked
 ```
 
 This is the role external examples are meant to play here: EIG suggests the structural question and failure mechanism; the resulting mathematical statement is then verified independently in standard language.
