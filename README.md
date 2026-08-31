@@ -80,27 +80,30 @@ See [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.m
 
 A foundational programme should be judged not only by whether it reorganizes known mathematics, but by whether its viewpoint generates **externally checkable mathematical consequences**.
 
-One such test arose from Parnas--Shraibman's 2018 work on Boolean and binary matrix rank. Their Section 6 asks whether a rank increase caused by jointly augmenting with two source bases must already be witnessed by just one vector chosen from each source.
+The cleanest current example is a **four-row Boolean-rank source-pair obstruction**. It is deliberately presented in a standalone one-page-style note whose proof uses only unions of subsets of a four-element set; the proof does not depend on a computer program:
 
-The factorization-atlas viewpoint suggested the opposite mechanism: incompatibility can be genuinely collective, with every small selection extending through some source even though the whole family does not. Exact search then produced the following candidate discoveries:
+**[`discoveries/boolean-four-row-one-page.md`](discoveries/boolean-four-row-one-page.md)**
 
-1. **4-row Boolean counterexample.** `A={3,7,15}`, with source bases `U={3,5,8}` and `V={3,5,12}`. The full augmentation raises Boolean rank from 3 to 4, while every cross pair `u in U, v in V` leaves rank 3.
-2. **5-row binary counterexample.** `A={10,31,27,18}`, `U={4,9,10,18}`, `V={9,10,18,21}`. The full augmentation raises binary rank from 4 to 5, while every cross pair leaves rank 4.
-3. **Unbounded Boolean obstruction family.** For every `r>=2`, an explicit rank-`r` matrix has two source bases whose incompatibility requires an augmentation core of exactly `r` vectors. Thus no constant-size local witness principle of this form can hold in Boolean rank.
-
-The structural explanation is a source-incidence Helly/set-cover duality: if `Sigma_A(x)` is the set of source bases that span an admissible added vector `x`, then
+The instance is
 
 ```text
-rank(A | X) stays r
-    iff
-intersection_{x in X} Sigma_A(x) is nonempty.
+A={3,7,15},
+U={3,5,8},
+V={3,5,12}.
 ```
 
-So augmentation failure is exactly a collective cover obstruction on the factorization atlas.
+Here `U,V` are source Boolean bases of `A`. Augmenting by the full `U union V` raises Boolean rank from `3` to `4`, but every pair `u in U, v in V` leaves rank `3`. The only nontrivial cross pair is witnessed by the explicit rank-3 base `{3,4,8}`. Sourcehood follows from a three-line forest uniqueness argument.
 
-**Status before public release:** the checked-in exact integer verifiers pass; these external-discovery claims are intentionally marked **pending an independent mathematical/program recheck and a fresh historical-novelty audit**. They do not depend on WEIR being true, and they do not by themselves prove EIG.
+This arose while examining Parnas--Shraibman's 2018 augmentation framework through the factorization-atlas viewpoint. **Publication wording is intentionally conservative:** their Section 6 says that the base graph “has two sources,” which may mean two selected sources among a larger source atlas or exactly two sources in total. The displayed example settles the first formulation negatively; the exactly-two-total-sources formulation is positive by the source-incidence argument. That interpretive point, plus historical novelty, must be checked before claiming resolution of the published open problem.
 
-Full statement, proof skeleton, exact instances, verifier instructions, and immutable research provenance: **[`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md)**.
+A longer research dossier records two stronger follow-ups:
+
+- a five-row **binary-rank** finite obstruction, checked by exhaustive integer enumeration;
+- an explicit **unbounded Boolean family** whose minimum augmentation core has size exactly `r`.
+
+Those are useful evidence, but they are deliberately secondary to the four-row handwritten certificate because they require more checking. See [`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md).
+
+**Status before public release:** the one-page Boolean proof is self-contained; the checked-in exact integer verifiers also pass. Historical novelty, the precise reading of the 2018 question, and the broader binary/unbounded claims remain subject to independent review. None of these claims depends on WEIR being true, and none by itself proves EIG.
 
 ## What is conjectural
 
@@ -131,7 +134,8 @@ This repository deliberately separates four layers:
 | --- | --- |
 | finite exact residual quotient and elementary factor-rank laws | proved / audited; much of the algebra is classical |
 | exact category reconstruction from untyped consolidation + one-bit continuation success | main-audited recognition theorem; classical ingredients |
-| external source-pair augmentation discoveries | exact programs pass; independent recheck + novelty audit pending |
+| four-row Boolean source-pair obstruction | self-contained finite proof; publication scope/novelty audit pending |
+| broader binary/unbounded source-pair discoveries | exact programs pass; independent proof/novelty audit pending |
 | general witness-enriched, doctrine-relative, cross-domain reconstruction | conjectural / open |
 
 The detailed boundary is in [`STATUS.md`](STATUS.md).
@@ -141,11 +145,12 @@ The detailed boundary is in [`STATUS.md`](STATUS.md).
 1. [`FOUNDATIONS.md`](FOUNDATIONS.md) — the minimal interaction-first setup and design constraints.
 2. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
 3. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
-4. [`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md) — an externally checkable counterexample harvest generated by the viewpoint.
-5. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
-6. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
-7. [`ROADMAP.md`](ROADMAP.md) — only the load-bearing open gates.
-8. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source/audit provenance.
+4. [`discoveries/boolean-four-row-one-page.md`](discoveries/boolean-four-row-one-page.md) — the minimal handwritten external-discovery certificate.
+5. [`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md) — stronger binary/unbounded follow-ups and provenance.
+6. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
+7. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
+8. [`ROADMAP.md`](ROADMAP.md) — only the load-bearing open gates.
+9. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source/audit provenance.
 
 ## Verification
 
@@ -163,7 +168,7 @@ make verify-discoveries
 
 and CI runs the combined suite with `make verify-all`.
 
-The finite source-pair verifier exhaustively enumerates the displayed Boolean and binary examples. The unbounded-family verifier checks the closed-form formulas through `r=30` and exhausts the base `r=3` case. Regression evidence is not substituted for the infinite mathematical proof or for novelty review.
+The four-row Boolean obstruction does not require computation; its complete proof is in the one-page note. The finite verifier independently exhausts the displayed Boolean and binary examples. The unbounded-family verifier checks the closed-form formulas through `r=30` and exhausts the base `r=3` case. Regression evidence is not substituted for the infinite mathematical proof or for novelty review.
 
 See [`verification/README.md`](verification/README.md).
 
