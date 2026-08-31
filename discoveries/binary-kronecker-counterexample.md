@@ -1,14 +1,8 @@
-# Binary rank is not multiplicative under Kronecker product
+# Binary-Kronecker calibration — independent rediscovery after Shitov (2026)
 
-**Status:** complete finite proof and exact positive certificate; independent author/program recheck and historical-novelty audit pending before public priority is asserted.
+**Status:** correct finite certificate; **not a historical novelty claim**.
 
-> **Recommended for reading:** [`binary-kronecker-counterexample.pdf`](binary-kronecker-counterexample.pdf) — the same note, typeset from the checked-in [`TeX source`](binary-kronecker-counterexample.tex). The Markdown version below is retained for convenient GitHub browsing, search, and diffs. GitHub Actions recompiles and publishes the PDF when the TeX source changes.
-
-This note is deliberately self-contained. The search procedure that found the certificate is not part of the proof.
-
-## Result
-
-Let `A` be the following `5 x 5` binary matrix, written explicitly as five rows:
+This repository originally presented the following `5 x 5` binary-rank example as a candidate new refutation of Kronecker multiplicativity:
 
 ```text
 A = [
@@ -18,151 +12,56 @@ A = [
   [0, 1, 0, 1, 0],
   [1, 1, 0, 1, 1],
 ]
+
+rank_bin(A) = 5,
+rank_bin(A tensor A) <= 24 < 25.
 ```
 
-For a binary matrix, `rank_bin` is the least number of all-one rectangles whose disjoint union is its set of `1` entries; equivalently it is the least `r` for a factorization `A = U V` with binary `U,V` under ordinary integer multiplication.
+The finite mathematics remains correct: a short handwritten lower bound proves `rank_bin(A)=5`, and the checked-in 24 rectangles partition all 196 ones of `A tensor A` exactly once.
 
-The claim is
+However, this is **not the first refutation of binary-rank Kronecker multiplicativity**. Yaroslav Shitov publicly posted *Factoring Kronecker squares of nonnegative matrices with GPT-5.6 Sol* on **2026-07-25** and gave a different `5 x 5` binary matrix `B` with
 
 ```text
-rank_bin(A) = 5,
-rank_bin(A tensor A) <= 24,
+rank_01(B) = 5,
+rank_01(B tensor B) <= 24 < 25.
 ```
 
-and therefore
+Accordingly, the present example is retained only as an **independent rediscovery / computational calibration** of the EIG factorization-atlas search methodology. No historical priority is claimed for the nonmultiplicativity theorem.
 
-> **`rank_bin(A tensor A) < rank_bin(A)^2`.**
+The EIG provenance remains informative: the target was selected from the parallel-composition heuristic that the product of two locally minimal witness atlases need not remain globally minimal after composition, and an exact 24-rectangle certificate was then found independently. But EIG is not a logical dependency of the matrix result, and Shitov's earlier counterexample means this example is not suitable as headline external novelty evidence.
 
-Thus binary rank is not multiplicative under Kronecker product.
+## Finite certificate
 
-## A short proof that `rank_bin(A) = 5`
-
-Five row-stars partition the support of `A`, so `rank_bin(A) <= 5`.
-
-Put
+The proof that `rank_bin(A)=5` uses two null vectors
 
 ```text
 ell = (-1, 1, -1, 1, 0)^T,
-r   = (-1,-1,  0, 1, 1)^T.
+r   = (-1,-1,  0, 1, 1)^T,
 ```
 
-Direct calculation gives
+with `ell^T A=0`, `A r=0`, together with a unimodular `4 x 4` minor. Under a hypothetical four-term binary factorization, the term covering `A[3,1]=1` is forced by the two balance equations to cover a zero entry, a contradiction.
 
-```text
-ell^T A = 0,
-A r     = 0.
-```
+The machine-readable 24-rectangle self-product certificate is:
 
-The submatrix on rows `1,2,3,5` and columns `1,2,3,4` has determinant `-1`, hence the ordinary real rank of `A` is `4`.
+- [`certificates/binary-kronecker-seed5-self-k24.json`](certificates/binary-kronecker-seed5-self-k24.json)
 
-Assume for contradiction that `rank_bin(A) <= 4`, so
+and the independent checker is:
 
-```text
-A = U V,
-U in {0,1}^{5 x 4},
-V in {0,1}^{4 x 5}.
-```
+- [`../verification/verify_binary_kronecker_counterexample.py`](../verification/verify_binary_kronecker_counterexample.py)
 
-Because the real rank of `A` is `4`, both `U` and `V` have real rank four. Also `col(A) <= col(U)`, and both spaces have dimension four, so `col(U) = col(A)`. Since `ell^T A = 0`, every column `u` of `U` therefore satisfies `ell^T u = 0`. Symmetrically, `row(A) <= row(V)` and both have dimension four, so `row(V) = row(A)`; since `A r = 0`, every row `v^T` of `V` satisfies `v^T r = 0`. Thus each corresponding rank-one term obeys
+The checker reconstructs the raw Kronecker matrix and checks support containment and exact-once coverage of all 196 ones. It does not import the searcher.
 
-```text
-ell^T u = 0,
-v^T r   = 0.          (1)
-```
+## Prior art
 
-Moreover, under ordinary integer multiplication,
+- Y. Shitov, *Factoring Kronecker squares of nonnegative matrices with GPT-5.6 Sol*, publicly posted 2026-07-25, DOI `10.13140/RG.2.2.26449.90723`.
 
-```text
-A = sum_k u_k v_k^T
-```
+The EIG-found matrix is a different explicit example, but that does not restore theorem-level novelty.
 
-is a sum of entrywise nonnegative binary rank-one matrices. Hence every individual term satisfies `u_k v_k^T <= A` entrywise: a rank-one term cannot cover a zero of `A`.
+## Current search direction
 
-Some rank-one term `u v^T` covers `A[3,1] = 1`, so `u_3 = v_1 = 1` (one-based indices).
+The certificate-first external-search lane is now aimed at unresolved targets with equally small positive certificates, especially:
 
-From `ell^T u = 0`,
+1. the Parnas--Ron--Shraibman `U_{3,20}` Boolean-rank conjecture, where an `8`-rectangle cover would refute the predicted rank `9`;
+2. the exceptional Boolean crown self-products `C_5 tensor C_5` and `C_6 tensor C_6`, where a `15`-rectangle cover would prove strict submultiplicativity.
 
-```text
-u_2 + u_4 = u_1 + u_3 = u_1 + 1.
-```
-
-Since `A[4,1] = 0` and `v_1 = 1`, the support containment `u v^T <= A` forces `u_4 = 0`; binary-valuedness then forces `u_1 = 0` and `u_2 = 1`.
-
-Likewise `v^T r = 0` gives
-
-```text
-v_4 + v_5 = v_1 + v_2 = 1 + v_2.
-```
-
-Since `A[3,5] = 0` and `u_3 = 1`, support containment forces `v_5 = 0`; hence `v_2 = 0` and `v_4 = 1`.
-
-But then `u_2 = v_4 = 1`, so the same rank-one term covers `A[2,4]`, while `A[2,4] = 0`. Contradiction. Thus `rank_bin(A) = 5`.
-
-Equivalently, the local obstruction used above can be checked directly: there is no binary pair `(u,v)` satisfying all four conditions
-
-```text
-ell^T u = 0,
-v^T r = 0,
-u v^T <= A,
-u_3 = v_1 = 1.
-```
-
-The independent checker below exhausts all binary choices for `u` and `v` and verifies that the number of such pairs is zero.
-
-## The 24-rectangle certificate for `A tensor A`
-
-Index rows and columns of `A tensor A` by `0,...,24` in lexicographic order on pairs in `{0,...,4}^2`. The following 24 all-one rectangles partition all `196 = 14^2` ones exactly once:
-
-```text
- 1  R={2,7,9}          C={10,13,20,23}
- 2  R={10,14,20}       C={1,4,16,19}
- 3  R={5,9}            C={1,4,11,14,21,24}
- 4  R={7,9,12,14,22}   C={0,3}
- 5  R={18,19}          C={6,8,16,18}
- 6  R={13,23,24}       C={1,3,16,18}
- 7  R={3,23,24}        C={6,8,21,23}
- 8  R={1}              C={5,7,9,20,22,24}
- 9  R={8}              C={1,3,11,13,21,23}
-10  R={2,17}           C={5,8}
-11  R={0,1,5,6}        C={12}
-12  R={10,11}          C={2,17}
-13  R={0}              C={6,7,9,11,14,21,22,24}
-14  R={5,6,20,21}      C={2,22}
-15  R={16,19,21,24}    C={5,9,15,19}
-16  R={4,22}           C={5,8,20,23}
-17  R={3,4}            C={11,13}
-18  R={4,20}           C={6,9,21,24}
-19  R={15}             C={6,7,9,16,17,19}
-20  R={11}             C={0,4,15,19}
-21  R={6,21,24}        C={0,4,20,24}
-22  R={16,20,21}       C={7,17}
-23  R={1,4,6}          C={10,14}
-24  R={12,14,17,22}    C={15,18}
-```
-
-The machine-readable copy is [`certificates/binary-kronecker-seed5-self-k24.json`](certificates/binary-kronecker-seed5-self-k24.json).
-
-A small independent checker reconstructs the raw Kronecker matrix and verifies that every listed rectangle is contained in the support and every one-entry occurs exactly once:
-
-```bash
-python3 verification/verify_binary_kronecker_counterexample.py
-```
-
-The checker also verifies the two null vectors, the unimodular `4 x 4` minor, and exhaustively checks the local rank-one obstruction stated above. It does **not** import or trust the search program that found the certificate.
-
-## Why this belongs here
-
-The target was selected from the EIG factorization/parallel-composition viewpoint. A product of individually minimal witness atlases always gives a product-size witness family, but EIG specifically suggests testing whether composition permits new cross-factor witness sharing that is invisible in either factor separately. Binary rank under Kronecker product is an exact finite model of that question.
-
-That motivation is provenance only. The proof above is ordinary finite matrix and biclique-partition mathematics and does not depend on EIG being correct.
-
-## Literature and novelty firewall
-
-A targeted literature check on 2026-08-31 found the integer multiplicativity problem still stated as open in, among other sources:
-
-- Angikar Ghosal and Andreas Karrenbauer, *Engineering Insights into Biclique Partitions and Fractional Binary Ranks of Matrices*, SEA 2025, LIPIcs 338, Article 18, DOI `10.4230/LIPIcs.SEA.2025.18`;
-- Michal Parnas, *Mathematical and computational perspectives on the Boolean and binary rank and their relation to the real rank*, arXiv:`2601.13900` (2026).
-
-The SEA 2025 paper disproves multiplicativity for the **fractional** binary rank and explicitly leaves the integer binary-rank question open. The present certificate concerns the integer binary rank.
-
-No historical-priority claim is made here until an independent specialist search has ruled out an earlier unpublished, differently phrased, or insufficiently indexed counterexample.
+The correction itself is part of the epistemic record: finite correctness and historical novelty are separate questions.
