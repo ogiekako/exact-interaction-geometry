@@ -68,6 +68,44 @@ docs/AUDIT_INCOMING_PHASE_VIII_IX_EIG_MAIN_20260831.md
 
 Used to distinguish proved, repaired, refuted, and open claims. Audit-pending or refuted material is not promoted here.
 
+## External discovery candidates
+
+The source-pair augmentation dossier is intentionally outside the audited-foundation cutoff because its role is different: it is a small external mathematical prediction/counterexample harvest whose correctness can be checked without accepting EIG.
+
+Original external target:
+
+```text
+M. Parnas and A. Shraibman,
+The Augmentation Property of Binary Matrices for the Binary and Boolean Rank,
+Linear Algebra and its Applications 556 (2018), 70--99,
+Section 6.
+DOI: 10.1016/j.laa.2018.07.001
+```
+
+Immutable ledger sequence:
+
+```text
+3806b8ea4851f6edfa7073085e929bdd868442b9
+  initial four-row Boolean counterexample
+  docs/AUGMENTATION_SOURCE_PAIR_COUNTEREXAMPLE_20260830.md
+
+b2601fdb843fab9c245967e1695e28419034369b
+  Boolean + binary finite source-pair counterexamples
+  docs/AUGMENTATION_SOURCE_PAIR_COUNTEREXAMPLES_BOTH_RANKS_20260830.md
+  verification/verify_augmentation_source_pair_both_ranks_20260830.py
+
+f5ec36c41b5d20ef3cd064097c4ec798381d433b
+  source-incidence duality + unbounded Boolean family
+  docs/UNBOUNDED_BOOLEAN_SOURCE_PAIR_AUGMENTATION_20260830.md
+  verification/verify_unbounded_boolean_source_pair_augmentation_20260830.py
+```
+
+Public extraction: [`../discoveries/source-pair-augmentation.md`](../discoveries/source-pair-augmentation.md), [`../verification/verify_source_pair_counterexamples.py`](../verification/verify_source_pair_counterexamples.py), and [`../verification/verify_unbounded_boolean_augmentation.py`](../verification/verify_unbounded_boolean_augmentation.py).
+
+Status: exact checked-in programs pass; **independent recheck and historical-novelty audit pending before public priority claims**.
+
 ## Curation principle
 
 Git history preserves earlier public-curation structures, including the former `Interaction Reconstruction` seven-phase Book and standalone theorem harvests. They were removed from the current tree because they obscure the foundational EIG claim; their deletion is editorial, not historical erasure.
+
+The source-pair dossier is retained despite that general deletion because it is compact, externally falsifiable, mathematically independent of WEIR, and directly illustrates how the interaction/factorization viewpoint generated a testable new prediction rather than only a new vocabulary.
