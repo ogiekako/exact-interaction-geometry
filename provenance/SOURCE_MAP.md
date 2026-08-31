@@ -1,111 +1,77 @@
 # Source map
 
-This public repository is a curated extraction from the chronological research ledger:
+This repository is a curated extraction from the chronological research ledger:
 
 ```text
 repository: ogiekako/test
 subtree: experiments/repairable-tropical-north-star
 ```
 
-## Public-foundation cutoff
+## Foundational extraction
 
-The canonical audited EIG material used for this public snapshot is taken through the local-main checkpoint
+The finite response calculus, interaction-first objecthood formulation, and category-reconstruction theorem were extracted from the main-audited EIG material of 2026-08-30/31. The relevant public files are:
 
-```text
-c03a402a6dc8cb3de582ea8ddcd932294a2bfba5
-```
+- [`../theory/01-finite-exact-interactions.md`](../theory/01-finite-exact-interactions.md)
+- [`../FOUNDATIONS.md`](../FOUNDATIONS.md)
+- [`../theory/02-category-reconstruction.md`](../theory/02-category-reconstruction.md)
+- [`../theory/03-weir.md`](../theory/03-weir.md)
 
-on 2026-08-31 JST.
+The much larger research ledger is intentionally not mirrored here. Newer results are imported only when they improve the public mathematical surface without importing unresolved dependencies or programme history.
 
-The research ledger subsequently advanced to at least
+## Binary-Kronecker external discovery
 
-```text
-bf75064bf16aa860e76c910555a2c2a268872977
-```
+The current headline external discovery was produced after the public foundation snapshot.
 
-with additional **audit-pending** foundational work. Newer does not mean promoted: that tail is intentionally not imported into the public core until its audit status warrants it.
-
-## Source documents
-
-### Finite exact interaction calculus
+Search infrastructure was first committed in the research ledger at:
 
 ```text
-docs/EIG_FINITE_RESPONSE_AND_FACTOR_RANK_CALCULUS_20260830.md
+a7c228e3bd4fb0dcd81696dc4a4106fdfe12fd58
 ```
 
-Source status: `PROVED AFTER MAIN AUDIT` with scope/type repairs. Public extraction: [`../theory/01-finite-exact-interactions.md`](../theory/01-finite-exact-interactions.md).
-
-### Interaction-first objecthood foundation
+A local-main audit then hardened the search/certificate infrastructure at:
 
 ```text
-docs/EIG_INTERACTION_FIRST_OBJECTHOOD_RECONSTRUCTION_20260831.md
+f8a1c2315f33ec8dd9ed6c0e3c447de702980527
 ```
 
-Source status: finite/classical core main-audited; general WEIR conjectural. Public extraction: [`../FOUNDATIONS.md`](../FOUNDATIONS.md) and [`../theory/03-weir.md`](../theory/03-weir.md).
-
-### Category reconstruction theorem
+The user-executed 48-core run returned the 24-rectangle certificate on 2026-08-31 JST. The proof/certificate/verifier handoff is reachable at:
 
 ```text
-docs/EIG_CATEGORY_OBJECTHOOD_FROM_UNTYPED_INTERACTION_20260831.md
-verification/verify_eig_category_objecthood_from_interaction_20260831.py
+ed7cd7fe5e6b02a3e7f65ebf4f3c5b31670fac0f
 ```
 
-Source status: `MAIN-AUDITED REPAIRED-PROVED / CATEGORY-CONSOLIDATION RECOGNITION THEOREM`. Public extraction: [`../theory/02-category-reconstruction.md`](../theory/02-category-reconstruction.md) and [`../verification/verify_category_reconstruction.py`](../verification/verify_category_reconstruction.py).
-
-### Architecture / editorial boundary
+Source paths in the ledger:
 
 ```text
-docs/EIG_TEXTBOOK_MASTER_V0_7_20260831.md
+docs/EIG_EXTERNAL_BINARY_KRONECKER_COUNTEREXAMPLE_20260831.md
+counterexample_search/eig_kronecker_rank/certificates/seed5_self_k24.json
+verification/verify_eig_binary_kronecker_counterexample_20260831.py
+.handoff/20260831-2046-jst-eig-binary-kronecker-counterexample.md
 ```
 
-Used only to preserve the current reconstruction architecture and high-level open gates. The 80-chapter research textbook is not copied into the public foundation.
+The public extraction deliberately simplifies the verifier: it retains only the null-vector/minor certificate and direct rectangle check, not the discovery searcher or an unnecessary exact rank-minimization routine.
 
-### Independent intake audit
+Public files:
 
-```text
-docs/AUDIT_INCOMING_PHASE_VIII_IX_EIG_MAIN_20260831.md
-```
+- [`../discoveries/binary-kronecker-counterexample.md`](../discoveries/binary-kronecker-counterexample.md)
+- [`../discoveries/certificates/binary-kronecker-seed5-self-k24.json`](../discoveries/certificates/binary-kronecker-seed5-self-k24.json)
+- [`../verification/verify_binary_kronecker_counterexample.py`](../verification/verify_binary_kronecker_counterexample.py)
 
-Used to distinguish proved, repaired, refuted, and open claims. Audit-pending or refuted material is not promoted here.
+Status: complete finite argument and certificate internally checked; **independent author/program recheck and specialist historical-novelty audit remain pending before public priority is asserted**.
 
-## External discovery candidates
+## Earlier source-pair dossier
 
-The source-pair augmentation dossier is intentionally outside the audited-foundation cutoff because its role is different: it is a small external mathematical prediction/counterexample harvest whose correctness can be checked without accepting EIG.
+The source-pair augmentation material remains a secondary external discovery track. Its immutable ledger sequence begins with the four-row Boolean example and continues through binary and unbounded Boolean variants. Public extraction:
 
-Original external target:
+- [`../discoveries/boolean-four-row-one-page.md`](../discoveries/boolean-four-row-one-page.md)
+- [`../discoveries/source-pair-augmentation.md`](../discoveries/source-pair-augmentation.md)
+- [`../verification/verify_source_pair_counterexamples.py`](../verification/verify_source_pair_counterexamples.py)
+- [`../verification/verify_unbounded_boolean_augmentation.py`](../verification/verify_unbounded_boolean_augmentation.py)
 
-```text
-M. Parnas and A. Shraibman,
-The Augmentation Property of Binary Matrices for the Binary and Boolean Rank,
-Linear Algebra and its Applications 556 (2018), 70--99,
-Section 6.
-DOI: 10.1016/j.laa.2018.07.001
-```
-
-Immutable ledger sequence:
-
-```text
-3806b8ea4851f6edfa7073085e929bdd868442b9
-  initial four-row Boolean counterexample
-  docs/AUGMENTATION_SOURCE_PAIR_COUNTEREXAMPLE_20260830.md
-
-b2601fdb843fab9c245967e1695e28419034369b
-  Boolean + binary finite source-pair counterexamples
-  docs/AUGMENTATION_SOURCE_PAIR_COUNTEREXAMPLES_BOTH_RANKS_20260830.md
-  verification/verify_augmentation_source_pair_both_ranks_20260830.py
-
-f5ec36c41b5d20ef3cd064097c4ec798381d433b
-  source-incidence duality + unbounded Boolean family
-  docs/UNBOUNDED_BOOLEAN_SOURCE_PAIR_AUGMENTATION_20260830.md
-  verification/verify_unbounded_boolean_source_pair_augmentation_20260830.py
-```
-
-Public extraction: [`../discoveries/source-pair-augmentation.md`](../discoveries/source-pair-augmentation.md), [`../verification/verify_source_pair_counterexamples.py`](../verification/verify_source_pair_counterexamples.py), and [`../verification/verify_unbounded_boolean_augmentation.py`](../verification/verify_unbounded_boolean_augmentation.py).
-
-Status: exact checked-in programs pass; **independent recheck and historical-novelty audit pending before public priority claims**.
+It is not the headline discovery because the wording of the motivating 2018 source-pair question requires a scope interpretation before any claim of resolving that published question.
 
 ## Curation principle
 
-Git history preserves earlier public-curation structures, including the former `Interaction Reconstruction` seven-phase Book and standalone theorem harvests. They were removed from the current tree because they obscure the foundational EIG claim; their deletion is editorial, not historical erasure.
+Git history preserves earlier public-curation structures, including the former `Interaction Reconstruction` seven-phase Book and standalone theorem harvests. Their deletion from the current tree is editorial, not historical erasure.
 
-The source-pair dossier is retained despite that general deletion because it is compact, externally falsifiable, mathematically independent of WEIR, and directly illustrates how the interaction/factorization viewpoint generated a testable new prediction rather than only a new vocabulary.
+The public repository should expose the shortest chain from EIG's foundational question to exact mathematics, while keeping provenance, proof certificates, prior-art boundaries, and unresolved novelty questions explicit.

@@ -4,17 +4,15 @@
 
 Exact Interaction Geometry (EIG) is an emerging mathematical research programme built around a deliberately basic question:
 
-> **How much of mathematical structure can be reconstructed from interaction itself — from what can be composed, what future contexts can distinguish, and what witness data must survive exact gluing — rather than being supplied in advance as objects, states, types, or interfaces?**
+> **How much mathematical structure can be reconstructed from interaction itself — from what composes, what future contexts distinguish, and what witness data must survive exact gluing — rather than being supplied in advance as objects, states, types, or interfaces?**
 
 The strongest version of that question is open. This repository is a dated foundational disclosure, not a declaration that a new foundation of mathematics has been completed.
 
-**Jump:** [core idea](#the-core-idea) · [exact calibrations](#two-exact-calibrations) · [concrete discoveries](#concrete-discoveries-from-the-interaction-viewpoint) · [open foundation](#what-is-conjectural) · [prior art](#what-is-not-being-claimed) · [status](#current-epistemic-status)
+**Jump:** [core idea](#the-core-idea) · [headline discovery](#headline-external-discovery) · [exact calibrations](#two-exact-calibrations) · [open foundation](#what-is-conjectural) · [prior art](#what-is-not-being-claimed) · [status](#current-epistemic-status)
 
 ## The core idea
 
 For an interaction fragment `a`, do not begin by assigning it a primitive source object, target object, state type, or semantic label. Instead ask which left and right continuations remain possible and what closed experiments return.
-
-The basic reduction is contextual:
 
 ```text
 interaction execution
@@ -45,27 +43,67 @@ CONTEXT
   -> RECONSTRUCT
 ```
 
-Here **exact** means that a reduction is allowed only when every admitted future continuation has the same response. **Witness** means that multiplicity, provenance, cocycles, or higher comparison data are retained when later interaction can distinguish them. **Geometry** refers to the resulting factorization, descent, obstruction, and localization structure; it is not a claim that every EIG invariant is a metric or curvature.
+Here **exact** means that a reduction is allowed only when every admitted future continuation has the same response. **Witness** means that multiplicity, provenance, cocycles, or higher comparison data are retained when later interaction can distinguish them. **Geometry** refers to the resulting factorization, descent, obstruction, and localization structure; it is not a claim that every EIG invariant is metric geometry.
+
+## Headline external discovery
+
+### Binary rank is not multiplicative under Kronecker product
+
+A useful test of a foundational viewpoint is whether it generates externally checkable mathematics rather than only new vocabulary. The strongest current example in this programme is a finite counterexample to Kronecker multiplicativity of the binary rank.
+
+For
+
+\[
+A=\begin{pmatrix}
+0&1&1&0&1\\
+1&0&1&0&1\\
+1&0&0&1&0\\
+0&1&0&1&0\\
+1&1&0&1&1
+\end{pmatrix},
+\]
+
+there is a short handwritten proof that
+
+\[
+\operatorname{rank}_{\rm bin}(A)=5,
+\]
+
+while an explicit 24-biclique partition of `A tensor A` gives
+
+\[
+\boxed{
+\operatorname{rank}_{\rm bin}(A\otimes A)
+\le24<25
+=\operatorname{rank}_{\rm bin}(A)^2.
+}
+\]
+
+The lower bound uses only two displayed integer null vectors and one unimodular `4 x 4` minor. The upper bound is a finite list of 24 rectangles partitioning all 196 one-entries of the tensor product exactly once. The search program that found the list is **not** part of the proof.
+
+**Read the complete certificate:** [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md)  
+**Machine-readable certificate:** [`discoveries/certificates/binary-kronecker-seed5-self-k24.json`](discoveries/certificates/binary-kronecker-seed5-self-k24.json)  
+**Independent checker:** [`verification/verify_binary_kronecker_counterexample.py`](verification/verify_binary_kronecker_counterexample.py)
+
+The target was selected from the EIG factorization/parallel-composition heuristic: the product of two individually minimal witness atlases need not remain globally minimal after composition because cross-factor witness sharing can appear only after the product is formed. This motivation is provenance, not a logical dependency of the counterexample.
+
+A targeted literature check on 2026-08-31 found the integer multiplicativity question still explicitly open in Ghosal--Karrenbauer (SEA 2025) and in Parnas's 2026 survey. **Historical novelty and priority remain subject to an independent specialist audit before public priority is asserted.**
+
+A second, earlier discovery dossier concerns source-pair augmentation for Boolean/binary rank. Its clean four-row Boolean certificate remains available, but it is secondary because the wording of the motivating 2018 open question admits a scope ambiguity. See [`discoveries/boolean-four-row-one-page.md`](discoveries/boolean-four-row-one-page.md) and [`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md).
 
 ## Two exact calibrations
 
 ### 1. Finite response tables
 
-For a finite response table `M : X x Y -> K`, two left states are contextually equivalent exactly when they have identical response rows. The quotient by this equivalence is the **unique coarsest surjective deterministic exact interface**. If interfaces are instead allowed to carry latent witnesses, exact mediation becomes semiring factorization; serial composition satisfies a data-processing inequality and parallel composition is submultiplicative.
+For a finite response table `M : X x Y -> K`, two left states are contextually equivalent exactly when they have identical response rows. The quotient is the **unique coarsest surjective deterministic exact interface**. If interfaces instead carry latent witnesses, exact mediation becomes semiring factorization; serial composition satisfies a data-processing inequality and parallel composition is submultiplicative.
 
 See [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md).
 
 ### 2. Categories from untyped interaction
 
-Let `C` be any small category. Erase its objects and every source/target label. Keep only the raw arrows, add an absorbing failure `0`, compose two arrows when they are composable and return `0` otherwise, and observe just one bit:
+Let `C` be any small category. Erase its objects and every source/target label. Keep only the raw arrows, add an absorbing failure `0`, compose two arrows when composable and return `0` otherwise, and observe one bit: success iff the composite is nonzero.
 
-```text
-success = composite is nonzero.
-```
-
-Then two-sided continuation success recovers the ordered source/target pair of every arrow. The resulting contextual quotient has one nonzero idempotent for every original object. If the raw arrows are retained as witness fibres over the recovered endpoint classes, the original Hom sets, identities, and composition are recovered exactly.
-
-In this precise category-sector sense,
+Two-sided continuation success recovers the ordered source/target pair of every arrow. The contextual quotient has one nonzero idempotent for every original object. Retaining the raw arrows as witness fibres over the recovered endpoint classes then reconstructs the original Hom sets, identities, and composition exactly.
 
 ```text
 untyped interaction execution + one-bit success/failure
@@ -76,35 +114,6 @@ The construction uses classical category consolidation / semigroup ideas; those 
 
 See [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md).
 
-## Concrete discoveries from the interaction viewpoint
-
-A foundational programme should be judged not only by whether it reorganizes known mathematics, but by whether its viewpoint generates **externally checkable mathematical consequences**.
-
-The cleanest current example is a **four-row Boolean-rank source-pair obstruction**. It is deliberately presented in a standalone one-page-style note whose proof uses only unions of subsets of a four-element set; the proof does not depend on a computer program:
-
-**[`discoveries/boolean-four-row-one-page.md`](discoveries/boolean-four-row-one-page.md)**
-
-The instance is
-
-```text
-A={3,7,15},
-U={3,5,8},
-V={3,5,12}.
-```
-
-Here `U,V` are source Boolean bases of `A`. Augmenting by the full `U union V` raises Boolean rank from `3` to `4`, but every pair `u in U, v in V` leaves rank `3`. The only nontrivial cross pair is witnessed by the explicit rank-3 base `{3,4,8}`. Sourcehood follows from a three-line forest uniqueness argument.
-
-This arose while examining Parnas--Shraibman's 2018 augmentation framework through the factorization-atlas viewpoint. **Publication wording is intentionally conservative:** their Section 6 says that the base graph “has two sources,” which may mean two selected sources among a larger source atlas or exactly two sources in total. The displayed example settles the first formulation negatively; the exactly-two-total-sources formulation is positive by the source-incidence argument. That interpretive point, plus historical novelty, must be checked before claiming resolution of the published open problem.
-
-A longer research dossier records two stronger follow-ups:
-
-- a five-row **binary-rank** finite obstruction, checked by exhaustive integer enumeration;
-- an explicit **unbounded Boolean family** whose minimum augmentation core has size exactly `r`.
-
-Those are useful evidence, but they are deliberately secondary to the four-row handwritten certificate because they require more checking. See [`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md).
-
-**Status before public release:** the one-page Boolean proof is self-contained; the checked-in exact integer verifiers also pass. Historical novelty, the precise reading of the 2018 question, and the broader binary/unbounded claims remain subject to independent review. None of these claims depends on WEIR being true, and none by itself proves EIG.
-
 ## What is conjectural
 
 The main foundational target is **WEIR — Witness-Enriched Interaction Reconstruction**. Roughly, it asks for natural classes of interaction laboratories in which exact contextual reduction, interface/object selection, map selection, witness reconstruction, composition, doctrine change, and local-to-global descent are all derived from interaction data, up to unavoidable Cauchy/Morita/doctrine moduli.
@@ -113,29 +122,18 @@ WEIR is **not proved**. It is stated as a falsifiable programme with explicit ac
 
 ## What is not being claimed
 
-EIG does **not** claim that:
-
-- objectless category theory is new;
-- syntactic monoids or Myhill--Nerode minimization are new;
-- idempotent splitting / Karoubi completion is new;
-- relations-as-primary, allegories, ludics, Geometry of Interaction, Interaction Graphs, or Isbell nuclei are new;
-- every mathematical object has already been reconstructed from interaction;
-- one doctrine-free notion of objecthood has been identified;
-- scalar response is sufficient to recover witness multiplicity or higher coherence;
-- category reconstruction automatically gives ULF/Conduche factorization or descent.
+EIG does **not** claim that objectless category theory, syntactic monoids, Myhill--Nerode minimization, idempotent splitting, relations-as-primary, allegories, ludics, Geometry of Interaction, Interaction Graphs, or Isbell nuclei are new. Nor does it claim that every mathematical object has been reconstructed from interaction, that one doctrine-free notion of objecthood has been identified, or that scalar response suffices to recover witness multiplicity and higher coherence.
 
 The closest prior art is load-bearing. In particular, 2026 work of Gastaldi--Jarvis--Seiller--Terilla derives types from execution and measurement through Isbell nuclei, so **“types emerge from interaction” is not an EIG novelty claim**. See [`PRIOR_ART.md`](PRIOR_ART.md).
 
 ## Current epistemic status
 
-This repository deliberately separates four layers:
-
 | Layer | Status |
 | --- | --- |
 | finite exact residual quotient and elementary factor-rank laws | proved / audited; much of the algebra is classical |
 | exact category reconstruction from untyped consolidation + one-bit continuation success | main-audited recognition theorem; classical ingredients |
-| four-row Boolean source-pair obstruction | self-contained finite proof; publication scope/novelty audit pending |
-| broader binary/unbounded source-pair discoveries | exact programs pass; independent proof/novelty audit pending |
+| binary-rank Kronecker counterexample `5 x 5 -> 24 < 25` | complete finite proof + exact certificate internally checked; independent author/program recheck and novelty audit pending |
+| source-pair augmentation discoveries | exact checks / written proofs available; publication scope and novelty audit pending |
 | general witness-enriched, doctrine-relative, cross-domain reconstruction | conjectural / open |
 
 The detailed boundary is in [`STATUS.md`](STATUS.md).
@@ -143,38 +141,34 @@ The detailed boundary is in [`STATUS.md`](STATUS.md).
 ## Read in this order
 
 1. [`FOUNDATIONS.md`](FOUNDATIONS.md) — the minimal interaction-first setup and design constraints.
-2. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
-3. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
-4. [`discoveries/boolean-four-row-one-page.md`](discoveries/boolean-four-row-one-page.md) — the minimal handwritten external-discovery certificate.
-5. [`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md) — stronger binary/unbounded follow-ups and provenance.
-6. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
-7. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
+2. [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md) — the strongest current external finite discovery and its complete certificate.
+3. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
+4. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
+5. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
+6. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
+7. [`discoveries/boolean-four-row-one-page.md`](discoveries/boolean-four-row-one-page.md) — an earlier handwritten factorization-atlas counterexample.
 8. [`ROADMAP.md`](ROADMAP.md) — only the load-bearing open gates.
 9. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source/audit provenance.
 
 ## Verification
 
-The foundational category regression is:
-
 ```bash
-make verify
+make verify-all
 ```
 
-The exact external-discovery checks are:
+The binary-Kronecker certificate alone can be checked with:
 
 ```bash
-make verify-discoveries
+python3 verification/verify_binary_kronecker_counterexample.py
 ```
 
-and CI runs the combined suite with `make verify-all`.
-
-The four-row Boolean obstruction does not require computation; its complete proof is in the one-page note. The finite verifier independently exhausts the displayed Boolean and binary examples. The unbounded-family verifier checks the closed-form formulas through `r=30` and exhausts the base `r=3` case. Regression evidence is not substituted for the infinite mathematical proof or for novelty review.
+The checker is intentionally small and does not import the search code. It verifies the handwritten lower-bound ingredients and the exact-once 24-rectangle partition directly from the displayed data.
 
 See [`verification/README.md`](verification/README.md).
 
 ## Research process and provenance
 
-The programme was developed through extended AI-assisted mathematical research, with theorem-generation, counterexample-search, repair, and independent adversarial audit lanes. Model-generated claims are not promoted merely because they were generated or computationally checked. Failed and superseded formulations remain in Git history and in the original research ledger; this repository keeps only the current public mathematical surface.
+The programme was developed through extended AI-assisted mathematical research, with theorem generation, counterexample search, repair, and independent adversarial audit lanes. Model-generated claims are not promoted merely because they were generated or computationally checked. Failed and superseded formulations remain in Git history and in the original research ledger; this repository keeps only the current public mathematical surface.
 
 See [`provenance/RESEARCH_PROCESS.md`](provenance/RESEARCH_PROCESS.md) and [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md).
 
@@ -182,4 +176,4 @@ See [`provenance/RESEARCH_PROCESS.md`](provenance/RESEARCH_PROCESS.md) and [`pro
 
 **Author:** Keigo Oka  
 **Initial EIG public-foundation snapshot:** 2026-08-31  
-**Historical novelty:** not claimed for classical ingredients; the novelty and scope of the unified EIG programme and of the external discovery candidates remain subject to independent literature review.
+**Historical novelty:** not claimed for classical ingredients; the novelty and scope of the unified EIG programme and of the external discoveries remain subject to independent literature review.

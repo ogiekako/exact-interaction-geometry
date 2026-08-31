@@ -6,10 +6,12 @@ verify:
 	python3 -m py_compile verification/verify_category_reconstruction.py
 
 verify-discoveries:
+	python3 verification/verify_binary_kronecker_counterexample.py
+	python3 -O verification/verify_binary_kronecker_counterexample.py
 	python3 verification/verify_source_pair_counterexamples.py
 	python3 -O verification/verify_source_pair_counterexamples.py
 	python3 verification/verify_unbounded_boolean_augmentation.py
 	python3 -O verification/verify_unbounded_boolean_augmentation.py
-	python3 -m py_compile verification/verify_source_pair_counterexamples.py verification/verify_unbounded_boolean_augmentation.py
+	python3 -m py_compile verification/verify_binary_kronecker_counterexample.py verification/verify_source_pair_counterexamples.py verification/verify_unbounded_boolean_augmentation.py
 
 verify-all: verify verify-discoveries
