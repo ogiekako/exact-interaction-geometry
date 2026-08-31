@@ -51,14 +51,16 @@ Here **exact** means that a reduction is allowed only when every admitted future
 
 A useful test of a foundational viewpoint is whether it generates externally checkable mathematics rather than only new vocabulary. The strongest current example in this programme is a finite counterexample to Kronecker multiplicativity of the binary rank.
 
-The counterexample is the following `5 x 5` binary matrix:
+The counterexample is the following `5 x 5` binary matrix, written explicitly as five rows:
 
 ```text
-A = [0 1 1 0 1
-     1 0 1 0 1
-     1 0 0 1 0
-     0 1 0 1 0
-     1 1 0 1 1]
+A = [
+  [0, 1, 1, 0, 1],
+  [1, 0, 1, 0, 1],
+  [1, 0, 0, 1, 0],
+  [0, 1, 0, 1, 0],
+  [1, 1, 0, 1, 1],
+]
 ```
 
 A short handwritten argument proves **`rank_bin(A) = 5`**. An explicit 24-biclique partition of `A ⊗ A` proves the strict inequality
