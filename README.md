@@ -66,16 +66,16 @@ $$
 there is a short handwritten proof that
 
 $$
-\operatorname{rank}_{\mathrm{bin}}(A)=5,
+\mathrm{rank}_{\mathrm{bin}}(A)=5,
 $$
 
 while an explicit 24-biclique partition of $A\otimes A$ gives
 
 $$
 \boxed{
-\operatorname{rank}_{\mathrm{bin}}(A\otimes A)
+\mathrm{rank}_{\mathrm{bin}}(A\otimes A)
 \le 24 < 25
-=\operatorname{rank}_{\mathrm{bin}}(A)^2.
+=\mathrm{rank}_{\mathrm{bin}}(A)^2.
 }
 $$
 
