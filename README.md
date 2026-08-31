@@ -69,7 +69,7 @@ The lower bound uses only two displayed integer null vectors and one unimodular 
 
 **Read the complete certificate:** [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md)  
 **Machine-readable certificate:** [`discoveries/certificates/binary-kronecker-seed5-self-k24.json`](discoveries/certificates/binary-kronecker-seed5-self-k24.json)  
-**Independent checker:** [`verification/verify_binary_kronecker_counterexample.py`](verification/verify_binary_kronecker-counterexample.py)
+**Independent checker:** [`verification/verify_binary_kronecker_counterexample.py`](verification/verify_binary_kronecker_counterexample.py)
 
 The target was selected from the EIG factorization/parallel-composition heuristic: the product of two individually minimal witness atlases need not remain globally minimal after composition because cross-factor witness sharing can appear only after the product is formed. This motivation is provenance, not a logical dependency of the counterexample.
 
