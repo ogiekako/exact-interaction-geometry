@@ -1,6 +1,8 @@
 # Prior art and novelty boundary
 
-EIG sits close to several mature traditions. This is not peripheral bibliography: these theories define the boundary of what the programme may honestly claim.
+EIG sits close to several mature traditions and several unusually close 2026 programmes. This is not peripheral bibliography: these theories define the boundary of what the programme may honestly claim.
+
+A more detailed input/output comparison of the closest contemporary neighbours is in [`CONTEMPORARY_NEIGHBORS.md`](CONTEMPORARY_NEIGHBORS.md).
 
 ## 1. Syntactic monoids, algebras, and Myhill--Nerode theory
 
@@ -8,27 +10,35 @@ Two-sided contextual equivalence and response-minimal quotients are classical in
 
 **EIG does not claim contextual minimization itself as new.** The question is whether the same exact-continuation principle, with witness-sensitive enrichment, can serve as one component of a broader reconstruction theorem.
 
-## 2. Karoubi/Cauchy completion and Morita theory
+## 2. Behavioral systems and canonical state constructions
+
+Behavioral systems theory is a particularly important precedent for the idea that state should be characterized by continuation rather than supplied as an arbitrary coordinate. A. A. Julius and A. J. van der Schaft, *State maps of general behaviors, their lattice structure and bisimulations* (MTNS 2004), studies lattices of dynamic/state maps, Nerode and dual-Nerode constructions, and conditions for canonical minimal state maps. Their companion *A behavioral framework for compositionality: linear systems, discrete event systems and hybrid systems* (MTNS 2004) treats system composition through behavioral interconnection and generalized projection.
+
+This is close to the `CONTEXT -> REDUCE -> COMPOSE` part of EIG. It does **not** make the full EIG package new: the behavioral system, signal/time structure, and interconnection setting are already supplied, and the programme is not a reconstruction of general object loci, maps/Hom fibres, witness provenance, and local-to-global codescent from one raw interaction laboratory.
+
+## 3. Karoubi/Cauchy completion and Morita theory
 
 Recovering typed corners `fPe` from idempotents of an untyped monoid/semigroup is the classical Karoubi construction. Cauchy completion and Morita theory already explain why presentations can determine categories only up to appropriate retract/completion equivalences.
 
 **EIG does not claim idempotents-as-objects as new.** It uses this as a calibration and explicitly expects Cauchy/Morita moduli in any serious unicity theorem.
 
-## 3. Arrow-only categories, consolidations, and restriction semigroups
+## 4. Arrow-only categories, consolidations, restriction semigroups, and Interaction Categories
 
 Categories admit object-free/arrow-only presentations. Semigroup theory also studies the **consolidation** of a category: adjoin zero and send noncomposable products to zero. Restriction-semigroup and related constructions give exact correspondences in important classes.
 
-The theorem in [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) uses this classical shell. Its EIG role is narrower: freeze the observation to one-bit composition success, take its full two-sided contextual quotient, identify the quotient classes with endpoint types, then retain the prequotient arrows as witness fibres to reconstruct Hom sets.
+Samson Abramsky's **Interaction Categories** programme (1993--1990s) is an additional important warning against broad terminology claims: interaction and process composition are central there, with specifications serving as objects and suitable processes as morphisms.
 
-## 4. Relations, allegories, ludics, and Geometry of Interaction
+The theorem in [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) uses a classical consolidation shell. Its EIG role is narrower: freeze the observation to one-bit composition success, take its full two-sided contextual quotient, identify quotient classes with endpoint types, then retain the prequotient arrows as witness fibres to reconstruct Hom sets. EIG does not claim that categories of interacting processes are new.
 
-Relational/allegorical approaches make relations primary and recover maps internally. Girard's ludics makes interaction and orthogonality foundational. Geometry of Interaction and Seiller's Interaction Graphs study execution, measurement, orthogonality, and observational equivalence.
+## 5. Relations, Chu-style observation, allegories, ludics, and Geometry of Interaction
 
-**EIG therefore does not claim “interaction is primitive” or “types arise by interaction” as unprecedented ideas.**
+Relational/allegorical approaches make relations primary and recover maps internally. Chu spaces and related channel/observation formalisms organize systems through dual families of states/tests and an interaction or evaluation matrix. Girard's ludics makes interaction and orthogonality foundational. Geometry of Interaction and Seiller's Interaction Graphs study execution, measurement, orthogonality, and observational equivalence.
+
+**EIG therefore does not claim “interaction is primitive”, “objects are determined by observations”, or “types arise by interaction” as unprecedented ideas.**
 
 Representative references include Thomas Seiller, *Interaction Graphs: Additives*, arXiv:1205.6557, and the ludics literature on designs, interaction, and biorthogonality.
 
-## 5. Isbell nuclei: especially close 2026 work
+## 6. Isbell nuclei: especially close 2026 work
 
 Juan Luis Gastaldi, Samantha Jarvis, Thomas Seiller, and John Terilla, *A calculus of types in Isbell nuclei*, arXiv:2606.03369 (2026), starts from execution and measurement and derives an orthogonality-generated type calculus through enriched Isbell nuclei.
 
@@ -40,7 +50,47 @@ execution + measurement -> emergent types.
 
 The remaining EIG target is broader: simultaneous reconstruction of response-minimal algebra, doctrine-relative interfaces/objects, internally selected maps, witness multiplicity/provenance, exact Hom/composition, doctrine change, and local-to-global descent.
 
-## 6. Boolean Tucker decomposition
+## 7. Six Birds / Foundations of Emergence Calculus (Tsiokos 2026)
+
+Ioannis Tsiokos, *Six Birds: Foundations of Emergence Calculus*, arXiv:2602.00134 (submitted 2026-01-28), is a close contemporary neighbour and predates this public EIG snapshot. It studies composable processes under bounded observational access, lenses/refinement, idempotent completion/packaging, fixed-point objects, audit monotonicity, and route/holonomy defects.
+
+The follow-up *To Lay a Stone with Six Birds: Finite-State Semantics for Packaging, Directionality, and Coarse-Graining*, DOI `10.20944/preprints202602.1699.v1` (posted 2026-02-27), is closer still. It explicitly adopts a **no-smuggling** discipline: externally declared quotients are disallowed, packaging equivalence is induced by an internal packaging endomap, and finite autonomous stochastic machines provide a canonical substrate for the Six Birds primitives.
+
+This materially overlaps EIG and must be cited. The current technical distinction is not that Six Birds merely “assumes objects”. In its no-smuggling substrate, objects are fixed points of internally induced packaging. The remaining difference is that an admissible family of deterministic observational maps/lenses is still part of the substrate, and the programme does not presently reconstruct the EIG package of all-context exact interfaces, internally selected maps, cross-object Hom fibres, and witness multiplicity/provenance from raw execution/response alone.
+
+Accordingly **EIG does not claim emergence by lenses, idempotent packaging, fixed-point objecthood, no-smuggling semantics, or route-mismatch/holonomy diagnostics as novel in the broad sense.**
+
+## 8. Stable quotients and distributed objecthood (Youvan 2026)
+
+Douglas C. Youvan's July 2026 object-formation series is another close contemporary neighbour. Representative papers include:
+
+- *Object Formation and Conceptual Resolution: Stable Quotients, Complete Refinement Lattices, and Functorial Observation*, DOI `10.13140/RG.2.2.25921.72800`;
+- *Local Observation and Global Objecthood: Sheaf Descent, Gluing Obstructions, and the Algebra of Distributed Concept Formation*, DOI `10.13140/RG.2.2.12748.99204`;
+- *Variational Objecthood: A Least-Complexity Principle for Stable Identity, Compression, and Concept Formation*, DOI `10.13140/RG.2.2.26170.76485`.
+
+The distributed-objecthood paper takes local domains equipped with local equivalence policies, forms the minimal global equivalence `EqCl(union E_i)`, and gives an exact faithful-descent criterion by restricting the generated relation back to every local domain. It also studies stable transformations, a presheaf of resolution lattices, gluing defects, and explicit zig-zag obstruction witnesses. This is genuine prior art for **quotient objecthood plus local-to-global descent**.
+
+The distinction from current EIG is again narrower than a slogan. Youvan explicitly allows local equivalence to originate from future behavior, tests, or admissible substitution, but the formal theory begins after those distinctions have been represented by supplied equivalence policies. The paper also explicitly notes that its set quotient erases provenance and path multiplicity, treats policy choice as a fixed-ontology limitation, and leaves groupoid/stack-level witness retention and higher coherence to later extensions. Strict network morphisms use supplied functions and index maps.
+
+Therefore EIG does **not** claim stable quotient objecthood, equivalence-policy lattices, generated globalization, faithful descent of local equivalences, or zig-zag gluing obstructions as unprecedented. Its stronger open target asks whether the policies/interfaces and the witness-enriched typed compositional world can themselves be reconstructed from the interaction doctrine.
+
+## 9. Algebraic Abiogenesis / Mathematical It from Bit (Youvan 2026)
+
+Youvan's *Mathematical It from Bit: Algebraic Abiogenesis, Anonymous Finite Operations, and the Automated Birth of Abstract Algebra*, DOI `10.13140/RG.2.2.25987.26403`, and the public repository `DougYouvan/algebraic-abiogenesis` are especially relevant to the algebraic sector.
+
+The formalism begins with an anonymous finite signature, finite operation tables, and a free term algebra. Exact equality of term functions across the finite model ecology defines a fully invariant congruence; quotienting the term algebra by that congruence produces algebraic objects and operations. The methodology then uses countermodels, basis compression, and structural maturation.
+
+This is a real **operation-first reconstruction** precedent. Its exact term-function congruence is close in spirit to EIG's contextual reduction. It nevertheless starts with a supplied signature, term syntax, variable set, and family of finite algebras, and it reconstructs an equational/free-algebra world rather than the full doctrine-relative interface/map/Hom/witness/descent package targeted by WEIR.
+
+EIG therefore does not claim that anonymous operations can first be observed extensionally and only later organized into quotient algebraic objects as an unprecedented idea.
+
+## 10. Predictive quotients and fibre fingerprints (Wang 2026)
+
+Qinyou Wang, *Fiber Fingerprints of Hidden Learning-State Dynamics*, arXiv:2608.15976 (submitted 2026-08-17), gives a particularly close future-context construction. A declared category of execution contexts, a state functor, a probe doctrine, and response maps induce predictive equivalence by equality under **all declared future probes**. The resulting quotient is a congruence, descends functorially, and satisfies a Nerode-type minimality theorem. The paper also studies set-level predictive fibres and richer conditional realizations.
+
+This is strong prior art for the claim that all-future-response equivalence can canonically produce a minimal predictive quotient and retain informative fibre structure. The distinction is that the execution-context category, state functor, protocols, present readout, and probe doctrine are supplied. EIG's open WEIR target asks when the relevant interface/object/map structure itself is forced downstream of a more primitive interaction laboratory, with exact cross-Hom and witness descent.
+
+## 11. Boolean Tucker decomposition
 
 Boolean tensor factorization, including Boolean Tucker decomposition, is established prior work. A basic reference is:
 
@@ -54,7 +104,7 @@ A nearby warning is also important: constrained Tucker decompositions over other
 
 The follow-up F/T/three-zero-hook analysis also touches classical semilattice theory. Abstract flatness/distributivity results for join-semilattices are prior art; the public EIG claim is the concrete Boolean junction application and finite obstruction analysis, not the classical theorem.
 
-## 7. Binary-rank Kronecker nonmultiplicativity: Shitov 2026
+## 12. Binary-rank Kronecker nonmultiplicativity: Shitov 2026
 
 A priority correction is load-bearing for the external-search lane:
 
@@ -69,11 +119,28 @@ rank_01(B tensor B) <= 24 < 25.
 
 The EIG search lane independently found a different `5 x 5` `5 -> 24` example on 2026-08-31. Its finite certificate is correct, but **the theorem that binary rank is nonmultiplicative under Kronecker product is not an EIG novelty claim**. The EIG example is retained only as a calibration of the parallel-composition search heuristic.
 
-## 8. Arity/nerve and generic reconstruction machinery
+## 13. Arity/nerve and generic reconstruction machinery
 
-Yoneda density, presheaf reconstruction, monads with arities, nervous monads, Grothendieck constructions, profunctors/equipments, and descent theory provide powerful generic reconstruction shells.
+Yoneda density, presheaf reconstruction, monads with arities, nervous monads, Grothendieck constructions, profunctors/equipments, sheaves/stacks, and descent theory provide powerful generic reconstruction shells.
 
 EIG may use these as representation machinery. It must not count their existence as evidence that the **correct process-generated or interaction-generated arities were derived rather than supplied**.
+
+## What remains distinctive in the present EIG formulation
+
+After these exclusions, the strongest honest EIG target is not any single slogan above. It is the simultaneous package formalized as WEIR:
+
+```text
+raw execution / admitted continuation response
+        -> exact contextual algebra
+        -> doctrine-relative interfaces / objecthood
+        -> internally characterized maps
+        -> witness multiplicity / provenance
+        -> exact Hom and composition reconstruction
+        -> doctrine refinement
+        -> intrinsic descent / obstruction geometry.
+```
+
+Several neighbouring theories cover large and important parts of this chain. **No claim is made here that an exhaustive historical search has proved the whole package unique.** The current literature audit has not identified a direct predecessor that derives this entire package from one frozen interaction laboratory without supplying the target object/map world.
 
 ## Novelty policy
 
