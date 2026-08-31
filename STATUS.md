@@ -34,10 +34,11 @@ For the `2 x 4 x 4` tensor in [`discoveries/boolean-tucker-junction-counterexamp
 
 but profile `(2,3,3)` is not jointly realizable by one exact Boolean Tucker core. The displayed tensor has exact feasible profile region
 
-\[
-\operatorname{Tuck}_{\mathbb B}(T)
-=\uparrow(2,3,4)\cup\uparrow(2,4,3).
-\]
+```text
+Tuck_B(T) = Up(2,3,4) union Up(2,4,3)
+```
+
+where `Up(p,q,r)` denotes the componentwise upward closure.
 
 The public checker exhausts every nonzero support mask on each mode, derives the mode ranks and unique minimum bases without a normalization lemma, checks the four blocking zeros, exhausts every distinct nonzero first-arm support family to rule out all profiles with the two other arms fixed at rank three, verifies the two Pareto profiles, and checks a same-shape same-mode-ranks tensor for which `(2,3,3)` is feasible.
 
