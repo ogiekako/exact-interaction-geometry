@@ -1,5 +1,6 @@
 name: Build discovery PDF
 
+# The checked-in PDF is rebuilt from the TeX source on main.
 on:
   push:
     branches: [main]
