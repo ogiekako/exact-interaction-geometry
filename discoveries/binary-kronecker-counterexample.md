@@ -2,6 +2,8 @@
 
 **Status:** complete finite proof and exact positive certificate; independent author/program recheck and historical-novelty audit pending before public priority is asserted.
 
+> **Recommended for reading:** [`binary-kronecker-counterexample.pdf`](binary-kronecker-counterexample.pdf) — the same note, typeset from the checked-in [`TeX source`](binary-kronecker-counterexample.tex). The Markdown version below is retained for convenient GitHub browsing, search, and diffs. GitHub Actions recompiles and publishes the PDF when the TeX source changes.
+
 This note is deliberately self-contained. The search procedure that found the certificate is not part of the proof.
 
 ## Result
