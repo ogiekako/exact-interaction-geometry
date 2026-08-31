@@ -166,6 +166,12 @@ The checker is intentionally small and does not import the search code. It verif
 
 See [`verification/README.md`](verification/README.md).
 
+## License
+
+Mathematical notes, theorem/proof text, README files, and other human-readable documentation are licensed under **CC BY 4.0** unless otherwise noted. Source code, scripts, build/workflow files, and machine-readable verification certificates are licensed under the **Apache License 2.0** unless otherwise noted.
+
+See [`LICENSE.md`](LICENSE.md) for the exact scope and license references.
+
 ## Research process and provenance
 
 The programme was developed through extended AI-assisted mathematical research, with theorem generation, counterexample search, repair, and independent adversarial audit lanes. Model-generated claims are not promoted merely because they were generated or computationally checked. Failed and superseded formulations remain in Git history and in the original research ledger; this repository keeps only the current public mathematical surface.
