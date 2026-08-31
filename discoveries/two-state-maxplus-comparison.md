@@ -1,8 +1,11 @@
 # Two-state max-plus comparison is decidable
 
+**Typeset PDF (recommended for reading):** [`two-state-maxplus-comparison.pdf`](two-state-maxplus-comparison.pdf)  
+**TeX source:** [`two-state-maxplus-comparison.tex`](two-state-maxplus-comparison.tex)
+
 **Status:** proof reconstructed and independently re-audited; public regression included. A targeted primary-source and current-literature audit through **2026-09-01** located no prior resolution of the two-state bounded-state comparison case. Historical absence cannot be proved bibliographically, so no absolute `first` claim is made.
 
-This note is self-contained at the level needed to check the mathematical mechanism. The finite regression is not the proof.
+This Markdown version is kept for browser reading, search, and diff review. The PDF above is the preferred typeset presentation. The finite regression is not the proof.
 
 ## 1. Result
 
