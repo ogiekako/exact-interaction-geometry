@@ -1,5 +1,7 @@
 # Contemporary neighbours: input/output audit
 
+**Last audited: 2026-09-01**
+
 This note compares EIG with unusually close contemporary programmes by asking a strict question:
 
 > **What mathematical structure is supplied as input, and what structure is actually derived?**
@@ -19,7 +21,7 @@ Current WEIR asks, in its strongest form, whether one frozen doctrine can start 
 7. local-to-global descent and intrinsic obstruction geometry;
 8. blind recovery in distant domains without supplying the expected target categories.
 
-A neighbour is therefore not declared equivalent merely because it uses words such as interaction, emergence, quotient, objecthood, lens, descent, or holonomy.
+A neighbour is therefore not declared equivalent merely because it uses words such as interaction, emergence, quotient, objecthood, lens, descent, witness, policy, or holonomy.
 
 ## Six Birds: Foundations of Emergence Calculus
 
@@ -42,32 +44,49 @@ The remaining distinction is narrower. Even the no-smuggling substrate retains a
 
 **Audit verdict:** large overlap; close contemporary neighbour; not currently identified as equivalent to WEIR.
 
-## Youvan: stable quotients and distributed objecthood
+## Youvan 2026: stable quotients, admissibility, certified witnesses, and policy genesis
 
-**References:** Douglas C. Youvan, July 2026 series, especially *Object Formation and Conceptual Resolution* and *Local Observation and Global Objecthood: Sheaf Descent, Gluing Obstructions, and the Algebra of Distributed Concept Formation*.
+Douglas C. Youvan's July 2026 sequence is a substantially closer neighbour than a comparison with one distributed-objecthood paper alone suggests. Relevant items include:
 
-The local-to-global theory starts with a state space `X`, a cover `{U_i}`, and supplied local equivalence policies `E_i`. Each quotient `U_i/E_i` is a local object space. The canonical globalization is
+- *Object Formation and Conceptual Resolution: Stable Quotients, Complete Refinement Lattices, and Functorial Observation*, DOI `10.13140/RG.2.2.25921.72800`;
+- *Local Observation and Global Objecthood: Sheaf Descent, Gluing Obstructions, and the Algebra of Distributed Concept Formation*, DOI `10.13140/RG.2.2.12748.99204`;
+- *Admissibility Algebra: A Policy-Relative Foundation for Identity, Invariance, and Certified Transformation*, DOI `10.13140/RG.2.2.28510.40006`;
+- *Admissibility Fibrations: Policy-Indexed Identity, Certified Quotients, and Lyapunov-Stable Emergence*, DOI `10.13140/RG.2.2.11130.25283`;
+- *Categorical Neural Abiogenesis: Policy-Indexed Quotients, Functorial Compression, and Certified Memory in No-Corpus Artificial Intelligence*, DOI `10.13140/RG.2.2.36315.73765`;
+- *Equivalence Genesis and Recursive Ontogenesis: Obstruction-Driven Identity Policies Beyond Homotopy Equivalence and Univalence*, DOI `10.13140/RG.2.2.17359.44968`.
+
+The earlier local-to-global objecthood construction starts with local equivalence policies, forms their generated global equivalence, and gives an exact faithful-descent condition. That is direct prior art for quotient objecthood, policy-relative resolution, gluing defects, and explicit obstruction witnesses.
+
+The later admissibility line materially strengthens the overlap. *Admissibility Algebra* treats the basic data as presentations, candidate transformations, policies, admissibility selectors, invariants, certificates, and coherence laws. *Admissibility Fibrations* explicitly makes policy-relative identity proof-relevant: certificate spaces may retain multiple witnesses and higher coherence, policies are organized in an indexed / fibered categorical structure, and refinement induces functorial reindexing or weakening. Therefore it is **not** accurate to characterize the Youvan programme as merely set-quotient objecthood that necessarily erases witness multiplicity.
+
+*Categorical Neural Abiogenesis* goes further in a computational direction: certified memory stores quotient objects together with governing policies, certificates/witnesses, countermodels, canonical representatives, known failure conditions, and higher coherence between independently obtained certificates. Thus witness-sensitive retention and policy-relative lawful reuse are themselves contemporary prior art.
+
+Most importantly for the EIG boundary, *Equivalence Genesis and Recursive Ontogenesis* explicitly proposes policy generation rather than only externally fixed policy choice. Its central cycle is schematically
 
 ```text
-E* = EqCl(union_i E_i),
+failed identity
+    -> obstruction
+    -> new invariant
+    -> new policy
+    -> new objects.
 ```
 
-and faithful descent holds exactly when `E*|U_i = E_i` for every domain. Returning zig-zags are obstruction witnesses. Compatible local transformations can assemble and descend to the global quotient, and the lattices `Eq(U)` form a contravariant presheaf of resolutions.
+It also treats refinement, coarsening, policy composition, gluing, and obstruction-driven discovery of new identity policies. Accordingly EIG must **not** use “the other framework supplies the identity policy whereas EIG generates it” as a generic novelty firewall against the Youvan programme.
 
-This is direct prior art for:
+The remaining distinction has to be stated at the **derivation boundary and simultaneous-package level**, not by denying these ingredients. In the cited Youvan formalisms, substantial mathematical structure remains primitive or externally parameterized: universes of presentations and candidate transformations, policies or policy-generating machinery, admissibility selectors, invariant languages, certificate/coherence data, contexts/tasks, and in some constructions signatures or term syntax. The current audit has not identified in this sequence a theorem that starts from the WEIR-style common primitive laboratory of execution/pasting plus admitted continuation response and then, by one frozen rule, simultaneously derives:
 
-- policy-relative quotient objecthood;
-- local-to-global object formation;
-- exact faithful-descent criteria;
-- gluing defects and returning-zig-zag witnesses;
-- transformation-stable global quotients;
-- presheaf organization of local resolutions.
+- the coarsest exact all-context contextual algebra;
+- the intended interface/object locus;
+- internally selected map-like interactions;
+- exact reopened-boundary witness provenance;
+- cross-object Hom data and composition;
+- doctrine change;
+- intrinsic descent geometry;
+- and blind recovery in mathematically distant calibration domains.
 
-The paper is also unusually useful because it states its limitations explicitly. It says that the local/global equivalence relations are supplied policies, not yet selected or learned by the theory; that quotienting erases provenance and multiplicity of identity paths; and that groupoids, enriched categories, stacks, higher coherence, and provenance-sensitive witnesses are later extensions. Its strict network morphisms also use supplied functions and index maps.
+That is a narrower distinction than the previous comparison, but it is the defensible one.
 
-This makes the difference from WEIR precise. Youvan supplies local identity policies and then solves their exact globalization/descent problem. WEIR asks, more strongly, when the identity/interface policy itself and the witness-enriched typed world can be reconstructed from interaction data.
-
-**Audit verdict:** very close on quotient objecthood and descent; explicitly not yet witness-enriched or policy-generating in the EIG sense.
+**Audit verdict:** very large overlap on policy-relative objecthood, descent, proof-relevant certificates, doctrine/policy refinement, and obstruction-driven policy genesis; these ingredients are not EIG novelty claims. No direct predecessor of the full WEIR gate package from one frozen interaction laboratory has been identified in this audit.
 
 ## Youvan: Algebraic Abiogenesis / Mathematical It from Bit
 
@@ -116,12 +135,16 @@ EIG is **not** claiming novelty for any of the following in isolation:
 - observational or behavioral equivalence;
 - all-future-context minimization;
 - idempotent completion;
+- policy-indexed identity or objecthood;
+- proof-relevant certificates, witness multiplicity, or higher coherence as such;
+- functorial refinement/change of identity policy;
+- obstruction-driven refinement or generation of identity policies;
 - local-to-global descent;
 - gluing/holonomy defects;
 - fibres/provenance as useful retained data;
 - anonymous operations giving rise to quotient algebraic theories.
 
-The narrow open claim is about **simultaneity and derivation boundary**: can a natural doctrine start with one interaction laboratory and derive the exact contextual algebra, object/interface locus, internal maps, witness-enriched Hom/composition, doctrine refinement, and descent geometry without separately supplying the answer at each stage?
+The narrow open claim is about **simultaneity and derivation boundary**: can a natural doctrine start with one interaction laboratory and derive the exact contextual algebra, object/interface locus, internal maps, witness-enriched Hom/composition, doctrine refinement, and descent geometry without separately supplying the answer at each stage, and can one frozen rule survive blind calibration in structurally distant domains?
 
 That is why WEIR is written as acceptance gates rather than as a slogan.
 
@@ -134,4 +157,4 @@ This audit is deliberately conservative:
 - close 2026 work is cited even when peer-review status is unsettled, because priority and conceptual overlap do not depend on journal publication;
 - a future equivalence theorem identifying EIG with an existing framework would be a legitimate research result, not something to conceal.
 
-At the present snapshot, the audit has found several frameworks covering large pieces of WEIR but has **not identified a direct predecessor that derives the entire gate package from one frozen interaction laboratory**.
+At the present snapshot, the audit has found several frameworks covering large and important pieces of WEIR but has **not identified a direct predecessor that derives the entire gate package from one frozen interaction laboratory**.
