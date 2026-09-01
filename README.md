@@ -241,7 +241,7 @@ See [`provenance/RESEARCH_PROCESS.md`](provenance/RESEARCH_PROCESS.md) and [`pro
 
 ---
 
-**Author:** Keigo Oka (`ogiekako@gmail.com`) — Google. Work done in a personal capacity; no Google internal resources were used.  
+**Author:** Keigo Oka  
 **ORCID:** [`0009-0007-8119-9267`](https://orcid.org/0009-0007-8119-9267)  
 **Initial EIG public-foundation snapshot:** 2026-08-31  
 **Historical novelty:** not claimed for classical ingredients; the two-state max-plus result is presented as a published-open-case resolution under a dated literature audit rather than an absolute historical-first claim.
