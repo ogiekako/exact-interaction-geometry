@@ -3,6 +3,8 @@
 **Typeset PDF (recommended for reading):** [`two-state-maxplus-comparison.pdf`](two-state-maxplus-comparison.pdf)  
 **TeX source:** [`two-state-maxplus-comparison.tex`](two-state-maxplus-comparison.tex)
 
+**Author:** Keigo Oka (`ogiekako@gmail.com`) — Google. Work done in a personal capacity; no Google internal resources were used. ORCID: [`0009-0007-8119-9267`](https://orcid.org/0009-0007-8119-9267).
+
 **Status:** proof reconstructed and independently re-audited; public regression included. A targeted primary-source and current-literature audit through **2026-09-01** located no prior resolution of the two-state bounded-state comparison case. Historical absence cannot be proved bibliographically, so no absolute `first` claim is made.
 
 This Markdown version is kept for browser reading, search, and diff review. The PDF above is the preferred typeset presentation. The finite regression is not the proof.
@@ -253,3 +255,9 @@ The proof itself is ordinary weighted-automata mathematics and does not depend o
 The EIG connection is discovery provenance. Projectivizing the two-state forward response isolates one exact unbounded residual coordinate. The decisive question is then whether an interaction step can both preserve that residual information for future continuation and expose its magnitude to the current response. In dimension two the answer is no: the retain/read lemma forces a one-counter boundary. That structural separation suggested the normal form and the decision procedure.
 
 This is the kind of external test the programme wants: an interaction-first question selects a conventional mathematical problem, and the final theorem is independently stated and checkable without EIG vocabulary.
+
+## 10. AI-assisted research disclosure
+
+This work was developed through AI-assisted mathematical research. OpenAI reasoning models, including GPT-5.6 Sol, materially contributed to theorem discovery, proof drafting, verifier generation, and literature-audit support. Keigo Oka directed the research programme, curated the final mathematical claims after adversarial checking, and takes responsibility for the contents of this note.
+
+Model output is not treated as mathematical evidence. The theorem is intended to stand on the written proof above, together with the public regression as an independent finite check of its algebraic mechanism.
