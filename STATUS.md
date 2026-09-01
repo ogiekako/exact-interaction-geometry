@@ -133,6 +133,6 @@ A passing verifier does not establish historical novelty.
 
 ## Historical novelty boundary
 
-Many EIG ingredients are established mathematics. Max-plus automata, projective normalization, one-counter languages, Parikh's theorem, and Presburger arithmetic are classical ingredients. The staged public claim is the exact composition of these ingredients into the two-state right-hand comparison theorem and its `d=2` open-case consequence, under the dated novelty audit above.
+Many EIG ingredients are established mathematics. Max-plus automata, projective normalization, one-counter languages, Parikh's theorem, and Presburger arithmetic are classical ingredients. The public claim is the exact composition of these ingredients into the two-state right-hand comparison theorem and its `d=2` open-case consequence, under the dated novelty audit above.
 
 Boolean Tucker decomposition is prior work; nonnegative Tucker literature already contains non-field-like minimum-rank phenomena; and semilattice flatness/distributivity is classical. The Boolean public claim remains the explicit exact junction counterexample and its independently checkable rank region.
