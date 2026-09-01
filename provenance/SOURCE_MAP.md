@@ -85,7 +85,7 @@ docs/EIG_EXTERNAL_BOOLEAN_SEMILATTICE_FLATNESS_FORBIDDEN_HOOK_20260831.md
 Follow-up verifier:
 
 ```text
-verification/verify_eig_external_boolean_semilATTICE_FLATNESS_20260831.py
+verification/verify_eig_external_boolean_semilattice_flatness_20260831.py
 ```
 
 The public extraction intentionally narrows the story. It presents the explicit `2 x 4 x 4` Boolean Tucker incompatibility, its small blocker certificate, and the EIG question that led to it. It does not rely on a historical `first` claim.
