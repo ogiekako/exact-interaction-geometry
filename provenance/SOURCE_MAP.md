@@ -7,9 +7,11 @@ repository: ogiekako/test
 subtree: experiments/repairable-tropical-north-star
 ```
 
+References to the ledger below describe research provenance. They are not validation badges, and material absent from this public repository should not be treated as publicly verified mathematics.
+
 ## Foundational extraction
 
-The finite response calculus, interaction-first objecthood formulation, and category-reconstruction theorem were extracted from the main-audited EIG material of 2026-08-30/31. Public files:
+The finite response calculus, interaction-first objecthood formulation, and category-reconstruction theorem were extracted from EIG material developed on 2026-08-30/31. Public files:
 
 - [`../theory/01-finite-exact-interactions.md`](../theory/01-finite-exact-interactions.md)
 - [`../FOUNDATIONS.md`](../FOUNDATIONS.md)
@@ -20,35 +22,35 @@ The larger research ledger is intentionally not mirrored here. Newer results are
 
 ## Two-state max-plus comparison theorem
 
-The top-level conventional-mathematics theorem is extracted from the two-state max-plus lane of 2026-08-28, then re-audited for public release on 2026-09-01.
+The top-level conventional-mathematics theorem is extracted from the two-state max-plus lane of 2026-08-28, then separately reviewed and repaired for public release on 2026-09-01.
 
-Primary ledger theorem note:
+Primary internal theorem note:
 
 ```text
 docs/TWO_STATE_TAIL_NORMAL_FORM_AND_STATE_COUNT_CALIBRATION.md
 ```
 
-Independent ledger proof/literature audit:
+Separate internal proof/literature review:
 
 ```text
 docs/AUDIT_TWO_STATE_TAIL_NORMAL_FORM_AND_STATE_COUNT_CALIBRATION.md
 ```
 
-Dedicated ledger literature record:
+Dedicated internal literature record:
 
 ```text
 docs/LITERATURE_STATE_COUNT_DECIDABILITY_FRONTIER.md
 ```
 
-Earlier exact ledger regression:
+Earlier exact internal regression:
 
 ```text
 verification/verify_two_state_projective_one_counter.py
 ```
 
-The earlier ledger audit used the shorthand “retain/read separation” for the tail mechanism. During public adversarial review on 2026-09-01, the literal two-way formulation was found to omit a third logically necessary case: **silent forget**, where the old unbounded gap is erased while the height increment is constant (the all-zero letter is the minimal example). The public proof was therefore repaired to the exact **propagate / forget / read-and-forget trichotomy**. The theorem mechanism that survives is the one-way property needed by the one-counter reduction: a transition whose output increment depends on the unbounded magnitude does not propagate that magnitude to the future.
+The earlier internal review used the shorthand “retain/read separation” for the tail mechanism. During a separate model-assisted adversarial review on 2026-09-01, the literal two-way formulation was found to omit a third logically necessary case: **silent forget**, where the old unbounded gap is erased while the height increment is constant (the all-zero letter is the minimal example). The public proof was therefore repaired to the exact **propagate / forget / read-and-forget trichotomy**. The theorem mechanism that survives is the one-way property needed by the one-counter reduction: a transition whose output increment depends on the unbounded magnitude does not propagate that magnitude to the future.
 
-The public one-counter lemma was simultaneously strengthened to a functional construction with an explicit counter invariant and separate zero-emission drain for forget versus `-1`-emission drain for read-and-forget. The public checker now directly classifies the trichotomy and contains the all-zero silent-forget regression.
+The public one-counter lemma was simultaneously strengthened to a functional construction with an explicit counter invariant and separate zero-emission drain for forget versus `-1`-emission drain for read-and-forget. The public checker directly classifies the trichotomy and contains the all-zero silent-forget regression.
 
 For the public repository, the theorem and checker were **reconstructed rather than copied wholesale**. Public files:
 
@@ -56,33 +58,33 @@ For the public repository, the theorem and checker were **reconstructed rather t
 - [`../verification/verify_two_state_maxplus.py`](../verification/verify_two_state_maxplus.py)
 - [`TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md)
 
-A fresh 2026-09-01 literature audit confirmed that Daviaud--Guillon--Merlet (MFCS 2017) explicitly leave bounded-state comparison open from 2 through 552 states after their 553-state undecidability theorem. Searches across same-model two-state identities, comparison/equivalence surveys, `2 x 2` tropical-matrix structure, ambiguity/simulation classes, few-register CRA work, the 2025 Big-O/affine-domination theorem, and the 2026 determinisation/unambiguisation/unary-tropical literature located no earlier theorem resolving the two-state comparison case or the stronger arbitrary-left/two-state-right containment statement.
+A dated literature review on 2026-09-01 checked the DGM 2017 problem statement and nearby same-model and adjacent literature. The review did not identify an earlier theorem resolving the two-state comparison case or the stronger arbitrary-left/two-state-right containment statement. This is bounded search evidence, not proof of historical absence.
 
-The curation therefore uses the wording **“published open `d=2` case resolved; no prior resolution located in the dated audit”**, not an absolute historical-first claim.
+The curation therefore uses wording equivalent to **“the manuscript proves the `d=2` case of the published DGM 2017 question; no prior resolution was identified in the dated review”**, not an absolute historical-first claim.
 
 ## Boolean Tucker external case study
 
 The second external case study is extracted from the 2026-08-31 Boolean junction/Tucker lane in the research ledger.
 
-Primary ledger note:
+Primary internal note:
 
 ```text
 docs/EIG_EXTERNAL_BOOLEAN_TUCKER_RANK_REGION_20260831.md
 ```
 
-Solver-free ledger verifier:
+Solver-free internal verifier:
 
 ```text
 verification/verify_eig_external_boolean_tucker_rank_region_20260831.py
 ```
 
-Follow-up structural note:
+Unpublished structural follow-up note:
 
 ```text
 docs/EIG_EXTERNAL_BOOLEAN_SEMILATTICE_FLATNESS_FORBIDDEN_HOOK_20260831.md
 ```
 
-Follow-up verifier:
+Unpublished follow-up verifier:
 
 ```text
 verification/verify_eig_external_boolean_semilattice_flatness_20260831.py
@@ -95,7 +97,7 @@ Public files:
 - [`../discoveries/boolean-tucker-junction-counterexample.md`](../discoveries/boolean-tucker-junction-counterexample.md)
 - [`../verification/verify_boolean_tucker_junction_counterexample.py`](../verification/verify_boolean_tucker_junction_counterexample.py)
 
-The reduced F/T/three-zero-hook classification remains summarized as structural follow-up rather than being imported wholesale into the public core. The ledger itself records the classical semilattice flatness/distributivity boundary and the remaining universal identification bridge.
+The reduced F/T/three-zero-hook material remains **PRIVATE / NOT PUBLICLY VERIFIABLE** because its supporting proof/checker has not been imported into this repository. It is not relied upon for the public Boolean Tucker theorem statement.
 
 ## Binary-Kronecker calibration and priority correction
 
@@ -117,13 +119,13 @@ A user-executed 48-core run then found a different explicit `5 x 5` binary matri
 ed7cd7fe5e6b02a3e7f65ebf4f3c5b31670fac0f.
 ```
 
-The finite mathematics is correct, but the theorem is **not historically new to EIG**. A later literature check located Yaroslav Shitov's preprint *Factoring Kronecker squares of nonnegative matrices with GPT-5.6 Sol*, publicly posted on **2026-07-25**, which gives another explicit `5 x 5` binary matrix `B` with `rank_01(B)=5` and `rank_01(B tensor B)<=24<25`.
+The public finite certificate is retained, but the theorem is **not presented as historically new to EIG**. A later literature check located Yaroslav Shitov's preprint *Factoring Kronecker squares of nonnegative matrices with GPT-5.6 Sol*, publicly posted on **2026-07-25**, which gives another explicit `5 x 5` binary matrix `B` with `rank_01(B)=5` and `rank_01(B tensor B)<=24<25`.
 
-Therefore the EIG-found example is retained only as an independent rediscovery / calibration of the parallel-witness search heuristic. No priority is claimed for binary-rank Kronecker nonmultiplicativity.
+Therefore the EIG-found example is retained only as a project rediscovery / calibration of the parallel-witness search heuristic. No priority is claimed for binary-rank Kronecker nonmultiplicativity.
 
 ## Current external-search frontier
 
-The research ledger continues to hold finite-certificate search targets separately from promoted theorem material. Search infrastructure is not imported as evidence unless it returns a short independently audited mathematical result.
+The research ledger continues to hold finite-certificate search targets separately from promoted theorem material. Search infrastructure is not evidence unless and until it produces a public proof or certificate appropriate to the claim.
 
 ## Earlier source-pair dossier
 
