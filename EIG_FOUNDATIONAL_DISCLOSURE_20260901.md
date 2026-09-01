@@ -240,7 +240,7 @@ EIG is intended to be falsifiable and mathematically productive, not only a voca
 
 The programme's residual/interface viewpoint led to isolating the unique one-dimensional projective gap of a two-state max-plus automaton and asking whether a transition can simultaneously preserve that unbounded residual for future computation and expose its magnitude in the current output.
 
-The answer is an exact retain/read separation. It yields an exact one-counter realization and a decidability proof for arbitrary-left / at-most-two-state-right max-plus comparison, closing the `d=2` endpoint of the bounded-state range explicitly left open by Daviaud--Guillon--Merlet (MFCS 2017). The theorem itself is ordinary weighted-automata mathematics and does not depend on EIG.
+The answer is an exact tail trichotomy—propagate, forget, or read-and-forget—with the key property that a step whose output depends on the unbounded magnitude cannot also propagate that magnitude to the future. It yields an exact one-counter realization and a decidability proof for arbitrary-left / at-most-two-state-right max-plus comparison, closing the `d=2` endpoint of the bounded-state range explicitly left open by Daviaud--Guillon--Merlet (MFCS 2017). The theorem itself is ordinary weighted-automata mathematics and does not depend on EIG.
 
 See [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf).
 
