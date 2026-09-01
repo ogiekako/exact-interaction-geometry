@@ -46,7 +46,7 @@ Earlier exact ledger regression:
 verification/verify_two_state_projective_one_counter.py
 ```
 
-The earlier ledger audit used the shorthand “retain/read separation” for the tail mechanism. During public adversarial review on 2026-09-01, the literal two-way formulation was found to omit a third, harmless but logically necessary case: **silent forget**, where the old unbounded gap is erased while the height increment is constant (the all-zero letter is the minimal example). The public proof was therefore repaired to the exact **propagate / forget / read-and-forget trichotomy**. The theorem mechanism that survives is the one-way property needed by the one-counter reduction: a transition whose output increment depends on the unbounded magnitude does not propagate that magnitude to the future.
+The earlier ledger audit used the shorthand “retain/read separation” for the tail mechanism. During public adversarial review on 2026-09-01, the literal two-way formulation was found to omit a third logically necessary case: **silent forget**, where the old unbounded gap is erased while the height increment is constant (the all-zero letter is the minimal example). The public proof was therefore repaired to the exact **propagate / forget / read-and-forget trichotomy**. The theorem mechanism that survives is the one-way property needed by the one-counter reduction: a transition whose output increment depends on the unbounded magnitude does not propagate that magnitude to the future.
 
 The public one-counter lemma was simultaneously strengthened to a functional construction with an explicit counter invariant and separate zero-emission drain for forget versus `-1`-emission drain for read-and-forget. The public checker now directly classifies the trichotomy and contains the all-zero silent-forget regression.
 
@@ -85,7 +85,7 @@ docs/EIG_EXTERNAL_BOOLEAN_SEMILATTICE_FLATNESS_FORBIDDEN_HOOK_20260831.md
 Follow-up verifier:
 
 ```text
-verification/verify_eig_external_boolean_semILATTICE_FLATNESS_20260831.py
+verification/verify_eig_external_boolean_semilattice_flatness_20260831.py
 ```
 
 The public extraction intentionally narrows the story. It presents the explicit `2 x 4 x 4` Boolean Tucker incompatibility, its small blocker certificate, and the EIG question that led to it. It does not rely on a historical `first` claim.
