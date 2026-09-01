@@ -8,6 +8,8 @@ Exact Interaction Geometry (EIG) is an emerging mathematical research programme 
 
 The strongest version of that question is open. This repository is a dated foundational disclosure, not a declaration that a new foundation of mathematics has been completed.
 
+**For the strongest precise formulation of EIG that this repository claims as of 2026-09-01, read [`EIG_FOUNDATIONAL_DISCLOSURE_20260901.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260901.md).** It separates the proved core, programme-level design constraints, open WEIR target, and prior-art boundary in one dated claim surface.
+
 **Jump:** [core idea](#the-core-idea) · [two-state max-plus theorem](#a-published-open-case-two-state-max-plus-comparison) · [Boolean Tucker case study](#a-second-external-case-study-boolean-tucker-junction-failure) · [exact calibrations](#two-exact-calibrations) · [open foundation](#what-is-conjectural) · [prior art](#what-is-not-being-claimed) · [status](#current-epistemic-status)
 
 ## The core idea
@@ -194,16 +196,17 @@ The detailed boundary is in [`STATUS.md`](STATUS.md).
 
 ## Read in this order
 
-1. [`FOUNDATIONS.md`](FOUNDATIONS.md) — the minimal interaction-first setup and design constraints.
-2. [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf) — the preferred typeset statement and proof of the strongest current conventional-mathematics theorem arising from the programme.
-3. [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md) — why the result is treated as a resolution of a published open case, with a conservative priority boundary.
-4. [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md) — a second EIG-to-external-mathematics example.
-5. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
-6. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
-7. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
-8. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
-9. [`ROADMAP.md`](ROADMAP.md) — the main open gates.
-10. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source/audit provenance.
+1. [`EIG_FOUNDATIONAL_DISCLOSURE_20260901.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260901.md) — the strongest dated formulation of what EIG means at this snapshot, with proved/open/prior-art boundaries in one place.
+2. [`FOUNDATIONS.md`](FOUNDATIONS.md) — the minimal interaction-first setup and design constraints.
+3. [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf) — the preferred typeset statement and proof of the strongest current conventional-mathematics theorem arising from the programme.
+4. [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md) — why the result is treated as a resolution of a published open case, with a conservative priority boundary.
+5. [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md) — a second EIG-to-external-mathematics example.
+6. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
+7. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
+8. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
+9. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
+10. [`ROADMAP.md`](ROADMAP.md) — the main open gates.
+11. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source/audit provenance.
 
 ## Verification
 
