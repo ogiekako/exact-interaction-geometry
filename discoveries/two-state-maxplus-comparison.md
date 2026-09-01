@@ -5,7 +5,7 @@
 
 **Author:** Keigo Oka (`ogiekako@gmail.com`) — Google. Work done in a personal capacity; no Google internal resources were used. ORCID: [`0009-0007-8119-9267`](https://orcid.org/0009-0007-8119-9267).
 
-**Status:** proof reconstructed and independently re-audited; public regression included. A targeted primary-source and current-literature audit through **2026-09-01** located no prior resolution of the two-state bounded-state comparison case. Historical absence cannot be proved bibliographically, so no absolute `first` claim is made.
+**Status:** public proof and finite regression included. A separate model-assisted adversarial review led to a repair of the tail statement before this version. A targeted primary-source and current-literature review through **2026-09-01** did not identify a prior resolution of the two-state bounded-state comparison case. Historical absence cannot be established by such a search, so no absolute `first` claim is made.
 
 This Markdown version is kept for browser reading, search, and diff review. The PDF above is the preferred typeset presentation. The finite regression is not the proof.
 
@@ -37,11 +37,11 @@ We allow arbitrary max-plus initial/final weights and words in `Sigma*`. The MFC
 
 No useful complexity bound is claimed here.
 
-## 2. The published open case
+## 2. A case from a published open problem
 
 Laure Daviaud, Pierre Guillon, and Glenn Merlet, *Comparison of Max-Plus Automata and Joint Spectral Radius of Tropical Matrices*, MFCS 2017, proved bounded-state undecidability at 553 states and explicitly left the interval from 2 through 552 open. Their conclusion asks what happens “between 2 and 552 states” and notes that even the two-state case appears difficult.
 
-The theorem above closes the `d=2` endpoint of that stated bounded-state comparison question. It is slightly stronger than needed for that endpoint because only the **right-hand** automaton is required to have at most two states.
+The theorem above proves the `d=2` case of that stated bounded-state comparison question. It is slightly stronger than needed for that endpoint because only the **right-hand** automaton is required to have at most two states.
 
 ## 3. Two-state projective coordinates
 
@@ -186,7 +186,7 @@ Finally, `[[A]](w) > [[B]](w)` exactly when some accepting run of `A` has weight
 
 Taking `A` to be the total zero one-state automaton gives two-state positivity.
 
-## 7. Independent regression
+## 7. Public finite regression
 
 Run
 
@@ -200,22 +200,22 @@ The public checker performs three exact finite regressions:
 2. `15,552` tail checks over every `2 x 2` letter with entries in `{-infinity,-2,-1,0,1,2}` and both projective tails, explicitly classifying death / propagate / forget / read-and-forget and checking the all-zero silent-forget case;
 3. `465,831` end-to-end word checks comparing direct max-plus evaluation with a separately coded projective/counter evaluator.
 
-The infinite theorem rests on the proof above, not on finite enumeration.
+The infinite theorem rests on the proof above, not on finite enumeration. The regression is computational evidence for the finite subclaims it checks; it is not third-party mathematical verification.
 
-## 8. Novelty audit
+## 8. Dated literature review
 
-A fresh audit on 2026-09-01 searched the theorem under neighbouring descriptions including two-state max-plus comparison/positivity, `2 x 2` tropical formulations, one-counter compilation, few-register CRA work, and recent determinisation/unambiguisation literature. No prior theorem deciding the two-state bounded-state comparison case, no theorem deciding arbitrary-left versus two-state-right containment, and no equivalent one-counter compilation was located.
+A targeted review on 2026-09-01 searched the theorem under neighbouring descriptions including two-state max-plus comparison/positivity, `2 x 2` tropical formulations, one-counter compilation, few-register CRA work, and recent determinisation/unambiguisation literature. In the material reviewed, no prior theorem deciding the two-state bounded-state comparison case, no theorem deciding arbitrary-left versus two-state-right containment, and no equivalent one-counter compilation was identified.
 
 Especially relevant neighbouring work includes:
 
 - Laure Daviaud, Pierre Guillon, Glenn Merlet, *Comparison of Max-Plus Automata and Joint Spectral Radius of Tropical Matrices*, MFCS 2017, DOI `10.4230/LIPIcs.MFCS.2017.19` — states the bounded-state open range `2..552`.
 - Laure Daviaud, Marianne Johnson, *The Shortest Identities for Max-Plus Automata with Two States*, MFCS 2017, DOI `10.4230/LIPIcs.MFCS.2017.48` — the same two-state model, but identities rather than comparison.
-- Laure Daviaud, *Containment and Equivalence of Weighted Automata: Probabilistic and Max-Plus Cases*, LATA 2020, DOI `10.1007/978-3-030-40608-0_2` — containment/equivalence survey; no two-state solution recorded.
-- Laure Daviaud, David Purser, Marie Tcheng, *The Big-O Problem for Max-Plus Automata is Decidable (PSPACE-Complete)*, LMCS 21(3), 2025, DOI `10.46298/lmcs-21(3:3)2025` — solves affine domination, explicitly a relaxation of exact containment.
-- Shaull Almagor, Udi Boker, Orna Kupferman, *What's decidable about weighted automata?*, Information and Computation 282 (2022), DOI `10.1016/j.ic.2020.104651` — broad frontier, not a two-state comparison theorem.
-- later few-register, determinisation, unambiguisation, register-minimisation, and unary-tropical results — different restrictions or decision problems.
+- Laure Daviaud, *Containment and Equivalence of Weighted Automata: Probabilistic and Max-Plus Cases*, LATA 2020, DOI `10.1007/978-3-030-40608-0_2` — containment/equivalence survey; this review did not identify a two-state solution there.
+- Laure Daviaud, David Purser, Marie Tcheng, *The Big-O Problem for Max-Plus Automata is Decidable (PSPACE-Complete)*, LMCS 21(3), 2025, DOI `10.46298/lmcs-21(3:3)2025` — concerns affine domination rather than exact containment.
+- Shaull Almagor, Udi Boker, Orna Kupferman, *What's decidable about weighted automata?*, Information and Computation 282 (2022), DOI `10.1016/j.ic.2020.104651` — broad decision-problem background.
+- later few-register, determinisation, unambiguisation, register-minimisation, and unary-tropical results — neighbouring restrictions or decision problems considered in the review.
 
-The detailed search record is in [`../provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](../provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md).
+The detailed search record is in [`../provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](../provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md). The review is bounded and does not establish historical firstness.
 
 ## 9. Why it belongs in EIG
 
@@ -223,6 +223,6 @@ The proof itself is ordinary weighted-automata mathematics and does not depend o
 
 ## 10. AI-assisted research disclosure
 
-This work was developed through AI-assisted mathematical research. OpenAI reasoning models, including GPT-5.6 Sol, materially contributed to theorem discovery, proof drafting, verifier generation, and literature-audit support. Keigo Oka directed the research programme, curated the final mathematical claims after adversarial checking, and takes responsibility for the contents of this note.
+This work was developed through AI-assisted mathematical research. OpenAI reasoning models, including GPT-5.6 Sol, materially contributed to theorem discovery, proof drafting, verifier generation, literature-search support, and separate adversarial review. Keigo Oka directed the research programme and takes responsibility for the contents of this note.
 
-Model output is not treated as mathematical evidence. The theorem is intended to stand on the written proof above, together with the public regression as an independent finite check of its algebraic mechanism.
+Model output, agreement between models, and internal review are not treated as mathematical evidence. The theorem is intended to stand on the written proof above; the public regression provides computational checks of the finite algebraic mechanisms it explicitly tests.
