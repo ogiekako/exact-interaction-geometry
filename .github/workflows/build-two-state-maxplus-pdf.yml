@@ -1,0 +1,52 @@
+name: build two-state max-plus PDF
+
+on:
+  push:
+    branches:
+      - main
+      - staging/two-state-maxplus
+    paths:
+      - discoveries/two-state-maxplus-comparison.tex
+      - .github/workflows/build-two-state-maxplus-pdf.yml
+  pull_request:
+    paths:
+      - discoveries/two-state-maxplus-comparison.tex
+      - .github/workflows/build-two-state-maxplus-pdf.yml
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-base texlive-latex-recommended texlive-latex-extra
+
+      - name: Compile note
+        run: |
+          mkdir -p /tmp/two-state-maxplus-pdf
+          latexmk -pdf -interaction=nonstopmode -halt-on-error \
+            -outdir=/tmp/two-state-maxplus-pdf \
+            discoveries/two-state-maxplus-comparison.tex
+          cp /tmp/two-state-maxplus-pdf/two-state-maxplus-comparison.pdf \
+            discoveries/two-state-maxplus-comparison.pdf
+
+      - name: Commit compiled PDF
+        if: github.event_name == 'push'
+        run: |
+          git add discoveries/two-state-maxplus-comparison.pdf
+          if git diff --cached --quiet; then
+            echo "Compiled PDF is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Build two-state max-plus PDF"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

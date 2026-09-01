@@ -8,7 +8,7 @@ Exact Interaction Geometry (EIG) is an emerging mathematical research programme 
 
 The strongest version of that question is open. This repository is a dated foundational disclosure, not a declaration that a new foundation of mathematics has been completed.
 
-**Jump:** [core idea](#the-core-idea) · [Boolean Tucker case study](#a-small-external-case-study-boolean-tucker-junction-failure) · [exact calibrations](#two-exact-calibrations) · [open foundation](#what-is-conjectural) · [prior art](#what-is-not-being-claimed) · [status](#current-epistemic-status)
+**Jump:** [core idea](#the-core-idea) · [two-state max-plus theorem](#a-published-open-case-two-state-max-plus-comparison) · [Boolean Tucker case study](#a-second-external-case-study-boolean-tucker-junction-failure) · [exact calibrations](#two-exact-calibrations) · [open foundation](#what-is-conjectural) · [prior art](#what-is-not-being-claimed) · [status](#current-epistemic-status)
 
 ## The core idea
 
@@ -40,17 +40,55 @@ CONTEXT
 
 Here **exact** means that a reduction is allowed only when every admitted future continuation has the same response. **Witness** means that multiplicity, provenance, cocycles, or higher comparison data are retained when later interaction can distinguish them. **Geometry** refers to the resulting factorization, descent, obstruction, and localization structure; it is not a claim that every EIG invariant is metric geometry.
 
-## A small external case study: Boolean Tucker junction failure
+## A published open case: two-state max-plus comparison
 
-A useful test of EIG is whether its internal questions lead to ordinary mathematics that can be checked without accepting EIG terminology.
+The clearest current external theorem arose from asking what information a minimal interaction state must retain when future composition can both propagate and observe an unbounded residual.
 
-One recurring EIG question is:
+For max-plus automata over `Z_max`, Daviaud--Guillon--Merlet (MFCS 2017) proved bounded-state comparison undecidable at 553 states and explicitly left the state range `2..552` open, singling out the two-state case as difficult.
 
-> **If each boundary admits an independently minimal exact interface, must those minima glue through one common junction witness?**
+The result proved here closes the `d=2` endpoint:
 
-This leads naturally to exact Boolean Tucker decomposition. For a Boolean tensor `T`, minimize each mode unfolding separately using Boolean matrix rank, then ask whether those minima can be realized simultaneously by one Boolean Tucker core.
+> **If `B` is a max-plus automaton with at most two states, then for an arbitrary max-plus automaton `A` it is decidable whether `[[A]] <= [[B]]` pointwise.**
 
-They need not be.
+In particular, comparison and equivalence of two two-state max-plus automata are decidable, and so is two-state positivity `Pos_2^k(Z_max)` for every finite alphabet size `k`.
+
+The mechanism is small. Projectivizing the two forward weights leaves one signed gap. Beyond an explicit finite threshold, every letter obeys an exact **retain/read separation**:
+
+```text
+retain the unbounded gap for future continuation
+        -> current height increment is gap-independent
+
+read the gap magnitude into the current response
+        -> the successor projective state forgets that magnitude
+```
+
+So the complete two-state dynamics compiles into finite control plus one nonnegative counter. Synchronizing that exact one-counter transducer with runs of the left automaton gives an effective context-free language; Parikh semilinearity reduces a containment violation to Presburger arithmetic.
+
+```text
+two-state max-plus forward dynamics
+                ↓ projectivize
+height + one signed unbounded gap
+                ↓ retain/read separation
+exact one-counter transducer
+                ↓ Parikh / Presburger
+pointwise comparison is decidable
+```
+
+**Typeset PDF (recommended):** [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf)  
+**Browser / diff version:** [`discoveries/two-state-maxplus-comparison.md`](discoveries/two-state-maxplus-comparison.md)  
+**TeX source:** [`discoveries/two-state-maxplus-comparison.tex`](discoveries/two-state-maxplus-comparison.tex)  
+**Run the public regression:** `python3 verification/verify_two_state_maxplus.py`  
+**Read the fresh novelty audit:** [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md)
+
+A targeted primary-source and current-literature audit through **2026-09-01** located no prior resolution of the two-state bounded-state comparison case or the stronger arbitrary-left/two-state-right theorem. This is strong search evidence, not a logically absolute historical-first certificate; the repository therefore avoids an unqualified `first known` claim.
+
+The proof is ordinary weighted-automata mathematics and does not depend on EIG. EIG is discovery provenance: its residual/interface viewpoint suggested isolating the exact one-dimensional projective state and asking whether a step can simultaneously preserve and expose it.
+
+## A second external case study: Boolean Tucker junction failure
+
+A separate test of EIG asks whether independently minimal exact interfaces must glue through one common junction witness.
+
+For a Boolean tensor `T`, minimize each mode unfolding separately using Boolean matrix rank, then ask whether those minima can be realized simultaneously by one Boolean Tucker core. They need not be.
 
 There is an explicit `2 x 4 x 4` Boolean tensor with
 
@@ -77,8 +115,6 @@ counterexample: (2,3,3) local minima cannot share one exact core
                                 ↓
 small obstruction: every candidate latent lift of one positive is blocked
 ```
-
-This is the role external examples are meant to play here: EIG suggests the structural question and failure mechanism; the resulting mathematical statement is then verified independently in standard language.
 
 **Read the counterexample:** [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md)  
 **Run the solver-free checker:** `python3 verification/verify_boolean_tucker_junction_counterexample.py`
@@ -137,12 +173,15 @@ WEIR is **not proved**. It is stated as a falsifiable programme with explicit ac
 
 EIG does **not** claim that objectless category theory, syntactic monoids, Myhill--Nerode minimization, idempotent splitting, relations-as-primary, allegories, ludics, Geometry of Interaction, Interaction Graphs, or Isbell nuclei are new. Nor does it claim that every mathematical object has been reconstructed from interaction, that one doctrine-free notion of objecthood has been identified, or that scalar response suffices to recover witness multiplicity and higher coherence.
 
-Boolean Tucker decomposition is established prior work; constrained Tucker decompositions are also known to exhibit non-field-like rank phenomena in other cones, including nonnegative Tucker models. The EIG case study here is deliberately narrower: it records one explicit exact Boolean junction failure and the interaction-first question that exposed it. See [`PRIOR_ART.md`](PRIOR_ART.md).
+The two-state max-plus theorem is presented at its narrow audited scope. The surrounding two-state identity theory, tropical matrix structure, finitely ambiguous containment theory, cost-register-automata frontiers, and 2026 tropical determinisation results are prior art and are explicitly separated in [`PRIOR_ART.md`](PRIOR_ART.md).
+
+Boolean Tucker decomposition is established prior work; constrained Tucker decompositions are also known to exhibit non-field-like rank phenomena in other cones, including nonnegative Tucker models. The Boolean case study here records one explicit exact Boolean junction failure and the interaction-first question that exposed it.
 
 ## Current epistemic status
 
 | Layer | Status |
 | --- | --- |
+| arbitrary-left / at-most-two-state-right max-plus comparison | **PROVED / PUBLIC**; closes the `d=2` endpoint of the DGM 2017 bounded-state question; no prior resolution located in audit through 2026-09-01 |
 | finite exact residual quotient and elementary factor-rank laws | proved / publicly documented; much of the algebra is classical |
 | exact category reconstruction from untyped consolidation + one-bit continuation success | publicly documented theorem with end-to-end finite regression; classical ingredients |
 | explicit Boolean Tucker `(2,3,3)` junction counterexample and displayed rank region for that tensor | finite exact statement with solver-free exhaustive checker; no historical `first` claim |
@@ -156,14 +195,15 @@ The detailed boundary is in [`STATUS.md`](STATUS.md).
 ## Read in this order
 
 1. [`FOUNDATIONS.md`](FOUNDATIONS.md) — the minimal interaction-first setup and design constraints.
-2. [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md) — the clearest current example of the EIG-to-external-mathematics workflow.
-3. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
-4. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
-5. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
-6. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
-7. [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md) — a correct rediscovery retained as calibration.
-8. [`ROADMAP.md`](ROADMAP.md) — the main open gates.
-9. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source/audit provenance.
+2. [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf) — the preferred typeset statement and proof of the strongest current conventional-mathematics theorem arising from the programme.
+3. [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md) — why the result is treated as a resolution of a published open case, with a conservative priority boundary.
+4. [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md) — a second EIG-to-external-mathematics example.
+5. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
+6. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
+7. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
+8. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
+9. [`ROADMAP.md`](ROADMAP.md) — the main open gates.
+10. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source/audit provenance.
 
 ## Verification
 
@@ -171,13 +211,19 @@ The detailed boundary is in [`STATUS.md`](STATUS.md).
 make verify-all
 ```
 
+The two-state max-plus theorem has a public finite regression:
+
+```bash
+python3 verification/verify_two_state_maxplus.py
+```
+
+It independently checks the closed formulas, the retain/read tail dichotomy, and `465,831` end-to-end direct-versus-compiled word cases. The infinite decision theorem rests on the written proof, not on finite testing.
+
 The Boolean Tucker case study alone can be checked with
 
 ```bash
 python3 verification/verify_boolean_tucker_junction_counterexample.py
 ```
-
-The checker uses no external solver, floating point, randomness, normalization lemma, or discovery code; it exhausts all nonzero support masks on each mode.
 
 See [`verification/README.md`](verification/README.md).
 
@@ -197,4 +243,4 @@ See [`provenance/RESEARCH_PROCESS.md`](provenance/RESEARCH_PROCESS.md) and [`pro
 
 **Author:** Keigo Oka  
 **Initial EIG public-foundation snapshot:** 2026-08-31  
-**Historical novelty:** not claimed for classical ingredients; external examples are presented at the narrowest independently supported scope.
+**Historical novelty:** not claimed for classical ingredients; the two-state max-plus result is presented as a published-open-case resolution under a dated literature audit rather than an absolute historical-first claim.
