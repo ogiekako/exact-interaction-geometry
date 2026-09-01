@@ -115,7 +115,7 @@ For uniqueness, a generator containing bit `2` is needed for `0e` and cannot be 
 
 The mode-1 unfolding has nonzero columns `01,02,03`. Since the incomparable singleton supports `01` and `02` must both be generated, its Boolean rank is two and its unique minimum basis is `{01,02}`. Therefore `beta(T)=(2,3,3)`.
 
-The public checker independently reaches the same conclusion by exhaustive enumeration of **all** nonzero support masks on each mode; it does not assume a normalization lemma.
+The public checker separately reaches the same conclusion by exhaustive enumeration of **all** nonzero support masks on each mode; it does not assume a normalization lemma.
 
 ## Why the two rank-three minima cannot coexist
 
@@ -169,11 +169,11 @@ finite certificate:
 
 This is the kind of external test the programme is intended to produce: the framework suggests a structural failure mode first, and the resulting claim is then checkable without accepting the framework.
 
-## Structural follow-up
+## Unpublished structural follow-up
 
-The private research ledger contains a stronger follow-up analysis of the reduced separator problem. In the first rank-three strict-gap regime, the minimum separator bases reduce to two types, conventionally called `F` and `T`; the corresponding fiber-versus-tensor holes are completely enumerable and admit a small three-zero hook obstruction. A distributive separator semilattice is sufficient for the relevant local data to glue.
+An internal research follow-up explores possible structural refinements of this example, including reduced-separator classifications and small obstruction patterns. Its proof/checker is not included in this public repository.
 
-Those follow-up statements were audited in the research ledger, but their proof/checker is **not imported into this public repository**. They are not needed to verify the counterexample above and are deliberately not used here as a historical-priority claim.
+**Public status:** **PRIVATE / NOT PUBLICLY VERIFIABLE.** No theorem from that follow-up is relied upon in the public counterexample above, and this note does not present those internal observations as established mathematical results.
 
 ## Verification
 
@@ -189,8 +189,6 @@ The checker uses no SAT/SMT/MIP solver, randomness, floating point, normalizatio
 
 Boolean Tucker decomposition itself is established work; see Pauli Miettinen, *Boolean Tensor Factorizations*, ICDM 2011, DOI `10.1109/ICDM.2011.28`.
 
-The broader phenomenon that constrained Tucker decompositions can fail to possess a minimum is also not claimed here as new: nonnegative Tucker literature contains such examples, e.g. *Nonnegative canonical tensor decomposition with linear constraints: nnCANDELINC* (2022), DOI `10.1002/nla.2443`.
+Constrained Tucker decompositions over other cones have related non-field-like behavior. This repository does not rely on a broad cross-cone equivalence claim for the Boolean result; source-level comparisons should be checked separately before being stated more strongly.
 
-Likewise, the abstract equivalence between flatness and distributivity for join-semilattices is classical; see Grätzer--Wehrung, *Flat semilattices*, Colloquium Mathematicum 79 (1999), 185--191.
-
-This repository therefore makes the deliberately narrower statement: **here is an explicit Boolean Tucker junction counterexample, here is a short exact certificate, and here is the EIG question that led to looking for it.** A broad public-web literature audit has not found a direct prior statement of this Boolean counterexample, but no `first` or priority claim is required for the role it plays here.
+The public claim here is deliberately narrow: **an explicit Boolean Tucker junction counterexample, a short exact certificate, and the EIG question that led to looking for it.** No historical `first` or priority claim is required for that role.
