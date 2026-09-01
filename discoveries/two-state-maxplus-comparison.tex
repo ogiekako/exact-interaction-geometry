@@ -6,6 +6,10 @@
 \usepackage{enumitem}
 \usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Two-State Max-Plus Comparison Is Decidable},
+  pdfauthor={Keigo Oka}
+}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -18,7 +22,7 @@
 \newcommand{\supp}{\operatorname{supp}}
 
 \title{Two-State Max-Plus Comparison Is Decidable}
-\author{Keigo Oka}
+\author{Keigo Oka\thanks{Google. Work done in a personal capacity; no Google internal resources were used. Email: \href{mailto:ogiekako@gmail.com}{ogiekako@gmail.com}. ORCID: \href{https://orcid.org/0009-0007-8119-9267}{0009-0007-8119-9267}.}}
 \date{September 1, 2026}
 
 \begin{document}
@@ -241,6 +245,10 @@ A targeted literature audit conducted through September 1, 2026 located no earli
 
 A companion exact regression script checks the algebra independently of the proof. It verifies the projective formulas, exhaustively checks the retain/read tail classification for all $2\times2$ letter matrices over a finite test alphabet of weights including $\minf$, and compares direct max-plus evaluation with a separately coded projective/counter evaluator on hundreds of thousands of finite words. The infinite theorem rests on the proof above, not on finite enumeration.
 
+\section*{AI-assisted research disclosure}
+
+This work was developed through AI-assisted mathematical research. OpenAI reasoning models, including GPT-5.6 Sol, materially contributed to theorem discovery, proof drafting, verifier generation, and literature-audit support. The author directed the research programme, curated the final mathematical claims after adversarial checking, and takes responsibility for the manuscript. Model output is not treated as mathematical evidence; the result is intended to stand on the written proof above, with the public regression code serving as an independent finite check of its algebraic mechanism.
+
 \begin{thebibliography}{9}
 \small
 \setlength{\itemsep}{0.35em}
@@ -260,7 +268,7 @@ Laure Daviaud and Marianne Johnson.
 \bibitem{Daviaud2020}
 Laure Daviaud.
 \newblock Containment and Equivalence of Weighted Automata: Probabilistic and Max-Plus Cases.
-\newblock In \emph{LATA 2020}, LNCS 12038, pp. 22--40, 2020.
+\newblock In \emph{LATA 2020}, LNCS 12038, pp. 17--32, 2020.
 \newblock DOI: \href{https://doi.org/10.1007/978-3-030-40608-0_2}{10.1007/978-3-030-40608-0\_2}.
 
 \bibitem{Parikh1966}
