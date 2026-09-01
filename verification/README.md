@@ -25,7 +25,7 @@ tail cases: 15552 {'death': ..., 'propagate': ..., 'forget': ..., 'read-and-forg
 end-to-end word cases: 465831
 ```
 
-The checker was written independently for the curated public repository rather than copied from the earlier discovery/audit program. It uses exact integer/max-plus arithmetic, no external solver, no floating point, and no randomness.
+The checker was written separately for the curated public repository rather than copied from the earlier discovery/review program. It uses exact integer/max-plus arithmetic, no external solver, no floating point, and no randomness. This separation is a software-engineering provenance fact, not a claim of independent third-party verification.
 
 It checks three finite layers:
 
@@ -37,7 +37,7 @@ The trichotomy distinction matters. A transition may forget an unbounded project
 
 The checker is a **regression for the proof**, not a proof by exhaustion. The infinite theorem additionally uses the written threshold argument, functional one-counter construction, effective Parikh theorem, and Presburger decision step in [`../discoveries/two-state-maxplus-comparison.md`](../discoveries/two-state-maxplus-comparison.md).
 
-Historical novelty is separately audited in [`../provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](../provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md); no program can establish bibliographic priority.
+Historical novelty is discussed separately in [`../provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](../provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md); no program can establish bibliographic priority.
 
 ## Boolean Tucker junction counterexample
 
@@ -61,7 +61,7 @@ The complete human-readable counterexample is [`../discoveries/boolean-tucker-ju
 python3 verification/verify_binary_kronecker_counterexample.py
 ```
 
-The machine-readable JSON certificate is the single source of the 24 rectangle list. The checker reads that file, reconstructs the self-Kronecker product, and checks exact-once coverage. Independently of the handwritten null-vector proof, it also computes the exact binary rank of the `5 x 5` base matrix by exhaustive legal-rectangle generation plus exact-cover dynamic programming.
+The machine-readable JSON certificate is the single source of the 24 rectangle list. The checker reads that file, reconstructs the self-Kronecker product, and checks exact-once coverage. Separately from the handwritten null-vector proof, it also computes the exact binary rank of the `5 x 5` base matrix by exhaustive legal-rectangle generation plus exact-cover dynamic programming.
 
 This is a correctness/calibration check only; the nonmultiplicativity theorem is not claimed novel here.
 
@@ -79,4 +79,4 @@ CI runs the combined target in Python 3.12, including the two-state max-plus reg
 
 ## Boundary
 
-A finite regression can catch algebraic, indexing, threshold, or certificate errors and can independently corroborate the mechanism of a proof. It cannot replace an unbounded mathematical argument, establish historical novelty, certify publication priority, or prove the broader EIG programme.
+A finite regression can catch algebraic, indexing, threshold, or certificate errors and can provide separate computational evidence for finite subclaims of a proof. It cannot replace an unbounded mathematical argument, establish historical novelty, certify publication priority, or prove the broader EIG programme.
