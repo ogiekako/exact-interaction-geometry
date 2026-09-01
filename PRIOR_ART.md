@@ -104,7 +104,7 @@ The closest same-model two-state work found is:
 
 - Laure Daviaud, Marianne Johnson, *The Shortest Identities for Max-Plus Automata with Two States*, MFCS 2017, DOI `10.4230/LIPIcs.MFCS.2017.48`.
 
-That paper studies identities of the full two-state class, not positivity or pointwise comparison. Structural `2 x 2` tropical-matrix semigroup literature is likewise directly relevant background, but no containment theorem equivalent to the staged result was located.
+That paper studies identities of the full two-state class, not positivity or pointwise comparison. Structural `2 x 2` tropical-matrix semigroup literature is likewise directly relevant background, but no containment theorem equivalent to the public result was located.
 
 Broader containment and decision-problem references checked include:
 
@@ -114,7 +114,7 @@ Broader containment and decision-problem references checked include:
 
 The Big-O theorem concerns affine domination rather than exact containment. Known positive results for finitely ambiguous automata do not cover arbitrary two-state automata because state count does not bound ambiguity.
 
-The 2026 tropical/min-plus decision literature was also checked. In particular, Almagor--Arbel--Sheinvald decide **determinisability** and study its complexity, unambiguisability, and register minimisation; those results do not say that every two-state weighted automaton is determinisable. The 2026 one-letter representation theorem fixes alphabet size rather than state count. Nearby few-register cost-register-automata results use different model restrictions and decision problems, and do not translate to the staged theorem while preserving the two-state bound.
+The 2026 tropical/min-plus decision literature was also checked. In particular, Almagor--Arbel--Sheinvald decide **determinisability** and study its complexity, unambiguisability, and register minimisation; those results do not say that every two-state weighted automaton is determinisable. The 2026 one-letter representation theorem fixes alphabet size rather than state count. Nearby few-register cost-register-automata results use different model restrictions and decision problems, and do not translate to the theorem while preserving the two-state bound.
 
 The fresh audit is recorded in [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md). Its conclusion is deliberately bounded:
 
