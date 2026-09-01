@@ -20,7 +20,7 @@ The larger research ledger is intentionally not mirrored here. Newer results are
 
 ## Two-state max-plus comparison theorem
 
-The staged top-level conventional-mathematics theorem is extracted from the two-state max-plus lane of 2026-08-28, then re-audited for public staging on 2026-09-01.
+The top-level conventional-mathematics theorem is extracted from the two-state max-plus lane of 2026-08-28, then re-audited for public release on 2026-09-01.
 
 Primary ledger theorem note:
 
@@ -50,7 +50,7 @@ The earlier independent audit records `825,266` exact checks and promotes the cl
 
 For the public repository, the theorem and checker were **reconstructed rather than copied wholesale**. The public note states the weighted-automata theorem without requiring EIG terminology, and the public checker independently reimplements the algebra/tail/compiler regressions.
 
-Public staged files:
+Public files:
 
 - [`../discoveries/two-state-maxplus-comparison.md`](../discoveries/two-state-maxplus-comparison.md)
 - [`../verification/verify_two_state_maxplus.py`](../verification/verify_two_state_maxplus.py)
@@ -85,7 +85,7 @@ docs/EIG_EXTERNAL_BOOLEAN_SEMILATTICE_FLATNESS_FORBIDDEN_HOOK_20260831.md
 Follow-up verifier:
 
 ```text
-verification/verify_eig_external_boolean_semilattice_flatness_20260831.py
+verification/verify_eig_external_boolean_semilATTICE_FLATNESS_20260831.py
 ```
 
 The public extraction intentionally narrows the story. It presents the explicit `2 x 4 x 4` Boolean Tucker incompatibility, its small blocker certificate, and the EIG question that led to it. It does not rely on a historical `first` claim.
