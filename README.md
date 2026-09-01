@@ -2,7 +2,7 @@
 
 **Interaction-first reconstruction of interfaces, objects, and compositional structure.**
 
-Exact Interaction Geometry (EIG) is an emerging mathematical research programme built around a deliberately basic question:
+This repository proposes Exact Interaction Geometry (EIG), a mathematical research programme built around a deliberately basic question:
 
 > **How much mathematical structure can be reconstructed from interaction itself — from what composes, what future contexts distinguish, and what witness data must survive exact gluing — rather than being supplied in advance as objects, states, types, or interfaces?**
 
@@ -10,7 +10,7 @@ The strongest version of that question is open. This repository is a dated found
 
 **For the strongest precise formulation of EIG that this repository claims as of 2026-09-01, read [`EIG_FOUNDATIONAL_DISCLOSURE_20260901.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260901.md).** It separates the proved core, programme-level design constraints, open WEIR target, and prior-art boundary in one dated claim surface.
 
-**Jump:** [core idea](#the-core-idea) · [two-state max-plus theorem](#a-published-open-case-two-state-max-plus-comparison) · [Boolean Tucker case study](#a-second-external-case-study-boolean-tucker-junction-failure) · [exact calibrations](#two-exact-calibrations) · [open foundation](#what-is-conjectural) · [prior art](#what-is-not-being-claimed) · [status](#current-epistemic-status)
+**Jump:** [core idea](#the-core-idea) · [two-state max-plus theorem](#a-case-from-a-published-open-problem-two-state-max-plus-comparison) · [Boolean Tucker case study](#a-second-external-case-study-boolean-tucker-junction-failure) · [exact calibrations](#two-exact-calibrations) · [open foundation](#what-is-conjectural) · [prior art](#what-is-not-being-claimed) · [status](#current-epistemic-status)
 
 ## The core idea
 
@@ -42,13 +42,13 @@ CONTEXT
 
 Here **exact** means that a reduction is allowed only when every admitted future continuation has the same response. **Witness** means that multiplicity, provenance, cocycles, or higher comparison data are retained when later interaction can distinguish them. **Geometry** refers to the resulting factorization, descent, obstruction, and localization structure; it is not a claim that every EIG invariant is metric geometry.
 
-## A published open case: two-state max-plus comparison
+## A case from a published open problem: two-state max-plus comparison
 
 The clearest current external theorem arose from asking what information a minimal interaction state must retain when future composition can both propagate and observe an unbounded residual.
 
 For max-plus automata over `Z_max`, Daviaud--Guillon--Merlet (MFCS 2017) proved bounded-state comparison undecidable at 553 states and explicitly left the state range `2..552` open, singling out the two-state case as difficult.
 
-The result proved here closes the `d=2` endpoint:
+The manuscript in this repository proves the `d=2` case of that published question:
 
 > **If `B` is a max-plus automaton with at most two states, then for an arbitrary max-plus automaton `A` it is decidable whether `[[A]] <= [[B]]` pointwise.**
 
@@ -86,9 +86,9 @@ pointwise comparison is decidable
 **Browser / diff version:** [`discoveries/two-state-maxplus-comparison.md`](discoveries/two-state-maxplus-comparison.md)  
 **TeX source:** [`discoveries/two-state-maxplus-comparison.tex`](discoveries/two-state-maxplus-comparison.tex)  
 **Run the public regression:** `python3 verification/verify_two_state_maxplus.py`  
-**Read the fresh novelty audit:** [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md)
+**Read the dated literature review:** [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md)
 
-A targeted primary-source and current-literature audit through **2026-09-01** located no prior resolution of the two-state bounded-state comparison case or the stronger arbitrary-left/two-state-right theorem. This is strong search evidence, not a logically absolute historical-first certificate; the repository therefore avoids an unqualified `first known` claim.
+A targeted primary-source and current-literature review through **2026-09-01** did not identify a prior resolution of the two-state bounded-state comparison case or the stronger arbitrary-left/two-state-right theorem. This is bounded search evidence, not a certificate of historical firstness; the repository therefore avoids an unqualified `first known` claim.
 
 The proof is ordinary weighted-automata mathematics and does not depend on EIG. EIG is discovery provenance: its residual/interface viewpoint suggested isolating the exact one-dimensional projective state and asking whether a step can simultaneously preserve and expose an unbounded residual magnitude.
 
@@ -127,7 +127,7 @@ small obstruction: every candidate latent lift of one positive is blocked
 **Read the counterexample:** [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md)  
 **Run the solver-free checker:** `python3 verification/verify_boolean_tucker_junction_counterexample.py`
 
-A follow-up analysis in the private research ledger identifies two minimal rank-three separator types (`F` and `T`), classifies their reduced fiber/tensor holes, and finds a common three-zero hook obstruction. It also connects the safe side of the phenomenon to classical distributive/flat semilattices. The proof/checker for that follow-up is not imported into this public repository, so it is treated here as **ledger-audited provenance**, not as a public independently reproducible theorem. None of it is needed for the Boolean Tucker counterexample above.
+An unpublished internal follow-up explores possible structural refinements of this example. Those observations are not part of the publicly verifiable mathematical record of this repository, are not relied upon for the public Boolean Tucker statement above, and are not presented here as established results.
 
 ## Two exact calibrations
 
@@ -158,18 +158,18 @@ The repository keeps external-search results separate from foundational claims.
 
 ### Binary-Kronecker calibration
 
-The EIG parallel-composition heuristic independently led to a correct `5 x 5` binary matrix with
+The EIG parallel-composition heuristic separately led to a correct `5 x 5` binary matrix with
 
 ```text
 rank_bin(A) = 5,
 rank_bin(A tensor A) <= 24 < 25.
 ```
 
-This is **not** a novelty claim: Yaroslav Shitov had publicly posted a different `5 x 5` `5 -> 24` counterexample on 2026-07-25. The EIG-found example is retained only as an independent rediscovery / calibration of the search methodology. See [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md).
+This is **not** a novelty claim: Yaroslav Shitov had publicly posted a different `5 x 5` `5 -> 24` counterexample on 2026-07-25. The EIG-found example is retained only as a project rediscovery / calibration of the search methodology. See [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md).
 
 The earlier source-pair augmentation dossier is also retained as secondary evidence because the wording of its motivating 2018 question admits a scope ambiguity. See [`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md).
 
-Current private search lanes target unresolved finite-certificate problems such as Parnas--Ron--Shraibman `U_{3,20}` and the exceptional crown self-products. Search programs do not become public mathematical claims unless they return a short independently checked certificate.
+Current private search lanes target unresolved finite-certificate problems such as Parnas--Ron--Shraibman `U_{3,20}` and the exceptional crown self-products. Search programs do not become public mathematical claims unless they return a short publicly checkable certificate or proof.
 
 ## What is conjectural
 
@@ -181,7 +181,7 @@ WEIR is **not proved**. It is stated as a falsifiable programme with explicit ac
 
 EIG does **not** claim that objectless category theory, syntactic monoids, Myhill--Nerode minimization, idempotent splitting, relations-as-primary, allegories, ludics, Geometry of Interaction, Interaction Graphs, or Isbell nuclei are new. Nor does it claim that every mathematical object has been reconstructed from interaction, that one doctrine-free notion of objecthood has been identified, or that scalar response suffices to recover witness multiplicity and higher coherence.
 
-The two-state max-plus theorem is presented at its narrow audited scope. The surrounding two-state identity theory, tropical matrix structure, finitely ambiguous containment theory, cost-register-automata frontiers, the 2025 Big-O/affine-domination theorem, and 2026 tropical determinisation results are prior art and are explicitly separated in [`PRIOR_ART.md`](PRIOR_ART.md).
+The two-state max-plus theorem is presented at its narrow stated scope. The surrounding two-state identity theory, tropical matrix structure, finitely ambiguous containment theory, cost-register-automata frontiers, the 2025 Big-O/affine-domination theorem, and 2026 tropical determinisation results are prior art and are explicitly separated in [`PRIOR_ART.md`](PRIOR_ART.md).
 
 Boolean Tucker decomposition is established prior work; constrained Tucker decompositions are also known to exhibit non-field-like rank phenomena in other cones, including nonnegative Tucker models. The Boolean case study here records one explicit exact Boolean junction failure and the interaction-first question that exposed it.
 
@@ -189,12 +189,12 @@ Boolean Tucker decomposition is established prior work; constrained Tucker decom
 
 | Layer | Status |
 | --- | --- |
-| arbitrary-left / at-most-two-state-right max-plus comparison | **PROVED / PUBLIC**; closes the `d=2` endpoint of the DGM 2017 bounded-state question; no prior resolution located in audit through 2026-09-01 |
+| arbitrary-left / at-most-two-state-right max-plus comparison | public proof in this repository; proves the `d=2` case of the DGM 2017 bounded-state question; no prior resolution identified in the dated review through 2026-09-01 |
 | finite exact residual quotient and elementary factor-rank laws | proved / publicly documented; much of the algebra is classical |
 | exact category reconstruction from untyped consolidation + one-bit continuation success | publicly documented theorem with end-to-end finite regression; classical ingredients |
 | explicit Boolean Tucker `(2,3,3)` junction counterexample and displayed rank region for that tensor | finite exact statement with solver-free exhaustive checker; no historical `first` claim |
-| rank-three `F/T` reduced separator classification and three-zero hook | ledger-audited; public proof/checker not imported; broader universal converse remains reduced |
-| binary-Kronecker `5 -> 24` example | correct independent rediscovery; no theorem-priority claim |
+| unpublished structural follow-up to the Boolean Tucker example | **PRIVATE / NOT PUBLICLY VERIFIABLE**; not relied upon for any public theorem claim |
+| binary-Kronecker `5 -> 24` example | project rediscovery with public finite certificate; no theorem-priority claim |
 | source-pair and current search targets | secondary / candidate evidence; scope or novelty review pending |
 | general witness-enriched, doctrine-relative, cross-domain reconstruction | conjectural / open |
 
@@ -205,14 +205,14 @@ The detailed boundary is in [`STATUS.md`](STATUS.md).
 1. [`EIG_FOUNDATIONAL_DISCLOSURE_20260901.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260901.md) — the strongest dated formulation of what EIG means at this snapshot, with proved/open/prior-art boundaries in one place.
 2. [`FOUNDATIONS.md`](FOUNDATIONS.md) — the minimal interaction-first setup and design constraints.
 3. [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf) — the preferred typeset statement and proof of the strongest current conventional-mathematics theorem arising from the programme.
-4. [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md) — why the result is treated as a resolution of a published open case, with a conservative priority boundary.
+4. [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md) — the dated literature review and its conservative priority boundary.
 5. [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md) — a second EIG-to-external-mathematics example.
 6. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
 7. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
 8. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
 9. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
 10. [`ROADMAP.md`](ROADMAP.md) — the main open gates.
-11. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source/audit provenance.
+11. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source and process provenance.
 
 ## Verification
 
@@ -226,7 +226,7 @@ The two-state max-plus theorem has a public finite regression:
 python3 verification/verify_two_state_maxplus.py
 ```
 
-It independently checks the closed formulas, the propagate/forget/read-and-forget tail trichotomy (including the all-zero silent-forget case), and `465,831` end-to-end direct-versus-compiled word cases. The infinite decision theorem rests on the written proof, not on finite testing.
+The separate regression checks the closed formulas, the propagate/forget/read-and-forget tail trichotomy (including the all-zero silent-forget case), and `465,831` end-to-end direct-versus-compiled word cases. The infinite decision theorem rests on the written proof, not on finite testing.
 
 The Boolean Tucker case study alone can be checked with
 
@@ -244,7 +244,7 @@ See [`LICENSE.md`](LICENSE.md) for the exact scope and license references.
 
 ## Research process and provenance
 
-The programme was developed through extended AI-assisted mathematical research, with theorem generation, counterexample search, repair, and independent adversarial audit lanes. Model-generated claims are not promoted merely because they were generated or computationally checked. Failed and superseded formulations remain in Git history and in the original research ledger; this repository keeps only the current public mathematical surface.
+The programme was developed through extended AI-assisted mathematical research, including theorem generation, counterexample search, proof repair, regression testing, and separate model-assisted adversarial review. These activities describe the research process; they are not evidence that a theorem is correct. Public mathematical claims are intended to rest on the proofs, definitions, finite certificates, or regression tests identified for each claim. Failed and superseded formulations remain in Git history and in the original research ledger; this repository keeps only the current public mathematical surface.
 
 See [`provenance/RESEARCH_PROCESS.md`](provenance/RESEARCH_PROCESS.md) and [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md).
 
@@ -253,4 +253,4 @@ See [`provenance/RESEARCH_PROCESS.md`](provenance/RESEARCH_PROCESS.md) and [`pro
 **Author:** Keigo Oka  
 **ORCID:** [`0009-0007-8119-9267`](https://orcid.org/0009-0007-8119-9267)  
 **Initial EIG public-foundation snapshot:** 2026-08-31  
-**Historical novelty:** not claimed for classical ingredients; the two-state max-plus result is presented as a published-open-case resolution under a dated literature audit rather than an absolute historical-first claim.
+**Historical novelty:** not claimed for classical ingredients; the two-state max-plus manuscript proves the `d=2` case of the published DGM 2017 question, while historical priority is stated only at the scope of the dated literature review.
