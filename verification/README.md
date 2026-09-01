@@ -73,7 +73,7 @@ This is a correctness/calibration check only; the nonmultiplicativity theorem is
 make verify-all
 ```
 
-CI runs the combined target in Python 3.12, including the staged two-state max-plus regression in normal and optimized Python.
+CI runs the combined target in Python 3.12, including the two-state max-plus regression in normal and optimized Python.
 
 ## Boundary
 
