@@ -35,18 +35,43 @@ jobs:
           latexmk -pdf -interaction=nonstopmode -halt-on-error \
             -outdir=/tmp/two-state-maxplus-pdf \
             discoveries/two-state-maxplus-comparison.tex
-          cp /tmp/two-state-maxplus-pdf/two-state-maxplus-comparison.pdf \
-            discoveries/two-state-maxplus-comparison.pdf
 
       - name: Commit compiled PDF
         if: github.event_name == 'push'
+        shell: bash
         run: |
-          git add discoveries/two-state-maxplus-comparison.pdf
-          if git diff --cached --quiet; then
-            echo "Compiled PDF is already current."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build two-state max-plus PDF"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          set -euo pipefail
+          event_tex=$(git rev-parse "${GITHUB_SHA}:discoveries/two-state-maxplus-comparison.tex")
+
+          # A PDF build may overlap an unrelated documentation commit. Rebase the
+          # generated file onto the latest branch tip, but never publish a PDF if
+          # the TeX source itself has changed since this workflow was triggered.
+          for attempt in 1 2 3; do
+            git fetch origin "${GITHUB_REF_NAME}"
+            remote_tex=$(git rev-parse "origin/${GITHUB_REF_NAME}:discoveries/two-state-maxplus-comparison.tex")
+            if [[ "${remote_tex}" != "${event_tex}" ]]; then
+              echo "A newer TeX revision exists; its workflow run will publish the PDF."
+              exit 0
+            fi
+
+            git reset --hard "origin/${GITHUB_REF_NAME}"
+            cp /tmp/two-state-maxplus-pdf/two-state-maxplus-comparison.pdf \
+              discoveries/two-state-maxplus-comparison.pdf
+            git add discoveries/two-state-maxplus-comparison.pdf
+            if git diff --cached --quiet; then
+              echo "Compiled PDF is already current."
+              exit 0
+            fi
+
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Build two-state max-plus PDF"
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            echo "Branch advanced during PDF publication; retrying (${attempt}/3)."
+            sleep 2
+          done
+
+          echo "Could not publish the compiled PDF after three attempts."
+          exit 1
