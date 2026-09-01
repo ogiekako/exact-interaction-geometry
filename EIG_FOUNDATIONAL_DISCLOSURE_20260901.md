@@ -38,16 +38,18 @@ At this date, the general answer is open. Several exact special cases are proved
 
 The smallest EIG laboratory contains interaction fragments, an execution or pasting operation, and a class of admitted closed experiments with exact responses. A doctrine specifies which continuations and responses count as observable.
 
-For an associative interaction system `P` with closed response `r`, the basic two-sided contextual relation is
+For an associative interaction semigroup `P` with closed response `r`, let `P^1` denote its unitalization (or simply `P` itself when a unit is already present). Define the full two-sided contextual relation by
 
 ```text
 a ~_r b
 iff
 r(x a y) = r(x b y)
-for every admitted left/right context x,y.
+for all x,y in P^1.
 ```
 
-When the execution law is associative, this is a congruence. The quotient is the coarsest composition-stable identification preserving the declared closed responses in the standard syntactic-algebra sense.
+Equivalently, empty left and right contexts are admitted, and the context family is closed under extension by composition. Under these assumptions the relation is a congruence: multiplying equivalent fragments on either side can be absorbed into the quantified contexts. Because the empty contexts are included, the quotient also preserves the original closed response `r(a)`.
+
+The quotient is therefore the coarsest composition-stable identification preserving the declared closed responses in the standard syntactic-algebra sense.
 
 This motivates the EIG exactness rule:
 
@@ -240,7 +242,7 @@ EIG is intended to be falsifiable and mathematically productive, not only a voca
 
 The programme's residual/interface viewpoint led to isolating the unique one-dimensional projective gap of a two-state max-plus automaton and asking whether a transition can simultaneously preserve that unbounded residual for future computation and expose its magnitude in the current output.
 
-The answer is an exact tail trichotomy—propagate, forget, or read-and-forget—with the key property that a step whose output depends on the unbounded magnitude cannot also propagate that magnitude to the future. It yields an exact one-counter realization and a decidability proof for arbitrary-left / at-most-two-state-right max-plus comparison, closing the `d=2` endpoint of the bounded-state range explicitly left open by Daviaud--Guillon--Merlet (MFCS 2017). The theorem itself is ordinary weighted-automata mathematics and does not depend on EIG.
+The answer is an exact tail trichotomy—propagate, forget, or read-and-forget—with the key property that a step whose output depends on the unbounded magnitude cannot also propagate that magnitude to the future. It yields an exact one-counter realization and a decidability proof for arbitrary-left / at-most-two-state-right max-plus comparison. The manuscript proves the `d=2` case of the bounded-state question explicitly posed by Daviaud--Guillon--Merlet (MFCS 2017). The theorem itself is ordinary weighted-automata mathematics and does not depend on EIG.
 
 See [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf).
 
@@ -252,7 +254,7 @@ See [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolea
 
 These examples are evidence that the interaction-first questions can select nontrivial conventional mathematics. They are not evidence that the general WEIR theorem is already true.
 
-## 10. Explicit prior-art firewall
+## 10. Explicit prior-art boundary
 
 The following broad ideas are **not** claimed as EIG inventions:
 
@@ -270,7 +272,7 @@ The following broad ideas are **not** claimed as EIG inventions:
 - idempotent packaging, stable quotient objecthood, or local-to-global quotient descent in the broad sense;
 - generic Yoneda/nerve, profunctor, Grothendieck, sheaf, stack, or descent machinery.
 
-The nearest contemporary programmes and the exact boundaries are discussed in [`PRIOR_ART.md`](PRIOR_ART.md) and [`CONTEMPORARY_NEIGHBORS.md`](CONTEMPORARY_NEIGHBORS.md).
+The nearest contemporary programmes and the repository's comparisons with them are discussed in [`PRIOR_ART.md`](PRIOR_ART.md) and [`CONTEMPORARY_NEIGHBORS.md`](CONTEMPORARY_NEIGHBORS.md). Those comparison judgments are interpretations by this repository unless a cited source itself states the relationship.
 
 ## 11. The dated EIG formulation being disclosed
 
@@ -301,7 +303,7 @@ A reader using only the public repository should be able to determine:
 - a complete exact category reconstruction theorem;
 - the current multi-stage architecture;
 - the WEIR acceptance gates and falsification boundary;
-- which nearby classical and contemporary theories block broader novelty claims;
+- which nearby classical and contemporary theories are relevant to broader novelty questions;
 - which external theorem/counterexample arose from the programme;
 - exactly which claims are proved, classical, open, or only provenance.
 
