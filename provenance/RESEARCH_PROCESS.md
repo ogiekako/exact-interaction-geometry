@@ -26,6 +26,8 @@ Broader application branches, superseded formulations, failed theorem candidates
 
 ## AI disclosure
 
-AI systems, primarily OpenAI reasoning models, materially contributed to theorem discovery, proof drafting, counterexample generation, code generation, and audit. Keigo Oka directed the research programme and maintains the curated mathematical record.
+AI systems, primarily OpenAI reasoning models including GPT-5.6 Sol, materially contributed to theorem discovery, proof drafting, counterexample generation, code generation, and audit. Keigo Oka directed the research programme and maintains the curated mathematical record. Model output is not treated as mathematical evidence: promoted claims are intended to rest on explicit statements, proofs or finite certificates as appropriate, public regression code, and independent checks.
+
+Keigo Oka is employed by Google. This work was done in a personal capacity; no Google internal resources were used.
 
 The provenance label of a result is distinct from its correctness status. Mathematical correctness is meant to rest on explicit statements, proofs/certificates, and independent checks, not on the identity of the model that proposed it.
