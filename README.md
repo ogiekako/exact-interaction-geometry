@@ -54,24 +54,30 @@ The result proved here closes the `d=2` endpoint:
 
 In particular, comparison and equivalence of two two-state max-plus automata are decidable, and so is two-state positivity `Pos_2^k(Z_max)` for every finite alphabet size `k`.
 
-The mechanism is small. Projectivizing the two forward weights leaves one signed gap. Beyond an explicit finite threshold, every letter obeys an exact **retain/read separation**:
+The mechanism is small. Projectivizing the two forward weights leaves one signed gap. Beyond an explicit finite threshold, every nondead letter has one of three exact tail behaviors:
 
 ```text
-retain the unbounded gap for future continuation
-        -> current height increment is gap-independent
+PROPAGATE
+    preserve an unbounded gap n as n+s
+    -> current height increment is constant
 
-read the gap magnitude into the current response
-        -> the successor projective state forgets that magnitude
+FORGET
+    erase the gap without using its magnitude
+    -> current height increment is constant
+
+READ-AND-FORGET
+    use the magnitude n in the current response
+    -> successor projective state forgets n
 ```
 
-So the complete two-state dynamics compiles into finite control plus one nonnegative counter. Synchronizing that exact one-counter transducer with runs of the left automaton gives an effective context-free language; Parikh semilinearity reduces a containment violation to Presburger arithmetic.
+The key property is therefore not a literal two-way retain/read dichotomy: **a step whose output depends on the unbounded magnitude cannot also propagate that magnitude to the future.** This gives an exact functional one-counter realization. Synchronizing it with runs of the left automaton gives an effective context-free language; Parikh semilinearity reduces a containment violation to Presburger arithmetic.
 
 ```text
 two-state max-plus forward dynamics
                 ↓ projectivize
 height + one signed unbounded gap
-                ↓ retain/read separation
-exact one-counter transducer
+                ↓ propagate / forget / read-and-forget
+functional one-counter transducer
                 ↓ Parikh / Presburger
 pointwise comparison is decidable
 ```
@@ -84,7 +90,7 @@ pointwise comparison is decidable
 
 A targeted primary-source and current-literature audit through **2026-09-01** located no prior resolution of the two-state bounded-state comparison case or the stronger arbitrary-left/two-state-right theorem. This is strong search evidence, not a logically absolute historical-first certificate; the repository therefore avoids an unqualified `first known` claim.
 
-The proof is ordinary weighted-automata mathematics and does not depend on EIG. EIG is discovery provenance: its residual/interface viewpoint suggested isolating the exact one-dimensional projective state and asking whether a step can simultaneously preserve and expose it.
+The proof is ordinary weighted-automata mathematics and does not depend on EIG. EIG is discovery provenance: its residual/interface viewpoint suggested isolating the exact one-dimensional projective state and asking whether a step can simultaneously preserve and expose an unbounded residual magnitude.
 
 ## A second external case study: Boolean Tucker junction failure
 
@@ -175,7 +181,7 @@ WEIR is **not proved**. It is stated as a falsifiable programme with explicit ac
 
 EIG does **not** claim that objectless category theory, syntactic monoids, Myhill--Nerode minimization, idempotent splitting, relations-as-primary, allegories, ludics, Geometry of Interaction, Interaction Graphs, or Isbell nuclei are new. Nor does it claim that every mathematical object has been reconstructed from interaction, that one doctrine-free notion of objecthood has been identified, or that scalar response suffices to recover witness multiplicity and higher coherence.
 
-The two-state max-plus theorem is presented at its narrow audited scope. The surrounding two-state identity theory, tropical matrix structure, finitely ambiguous containment theory, cost-register-automata frontiers, and 2026 tropical determinisation results are prior art and are explicitly separated in [`PRIOR_ART.md`](PRIOR_ART.md).
+The two-state max-plus theorem is presented at its narrow audited scope. The surrounding two-state identity theory, tropical matrix structure, finitely ambiguous containment theory, cost-register-automata frontiers, the 2025 Big-O/affine-domination theorem, and 2026 tropical determinisation results are prior art and are explicitly separated in [`PRIOR_ART.md`](PRIOR_ART.md).
 
 Boolean Tucker decomposition is established prior work; constrained Tucker decompositions are also known to exhibit non-field-like rank phenomena in other cones, including nonnegative Tucker models. The Boolean case study here records one explicit exact Boolean junction failure and the interaction-first question that exposed it.
 
@@ -220,7 +226,7 @@ The two-state max-plus theorem has a public finite regression:
 python3 verification/verify_two_state_maxplus.py
 ```
 
-It independently checks the closed formulas, the retain/read tail dichotomy, and `465,831` end-to-end direct-versus-compiled word cases. The infinite decision theorem rests on the written proof, not on finite testing.
+It independently checks the closed formulas, the propagate/forget/read-and-forget tail trichotomy (including the all-zero silent-forget case), and `465,831` end-to-end direct-versus-compiled word cases. The infinite decision theorem rests on the written proof, not on finite testing.
 
 The Boolean Tucker case study alone can be checked with
 
