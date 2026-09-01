@@ -46,17 +46,17 @@ Earlier exact ledger regression:
 verification/verify_two_state_projective_one_counter.py
 ```
 
-The earlier independent audit records `825,266` exact checks and promotes the closed forms, threshold, retain/read separation, exact one-counter compilation, decorated semilinearity, right-hand containment, and two-state positivity theorem.
+The earlier ledger audit used the shorthand “retain/read separation” for the tail mechanism. During public adversarial review on 2026-09-01, the literal two-way formulation was found to omit a third logically necessary case: **silent forget**, where the old unbounded gap is erased while the height increment is constant (the all-zero letter is the minimal example). The public proof was therefore repaired to the exact **propagate / forget / read-and-forget trichotomy**. The theorem mechanism that survives is the one-way property needed by the one-counter reduction: a transition whose output increment depends on the unbounded magnitude does not propagate that magnitude to the future.
 
-For the public repository, the theorem and checker were **reconstructed rather than copied wholesale**. The public note states the weighted-automata theorem without requiring EIG terminology, and the public checker independently reimplements the algebra/tail/compiler regressions.
+The public one-counter lemma was simultaneously strengthened to a functional construction with an explicit counter invariant and separate zero-emission drain for forget versus `-1`-emission drain for read-and-forget. The public checker now directly classifies the trichotomy and contains the all-zero silent-forget regression.
 
-Public files:
+For the public repository, the theorem and checker were **reconstructed rather than copied wholesale**. Public files:
 
 - [`../discoveries/two-state-maxplus-comparison.md`](../discoveries/two-state-maxplus-comparison.md)
 - [`../verification/verify_two_state_maxplus.py`](../verification/verify_two_state_maxplus.py)
 - [`TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md)
 
-A fresh 2026-09-01 literature audit confirmed that Daviaud--Guillon--Merlet (MFCS 2017) explicitly leave bounded-state comparison open from 2 through 552 states after their 553-state undecidability theorem. Searches across same-model two-state identities, comparison/equivalence surveys, `2 x 2` tropical-matrix structure, ambiguity/simulation classes, few-register CRA work, and the 2026 determinisation/unambiguisation/unary-tropical literature located no earlier theorem resolving the two-state comparison case or the stronger arbitrary-left/two-state-right containment statement.
+A fresh 2026-09-01 literature audit confirmed that Daviaud--Guillon--Merlet (MFCS 2017) explicitly leave bounded-state comparison open from 2 through 552 states after their 553-state undecidability theorem. Searches across same-model two-state identities, comparison/equivalence surveys, `2 x 2` tropical-matrix structure, ambiguity/simulation classes, few-register CRA work, the 2025 Big-O/affine-domination theorem, and the 2026 determinisation/unambiguisation/unary-tropical literature located no earlier theorem resolving the two-state comparison case or the stronger arbitrary-left/two-state-right containment statement.
 
 The curation therefore uses the wording **“published open `d=2` case resolved; no prior resolution located in the dated audit”**, not an absolute historical-first claim.
 

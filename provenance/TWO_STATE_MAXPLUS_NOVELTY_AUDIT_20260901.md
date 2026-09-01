@@ -50,7 +50,7 @@ Checked:
 
 - Laure Daviaud, *Containment and Equivalence of Weighted Automata: Probabilistic and Max-Plus Cases*, LATA 2020, DOI `10.1007/978-3-030-40608-0_2`.
 - Shaull Almagor, Udi Boker, Orna Kupferman, *What's decidable about weighted automata?*, Information and Computation 282 (2022), DOI `10.1016/j.ic.2020.104651`.
-- Laure Daviaud, David Purser, Marie Tcheng, *The Big-O Problem for Max-Plus Automata is Decidable (PSPACE-Complete)*, LICS 2023 / arXiv:2304.05229.
+- Laure Daviaud, David Purser, Marie Tcheng, *The Big-O Problem for Max-Plus Automata is Decidable (PSPACE-Complete)*, Logical Methods in Computer Science 21(3), 2025, DOI `10.46298/lmcs-21(3:3)2025` (conference version: LICS 2023; arXiv:2304.05229).
 
 The 2020 survey records bounded-state undecidability but no two-state positive theorem. The Almagor--Boker--Kupferman line maps decision problems under restrictions such as weight domains and automaton structure, but no fixed two-state comparison result matching the target was found. The Big-O theorem decides an affine-domination relaxation and explicitly remains distinct from exact containment.
 
@@ -126,11 +126,11 @@ The audit explicitly searched the sign-dual min-plus terminology, including the 
 
 Novelty and correctness are separate.
 
-The proof of the target theorem was re-audited from the two-state projective recurrence rather than inferred from this literature search. The key tail statement reduces to the elementary fact that, beyond all finite breakpoints, a `2 x 2` max-plus letter can either preserve the unique unbounded projective gap with constant output increment or read that gap into the output while erasing it. This gives an exact one-counter compilation and then effective semilinearity/Presburger decidability.
+The proof of the target theorem was re-audited from the two-state projective recurrence rather than inferred from this literature search. A later adversarial pass caught an overstrong shorthand in the first public proof: a tail can silently forget the old gap with a constant height increment, so the literal retain/read dichotomy is false (the all-zero letter is the smallest example). The corrected tail statement is the exact **propagate / forget / read-and-forget trichotomy**. The property needed for decidability survives: whenever a transition's height increment depends on the unbounded gap magnitude, the successor does not propagate that magnitude. Together with the strengthened functional one-counter construction and explicit counter invariant, this yields the same effective semilinearity/Presburger decision argument.
 
 The public theorem note and public finite regression are:
 
 - [`../discoveries/two-state-maxplus-comparison.md`](../discoveries/two-state-maxplus-comparison.md)
 - [`../verification/verify_two_state_maxplus.py`](../verification/verify_two_state_maxplus.py)
 
-The private chronological research ledger additionally contains an independent audit and an `825,266`-case exact regression dated 2026-08-28.
+The private chronological research ledger additionally contains an earlier `825,266`-case exact regression dated 2026-08-28. Because that earlier audit used the superseded two-way shorthand, the current public repaired proof and regression are the relevant claim surface for this point.

@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Solver-free regression for the two-state max-plus tail theorem.
 
-This is not the proof. It independently checks the closed forms, the
-retain/read tail dichotomy, and an exact counter-state evaluator against direct
-max-plus semantics on exhaustive finite test families.
+This is not the proof. It independently checks the closed forms, the exact
+tail trichotomy (propagate / forget / read-and-forget), and an exact
+counter-state evaluator against direct max-plus semantics on exhaustive finite
+test families. In particular it contains the all-zero letter as an explicit
+silent-forget regression.
 """
 from itertools import product
 
@@ -94,8 +96,8 @@ def compiled_step(side, n, H, M, K):
     inactive = M[2:] if side == 1 else M[:2]
     A = mp_max(*active)
 
-    # READ: the active row is absent. The gap is consumed into the height,
-    # and the successor projective state forgets n.
+    # READ-AND-FORGET: the active row is absent. The old gap contributes -n
+    # to the height and is absent from the successor projective state.
     if A is NEG:
         C = mp_max(*inactive)
         if C is NEG:
@@ -103,9 +105,10 @@ def compiled_step(side, n, H, M, K):
         q = normalized_row(inactive)
         return (q[0], q[1], H + C - n)
 
-    # RETAIN/FIX: height increment is constant. If one active output is
-    # absent, the counter is shifted by a constant; if both are present,
-    # the successor gap is bounded.
+    # CONSTANT-OUTPUT cases. With two active finite outputs, the successor
+    # gap is bounded and forgets n. With exactly one active finite output,
+    # the old gap either propagates by a fixed shift or is forgotten into an
+    # infinite-gap state. In every such case the height increment is constant.
     if active[0] is not NEG and active[1] is not NEG:
         q = normalized_row(active)
         return (q[0], q[1], H + A)
@@ -176,39 +179,61 @@ def audit_closed_forms():
     return count
 
 
+def classify_tail(M, side):
+    finite = [v for v in M if v is not NEG]
+    K = (
+        1
+        if len(finite) <= 1
+        else 1 + max(abs(x - y) for x in finite for y in finite)
+    )
+    ns = list(range(K + 1, K + 7))
+    seq = []
+    for n in ns:
+        x = (0, -n) if side == 1 else (-n, 0)
+        seq.append(normalize(step(x, M)))
+
+    if all(q is None for q in seq):
+        return "death", K, ns, seq
+    if any(q is None for q in seq):
+        fail(("mixed death in tail", M, side, K, seq))
+
+    states = [(q[0], q[1]) for q in seq]
+    heights = [q[2] for q in seq]
+
+    if len(set(heights)) == 1:
+        if len(set(states)) == 1:
+            return "forget", K, ns, seq
+        sides = [q[0] for q in seq]
+        mags = [q[1] for q in seq]
+        if (
+            len(set(sides)) == 1
+            and all(m != INF for m in mags)
+            and len({m - n for m, n in zip(mags, ns)}) == 1
+        ):
+            return "propagate", K, ns, seq
+        fail(("constant-output tail is neither propagate nor forget", M, side, K, seq))
+
+    if len(set(states)) == 1 and len({h + n for h, n in zip(heights, ns)}) == 1:
+        return "read-and-forget", K, ns, seq
+
+    fail(("tail trichotomy violation", M, side, K, seq))
+
+
 def audit_tail():
     count = 0
-    kinds = {"death": 0, "read": 0, "constant": 0}
+    kinds = {"death": 0, "propagate": 0, "forget": 0, "read-and-forget": 0}
     for M in product(ENTRIES, repeat=4):
-        finite = [v for v in M if v is not NEG]
-        K = (
-            1
-            if len(finite) <= 1
-            else 1 + max(abs(x - y) for x in finite for y in finite)
-        )
         for side in (1, 2):
-            seq = []
-            for n in range(K + 1, K + 7):
-                x = (0, -n) if side == 1 else (-n, 0)
-                q = normalize(step(x, M))
-                seq.append(q)
-                count += 1
-            if all(q is None for q in seq):
-                kinds["death"] += 1
-                continue
-            if any(q is None for q in seq):
-                fail(("mixed death in tail", M, side, K, seq))
-            states = [(q[0], q[1]) for q in seq]
-            heights = [q[2] for q in seq]
-            if len(set(heights)) == 1:
-                kinds["constant"] += 1
-                continue
-            if len(set(states)) == 1 and all(
-                heights[i] - heights[0] == -i for i in range(len(heights))
-            ):
-                kinds["read"] += 1
-                continue
-            fail(("retain/read violation", M, side, K, seq))
+            kind, _, ns, _ = classify_tail(M, side)
+            kinds[kind] += 1
+            count += len(ns)
+
+    # Explicit regression for the case missed by the superseded dichotomy.
+    for side in (1, 2):
+        kind, _, _, _ = classify_tail((0, 0, 0, 0), side)
+        if kind != "forget":
+            fail(("all-zero letter must silently forget", side, kind))
+
     return count, kinds
 
 

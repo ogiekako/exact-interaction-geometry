@@ -20,7 +20,7 @@ Let `A` be an arbitrary finite max-plus automaton over `Z_max`, and let `B` have
 
 is decidable. Consequently comparison/equivalence of two two-state max-plus automata and two-state positivity `Pos_2^k(Z_max)` are decidable for every finite alphabet size `k`.
 
-The proof passes through an exact projective normal form. Beyond an explicit finite threshold, the unique unbounded two-state projective gap satisfies a retain/read dichotomy: a letter may retain the gap with gap-independent output increment, or read its magnitude into the output while erasing it from the successor state, but cannot do both. This yields an exact one-counter transducer, after which effective Parikh semilinearity reduces containment failure to Presburger arithmetic.
+The proof passes through an exact projective normal form. Beyond an explicit finite threshold, the unique unbounded two-state projective gap has a three-way tail classification: **propagate**, **forget**, or **read-and-forget**. Propagation has gap-independent output increment; silent forgetting also has gap-independent output increment; and only read-and-forget makes the output depend on the unbounded magnitude. Thus a transition cannot both read an unbounded magnitude into the output and preserve it for future computation. This yields an exact functional one-counter transducer, after which effective Parikh semilinearity reduces containment failure to Presburger arithmetic.
 
 Publication posture:
 
@@ -127,7 +127,7 @@ The following are **not** promoted as broad theorems here:
 
 `make verify` runs foundational regression. `make verify-discoveries` runs the two-state max-plus public regression together with the Boolean Tucker case study and the retained finite calibrations/examples.
 
-For the max-plus theorem, the checker independently verifies closed formulas, the tail retain/read dichotomy on a complete finite letter family, and hundreds of thousands of end-to-end direct-versus-compiled word evaluations. These are regressions for the written infinite proof; finite testing is not being used as a substitute for the one-counter/Parikh argument.
+For the max-plus theorem, the checker independently verifies closed formulas, the propagate/forget/read-and-forget tail trichotomy on a complete finite letter family (including the all-zero silent-forget case), and hundreds of thousands of end-to-end direct-versus-compiled word evaluations. These are regressions for the written infinite proof; finite testing is not being used as a substitute for the functional one-counter/Parikh argument.
 
 A passing verifier does not establish historical novelty.
 
