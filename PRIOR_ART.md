@@ -60,19 +60,39 @@ This materially overlaps EIG and must be cited. The current technical distinctio
 
 Accordingly **EIG does not claim emergence by lenses, idempotent packaging, fixed-point objecthood, no-smuggling semantics, or route-mismatch/holonomy diagnostics as novel in the broad sense.**
 
-## 8. Stable quotients and distributed objecthood (Youvan 2026)
+## 8. Youvan 2026: stable quotients, admissibility, certified witnesses, and policy genesis
 
-Douglas C. Youvan's July 2026 object-formation series is another close contemporary neighbour. Representative papers include:
+Douglas C. Youvan's 2026 object-formation / admissibility / ontogenesis sequence is a close contemporary neighbour and materially overlaps several WEIR gates. Relevant papers include:
 
 - *Object Formation and Conceptual Resolution: Stable Quotients, Complete Refinement Lattices, and Functorial Observation*, DOI `10.13140/RG.2.2.25921.72800`;
 - *Local Observation and Global Objecthood: Sheaf Descent, Gluing Obstructions, and the Algebra of Distributed Concept Formation*, DOI `10.13140/RG.2.2.12748.99204`;
-- *Variational Objecthood: A Least-Complexity Principle for Stable Identity, Compression, and Concept Formation*, DOI `10.13140/RG.2.2.26170.76485`.
+- *Admissibility Algebra: A Policy-Relative Foundation for Identity, Invariance, and Certified Transformation*, DOI `10.13140/RG.2.2.28510.40006`;
+- *Admissibility Fibrations: Policy-Indexed Identity, Certified Quotients, and Lyapunov-Stable Emergence*, DOI `10.13140/RG.2.2.11130.25283`;
+- *Categorical Neural Abiogenesis: Policy-Indexed Quotients, Functorial Compression, and Certified Memory in No-Corpus Artificial Intelligence*, DOI `10.13140/RG.2.2.36315.73765`;
+- *Equivalence Genesis and Recursive Ontogenesis: Obstruction-Driven Identity Policies Beyond Homotopy Equivalence and Univalence*, DOI `10.13140/RG.2.2.17359.44968`.
 
-The distributed-objecthood paper takes local domains equipped with local equivalence policies, forms the minimal global equivalence `EqCl(union E_i)`, and gives an exact faithful-descent criterion by restricting the generated relation back to every local domain. It also studies stable transformations, a presheaf of resolution lattices, gluing defects, and explicit zig-zag obstruction witnesses. This is genuine prior art for **quotient objecthood plus local-to-global descent**.
+The distributed-objecthood construction is direct prior art for policy-relative quotient objecthood, generated globalization, faithful descent, gluing defects, and explicit obstruction witnesses.
 
-The distinction from current EIG is again narrower than a slogan. Youvan explicitly allows local equivalence to originate from future behavior, tests, or admissible substitution, but the formal theory begins after those distinctions have been represented by supplied equivalence policies. The paper also explicitly notes that its set quotient erases provenance and path multiplicity, treats policy choice as a fixed-ontology limitation, and leaves groupoid/stack-level witness retention and higher coherence to later extensions. Strict network morphisms use supplied functions and index maps.
+The later admissibility work strengthens the overlap substantially. *Admissibility Algebra* treats presentations, candidate transformations, policies, admissibility selectors, invariants, certificates, and coherence laws as foundational ingredients. *Admissibility Fibrations* develops policy-indexed identity and certified quotients in a proof-relevant setting where certificate spaces can retain multiple witnesses and higher coherence, and where policy refinement induces functorial comparison between identity doctrines. Therefore **proof-relevant witnesses, policy-indexed objecthood, and functorial doctrine/policy refinement are not EIG novelty claims in isolation.**
 
-Therefore EIG does **not** claim stable quotient objecthood, equivalence-policy lattices, generated globalization, faithful descent of local equivalences, or zig-zag gluing obstructions as unprecedented. Its stronger open target asks whether the policies/interfaces and the witness-enriched typed compositional world can themselves be reconstructed from the interaction doctrine.
+*Categorical Neural Abiogenesis* likewise keeps quotient objects together with governing policies, certificates/witnesses, countermodels, canonical representatives, known failure conditions, and coherence information in certified memory. It is therefore too strong to characterize the Youvan programme generically as a set-quotient theory that erases provenance or witness structure.
+
+Finally, *Equivalence Genesis and Recursive Ontogenesis* explicitly treats policy formation itself as endogenous to failure analysis. Its core mechanism is obstruction-driven identity-policy formation: failed equivalences generate obstructions, obstructions induce invariants, invariants induce new policies, and new policies induce new objecthood. Thus **obstruction-driven policy generation itself is also prior art** and cannot serve as a generic firewall for EIG.
+
+The remaining EIG distinction is narrower and should be stated at the derivation boundary. In the cited Youvan formalisms, substantial structure remains primitive or parameterized: universes of presentations and candidate transformations, policy/admissibility machinery, invariant languages, certificates/coherence, task/context structure, and in the algebraic line signatures and term syntax. The current audit has not identified there a theorem deriving, from one WEIR-style primitive interaction laboratory and one rule frozen in advance, the entire package
+
+```text
+all-context exact contextual algebra
+    + derived object/interface locus
+    + internally selected maps
+    + exact reopened-boundary witness provenance
+    + cross-object Hom data and composition
+    + doctrine change
+    + intrinsic descent geometry
+    + blind cross-domain recovery.
+```
+
+Accordingly EIG does **not** claim stable quotient objecthood, policy-indexed identity, certified quotient/witness spaces, functorial policy refinement, gluing obstruction theory, or obstruction-driven policy genesis as unprecedented. Its open target is the **simultaneous reconstruction of the full package from a common interaction/continuation-response boundary, with blind calibration and explicit reconstruction moduli**.
 
 ## 9. Algebraic Abiogenesis / Mathematical It from Bit (Youvan 2026)
 
@@ -173,10 +193,11 @@ raw execution / admitted continuation response
         -> witness multiplicity / provenance
         -> exact Hom and composition reconstruction
         -> doctrine refinement
-        -> intrinsic descent / obstruction geometry.
+        -> intrinsic descent / obstruction geometry
+        -> blind calibration in distant domains under one frozen rule.
 ```
 
-Several neighbouring theories cover large and important parts of this chain. **No claim is made here that an exhaustive historical search has proved the whole package unique.** The current literature audit has not identified a direct predecessor that derives this entire package from one frozen interaction laboratory without supplying the target object/map world.
+Several neighbouring theories cover large and important parts of this chain, including policy-relative objecthood, proof-relevant witnesses/certificates, policy refinement, and obstruction-driven policy formation. **No claim is made here that an exhaustive historical search has proved the whole package unique.** The current literature audit has not identified a direct predecessor that derives this entire package from one frozen interaction laboratory without supplying the target object/map world or equivalent domain structure.
 
 ## Novelty policy
 
