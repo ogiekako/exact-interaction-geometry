@@ -19,7 +19,6 @@
 \newcommand{\Zmax}{\mathbb{Z}_{\max}}
 \newcommand{\minf}{-\infty}
 \newcommand{\eval}[1]{[\![#1]\!]}
-\newcommand{\supp}{\operatorname{supp}}
 
 \title{Two-State Max-Plus Comparison Is Decidable}
 \author{Keigo Oka\thanks{Google. Work done in a personal capacity; no Google internal resources were used. Email: \href{mailto:ogiekako@gmail.com}{ogiekako@gmail.com}. ORCID: \href{https://orcid.org/0009-0007-8119-9267}{0009-0007-8119-9267}.}}
@@ -29,7 +28,7 @@
 \maketitle
 
 \begin{abstract}
-Daviaud, Guillon, and Merlet proved that comparison of max-plus automata is undecidable under a fixed state bound of 553 and explicitly left the range from 2 to 552 states open. We resolve the two-state endpoint. More strongly, given an arbitrary finite max-plus automaton $A$ and a max-plus automaton $B$ with at most two states, it is decidable whether $\eval{A}(w)\leq \eval{B}(w)$ for every word $w$. The structural reason is a one-dimensional projective normal form for two-state dynamics: outside an effective bounded region, a transition can either retain the unbounded projective gap or read its magnitude into the current output, but cannot do both. This retain/read separation yields an exact compilation of $B$ into a one-counter transducer. Effective semilinearity of context-free Parikh images then reduces comparison to Presburger arithmetic. As a consequence, two-state max-plus comparison, equivalence, and positivity are decidable.
+Daviaud, Guillon, and Merlet proved that comparison of max-plus automata is undecidable under a fixed state bound of 553 and explicitly left the range from 2 to 552 states open. We resolve the two-state endpoint. More strongly, given an arbitrary finite max-plus automaton $A$ and a max-plus automaton $B$ with at most two states, it is decidable whether $\eval{A}(w)\leq \eval{B}(w)$ for every word $w$. The structural reason is a one-dimensional projective normal form for two-state dynamics. Outside an effective bounded region, a transition has one of three tail behaviors: it propagates the unbounded projective gap with gap-independent height increment, forgets the gap with gap-independent height increment, or reads the gap magnitude into the height increment and then forgets it. In particular, any transition whose output depends on the unbounded gap necessarily destroys that gap. This yields an exact one-counter realization of $B$. Effective semilinearity of context-free Parikh images then reduces comparison to Presburger arithmetic. As a consequence, two-state max-plus comparison, equivalence, and positivity are decidable.
 \end{abstract}
 
 \section{Introduction}
@@ -71,7 +70,9 @@ The following problems are decidable:
 \end{enumerate}
 \end{corollary}
 
-The proof is elementary apart from one standard formal-language theorem. A two-state forward vector has only one unbounded projective coordinate, namely the difference of its two entries. For sufficiently large absolute difference, each letter has a fixed tail behavior. The key point is that a letter which observes the magnitude of this difference necessarily destroys it. A letter which preserves it cannot simultaneously make the current output depend on its magnitude. We call this the \emph{retain/read separation}. It permits exact simulation by one nonnegative counter. The accepting transition language of the synchronized simulation is context-free, so effective Parikh semilinearity \cite{Parikh1966} reduces the existence of a comparison violation to Presburger arithmetic.
+The proof is elementary apart from one standard formal-language theorem. A two-state forward vector has only one unbounded projective coordinate, namely the difference of its two entries. For sufficiently large absolute difference, each letter has a fixed tail form. The essential property is one-way: if the current height increment depends on the magnitude of the unbounded projective gap, then the successor projective state no longer depends on that magnitude. A step that propagates the gap has a gap-independent height increment. This no-read-while-propagating property permits exact simulation by one nonnegative counter. The accepting transition language of the synchronized simulation is context-free, so effective Parikh semilinearity \cite{Parikh1966} reduces the existence of a comparison violation to Presburger arithmetic.
+
+We use slightly more general conventions than \cite{DGM2017}: arbitrary max-plus initial and final weights and words in $\Sigma^*$ are allowed here. The MFCS 2017 formulation uses Boolean-valued initial/final vectors and nonempty words. Restricting to that convention only simplifies the construction; excluding the empty word can also be enforced by one bit of finite control.
 
 No complexity bound is claimed here.
 
@@ -89,11 +90,11 @@ If both coordinates are finite, define the signed projective gap
 \[
 z(x)=x_1-x_2\in\mathbb Z.
 \]
-If exactly one coordinate is finite, we use the symbols $+\infty$ and $-\infty$ for the corresponding infinite gap. Thus, after subtracting the common height, every finite projective state is represented by
+If exactly one coordinate is finite, use $+\infty$ or $-\infty$ for the corresponding infinite gap. After subtracting the common height, every finite projective state is therefore represented by
 \[
 (0,-n)\quad\text{or}\quad(-n,0),\qquad n\in\mathbb N.
 \]
-The unbounded projective information is therefore one-dimensional.
+The unbounded projective information is one-dimensional.
 
 Let a letter $\sigma$ act by
 \[
@@ -124,81 +125,95 @@ Subtracting the input height gives the height cocycle
 \end{equation}
 whenever the successor is nondead.
 
-\section{The retain/read separation}
+\section{The tail trichotomy}
 
 Let $E$ be the set of all finite transition, initial, and final weights of $B$. Choose
 \begin{equation}\label{eq:K}
 K=1+\max\{|\alpha-\beta|:\alpha,\beta\in E\},
 \end{equation}
-with $K=1$ if $E$ has fewer than two elements. Thus $K$ strictly dominates every finite breakpoint in \eqref{eq:gap}, every fixed tail shift appearing below, and the final readout breakpoint.
+with $K=1$ if $E$ has fewer than two elements. Thus $K$ strictly dominates every finite transition breakpoint, every fixed tail shift below, and the final readout breakpoint.
 
-We first analyze the positive tail $z>K$. Since $z$ is beyond all breakpoints, every maximum in \eqref{eq:gap} has a forced branch. The cases are summarized in Table~\ref{tab:tail}. The negative tail follows by exchanging the two current-state coordinates.
+Consider first the positive tail $z>K$. Every maximum in \eqref{eq:gap} then has a forced branch. The four active-row cases are summarized in Table~\ref{tab:tail}. The negative tail follows by exchanging the two current-state coordinates.
 
 \begin{table}[ht]
 \centering
 \small
-\begin{tabular}{@{}lll@{}}
+\begin{tabular}{@{}llll@{}}
 \toprule
-active row $(a,b)$ & successor projective behavior & height increment \\
+active row $(a,b)$ & successor projective behavior & height increment & class \\
 \midrule
-$a,b$ finite & fixed gap $a-b$ & constant $\max(a,b)$ \\
-$a$ finite, $b=\minf$ & translation or $+\infty$ & constant $a$ \\
-$a=\minf$, $b$ finite & reflected translation or $-\infty$ & constant $b$ \\
-$a=b=\minf$ & fixed by $(c,d)$, independent of $z$ & $C_M-z$ \\
+$a,b$ finite & fixed gap $a-b$ & constant $\max(a,b)$ & forget \\
+exactly one finite & translation, or infinite gap & constant & propagate or forget \\
+$a=b=\minf$ & fixed by $(c,d)$, independent of $z$ & $C_M-z$ & read-and-forget \\
 \bottomrule
 \end{tabular}
-\caption{Tail behavior for $z>K$. ``Translation'' means that the gap magnitude changes by a fixed integer, possibly with a side flip.}
+\caption{Tail behavior for $z>K$. A translation has gap magnitude $n'=n+s$ for a fixed integer $s$ (with the symmetric negative-tail form obtained by exchanging the current states).}
 \label{tab:tail}
 \end{table}
 
-For completeness, consider the four lines. If $a$ is finite, then $z>|c-a|$ forces $z+a>c$; if $a=\minf$, the first coordinate of the successor is $c$. The same statement holds for $b,d$. Substituting the resulting forced branches into \eqref{eq:gap} gives the successor forms in Table~\ref{tab:tail}. Equation \eqref{eq:cocycle} gives the last column. If $A_M$ is finite, then $z>C_M-A_M$ whenever $C_M$ is finite, so $\delta_M(z)=A_M$. If $A_M=\minf$, then $\delta_M(z)=C_M-z$ and the successor is determined solely by $(c,d)$.
+For completeness, if $a$ is finite then $z>|c-a|$ forces $z+a>c$; if $a=\minf$, the first successor coordinate is $c$. The same statement holds for $b,d$. If both $a,b$ are finite, both successor coordinates come from the active row, so the gap is the fixed value $a-b$ and $\delta_M(z)=\max(a,b)$. If exactly one of $a,b$ is finite, the active successor coordinate is $H$ plus a fixed weight. The other coordinate is either absent, giving an infinite gap, or comes from the inactive row and differs by $n+s$ for a fixed integer $s$; in either case the height increment is constant. Finally, if $a=b=\minf$, both successor coordinates come from the inactive row, so their projective class is independent of $z$ while \eqref{eq:cocycle} gives $\delta_M(z)=C_M-z$.
 
-This proves the key lemma.
+Thus there is a genuine third possibility that should not be conflated with reading: a step may forget the gap without using its magnitude in the height increment.
 
-\begin{lemma}[Retain/read separation]\label{lem:retain-read}
-For every projective state with $|z|>K$, a letter can behave in only one of the following two ways with respect to the unbounded gap magnitude:
+\begin{lemma}[Tail trichotomy]\label{lem:tail}
+For every projective state with finite gap magnitude $n=|z|>K$, every nondead letter transition has exactly one of the following forms, with constants determined by the letter and the tail side:
 \begin{enumerate}[label=(\roman*)]
-\item it \emph{retains} the gap into the next projective state, up to a fixed translation and possible side flip, while the height increment is independent of $|z|$; or
-\item it \emph{reads} the gap magnitude into the height increment, in which case the successor projective state is independent of $|z|$.
+\item \emph{propagate}: the successor retains an unbounded gap with magnitude $n'=n+s$ for a fixed integer $s$ (and a fixed successor side), while the height increment is a fixed constant $c$;
+\item \emph{forget}: the successor projective state is independent of $n$, while the height increment is a fixed constant $c$;
+\item \emph{read-and-forget}: the successor projective state is independent of $n$, while the height increment is $c-n$.
 \end{enumerate}
-In particular, one letter cannot both retain and read the same unbounded gap.
+In particular, whenever the height increment depends on the unbounded gap magnitude, that magnitude is not propagated to the successor.
 \end{lemma}
 
+\begin{proof}
+The positive-tail case is the case split above, and the negative-tail case is obtained by exchanging the current-state coordinates. The choice of $K$ makes every relevant comparison strict and also gives $K>|s|$ for every propagate shift $s$.
+\end{proof}
+
 \begin{remark}
-This statement is specific to the one-dimensional projective geometry of two states. With three states, two independent projective differences can coexist, and an update can read one combination while retaining another. Thus the proof below should not be interpreted as a generic bounded-dimensional argument.
+For example, the all-zero matrix has a silent forget tail: for every sufficiently large gap, the successor gap is $0$ and the height increment is $0$. This is why the useful structural statement is not a literal retain/read dichotomy, but the prohibition on simultaneously reading an unbounded magnitude into the output and propagating that magnitude to the future.
+\end{remark}
+
+\begin{remark}
+The statement is specific to the one-dimensional projective geometry of two states. With three states, two independent projective differences can coexist, and an update can read one combination while retaining another.
 \end{remark}
 
 \section{Exact compilation to one counter}
 
-\begin{lemma}[One-counter realization]\label{lem:counter}
+\begin{lemma}[Functional one-counter realization]\label{lem:counter}
 From $B$ one can effectively construct a one-counter transducer $T_B$ such that, for every word $w$:
 \begin{enumerate}[label=(\roman*)]
 \item if $\eval{B}(w)=\minf$, then $T_B$ has no successful computation on $w$;
-\item otherwise $T_B$ has a successful computation whose total integer emission is exactly $\eval{B}(w)$.
+\item if $\eval{B}(w)\neq\minf$, then $T_B$ has a successful computation on $w$, and every successful computation on $w$ emits exactly $\eval{B}(w)$.
 \end{enumerate}
-The transducer uses finite control, one nonnegative counter, increment, blocking decrement, zero test, and fixed integer emissions.
+The construction may be chosen deterministic on each input word (apart from a fixed internal macro-expansion). It uses finite control, one nonnegative counter, increment, blocking decrement, zero test, and fixed integer emissions.
 \end{lemma}
 
 \begin{proof}
-Finite control stores which coordinate is maximal, whether the gap is finite or infinite, and all finite gap values at most $K$. When the finite gap magnitude exceeds $K$, the counter stores that magnitude.
+Finite control stores which coordinate is maximal, whether the projective gap is finite or infinite, and every finite gap value at most $K$. The counter invariant is:
+\begin{quote}
+In a bounded-gap or infinite-gap control state the counter is zero. In a tail state the counter equals the exact magnitude $n=|z|>K$.
+\end{quote}
+The initial forward vector contributes its height as a fixed emission and initializes this invariant.
 
-The initial forward vector contributes its height as a fixed emission and initializes the projective control/counter state. Consider one input letter. If the current gap is bounded, the exact successor and height increment are obtained from a finite lookup table. If the current gap is larger than $K$, Lemma~\ref{lem:retain-read} applies.
+If the current gap is bounded, the exact successor and height increment are obtained from a finite lookup table. If it is infinite, the only surviving current coordinate determines the successor by another finite lookup. Suppose now that the counter stores a tail magnitude $n>K$. Apply Lemma~\ref{lem:tail}.
 
-In a retain case, the counter changes by a fixed signed integer. Since $K$ strictly exceeds the absolute value of every such shift, blocking decrements are sufficient and never attempt to cross below zero on a tail state. The successor may enter the bounded region, which is detected before processing the next input letter by inspecting the counter up to $K+1$ using finitely many decrement/increment operations that restore its value.
+In a propagate case, emit the fixed constant $c$ and change the counter by the fixed shift $s$. Since $K>|s|$, a tail value cannot cross zero. To determine whether the shifted value has entered the bounded region, perform a deterministic destructive probe of at most $K+1$ decrements: if zero is reached within the first $K$ decrements, record the exact bounded value in finite control and leave the counter at zero; otherwise perform the $(K+1)$st decrement, then restore those $K+1$ units and remain in a tail control state. The probe emits zero, so it does not change the represented height.
 
-In a read case, the old gap will not be needed again. The transducer drains the counter to zero, emitting $-1$ per decrement, and then emits the fixed row maximum appearing in Table~\ref{tab:tail}. It then moves to the bounded or infinite-gap successor stored in finite control. Dead transitions reject.
+In a forget case, the old magnitude will never be needed again. Drain the counter to zero with zero emission, emit the fixed constant $c$, and move to the bounded- or infinite-gap successor stored in finite control.
 
-Exactly the same threshold handles the final vector. If the currently maximal coordinate has a finite final weight, the final contribution is constant on the tail. If only the other coordinate survives, the transducer drains the counter once and adds the corresponding fixed final weight. Thus the emitted total equals the max-plus forward value exactly.
+In a read-and-forget case, drain the counter to zero while emitting $-1$ per decrement, then emit the fixed constant $c$ and move to the successor projective control state. This contributes exactly $c-n$ and restores the invariant. Dead transitions reject.
+
+The final vector has the same one-dimensional form. On a bounded or infinite projective state its value is a finite-control lookup. On a tail, either the currently maximal coordinate has a finite final weight, in which case the final contribution is constant and the counter can be silently drained, or only the other coordinate contributes, in which case the counter is drained with emission $-1$ per decrement and a fixed final weight is added. If neither coordinate can accept, the computation rejects.
+
+All choices above are forced by the current finite control, counter tests, and input letter. Thus the macro-expanded transducer can be chosen deterministic, so successful computations cannot introduce spurious output values. By induction on the input prefix, the maintained height and projective state equal the exact max-plus forward vector; the terminal emission is therefore exactly $\eval{B}(w)$.
 \end{proof}
 
 \section{Deciding comparison}
 
-We now prove Theorem~\ref{thm:main}.
-
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
 First separate support. For a max-plus automaton, the set of words on which the value is finite is regular: ignore weights and retain exactly the finite-weight transitions, initial states, and final states. Hence it is decidable whether there exists a word with $\eval{A}(w)$ finite and $\eval{B}(w)=\minf$. Any such word is an immediate violation.
 
-Assume now that we work on the common finite support. Construct the exact one-counter transducer $T_B$ from Lemma~\ref{lem:counter}. Synchronize $T_B$ with the finite run graph of $A$. A transition of $T_B$ that consumes an input letter is synchronized with a transition of $A$ carrying the same letter; internal counter operations of $T_B$ leave the $A$-state unchanged. The resulting machine nondeterministically chooses an accepting run $\rho$ of $A$ while exactly computing $\eval{B}(w)$.
+Assume now that we work on the common finite support. Construct the functional one-counter transducer $T_B$ from Lemma~\ref{lem:counter}. Synchronize $T_B$ with the finite run graph of $A$. A transition of $T_B$ that consumes an input letter is synchronized with a transition of $A$ carrying the same letter; internal counter operations of $T_B$ leave the $A$-state unchanged. The resulting machine nondeterministically chooses an accepting run $\rho$ of $A$, while the $T_B$ component has only the exact output $\eval{B}(w)$ on the synchronized word.
 
 Give every transition of this product machine a fresh symbol. The set $L$ of successful transition sequences is an effectively given one-counter language and therefore a context-free language. By the effective form of Parikh's theorem \cite{Parikh1966}, the set of transition-count vectors
 \[
@@ -212,7 +227,7 @@ Both
 \qquad\text{and}\qquad
 \eval{B}(w)
 \]
-are integer-linear functions of the transition-count vector; fixed initial and final contributions may be represented by dedicated start and end transitions. Therefore the existence of a successful computation satisfying
+are integer-linear functions of the transition-count vector: each product transition carries a fixed contribution to the chosen $A$-run weight and a fixed transducer emission, and fixed initial/final contributions can be represented by dedicated start/end transitions. Therefore the existence of a successful computation satisfying
 \[
 \operatorname{wt}_A(\rho)>\eval{B}(w)
 \]
@@ -235,21 +250,21 @@ if and only if $\eval{B}(w)\geq0$ for every word $w$.
 
 \section{Position relative to prior work}
 
-Daviaud, Guillon, and Merlet \cite{DGM2017} established the bounded-state undecidability frontier at 553 states and explicitly identified the interval $2,\ldots,552$ as open. Theorem~\ref{thm:main} closes its two-state endpoint. Daviaud and Johnson \cite{DJ2017} studied the same two-state max-plus model but addressed semigroup identities rather than positivity or comparison. Daviaud's later survey \cite{Daviaud2020} reviews containment and equivalence for weighted automata and records no two-state solution.
+Daviaud, Guillon, and Merlet \cite{DGM2017} established the bounded-state undecidability frontier at 553 states and explicitly identified the interval $2,\ldots,552$ as open. Theorem~\ref{thm:main} closes its two-state endpoint. Daviaud and Johnson \cite{DJ2017} studied the same two-state max-plus model but addressed semigroup identities rather than positivity or comparison. Daviaud's survey \cite{Daviaud2020} reviews containment and equivalence for weighted automata and records no two-state solution. More recently, Daviaud, Purser, and Tcheng \cite{DPT2025} proved the Big-O (affine-domination) problem decidable and PSPACE-complete; their problem is explicitly a relaxation of exact containment, which remains undecidable in general.
 
-The proof mechanism is also different from nearby decidable restrictions such as unambiguous weighted expressions, unary-alphabet tropical automata, or determinisability problems: here the alphabet and left-hand automaton are unrestricted, while the right-hand automaton has only two states. The decisive structure is the exact one-counter reduction furnished by Lemma~\ref{lem:retain-read}.
+The proof mechanism here is different from nearby decidable restrictions such as finitely ambiguous classes, unary-alphabet tropical automata, or determinisability problems: the alphabet and left-hand automaton are unrestricted, while the right-hand automaton has only two states. The decisive structure is the exact one-counter reduction furnished by Lemmas~\ref{lem:tail} and \ref{lem:counter}.
 
 A targeted literature audit conducted through September 1, 2026 located no earlier resolution of the two-state comparison case and no equivalent arbitrary-left/two-state-right containment theorem. Bibliographic search cannot certify absolute historical absence, so this note makes no stronger priority claim than that dated statement.
 
-\section{Reproducibility}
+\section{Reproducibility and provenance}
 
 A maintained version of this manuscript, the public regression code, and the dated literature audit are available in the Exact Interaction Geometry research repository:
 \[
 \text{\url{https://github.com/ogiekako/exact-interaction-geometry}}.
 \]
-This result arose within the Exact Interaction Geometry research programme: its residual/interface viewpoint led to isolating the one-dimensional projective gap and asking whether a transition can both preserve that residual for future computation and expose its magnitude in the current output. The theorem and proof above are ordinary weighted-automata mathematics and do not depend on EIG; the repository records the resulting research provenance and reproducibility material.
+The result arose within the EIG research programme: its residual/interface viewpoint led to isolating the one-dimensional projective gap and asking whether one transition can both expose an unbounded residual magnitude and preserve it for future computation. The theorem itself is ordinary weighted-automata mathematics and does not depend on EIG.
 
-A companion exact regression script checks the algebra independently of the proof. It verifies the projective formulas, exhaustively checks the retain/read tail classification for all $2\times2$ letter matrices over a finite test alphabet of weights including $\minf$, and compares direct max-plus evaluation with a separately coded projective/counter evaluator on hundreds of thousands of finite words. The infinite theorem rests on the proof above, not on finite enumeration.
+The companion regression script checks the projective formulas, exhaustively classifies a finite family of letter tails into propagate / forget / read-and-forget (including the all-zero silent-forget case), and compares direct max-plus evaluation with a separately coded projective/counter evaluator on hundreds of thousands of finite words. The infinite theorem rests on the proof above, not on finite enumeration.
 
 \section*{AI-assisted research disclosure}
 
@@ -276,6 +291,12 @@ Laure Daviaud.
 \newblock Containment and Equivalence of Weighted Automata: Probabilistic and Max-Plus Cases.
 \newblock In \emph{LATA 2020}, LNCS 12038, pp. 17--32, 2020.
 \newblock DOI: \href{https://doi.org/10.1007/978-3-030-40608-0_2}{10.1007/978-3-030-40608-0\_2}.
+
+\bibitem{DPT2025}
+Laure Daviaud, David Purser, and Marie Tcheng.
+\newblock The Big-O Problem for Max-Plus Automata is Decidable (PSPACE-Complete).
+\newblock \emph{Logical Methods in Computer Science}, 21(3), 3:1--3:35, 2025.
+\newblock DOI: \href{https://doi.org/10.46298/lmcs-21(3:3)2025}{10.46298/lmcs-21(3:3)2025}.
 
 \bibitem{Parikh1966}
 Rohit J. Parikh.
