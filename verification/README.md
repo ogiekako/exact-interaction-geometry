@@ -21,7 +21,7 @@ Expected output is of the form
 ```text
 PASS two-state max-plus tail/compiler regression
 closed-form cases: 22032
-tail cases: 15552 ...
+tail cases: 15552 {'death': ..., 'propagate': ..., 'forget': ..., 'read-and-forget': ...}
 end-to-end word cases: 465831
 ```
 
@@ -30,10 +30,12 @@ The checker was written independently for the curated public repository rather t
 It checks three finite layers:
 
 1. every displayed signed-gap and height-cocycle formula over all `2 x 2` letters with entries in `{-infinity,-2,-1,0,1,2}` and signed gaps in a fixed interval;
-2. both projective tails for every such letter, directly rejecting any case in which the tail both retains an unbounded gap and has a gap-dependent height increment;
+2. both projective tails for every such letter, classifying each nondead tail as **propagate**, **forget**, or **read-and-forget**, with an explicit regression asserting that the all-zero letter is a silent-forget case;
 3. `465,831` direct-versus-compiled word evaluations on exhaustive one- and two-letter stress families.
 
-The checker is a **regression for the proof**, not a proof by exhaustion. The infinite theorem additionally uses the written threshold argument, exact one-counter construction, effective Parikh theorem, and Presburger decision step in [`../discoveries/two-state-maxplus-comparison.md`](../discoveries/two-state-maxplus-comparison.md).
+The trichotomy distinction matters. A transition may forget an unbounded projective gap while emitting a gap-independent constant; such a transition is neither propagation nor read-and-forget. The infinite proof therefore uses zero-emission counter drain for silent forget, `-1`-per-decrement drain only for read-and-forget, and an explicit counter invariant for tail versus bounded control states.
+
+The checker is a **regression for the proof**, not a proof by exhaustion. The infinite theorem additionally uses the written threshold argument, functional one-counter construction, effective Parikh theorem, and Presburger decision step in [`../discoveries/two-state-maxplus-comparison.md`](../discoveries/two-state-maxplus-comparison.md).
 
 Historical novelty is separately audited in [`../provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](../provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md); no program can establish bibliographic priority.
 
