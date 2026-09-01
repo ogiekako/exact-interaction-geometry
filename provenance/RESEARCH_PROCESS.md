@@ -1,6 +1,6 @@
 # Research process
 
-Exact Interaction Geometry emerged from a longer investigation of finite-interface recurrent dynamics and compositional reconstruction. The project was developed through extended AI-assisted mathematical research sessions rather than a conventional single-author notebook workflow.
+Exact Interaction Geometry developed from a longer investigation of finite-interface recurrent dynamics and compositional reconstruction. The project used extended AI-assisted mathematical research sessions rather than a conventional single-author notebook workflow.
 
 ## Workflow
 
@@ -12,11 +12,11 @@ counterexample search;
 proof repair;
 finite exact verification;
 literature comparison;
-independent adversarial audit;
+separate model-assisted adversarial review;
 canonical promotion or rejection.
 ```
 
-A generated theorem is not treated as established merely because a model produced a proof. The ledger contains many examples of claims being weakened, repaired, or explicitly refuted after independent audit.
+A generated theorem is not treated as established merely because a model produced a proof. The ledger contains examples of claims being weakened, repaired, or explicitly refuted after separate adversarial model review. Those reviews are part of the internal research process; they are not a substitute for a public proof, a finite certificate when appropriate, or external specialist verification.
 
 ## Public curation rule
 
@@ -26,8 +26,10 @@ Broader application branches, superseded formulations, failed theorem candidates
 
 ## AI disclosure
 
-AI systems, primarily OpenAI reasoning models including GPT-5.6 Sol, materially contributed to theorem discovery, proof drafting, counterexample generation, code generation, and audit. Keigo Oka directed the research programme and maintains the curated mathematical record. Model output is not treated as mathematical evidence: promoted claims are intended to rest on explicit statements, proofs or finite certificates as appropriate, public regression code, and independent checks.
+AI systems, primarily OpenAI reasoning models including GPT-5.6 Sol, materially contributed to theorem discovery, proof drafting, counterexample generation, code generation, literature-search support, and adversarial review. Keigo Oka directed the research programme and maintains the curated mathematical record.
+
+Model output, agreement between models, internal critique, and regression success are not treated as mathematical certification. Public claims are intended to rest on explicit statements and proofs, or on finite certificates/regression tests where those are the relevant evidence. Historical novelty and priority are separate literature questions.
 
 Keigo Oka is employed by Google. This work was done in a personal capacity; no Google internal resources were used.
 
-The provenance label of a result is distinct from its correctness status. Mathematical correctness is meant to rest on explicit statements, proofs/certificates, and independent checks, not on the identity of the model that proposed it.
+The provenance label of a result is distinct from its correctness status. Provenance records how a claim was generated or reviewed; it is not itself evidence that the claim is true.
