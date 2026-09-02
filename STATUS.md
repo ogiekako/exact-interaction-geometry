@@ -1,6 +1,7 @@
 # Status and epistemic boundary
 
-Snapshot: **2026-09-01 JST**
+Snapshot: **2026-09-01 JST**  
+Curation correction: **2026-09-02 JST**
 
 This file is intentionally conservative. It records only claims appropriate for the public EIG surface.
 
@@ -55,38 +56,13 @@ Public files:
 | every small category is exactly reconstructible from its untyped consolidation, one-bit composition success, and retained raw-arrow witness fibres | **PUBLIC PROOF AVAILABLE** | classical consolidation ingredients; EIG operational recognition formulation |
 | exact category reconstruction does not imply ULF/Conduche factorization | **PUBLIC PROOF AVAILABLE** | boundary theorem |
 
-## Second external case study: Boolean Tucker junction failure
+## Retired Boolean Tucker calibration
 
-For the `2 x 4 x 4` tensor in [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md), the three mode-unfolding Boolean ranks are
+A 2026-08-31 research lane produced a finite Boolean Tucker rank-profile incompatibility example. It was briefly presented in the public repository as a “Boolean Tucker junction counterexample.” The finite calculation was directed at an EIG-generated universal question: whether independently minimal Boolean mode interfaces must be jointly realizable by one exact Tucker core.
 
-```text
-(2,3,3),
-```
+A later curation review did **not** identify a published conjecture or problem asserting that universal property. Calling the example a public “counterexample” was therefore liable to suggest an external conjecture/problem resolution that the repository had not established. On 2026-09-02 the item was removed from the current public theorem/case-study surface. Git history preserves the research provenance; no historical or novelty claim is made for that lane.
 
-but profile `(2,3,3)` is not jointly realizable by one exact Boolean Tucker core. The displayed tensor has exact feasible profile region
-
-```text
-Tuck_B(T) = Up(2,3,4) union Up(2,4,3)
-```
-
-where `Up(p,q,r)` denotes the componentwise upward closure.
-
-The public checker exhausts every nonzero support mask on each mode, derives the mode ranks and unique minimum bases without a normalization lemma, checks the four blocking zeros, exhausts every distinct nonzero first-arm support family to rule out all profiles with the two other arms fixed at rank three, verifies the two Pareto profiles, and checks a same-shape same-mode-ranks tensor for which `(2,3,3)` is feasible.
-
-Public-evidence posture: **public finite counterexample and accompanying solver-free checker; no historical `first` claim.**
-
-The EIG relevance is the question that selected the phenomenon: independently minimal exact interfaces need not jointly descend through one common junction witness.
-
-### Unpublished structural follow-up
-
-An internal research note explores structural refinements of the Boolean Tucker example, including a reduced-separator classification and a small obstruction pattern. The proof/checker for that follow-up is not included in this repository.
-
-Public-evidence posture: **PRIVATE / NOT PUBLICLY VERIFIABLE.** These observations are not part of the public theorem record and are not required for the Boolean Tucker counterexample above.
-
-The internal notes also distinguish the following points, which are not promoted here as public results:
-
-- classical abstract semilattice flatness/distributivity is prior art;
-- a broader universal bridge from the reduced analysis to unrestricted Boolean Tucker structure remains unresolved.
+This curation decision does not assert that the finite calculation was false. It separates a potentially correct internally generated example from a documented external mathematical problem.
 
 ## External-search calibrations and candidates
 
@@ -126,7 +102,7 @@ The following are **not** promoted as broad theorems here:
 
 ## Verification boundary
 
-`make verify` runs foundational regression. `make verify-discoveries` runs the two-state max-plus public regression together with the Boolean Tucker case study and the retained finite calibrations/examples.
+`make verify` runs foundational regression. `make verify-discoveries` runs the two-state max-plus public regression together with retained finite calibrations/examples.
 
 For the max-plus theorem, the checker separately checks closed formulas, the propagate/forget/read-and-forget tail trichotomy on a complete finite letter family (including the all-zero silent-forget case), and hundreds of thousands of end-to-end direct-versus-compiled word evaluations. These are regressions for the written infinite proof; finite testing is not being used as a substitute for the functional one-counter/Parikh argument.
 
@@ -135,5 +111,3 @@ A passing verifier does not establish historical novelty.
 ## Historical novelty boundary
 
 Many EIG ingredients are established mathematics. Max-plus automata, projective normalization, one-counter languages, Parikh's theorem, and Presburger arithmetic are classical ingredients. The public claim is the exact composition of these ingredients into the two-state right-hand comparison theorem and its `d=2` consequence for the DGM 2017 question, with historical priority stated only at the bounded scope of the dated literature review above.
-
-Boolean Tucker decomposition is prior work; nonnegative Tucker literature already contains non-field-like minimum-rank phenomena; and semilattice flatness/distributivity is classical. The Boolean public claim remains the explicit exact junction counterexample and its publicly checkable rank region.
