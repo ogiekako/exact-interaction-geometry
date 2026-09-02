@@ -78,7 +78,7 @@ No complexity bound is claimed here.
 
 \section{Two-state projective dynamics}
 
-Fix a two-state max-plus automaton $B$. Its forward row after reading a prefix is a vector
+If $B$ has only one state, add a permanently dead second state; this leaves the computed series unchanged. Thus fix a two-state max-plus automaton $B$. Its forward row after reading a prefix is a vector
 \[
 x=(x_1,x_2)\in\Zmax^2.
 \]
@@ -167,6 +167,7 @@ Here \emph{propagate} refers to preservation of the dependence on $n$: the shift
 
 \begin{proof}
 The positive-tail case is the case split above, and the negative-tail case is obtained by exchanging the current-state coordinates. The choice of $K$ makes every relevant comparison strict and also gives $K>|s|$ for every propagate shift $s$.
+Moreover, in cases (ii) and (iii), the successor projective state is either an infinite-gap state or a finite-gap state whose magnitude is strictly less than $K$. Indeed, every finite successor gap in those cases is the difference of two finite entries of the letter matrix, so its absolute value is $<K$ by the definition of $K$.
 \end{proof}
 
 \begin{remark}
@@ -185,27 +186,44 @@ From $B$ one can effectively construct a one-counter transducer $T_B$ such that,
 \item if $\eval{B}(w)=\minf$, then $T_B$ has no successful computation on $w$;
 \item if $\eval{B}(w)\neq\minf$, then $T_B$ has a successful computation on $w$, and every successful computation on $w$ emits exactly $\eval{B}(w)$.
 \end{enumerate}
-The construction may be chosen deterministic on each input word (apart from a fixed internal macro-expansion). It uses finite control, one nonnegative counter, increment, blocking decrement, zero test, and fixed integer emissions.
+The construction may be chosen deterministic. Each input letter triggers a finite-control routine built from unit counter increments, blocking decrements, zero tests, and fixed integer emissions. Such a routine has a unique finite execution from any reachable configuration, although its running length may depend on the counter value (for example when the counter is drained to zero).
 \end{lemma}
 
 \begin{proof}
-Finite control stores which coordinate is maximal, whether the projective gap is finite or infinite, and every finite gap value at most $K$. The counter invariant is:
-\begin{quote}
-In a bounded-gap or infinite-gap control state the counter is zero. In a tail state the counter equals the exact magnitude $n=|z|>K$.
-\end{quote}
+Use finite-control states $B_z$ for every integer $-K\le z\le K$, infinite-gap states $I_+$ and $I_-$, and tail states $T_+$ and $T_-$. Their meanings are as follows. In $B_z$ the exact signed projective gap is $z$; in $I_+$ (respectively $I_-$) only the first (respectively second) coordinate is finite; and in $T_+$ or $T_-$ the gap is finite with the indicated sign and magnitude $n>K$.
+
+The counter invariant is:
+\[
+\begin{array}{ll}
+\text{in }B_z,I_+,I_- &: \text{the counter is }0,\\
+\text{in }T_+,T_- &: \text{the counter is exactly }n=|z|>K.
+\end{array}
+\]
+In addition, at every boundary between these finite-control routines, the total emission produced so far is exactly the height of the current forward vector.
+
 If the initial forward vector is $(\minf,\minf)$, take $T_B$ to have no successful computation, and there is nothing to prove. Otherwise its height is defined; the initial forward vector contributes that height as a fixed emission and initializes the invariant.
 
-If the current gap is bounded, the exact successor and height increment are obtained from a finite lookup table. If the lookup successor is a tail gap of magnitude $n'>K$, load this fixed value from zero by $n'$ unit increments; otherwise the counter remains zero. Because there are only finitely many bounded control states and letters, every such load is a fixed finite macro. If the current gap is infinite, the only surviving current coordinate determines the successor by another finite lookup. Suppose now that the counter stores a tail magnitude $n>K$. Apply Lemma~\ref{lem:tail}.
+If the current gap is bounded, the exact successor and height increment are obtained from a finite lookup table. If the lookup successor is a tail gap of magnitude $n'>K$, load this fixed value from zero by $n'$ unit increments; otherwise the counter remains zero. Because there are only finitely many bounded control states and letters, each such load is an effectively constructible finite routine. Its explicit size may depend on the numerical magnitudes of the weights; this is immaterial here because no complexity bound is claimed. If the current gap is infinite, the only surviving current coordinate determines the successor by another finite lookup. Suppose now that the counter stores a tail magnitude $n>K$. Apply Lemma~\ref{lem:tail}.
 
-In a propagate case, emit the fixed constant $c$ and change the counter by the fixed shift $s$. Since $K>|s|$, a tail value cannot cross zero. To determine whether the shifted value has entered the bounded region, perform a deterministic destructive probe of at most $K+1$ decrements: if zero is reached within the first $K$ decrements, record the exact bounded value in finite control and leave the counter at zero; otherwise perform the $(K+1)$st decrement, then restore those $K+1$ units and remain in a tail control state. The probe emits zero, so it does not change the represented height.
+In a propagate case, emit the fixed constant $c$ and change the counter by the fixed shift $s$, using $|s|$ unit increments or blocking decrements. Since $n>K>|s|$, these decrements cannot block. Let $m=n+s>0$ be the resulting counter value.
 
-In a forget case, the old magnitude will never be needed again. Drain the counter to zero with zero emission, emit the fixed constant $c$, and move to the bounded- or infinite-gap successor stored in finite control.
+To determine whether $m\le K$, use a deterministic destructive probe. For $j=0,1,\ldots,K$, after exactly $j$ probe decrements, test whether the counter is zero. If it is, then $m=j$; record that exact bounded gap in finite control and leave the counter at zero. If no zero test succeeds for $j\le K$, perform one further decrement and then exactly $K+1$ increments. This restores the original value $m$, including in the boundary case $m=K+1$, and the machine remains in the appropriate tail control state. All probe steps emit zero.
 
-In a read-and-forget case, drain the counter to zero while emitting $-1$ per decrement, then emit the fixed constant $c$ and move to the successor projective control state. This contributes exactly $c-n$ and restores the invariant. Dead transitions reject.
+In a forget case, the old magnitude will never be needed again. Drain the counter to zero with zero emission, emit the fixed constant $c$, and move to the successor projective control state. By the final observation in the proof of Lemma~\ref{lem:tail}, that successor is either an infinite-gap state or a bounded finite-gap state, so counter value zero is the correct representation.
 
-The final vector has the same one-dimensional form. On a bounded or infinite projective state its value is a finite-control lookup. On a tail, either the currently maximal coordinate has a finite final weight, in which case the final contribution is constant and the counter can be silently drained, or only the other coordinate contributes, in which case the counter is drained with emission $-1$ per decrement and a fixed final weight is added. If neither coordinate can accept, the computation rejects.
+In a read-and-forget case, drain the counter to zero while emitting $-1$ per decrement, then emit the fixed constant $c$ and move to the successor projective control state. The total contribution of the routine is exactly $c-n$. Again, the successor is bounded or infinite by Lemma~\ref{lem:tail}, so the counter-zero invariant is restored. Dead transitions reject.
 
-All choices above are forced by the current finite control, counter tests, and input letter. Thus the macro-expanded transducer can be chosen deterministic, so successful computations cannot introduce spurious output values. By induction on the input prefix, the maintained height and projective state equal the exact max-plus forward vector; the terminal emission is therefore exactly $\eval{B}(w)$.
+The final vector is handled by the same one-dimensional argument. Bounded and infinite projective states are finite-control lookups. Suppose, for example, that the current state is $T_+$, so the forward vector is $(H,H-n)$ with $n>K$, and let the final weights be $f_1,f_2$.
+
+If $f_1$ is finite, then whenever $f_2$ is also finite,
+\[
+  n>K>|f_1-f_2|
+\]
+implies $f_1>f_2-n$. Hence the first coordinate necessarily realizes the final maximum, the final contribution is the fixed constant $f_1$, and the counter may be drained silently. If $f_1=\minf$ and $f_2$ is finite, the final contribution is $f_2-n$; drain the counter while emitting $-1$ per decrement and then emit $f_2$. If both final weights are $\minf$, reject. The case $T_-$ is symmetric.
+
+All routines above are deterministic: at each zero test the zero and positive-counter cases are disjoint, and every other step is forced by the current finite control and input letter.
+
+We prove correctness by induction on the processed input prefix. At each boundary between letter routines, the finite control and counter encode the exact projective class of the forward vector as specified above, and the total emission produced so far is exactly its height. The bounded, infinite, propagate, forget, and read-and-forget cases above preserve this invariant, while a dead max-plus successor has no successful machine continuation. The initialization establishes the invariant for the initial forward vector, and the final routine adds exactly the remaining final contribution. Consequently, if $\eval{B}(w)=\minf$ there is no successful computation, and otherwise the unique successful computation emits exactly $\eval{B}(w)$.
 \end{proof}
 
 \section{Deciding comparison}
@@ -213,31 +231,43 @@ All choices above are forced by the current finite control, counter tests, and i
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
 First separate support. For a max-plus automaton, the set of words on which the value is finite is regular: ignore weights and retain exactly the finite-weight transitions, initial states, and final states. Hence it is decidable whether there exists a word with $\eval{A}(w)$ finite and $\eval{B}(w)=\minf$. Any such word is an immediate violation.
 
-Assume now that we work on the common finite support. Construct the functional one-counter transducer $T_B$ from Lemma~\ref{lem:counter}. Synchronize $T_B$ with the finite run graph of $A$. A transition of $T_B$ that consumes an input letter is synchronized with a transition of $A$ carrying the same letter; internal counter operations of $T_B$ leave the $A$-state unchanged. The resulting machine nondeterministically chooses an accepting run $\rho$ of $A$, while the $T_B$ component has only the exact output $\eval{B}(w)$ on the synchronized word.
+Henceforth discard every $\minf$-weighted transition of $A$, and in the explicit start/end encoding retain only finite initial and final weights. This does not change the series computed by $A$: every run using a $\minf$ weight has total weight $\minf$, while a word with no remaining accepting run still has value $\minf$. Thus every accepting run considered below has an ordinary integer weight.
 
-Expand the fixed internal macros into unit counter steps and give every transition of this expanded product machine a fresh symbol, including internal counter steps. The set $L$ of successful transition sequences is then accepted by an effectively constructible ordinary one-counter automaton, equivalently a pushdown automaton whose stack has one counter symbol above a bottom marker: increment pushes that symbol, blocking decrement pops it, and zero test checks the bottom marker. Thus a context-free grammar for $L$ can be constructed effectively. By the constructive form of Parikh's theorem \cite{Parikh1966,KopczynskiTo2010}, the set of transition-count vectors
+Assume now that we work on the common finite support. Construct the functional one-counter transducer $T_B$ from Lemma~\ref{lem:counter} and view its finite-control routines at the level of their unit one-counter transitions; counter-dependent loops are represented by ordinary loops in this finite transition graph and are not unrolled to a fixed length. Synchronize each transition that consumes a letter $\sigma$ with a finite-weight transition of $A$ carrying the same letter, while internal counter transitions leave the $A$-state unchanged. Encode finite initial and final weights of $A$ by dedicated start and end transitions. The resulting finite one-counter machine nondeterministically chooses an accepting run $\rho$ of $A$, while the $T_B$ component has only the exact output $\eval{B}(w)$ on the synchronized word.
+
+Give every transition $e$ of this finite product one-counter machine its own fresh symbol $\gamma_e$. Let $L$ be the language of fresh-symbol sequences labeling successful computations. Then $L$ is accepted by an effectively constructible ordinary one-counter automaton, hence by a pushdown automaton with one stack symbol above a bottom marker: increment pushes that symbol, blocking decrement pops it, and a zero test checks the bottom marker. Therefore an effective context-free grammar for $L$ can be constructed. By the constructive form of Parikh's theorem \cite{Parikh1966,KopczynskiTo2010}, its Parikh image
 \[
-\Psi(L)\subseteq\mathbb N^m
+  S=\Psi(L)\subseteq\mathbb N^m
 \]
 is effectively semilinear.
 
-Both
+Enumerate the product transitions as $e_1,\ldots,e_m$. For each $e_i$, let $a_i\in\mathbb Z$ be its contribution to the chosen $A$-run weight ($0$ on internal transducer transitions), and let $b_i\in\mathbb Z$ be its transducer emission. The dedicated start/end transitions include all finite initial and final contributions. Hence for every successful trace $t\in L$, with $v=\Psi(t)$,
 \[
-\operatorname{wt}_A(\rho)
-\qquad\text{and}\qquad
-\eval{B}(w)
+  \operatorname{wt}_A(\rho_t)=\sum_{i=1}^m a_i v_i,
+  \qquad
+  \eval{B}(w_t)=\sum_{i=1}^m b_i v_i,
 \]
-are integer-linear functions of the transition-count vector: each product transition carries a fixed contribution to the chosen $A$-run weight and a fixed transducer emission, and fixed initial/final contributions can be represented by dedicated start/end transitions. Therefore the existence of a successful computation satisfying
-\[
-\operatorname{wt}_A(\rho)>\eval{B}(w)
-\]
-is an existential Presburger question over an effectively semilinear set, and is decidable.
+where $w_t$ and $\rho_t$ are respectively the synchronized input word and the accepting run of $A$ represented by $t$. The second equality uses Lemma~\ref{lem:counter}.
 
-Finally,
+We claim that, after the support check above, a comparison violation exists if and only if
 \[
-\eval{A}(w)>\eval{B}(w)
+  \exists v\in S:
+  \sum_{i=1}^m (a_i-b_i)v_i>0. \tag{*}
 \]
-holds if and only if some accepting run $\rho$ of $A$ has weight greater than $\eval{B}(w)$. Thus we can decide whether any comparison violation exists.
+
+For the forward implication, suppose $\eval{A}(w)>\eval{B}(w)$. The support check ensures that $\eval{B}(w)$ is finite. Since $w$ has only finitely many runs in the finite automaton $A$, some accepting run $\rho$ attains $\eval{A}(w)$. Synchronizing $\rho$ with the successful computation of $T_B$ on $w$ gives a trace $t\in L$. Its Parikh vector $v=\Psi(t)$ satisfies $(*)$.
+
+Conversely, suppose $v\in S$ satisfies $(*)$. By the definition of $S=\Psi(L)$, there exists an actual successful trace $t\in L$ with $\Psi(t)=v$. This trace represents some word $w_t$ and accepting run $\rho_t$ of $A$, and $(*)$ gives
+\[
+  \operatorname{wt}_A(\rho_t)>\eval{B}(w_t).
+\]
+Therefore
+\[
+  \eval{A}(w_t)\ge \operatorname{wt}_A(\rho_t)>\eval{B}(w_t),
+\]
+so $w_t$ is a genuine comparison violation.
+
+Finally, because $S$ is effectively semilinear, condition $(*)$ is an existential Presburger condition over an effectively given semilinear set and is decidable. Hence it is decidable whether any comparison violation exists.
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{cor:basic}]
