@@ -67,13 +67,11 @@ In the category calibration, the supplied primitive is the **totalized execution
 
 This is an exact reconstruction theorem, but it is not reconstruction of the execution grammar from bare scalar data. It reconstructs hidden typing/object structure from a supplied execution law and its continuation profiles.
 
-### Boolean Tucker junction failure
-
-The explicit Boolean Tucker example shows another boundary: independently minimal interfaces need not admit one common exact junction witness. The obstruction is not noise to remove; it is intrinsic gluing geometry.
-
 ### Two-state max-plus comparison
 
 The two-state max-plus theorem isolates one unbounded projective residual. Its propagate / forget / read-and-forget trichotomy is an exact statement about what a transition may expose now and what it may preserve for future interaction. This is a conventional mathematical theorem selected by the same boundary-first viewpoint.
+
+A finite Boolean Tucker rank-profile incompatibility found in the research programme is intentionally not used as a current public calibration here: the later curation review did not identify a published conjecture/problem corresponding to the universal property that example refuted.
 
 ## 4. “Geometry” does not mean “space follows from interaction”
 
