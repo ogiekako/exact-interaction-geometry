@@ -142,19 +142,15 @@ absolute historical firstness: not claimed
 
 Accordingly the public claim is the **proved two-state comparison theorem and its `d=2` consequence for the stated DGM 2017 question**, together with the bounded statement that the targeted review did not identify a prior resolution. This is not a blanket claim of historical priority over every unpublished or differently indexed source.
 
-## 12. Boolean Tucker decomposition
+## 12. Boolean Tucker decomposition — retired calibration
 
 Boolean tensor factorization, including Boolean Tucker decomposition, is established prior work. A basic reference is:
 
 - Pauli Miettinen, *Boolean Tensor Factorizations*, ICDM 2011, DOI `10.1109/ICDM.2011.28`.
 
-The EIG repository does **not** claim Boolean Tucker decomposition itself as new.
+A 2026-08-31 EIG search lane produced a finite Boolean Tucker rank-profile incompatibility example by asking whether independently minimal Boolean unfolding ranks must always be jointly realizable by one exact Tucker core. The finite example may be mathematically correct, but the curation review did not identify a published conjecture or problem asserting that universal property. The item was therefore removed from the current public theorem/case-study surface on 2026-09-02 so that the word “counterexample” could not be mistaken for a documented external conjecture resolution.
 
-The external case study in [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md) asks a narrower structural question: whether the independently minimal Boolean ranks of all mode unfoldings must be jointly realizable by one exact Boolean Tucker core. An explicit `2 x 4 x 4` counterexample is given and checked. No historical `first` claim is required for the role this example plays in the programme.
-
-A nearby warning is also important: constrained Tucker decompositions over other cones are known to have non-field-like rank behaviour. The exact relationship to the Boolean example should not be overstated without source-by-source verification.
-
-An unpublished internal follow-up also touches semilattice theory. The public repository does not present its reduced-separator classification or obstruction claims as established results because the supporting proof/checker is not included here.
+The material remains in Git history as research provenance/calibration only. No historical priority, external problem resolution, or EIG novelty claim is made for it.
 
 ## 13. Binary-rank Kronecker nonmultiplicativity: Shitov 2026
 
