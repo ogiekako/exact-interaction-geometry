@@ -39,22 +39,6 @@ The checker is a **regression for the proof**, not a proof by exhaustion. The in
 
 Historical novelty is discussed separately in [`../provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](../provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md); no program can establish bibliographic priority.
 
-## Boolean Tucker junction counterexample
-
-```bash
-python3 verification/verify_boolean_tucker_junction_counterexample.py
-```
-
-Expected output begins
-
-```text
-PASS boolean-tucker-junction
-```
-
-The checker uses no external solver, floating point, randomness, normalization lemma, or Python `assert`. For each mode it exhausts every nonzero Boolean support mask directly, derives the exact mode Boolean rank and all minimum bases, verifies their uniqueness for the displayed tensor, checks the four blocking zeros, and exhausts all distinct nonzero support families on the two-point first mode to verify that no Tucker profile with the other two modes both at rank three is exact. It then verifies exact profiles `(2,3,4)` and `(2,4,3)` and checks a same-shape same-mode-ranks tensor for which `(2,3,3)` is feasible.
-
-The complete human-readable counterexample is [`../discoveries/boolean-tucker-junction-counterexample.md`](../discoveries/boolean-tucker-junction-counterexample.md).
-
 ## Retained binary-Kronecker calibration
 
 ```bash
@@ -68,6 +52,8 @@ This is a correctness/calibration check only; the nonmultiplicativity theorem is
 ## Other retained calibrations
 
 `make verify-discoveries` also checks the earlier source-pair examples. Those are retained for reproducibility and methodology calibration; they are not the headline external theorem.
+
+A Boolean Tucker rank-profile checker that had briefly been part of this public verification surface was retired on 2026-09-02 together with its external-case-study wording. The curation review did not identify a published conjecture/problem corresponding to the universal statement the finite example refuted. Git history preserves that calibration; it is not part of the current public theorem surface.
 
 ## Combined CI
 
