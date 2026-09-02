@@ -2,6 +2,8 @@
 
 **Snapshot date: 2026-09-01**
 
+> **Curation note added 2026-09-02.** The Boolean Tucker “junction counterexample” mentioned later in this historical snapshot was subsequently removed from the current public theorem/case-study surface. The finite calculation was formulated against an EIG-generated universal question, but the later curation review did not identify a published conjecture or problem asserting that universal property. The old material remains recoverable from Git history (for example at commit `455c2cf0f166cdf2d822b6007f6878b3aa32f867`) as research provenance/calibration, not as a documented external problem resolution. The remainder of this file is preserved as the 2026-09-01 snapshot rather than retroactively rewritten.
+
 This note records the strongest formulation of Exact Interaction Geometry (EIG) that is defensible from the public repository at this date. It is intended to make the programme reconstructible from one document: what the primitive stance is, what has already been proved, what is only a design constraint, what remains conjectural, and which parts are classical prior art.
 
 It is a dated disclosure of a formulation. It does **not** assert that every ingredient below is novel, that no equivalent formulation exists elsewhere, or that the general reconstruction theorem has been proved.
