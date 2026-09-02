@@ -5,7 +5,7 @@
 **Status:** candidate for independent audit on the stated small/finitary Level-2 class.  
 **Scope:** an independently supplied exact interaction/composition doctrine is input.  
 **Non-claim:** a bare object/map world does not in general determine its interaction doctrine.  
-**Epistemic rule:** this note separates proved fixed-point/transport lemmas from definitions and recognition criteria.
+**Epistemic rule:** this note separates proved fixed-point/transport lemmas from definitions, provenance obligations, and recognition criteria.
 
 ---
 
@@ -14,9 +14,9 @@
 For a fixed interaction doctrine `D`, Exact Interaction Geometry separates four tasks:
 
 1. **contextual separatedification** — erase exactly the distinctions invisible to every admitted context;
-2. **semantic shape generation** — close an intrinsic generic root under the doctrine's actual exact composition and universal constructions;
-3. **local-law compilation** — on an explicitly cellular subclass, compile typed local laws from constructor-derived decompositions and universal properties;
-4. **recognition** — separately test whether the generated arities and laws reconstruct the intended world and its operations.
+2. **semantic shape generation** — inside an independently supplied semantic world, close an intrinsic generic root under the doctrine's actual exact composition and universal constructions;
+3. **local-law compilation** — on an explicitly cellular subclass, propagate certified typed local laws from constructor-derived decompositions and universal properties;
+4. **recognition** — separately test whether the generated arities and laws recover the intended semantic world and its operations through the restricted nerve.
 
 The central object is
 
@@ -25,11 +25,11 @@ $$
 \operatorname{EIGCore}(D)
 =
 \mu\Psi_D
-\quad\text{inside the contextually separated semantic world }\mathcal W_D.
+\quad\text{inside the supplied contextually separated semantic world }\mathcal W_D.
 }
 $$
 
-In Set-like deterministic sectors, the contextual separatedification is concretely computed by a greatest fixed point `nu Phi_D`. Thus the compact slogan is
+In Set-like deterministic sectors, the contextual identification itself is concretely computed by a greatest fixed point `nu Phi_D`. Thus the compact slogan is
 
 $$
 \boxed{
@@ -37,7 +37,7 @@ $$
 }
 $$
 
-The fixed-point construction does **not** imply reconstruction. Local nervousness and operation exactness are separate recognition conditions.
+This is **doctrine-relative arity/shape extraction and recognition**, not reconstruction of the ambient semantic world from nothing. The fixed-point construction does **not** imply reconstruction. Local nervousness and operation exactness are separate recognition conditions.
 
 ---
 
@@ -49,7 +49,7 @@ An arity theory/monad is already supplied; one proves a nerve theorem or charact
 
 ### Level 2 — the positive EIG scope
 
-A raw world, a reconstruction target, and an exact interaction/composition doctrine are supplied, but the arity/shape theory is not. EIG extracts an intrinsic root, closes it under the actual doctrine, and then tests reconstruction.
+A raw world, an ambient semantic/reconstruction world, and an exact interaction/composition doctrine are supplied, but the arity/shape theory is not. EIG extracts an intrinsic root, closes it under the actual doctrine, and then tests whether the resulting arities recover the supplied world through the restricted nerve.
 
 ### Level 3 — false in general
 
@@ -69,22 +69,22 @@ $$
 
 - `P`: profiles/types;
 - `R`: raw family/witness sectors `E_p`;
-- `W`: the contextually separated semantic/reconstruction worlds `W_D(p)`;
-- `C`: primitive one-hole context generators and their typing/parameter rules;
-- `O`: primitive closing observations;
+- `W`: the independently supplied semantic/reconstruction worlds `W_D(p)` in which arity objects will be generated;
+- `C`: primitive typed one-hole context generators, with their domains and parameter rules;
+- `O`: primitive typed closing observations, which may be partial unless totality is explicitly declared;
 - `K`: actual typed constructors, possibly partial, dependent, or profile-changing;
 - `U`: independently meaningful exact universal constructions such as image, pullback, tabulation, support reflection, Cech/codescent, or free-path completion;
 - `E`: the honest equivalence notion: isomorphism, equivalence, Cauchy, Morita, or moduli-valued.
 
-The doctrine supplies, or independently constructs, a universal contextual/exact separatedification
+The doctrine supplies, or independently constructs, a contextual/exact semantic realization
 
 $$
 Q_D:\mathcal R_D\longrightarrow\mathcal W_D.
 $$
 
-`Q_D` is not an arbitrary chosen quotient. It must be characterized by the universal property of making the admitted contextually sound identifications.
+In the Set-like quotientable sector of Section 4, the essential image of `Q_D` is required to realize the universal contextual quotient constructed there. More generally, `Q_D` may be an effective quotient, localization, homotopy image, stack quotient, or another doctrine-appropriate separated realization.
 
-The doctrine also declares a structural morphism/cell class `W_D^str` used for reconstruction. It may equal the ambient semantic morphism class, but this is not assumed.
+The doctrine also declares a structural morphism/cell class `W_D^str` used for the reconstruction problem. It may equal the ambient semantic morphism class, but this is not assumed.
 
 The fixed-point theorem assumes a fixed universe in which the admissible semantic object classes form the required complete lattice. The Kleene `omega` formula requires an additional continuity hypothesis.
 
@@ -104,17 +104,20 @@ For every public calibration, answer-independence of the doctrine data is theref
 
 ### 4.1 Generated finite contexts
 
-In the Set-like deterministic sector, define the one-hole generator family `GenCtx_D` as follows.
+In the Set-like deterministic sector, distinguish **step contexts** from **closing observations**.
 
-For every `m`-ary constructor `K` and every hole position `i`, every well-typed filling of the other `m-1` positions by admitted parameters gives a one-hole generator
+Let `StepCtx_D` contain:
+
+1. every primitive one-hole context generator in `C`;
+2. for every `m`-ary constructor `K`, every hole position `i`, and every well-typed filling of the other `m-1` positions by admitted parameters, the one-hole partial context
 
 $$
-K(a_1,\ldots,a_{i-1},-,a_{i+1},\ldots,a_m),
+K(a_1,\ldots,a_{i-1},-,a_{i+1},\ldots,a_m).
 $$
 
-on exactly its legal partial/dependent domain. Primitive closing observations in `O` are also generators. If the doctrine regards a closing experiment as primitive rather than decomposable, it must appear explicitly in `GenCtx_D`.
+Each generator carries its actual typed domain. The finite admitted closing contexts `Ctx_D` are, **by definition for Theorem 4.1**, composites of finitely many compatible step contexts followed by one primitive closing observation in `O`. If the doctrine contains some other primitive composite experiment, it must be included explicitly in `C` or `O`; it is not silently assumed to be generated by `K`.
 
-The finite admitted one-hole contexts `Ctx_D` are, **by definition for Theorem 4.1**, the typed inductive closure of `GenCtx_D` under context composition. This generation hypothesis is load-bearing.
+This generation convention is load-bearing.
 
 ### 4.2 Set-like relation transformer
 
@@ -126,11 +129,18 @@ $$
 
 by `x Phi_D(R) y` iff:
 
-1. every primitive closing observation applicable to both gives the same result;
-2. for every one-hole constructor generator, definedness agrees on `x` and `y`;
-3. whenever that generator is defined, the two resulting cells are `R`-related.
+1. for every primitive closing observation `o` of the relevant type,
+   $$
+   o(x)\downarrow\iff o(y)\downarrow,
+   $$
+   and when defined the two observed values agree;
+2. for every step-context generator `c` in `StepCtx_D`,
+   $$
+   c(x)\downarrow\iff c(y)\downarrow;
+   $$
+3. whenever such a step context is defined, `c(x)` and `c(y)` are `R`-related.
 
-All constructor hole positions and all legal parameter fillings are quantified over.
+Thus partial-observation definedness is observable information, just as partial-constructor definedness is. All constructor hole positions and all legal parameter fillings are quantified over, and the primitive contexts in `C` are included explicitly.
 
 Knaster-Tarski gives
 
@@ -146,11 +156,51 @@ $$
 x\,R_D^\infty\,y
 $$
 
-iff every finite well-typed context in `Ctx_D` gives the same observable response on `x` and `y`.
+iff every finite well-typed closing context in `Ctx_D` has the same definedness and, when defined, the same observable response on `x` and `y`.
 
-**Proof.** If `x R_D^infty y`, fixed-point stability propagates through a generator; induction on the generated context depth propagates it through every finite context. Conversely, all-context indistinguishability is stable under every generator because prefixing a finite context by a generator is again a finite context. It is therefore a post-fixed point of `Phi_D` and lies below the greatest fixed point. The first implication gives the reverse inclusion. ∎
+**Proof.** If `x R_D^infty y`, fixed-point stability propagates through every step generator; induction on the number of step contexts propagates it to the final primitive observation, including definedness. Conversely, all-context indistinguishability is stable under every step generator because prefixing a finite closing context by a compatible step generator is again a finite closing context. It is therefore a post-fixed point of `Phi_D` and lies below the greatest fixed point. The first implication gives the reverse inclusion. ∎
 
-In enriched/higher sectors, `Q_D` may instead be an effective quotient, localization, homotopy image, stack quotient, or another universal separatedification. No general Set-valued `nu Phi_D` claim is made there.
+### 4.3 Set-like quotient/separatedification theorem
+
+The relation theorem and the quotient theorem are distinct.
+
+Call the Set-like doctrine **context-quotientable** when:
+
+1. the typed quotients by `R_D^infty` exist as sets in the declared universe;
+2. every primitive step context and constructor domain is extensional for `R_D^infty`, so componentwise replacement by equivalent inputs preserves well-typedness/definedness;
+3. the constructor outputs and primitive contexts respect `R_D^infty` whenever defined.
+
+These conditions hold automatically in ordinary total many-sorted algebraic signatures once `R_D^infty` is the all-context congruence; genuinely dependent/partial doctrines must check them.
+
+### Theorem 4.2 — universal contextual quotient
+
+For a context-quotientable Set-like doctrine, `R_D^infty` is a typed equivalence/congruence and the quotient map
+
+$$
+q_D:\mathcal R_D\twoheadrightarrow \mathcal R_D/R_D^\infty
+$$
+
+carries well-defined induced partial constructors and observations.
+
+Moreover, it is the coarsest context-exact surjective compositional interface: if
+
+$$
+f:\mathcal R_D\twoheadrightarrow T
+$$
+
+is any surjective typed compositional map such that `f(x)=f(y)` implies equality of definedness and output for every admitted finite closing context, then there is a unique typed map
+
+$$
+\bar f:T\longrightarrow \mathcal R_D/R_D^\infty
+$$
+
+with `q_D=\bar f\,f`; if `f` preserves the constructors, so does `bar f`.
+
+**Proof.** By Theorem 4.1, `R_D^infty` is all-context indistinguishability, hence an equivalence relation. Prefixing by each primitive step context shows compatibility; the quotientability hypothesis upgrades this one-hole compatibility to all declared partial/multiary constructors. Thus the quotient operations are well defined. For any `f` as stated, `f(x)=f(y)` implies all-context indistinguishability, so `ker(f)\subseteq R_D^infty`. Hence `[x]_f\mapsto[x]_{R_D^infty}` is well defined and unique, and constructor preservation descends from the same compatibility. ∎
+
+In this sector, saying that `Q_D` is the universal contextual separatedification means that its essential image is equivalent to this quotient and its raw map agrees with `q_D` up to the declared equivalence.
+
+In enriched/higher sectors, no general Set-valued `nu Phi_D` or quotient theorem is claimed here.
 
 ---
 
@@ -158,21 +208,27 @@ In enriched/higher sectors, `Q_D` may instead be an effective quotient, localiza
 
 The root is not chosen by presentation-dependent atoms or primes.
 
-For a raw family sector `E_p`, use its intrinsic Tiny/Cauchy core whenever defined:
+### 5.1 Ordinary presheaf theorem
+
+For a raw family sector `E_p` that is an ordinary small presheaf category, use its Tiny/Cauchy core:
 
 $$
 A_{raw}(p)=\operatorname{Tiny}(E_p).
 $$
 
-For a small presheaf category,
+For small `C`,
 
 $$
 \operatorname{Tiny}([C^{op},\mathbf{Set}])\simeq\operatorname{Kar}(C).
 $$
 
-Thus equivalent presheaf presentations recover the same root up to Cauchy equivalence.
+Thus equivalent ordinary presheaf presentations recover the same root up to Cauchy equivalence.
 
-The doctrine's universal exact realization sends the raw root to a semantic root
+### 5.2 Enriched/higher boundary
+
+No theorem in this note asserts that the ordinary `Set`-valued Tiny construction is the canonical root for every enriched, higher, or equipment-valued doctrine. In such sectors the doctrine must separately specify and justify the appropriate compact-projective/Cauchy root notion and prove the analogue needed for that calibration.
+
+The doctrine's universal exact realization sends the admitted raw root to a semantic root
 
 $$
 A_0(D)\subseteq \operatorname{Ob}(\mathcal W_D).
@@ -198,6 +254,8 @@ The intended order is
 raw/native composition
   -> target semantic reduction/recanonicalization.
 ```
+
+This is part of the Level-2 semantic doctrine; EIG is not claiming to reconstruct `bar K` from bare observations.
 
 ### 6.2 One-step generating operator
 
@@ -266,13 +324,13 @@ $$
 J_D:\Theta_D^{EIG}\hookrightarrow\mathcal W_D^{str}.
 $$
 
-The nontrivial extraction is the object/arity class. Once that class is independently fixed, using the already-declared structural Homs/cells avoids artificial free-mixed-syntax fullness obligations.
+The nontrivial extraction at this level is the object/arity class. The semantic world and its structural Homs/cells are Level-2 input. EIG therefore claims canonical arity/shape extraction **inside** that world and then a recognition test for whether those arities recover it; it does not claim to generate the semantic Hom theory ex nihilo.
 
 ---
 
 ## 8. Cellular local-law compiler
 
-The local-law compiler requires more structure than the generic Level-2 fixed-point theorem.
+The local-law compiler requires more structure than the generic Level-2 fixed-point theorem. It should be read as a **certified local-law propagation calculus**, not as a theorem that every useful local law is discovered automatically from unstructured interaction data.
 
 ### 8.1 Enrichment base
 
@@ -285,33 +343,39 @@ All `Map_V`, `Fib_V`, and model categories in this section are interpreted in th
 A **cellular Level-2 doctrine** additionally provides, or functorially derives from independently specified constructor semantics:
 
 1. a subtheory of elementary/generic shapes `A_D^el`;
-2. a doctrine-invariant class of inert/occurrence maps into generated shapes;
-3. restriction/overlap maps between occurrences;
+2. a doctrine-invariant class of elementary occurrence maps into generated shapes;
+3. explicit restriction/incidence/overlap data among those occurrences;
 4. for every constructor-generated elementary decomposition, a **local decomposition certificate**: a canonical comparison together with the filler/universal-property profile forced by the actual constructor semantics;
 5. a set of typed inference schemes for composing certified local laws, each with a generic soundness proof in `V`;
-6. coherent transport of these data under doctrine equivalence.
+6. coherent transport of these data under the chosen structure-preserving doctrine maps.
 
 Occurrence maps alone do not imply a Segal or descent law. The certificate must come from the universal property of the supplied constructor/decomposition semantics, not from the desired essential image.
 
-For example, in the free-category row, using all semantic maps `[1] -> [2]` would incorrectly include the composite `0 -> 2`; the doctrine must identify the immediate/inert edge occurrences. The unique assembly of a two-edge path is then certified by free path composition, not by naming a desired Segal nerve image.
+For example, in the free-category row, using all semantic maps `[1] -> [2]` would incorrectly include the composite `0 -> 2`; the doctrine must identify the immediate edge occurrences. The unique assembly of a two-edge path is then certified by free path composition, not by naming a desired Segal nerve image.
 
-### 8.3 Elementary core
+### 8.3 Occurrence incidence category and elementary core
 
-For a generated shape `T`, define
+For each generated shape `T`, the doctrine supplies or functorially derives an **occurrence incidence category** `Occ_D(T)` together with a functor
 
 $$
-\operatorname{Occ}_D(T)
-=(A_D^{el}\downarrow_{occ}T)
+\operatorname{cell}_T:\operatorname{Occ}_D(T)\to A_D^{el}
 $$
 
-and the canonical elementary-core map
+and a compatible family of occurrence maps `cell_T(u) -> T`.
+
+- objects of `Occ_D(T)` record elementary occurrences (and, when required by the decomposition, elementary overlap/incidence pieces);
+- morphisms are generated by the declared restriction/incidence/overlap maps and commute with the maps into `T`.
+
+Thus overlap information is part of the indexing diagram, not merely extra prose attached to a discrete set of vertices. Define
 
 $$
 I_D(T)
 =
-\operatorname*{colim}_{e\to T\in\operatorname{Occ}_D(T)}y(e)
+\operatorname*{colim}_{u\in\operatorname{Occ}_D(T)}y(\operatorname{cell}_T(u))
 \longrightarrow y(T).
 $$
+
+This formulation covers ordinary simplicial spines, tree Segal cores, Cech-style overlap diagrams, and analogous cellular incidence diagrams without pretending that all semantic maps from an elementary object are occurrences.
 
 ### 8.4 Typed defect laws
 
@@ -475,37 +539,47 @@ The conditions remain separately diagnosable even though local nervousness logic
 
 ---
 
-## 11. Doctrine morphisms and canonicality
+## 11. Doctrine maps and canonicality
 
-### 11.1 Doctrine equivalence used in this note
+### 11.1 Structure-preserving doctrine equivalence used for transport
 
-For the purpose of this construction, an equivalence `F:D -> D'` consists of coherent equivalences on the profile, raw, and semantic/structural worlds together with invertible comparison data preserving:
+For the transport statement below, an equivalence `F:D -> D'` consists of coherent equivalences on the profile, raw, and semantic/structural worlds together with invertible comparison data preserving:
 
 - the primitive context generators and closing observations;
 - the contextual separatedification `Q_D`;
-- raw Tiny/Cauchy sectors and their semantic root realizations;
+- raw root sectors and their semantic root realizations;
 - typed constructor domains and exactized semantic constructor values;
 - declared universal operations;
 - the equivalence/retract convention.
 
-For cellular doctrines it additionally preserves the enrichment base up to the declared equivalence, elementary objects, occurrence maps, decomposition certificates, **and the typed inference schemes including their profile-transform rules**.
+For cellular doctrines it additionally preserves the enrichment base up to the declared equivalence, occurrence incidence diagrams, decomposition certificates, **and the typed inference schemes including their profile-transform rules**.
 
-Composition and identities are the evident composites/identities of these coherent data. A doctrine equivalence is an invertible morphism up to the declared coherent 2-cells. This definition is local to this note; no claim is made that it is the unique useful category of EIG doctrines.
+Composition and identities are the evident composites/identities of these coherent data. This is a deliberately strong notion used only for the transport lemma; it is not claimed to be the primitive or unique useful notion of EIG doctrine equivalence.
 
-### Proposition 11.2 — transport invariance
+### Proposition 11.2 — structure-preserving transport invariance
 
-A doctrine equivalence in the sense above transports the contextual separatedification and conjugates the induced one-step operator `Psi_D` with `Psi_D'`. Hence it carries the least semantic fixed point and associated interaction theory to equivalent outputs. In the cellular subclass it also transports `Lambda_0`, the typed inference calculus, and therefore `L_D`.
+A doctrine equivalence in the strong sense above transports the contextual separatedification and conjugates the induced one-step operator `Psi_D` with `Psi_D'`. Hence it carries the least semantic fixed point and associated interaction theory to equivalent outputs. In the cellular subclass it also transports `Lambda_0`, the typed inference calculus, and therefore `L_D`.
 
 **Proof.** The preservation data induce order isomorphisms between the relevant relation/shape/law lattices and intertwine the corresponding operators/rules. Least/greatest fixed points and least rule-saturated subsets are invariant under such conjugacy. ∎
 
-This is the precise presentation-invariant sense of canonicality claimed here. It is a transport theorem conditional on a doctrine equivalence, not a theorem that bare presentations determine the doctrine itself.
+This is a correct **transport invariance** statement, but by itself it is only a weak form of canonicality: much of the derived structure is included among the preserved data.
+
+### 11.3 Stronger primitive-data canonicality target
+
+A stronger theorem would start from a thinner equivalence of primitive doctrine data — profiles, raw sectors, primitive contexts/observations, raw constructors, independently declared universal operations, and equivalence convention — and **derive** preservation of `Q_D`, the admitted intrinsic roots, exactized semantic constructors, and any cellular occurrence/decomposition structure.
+
+No general theorem of that strength is claimed here. It is a calibration-by-calibration obligation, and proving it in a broad natural class would materially strengthen the word `canonical`.
+
+Thus the current defensible canonicality claim is:
+
+> once the Level-2 semantic doctrine and the independently justified extraction data are fixed up to coherent equivalence, the generated EIG arity geometry is invariant up to the declared equivalence level.
 
 ---
 
 ## 12. Failure coastline
 
 - **F0 — doctrine ambiguity:** the bare world does not select a unique interaction doctrine.
-- **F1 — root failure:** no essentially small intrinsic Tiny/Cauchy root exists in the declared universe.
+- **F1 — root failure:** no essentially small intrinsic/admitted Cauchy root exists in the declared universe.
 - **F2 — reduction failure:** no canonical/universal contextual or exact reduction is available.
 - **F3 — size/continuity failure:** the required closure escapes the universe or lacks continuity needed for a claimed finite-stage generation.
 - **F4 — local-nervousness failure:** the compiled local model class strictly exceeds or otherwise mismatches the actual nerve image.
@@ -518,33 +592,33 @@ This is the precise presentation-invariant sense of canonicality claimed here. I
 
 ## 13. Frozen calibrations
 
-These rows are calibrations of the schema; each retains its own proof obligations and no-smuggling audit.
+These rows are calibrations of the schema; each retains its own proof obligations, enriched-root checks where relevant, and no-smuggling audit.
 
 ### Free categories
 
-Walking vertex/edge roots plus independently supplied free-path composition generate finite linear paths and the simplex-type arity theory. Immediate path edges are the cellular occurrences; the universal property of free composition certifies the strict Segal comparisons.
+Walking vertex/edge roots plus independently supplied free-path composition generate finite linear paths and the simplex-type arity theory. Immediate path edges and their endpoint incidences form the occurrence diagram; the universal property of free composition certifies the strict Segal comparisons.
 
 ### Fixed-colour nonsymmetric operads
 
-Generic corollas plus operadic substitution generate planar rooted trees. Vertex corollas are the cellular occurrences; substitution semantics certifies the tree Segal-core comparisons.
+Generic corollas plus operadic substitution generate planar rooted trees. Vertex corollas together with edge-incidence data form the cellular occurrence diagram; substitution semantics certifies the tree Segal-core comparisons.
 
 ### Strict globular `n`-categories
 
-Globe roots plus strict globular composition generate pasting diagrams and a `Theta_n`-type theory. Elementary globe/cell occurrences and their constructor-derived pasting certificates yield the globular Segal comparisons.
+Globe roots plus strict globular composition generate pasting diagrams and a `Theta_n`-type theory. Elementary globe/cell occurrences with their incidence data and constructor-derived pasting certificates yield the globular Segal comparisons.
 
 ### Normalized protected recurrent world
 
-The root consists of Tiny boundary/cell family sectors. Exact reduction uses joint coherent images, witness/storage tabulations, pullbacks, support/context, and derived owner geometry; temporal closure uses shared-interface ULF/strict-Segal paths. Its separately audited occurrence/decomposition calculus yields the local image/evaluator/storage/context/path ledger. SYNC, STORE, SPACE, star, and observer/public projection live in the external module/comparison layer. The honest unicity endpoint is model-Morita equivalence.
+The root consists of the separately audited boundary/cell family sectors with their appropriate Cauchy notion. Exact reduction uses joint coherent images, witness/storage tabulations, pullbacks, support/context, and derived owner geometry; temporal closure uses shared-interface ULF/strict-Segal paths. Its separately audited occurrence/decomposition calculus yields the local image/evaluator/storage/context/path ledger. SYNC, STORE, SPACE, star, and observer/public projection live in the external module/comparison layer. The honest unicity endpoint is model-Morita equivalence.
 
 The recurrent row is important because it requires existence, uniqueness, multiplicity, and retained witness geometry to remain distinct.
 
 ---
 
-## 14. Meta-EIG
+## 14. Meta-EIG formal envelope
 
-Meta-EIG is a doctrine-relative discovery formalism, not a doctrine-free selector of legitimate mathematics.
+Meta-EIG is a doctrine-relative **formal discovery envelope**, not a doctrine-free selector of legitimate mathematics and not presently an additional substantive fixed-point theorem beyond the supplied monotone operator.
 
-Fix a meta-doctrine `M` describing which comparison constructions, defect extractions, universal realizations, and **typed profile-transform inference schemes** are admissible. Let `Sh` and `Law` be set-sized universes of admissible semantic shapes and typed defect laws. A state is
+Fix a meta-doctrine `M` describing which comparison constructions, defect extractions, universal realizations, and typed profile-transform inference schemes are admissible. Let `Sh` and `Law` be set-sized universes of admissible semantic shapes and typed defect laws. A state is
 
 $$
 (A,\Lambda)\in\mathcal P(\mathsf{Sh})\times\mathcal P(\mathsf{Law}).
@@ -560,7 +634,7 @@ $$
 
 where `G` uses the same profile-aware typed saturation discipline as Section 8. `Real(Lambda)` may add a derived semantic sort only when the doctrine/meta-doctrine gives a canonical universal realization; a failing example alone does not license an arbitrary new object.
 
-### Theorem 14.1 — simultaneous fixed point
+### Theorem 14.1 — formal simultaneous fixed point
 
 If the two universes are set-sized and the simultaneous operator is monotone, then
 
@@ -573,9 +647,11 @@ $$
 
 exists by Knaster-Tarski. If the operator preserves the relevant directed unions, its least fixed point is obtained by the Kleene chain.
 
+The mathematical content specific to a Meta-EIG application lies in defining a nontrivial admissible `F`, proving monotonicity/continuity, and showing that its generated shapes/laws have the claimed semantics; Tarski alone does not provide discovery power.
+
 ### Level-2 triangularization
 
-When the exact interaction/completion doctrine is already supplied and shape generation is independent of newly discovered law data, `Psi(A,Lambda)=Psi_D(A)`. The simultaneous fixed point then triangularizes: first compute `mu Psi_D`, then compute the least law fixed point at that shape class.
+When the exact interaction/completion doctrine is already supplied and shape generation is independent of newly generated law data, `Psi(A,Lambda)=Psi_D(A)`. The simultaneous fixed point then triangularizes: first compute `mu Psi_D`, then compute the least law fixed point at that shape class.
 
 ---
 
@@ -601,7 +677,7 @@ $$
 
 with typed witness-defect profiles, external module actions, and an explicit failure coastline.
 
-Whether this exact combined architecture already exists in the literature under another formulation is a separate specialist prior-art question.
+Whether this exact combined architecture already exists in the literature under another formulation is a separate specialist prior-art question. A particularly valuable future comparison is to prove, in standard monads-with-arities / strongly-cartesian sectors, when the EIG-generated arity class agrees with the independently known canonical arities; no such general comparison theorem is claimed in this note.
 
 ---
 
@@ -611,19 +687,19 @@ This section is a summary of the preceding definitions and theorems, **not one a
 
 Given an admissible Level-2 doctrine `D`:
 
-1. construct or supply the universal contextual separatedification `Q_D:R_D -> W_D`; in the generated Set-like sector Theorem 4.1 identifies it with all-context equivalence;
-2. form the intrinsic Tiny/Cauchy root and its universal semantic realization `A_0(D)`;
+1. in a context-quotientable Set-like sector, Theorems 4.1--4.2 construct the universal all-context quotient; in other sectors a doctrine-appropriate contextual separated realization is a separate input/admission condition;
+2. form the admitted intrinsic/Cauchy root and its universal semantic realization `A_0(D)`; the ordinary presheaf case has the Tiny theorem of Section 5;
 3. apply Theorem 6.1 to obtain the least semantic fixed point `A_D^EIG = mu Psi_D`;
 4. restrict the declared structural semantic morphisms to obtain `Theta_D^EIG`;
 5. on the strengthened cellular subclass, compile the finitarily generated local law theory `L_D` by the profile-aware calculus, whose soundness is Theorem 8.1;
 6. test local nervousness and operation exactness as recognition conditions;
-7. transport along doctrine equivalences by Proposition 11.2;
+7. transport along the strong structure-preserving doctrine equivalences by Proposition 11.2, while treating stronger primitive-data canonicality as a separate obligation;
 8. report failures using F0--F8 rather than making arbitrary choices.
 
 None of these statements imply doctrine-free Level-3 self-generation.
 
 The shortest defensible definition is:
 
-> **EIG Core is the least exact compositional geometry generated from an intrinsic root inside a contextually separated semantic world, relative to an independently supplied interaction doctrine.**
+> **EIG Core is the least exact compositional arity/shape geometry generated from an intrinsic or independently justified root inside a supplied contextually separated semantic world, relative to an independently supplied interaction doctrine.**
 
-For cellular doctrines, local exactness laws are additionally compiled from independently justified constructor-derived occurrence/decomposition data. Full reconstruction remains a separate recognition problem.
+For cellular doctrines, local exactness laws are additionally propagated from independently justified constructor-derived occurrence/decomposition data. Full reconstruction remains a separate recognition problem.
