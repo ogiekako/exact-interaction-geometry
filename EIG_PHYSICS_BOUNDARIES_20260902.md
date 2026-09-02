@@ -106,7 +106,7 @@ D_ij(A,B) = (1/i) d/dt [ exp(itH) A exp(-itH), B ] |_{t=0}
 
 up to the conventional overall sign associated with the Heisenberg convention.
 
-If `F_a` and `G_b` are Hilbert–Schmidt orthonormal bases of traceless operators on factors `i` and `j`, then the standard matrix-algebra Casimir identity gives
+If `F_a` and `G_b` are Hilbert–Schmidt orthonormal bases of **traceless Hermitian operators** on factors `i` and `j`, then the standard matrix-algebra Casimir identity gives
 
 ```text
 sum_a [F_a,[F_a,X]] = 2 d_i X
