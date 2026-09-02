@@ -1,218 +1,206 @@
 # Exact Interaction Geometry
 
-**Interaction-first reconstruction of interfaces, objects, and compositional structure.**
+**Identifiability boundaries from operational interaction doctrines.**
 
-This repository proposes Exact Interaction Geometry (EIG), a mathematical research programme built around a deliberately basic question:
+Exact Interaction Geometry (EIG) studies a reconstruction problem:
 
-> **How much mathematical structure can be reconstructed from interaction itself — from what composes, what future contexts distinguish, and what witness data must survive exact gluing — rather than being supplied in advance as objects, states, types, or interfaces?**
+> **Given a specified operational interaction doctrine, what mathematical structure is forced by all admissible responses, what residual moduli remain observationally invisible, and what additional resource is minimally required to reconstruct more?**
 
-The strongest version of that question is open. This repository is a dated foundational disclosure, not a declaration that a new foundation of mathematics has been completed.
+An operational interaction doctrine may include execution or pasting laws, admitted continuation experiments, exact closed responses, harmless recodings, and witness data that can be reopened when scalar response is insufficient. EIG does **not** assume that bare probabilities, bare distinguishability, or “interaction alone” determine the execution grammar, locality, metric geometry, or a unique ontology.
 
-**For the strongest precise formulation of EIG that this repository claims as of 2026-09-01, read [`EIG_FOUNDATIONAL_DISCLOSURE_20260901.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260901.md).** It separates the proved core, programme-level design constraints, open WEIR target, and prior-art boundary in one dated claim surface.
+The strongest version of the programme remains open. This repository contains a small proved core, exact calibration theorems, conventional mathematical results discovered from the programme, and explicit failure boundaries.
 
-**Jump:** [core idea](#the-core-idea) · [two-state max-plus theorem](#a-case-from-a-published-open-problem-two-state-max-plus-comparison) · [Boolean Tucker case study](#a-second-external-case-study-boolean-tucker-junction-failure) · [exact calibrations](#two-exact-calibrations) · [open foundation](#what-is-conjectural) · [prior art](#what-is-not-being-claimed) · [status](#current-epistemic-status)
+**Current formulation:** [`EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md`](EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md)  
+**Dated foundational snapshot:** [`EIG_FOUNDATIONAL_DISCLOSURE_20260901.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260901.md)
 
 ## The core idea
 
-For an interaction fragment `a`, do not begin by assigning it a primitive source object, target object, state type, or semantic label. Instead ask which left and right continuations remain possible and what closed experiments return.
+EIG is not primarily the slogan “derive structure from interaction.” Its sharper discipline is:
 
 ```text
-interaction execution + closed continuation response
-                        ↓
-coarsest response-exact contextual quotient
-                        ↓
-interfaces / objecthood / witness fibres
-                        ↓
-composition + descent + reconstructed structure
+SPECIFY THE OPERATIONAL DOCTRINE
+  execution / pasting
+  admitted continuations
+  exact responses
+  reopenable witnesses
+  harmless recodings
+              |
+              v
+CONTEXTUAL REDUCTION
+  forget only distinctions invisible to every admitted continuation
+              |
+              v
+MAXIMAL IDENTIFIABLE CORE  +  RESIDUAL FIBRE / MODULI
+              |
+              +------------------------------+
+              |                              |
+              v                              v
+extra resource closes fibre              fibre persists
+              |                              |
+              v                              v
+RECONSTRUCTION                         NO-GO / MODULI THEOREM
 ```
 
-The working EIG architecture is:
+A failed reconstruction can therefore be a mathematically successful outcome. The correct result may be the **largest invariant that is identifiable**, together with the exact indistinguishability fibre and the extra resource needed to cross the boundary.
 
-```text
-CONTEXT
-  -> REDUCE
-  -> WITNESS
-  -> COMPOSE
-  -> GLUE / CODESCEND
-  -> PROJECT
-  -> STRUCTURE
-  -> REFLECT
-  -> RECONSTRUCT
-```
+This is the sense in which EIG uses “geometry”: factorization, fibres, descent, obstruction, localization, and moduli of interaction structure. It is **not** a claim that every EIG invariant is spatial or metric geometry.
 
-Here **exact** means that a reduction is allowed only when every admitted future continuation has the same response. **Witness** means that multiplicity, provenance, cocycles, or higher comparison data are retained when later interaction can distinguish them. **Geometry** refers to the resulting factorization, descent, obstruction, and localization structure; it is not a claim that every EIG invariant is metric geometry.
+## Exactness, witnesses, and no-smuggling
 
-## A case from a published open problem: two-state max-plus comparison
+For an interaction fragment `a`, compare it against every admitted continuation. Two fragments may be identified only if no allowed future experiment distinguishes them. This gives a response-exact contextual quotient in the standard syntactic/minimization sense.
 
-The clearest current external theorem arose from asking what information a minimal interaction state must retain when future composition can both propagate and observe an unbounded residual.
+But quotienting is not enough. If an internal boundary can later be reopened, multiplicity, provenance, phases, cocycles, or higher comparison data may need to survive as **witness fibres**. EIG therefore separates response-minimal reduction from witness-sensitive reconstruction.
 
-For max-plus automata over `Z_max`, Daviaud--Guillon--Merlet (MFCS 2017) proved bounded-state comparison undecidable at 553 states and explicitly left the state range `2..552` open, singling out the two-state case as difficult.
+A second discipline is **no-smuggling**. A reconstruction theorem is weak if the supplied input already contains the target structure in compressed form. EIG therefore asks not only whether a target can be decoded, but whether the chosen doctrine identifies it without supplying answer-adjacent labels, factors, maps, or classifiers in advance.
 
-The manuscript in this repository proves the `d=2` case of that published question:
-
-> **If `B` is a max-plus automaton with at most two states, then for an arbitrary max-plus automaton `A` it is decidable whether `[[A]] <= [[B]]` pointwise.**
-
-In particular, comparison and equivalence of two two-state max-plus automata are decidable, and so is two-state positivity `Pos_2^k(Z_max)` for every finite alphabet size `k`.
-
-The mechanism is small. Projectivizing the two forward weights leaves one signed gap. Beyond an explicit finite threshold, every nondead letter has one of three exact tail behaviors:
-
-```text
-PROPAGATE
-    preserve an unbounded gap n as n+s
-    -> current height increment is constant
-
-FORGET
-    erase the gap without using its magnitude
-    -> current height increment is constant
-
-READ-AND-FORGET
-    use the magnitude n in the current response
-    -> successor projective state forgets n
-```
-
-The key property is therefore not a literal two-way retain/read dichotomy: **a step whose output depends on the unbounded magnitude cannot also propagate that magnitude to the future.** This gives an exact functional one-counter realization. Synchronizing it with runs of the left automaton gives an effective context-free language; Parikh semilinearity reduces a containment violation to Presburger arithmetic.
-
-```text
-two-state max-plus forward dynamics
-                ↓ projectivize
-height + one signed unbounded gap
-                ↓ propagate / forget / read-and-forget
-functional one-counter transducer
-                ↓ Parikh / Presburger
-pointwise comparison is decidable
-```
-
-**Typeset PDF (recommended):** [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf)  
-**Browser / diff version:** [`discoveries/two-state-maxplus-comparison.md`](discoveries/two-state-maxplus-comparison.md)  
-**TeX source:** [`discoveries/two-state-maxplus-comparison.tex`](discoveries/two-state-maxplus-comparison.tex)  
-**Run the public regression:** `python3 verification/verify_two_state_maxplus.py`  
-**Read the dated literature review:** [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md)
-
-A targeted primary-source and current-literature review through **2026-09-01** did not identify a prior resolution of the two-state bounded-state comparison case or the stronger arbitrary-left/two-state-right theorem. This is bounded search evidence, not a certificate of historical firstness; the repository therefore avoids an unqualified `first known` claim.
-
-The proof is ordinary weighted-automata mathematics and does not depend on EIG. EIG is discovery provenance: its residual/interface viewpoint suggested isolating the exact one-dimensional projective state and asking whether a step can simultaneously preserve and expose an unbounded residual magnitude.
-
-## A second external case study: Boolean Tucker junction failure
-
-A separate test of EIG asks whether independently minimal exact interfaces must glue through one common junction witness.
-
-For a Boolean tensor `T`, minimize each mode unfolding separately using Boolean matrix rank, then ask whether those minima can be realized simultaneously by one Boolean Tucker core. They need not be.
-
-There is an explicit `2 x 4 x 4` Boolean tensor with
-
-```text
-mode Boolean ranks = (2,3,3)
-```
-
-but no exact Boolean Tucker decomposition of profile `(2,3,3)`. Its exact feasible profile region is
-
-```text
-Tuck_B(T) = Up(2,3,4) union Up(2,4,3)
-```
-
-where `Up(p,q,r)` denotes the componentwise upward closure. Thus the exact Boolean Tucker profile poset has two incomparable Pareto minima and no componentwise least element for this tensor.
-
-The obstruction is tiny: one positive tensor entry has only four possible lifts through the two minimum latent interfaces, and four explicitly displayed zeros block all four lifts.
-
-```text
-EIG question: independently minimal interfaces — do they jointly descend?
-                                ↓
-Boolean Tucker translation: minimize each unfolding separately
-                                ↓
-counterexample: (2,3,3) local minima cannot share one exact core
-                                ↓
-small obstruction: every candidate latent lift of one positive is blocked
-```
-
-**Read the counterexample:** [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md)  
-**Run the solver-free checker:** `python3 verification/verify_boolean_tucker_junction_counterexample.py`
-
-An unpublished internal follow-up explores possible structural refinements of this example. Those observations are not part of the publicly verifiable mathematical record of this repository, are not relied upon for the public Boolean Tucker statement above, and are not presented here as established results.
-
-## Two exact calibrations
+## Two exact foundational calibrations
 
 ### 1. Finite response tables
 
-For a finite response table `M : X x Y -> K`, two left states are contextually equivalent exactly when they have identical response rows. The quotient is the **unique coarsest surjective deterministic exact interface**. If interfaces instead carry latent witnesses, exact mediation becomes semiring factorization; serial composition satisfies a data-processing inequality and parallel composition is submultiplicative.
+For a finite response table
+
+```text
+M : X x Y -> K,
+```
+
+two left states are contextually equivalent exactly when they have identical response rows. The quotient `R(M)` is the unique coarsest surjective deterministic exact interface.
+
+The universal-property direction matters. If `q : X -> I` is any other surjective exact interface and `pi : X -> R(M)` is the canonical quotient, then
+
+```text
+pi = h o q
+```
+
+for a unique `h : I -> R(M)`. Thus the **canonical residual quotient factors through every exact interface**.
+
+If interfaces instead carry latent witnesses, exact mediation becomes semiring factorization. Serial composition obeys a data-processing inequality and parallel composition is submultiplicative. The mathematics is classical; EIG uses it as the smallest exact model of an identifiability boundary.
 
 See [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md).
 
-### 2. Categories from untyped interaction
+### 2. Categories from untyped execution
 
-Let `C` be any small category. Erase its objects and every source/target label. Keep only the raw arrows, add an absorbing failure `0`, compose two arrows when composable and return `0` otherwise, and observe one bit: success iff the composite is nonzero.
+Let `C` be a small category. Erase the object set and all source/target and Hom labels. Keep the raw arrows, add an absorbing failure `0`, and totalize execution by returning `0` when two arrows are not composable. Observe only success versus failure.
 
-Two-sided continuation success recovers the ordered source/target pair of every arrow. The contextual quotient has one nonzero idempotent for every original object. Retaining the raw arrows as witness fibres over the recovered endpoint classes then reconstructs the original Hom sets, identities, and composition exactly.
+Two-sided continuation success recovers the ordered source/target pair of every arrow. Retaining the raw arrows as witness fibres over those recovered endpoint classes then reconstructs the original Hom sets, identities, and composition.
 
 ```text
-untyped interaction execution + one-bit success/failure
-    -> objects + typing + Hom witnesses + identities + composition.
+untyped totalized execution
++ one-bit continuation success
++ retained raw-arrow witnesses
+    -> objects + typing + Hom sets + identities + composition.
 ```
 
-The construction uses classical category consolidation / semigroup ideas; those ingredients are not claimed novel. The point is the operational recognition theorem and its role as a calibration of the broader EIG question.
+This is an exact recognition theorem using classical category-consolidation / semigroup ingredients. It should not be misread as reconstruction from bare scalar data: the **totalized execution law itself is supplied**. What is reconstructed is the hidden typing/object/Hom organization carried by continuation profiles.
 
 See [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md).
 
-## Other external-search evidence
+## The open foundation: WEIR
 
-The repository keeps external-search results separate from foundational claims.
+The current general target is **WEIR — Witness-Enriched Interaction Reconstruction**.
+
+WEIR asks for natural doctrine classes in which one frozen **meta-rule or schema**, parameterized only by the declared operational doctrine and not by the target answer, can derive:
+
+- the exact contextual algebra;
+- the maximal identifiable core and its residual fibre/moduli;
+- doctrine-relative interfaces/objecthood;
+- internally characterized maps;
+- witness multiplicity and provenance;
+- exact composition and cross-Hom data;
+- doctrine refinement;
+- local-to-global descent and intrinsic obstruction structure;
+- honest reconstruction equivalence, which may be Cauchy/Morita/doctrine or moduli-valued rather than literal uniqueness.
+
+The blind-calibration requirement is an anti-overfitting condition on the **meta-rule**, not a demand for one literal extractor with identical syntax in every doctrine.
+
+WEIR is **open**. See [`theory/03-weir.md`](theory/03-weir.md).
+
+## Conventional mathematics generated by the programme
+
+EIG is intended to be mathematically productive, not only terminological. The following public results arose from EIG-motivated questions but stand or fall on ordinary mathematical proofs and certificates.
+
+### Two-state max-plus comparison
+
+For max-plus automata over `Z_max`, Daviaud--Guillon--Merlet (MFCS 2017) proved bounded-state comparison undecidable at 553 states and left the range `2..552` open. The manuscript in this repository proves the `d=2` case, in the stronger asymmetric form:
+
+> If `B` has at most two states, then for arbitrary finite max-plus `A`, pointwise comparison `[[A]] <= [[B]]` is decidable.
+
+Projectivizing the two-state forward weights leaves one signed unbounded gap. Beyond an explicit threshold, every nondead transition is exactly of type `PROPAGATE`, `FORGET`, or `READ-AND-FORGET`. A transition whose current output depends on the unbounded magnitude cannot also propagate that magnitude to the future. This yields a functional one-counter realization, then Parikh semilinearity and Presburger arithmetic.
+
+The proof is ordinary weighted-automata mathematics. EIG is discovery provenance: the residual/interface viewpoint suggested isolating the exact unbounded state and asking what interaction can simultaneously expose and preserve it.
+
+- [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf)
+- [`discoveries/two-state-maxplus-comparison.md`](discoveries/two-state-maxplus-comparison.md)
+- [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md)
+
+The targeted review through 2026-09-01 did not identify a prior resolution; absolute historical firstness is not claimed.
+
+### Boolean Tucker junction failure
+
+A separate EIG question asks whether independently minimal exact interfaces must glue through one common witness object. For an explicit `2 x 4 x 4` Boolean tensor, the mode Boolean ranks are `(2,3,3)`, but no exact Boolean Tucker decomposition of profile `(2,3,3)` exists. The exact feasible profile region for the displayed tensor is
+
+```text
+Tuck_B(T) = Up(2,3,4) union Up(2,4,3).
+```
+
+Thus local minima need not admit one globally compatible junction. The obstruction itself is part of the geometry rather than a diagnostic to hide.
+
+See [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md).
 
 ### Binary-Kronecker calibration
 
-The EIG parallel-composition heuristic separately led to a correct `5 x 5` binary matrix with
+The EIG parallel-composition heuristic also found a correct `5 x 5` binary matrix with
 
 ```text
 rank_bin(A) = 5,
 rank_bin(A tensor A) <= 24 < 25.
 ```
 
-This is **not** a novelty claim: Yaroslav Shitov had publicly posted a different `5 x 5` `5 -> 24` counterexample on 2026-07-25. The EIG-found example is retained only as a project rediscovery / calibration of the search methodology. See [`discoveries/binary-kronecker-counterexample.md`](discoveries/binary-kronecker-counterexample.md).
+This is **not** a novelty claim: Yaroslav Shitov had publicly posted a different `5 x 5` `5 -> 24` example on 2026-07-25. The EIG example is retained only as a rediscovery/calibration of the search method.
 
-The earlier source-pair augmentation dossier is also retained as secondary evidence because the wording of its motivating 2018 question admits a scope ambiguity. See [`discoveries/source-pair-augmentation.md`](discoveries/source-pair-augmentation.md).
+## What EIG does not claim
 
-Current private search lanes target unresolved finite-certificate problems such as Parnas--Ron--Shraibman `U_{3,20}` and the exceptional crown self-products. Search programs do not become public mathematical claims unless they return a short publicly checkable certificate or proof.
+EIG does **not** claim novelty for interaction/process composition, observational equivalence, Myhill--Nerode minimization, syntactic monoids, behavioral state constructions, arrow-only categories, Karoubi/Cauchy completion, relations/allegories, Chu-style duality, ludics, Geometry of Interaction, Interaction Graphs, Isbell nuclei, sheaf/descent machinery, or the broad idea that types can emerge from execution and observation.
 
-## What is conjectural
+It also does not claim:
 
-The main foundational target is **WEIR — Witness-Enriched Interaction Reconstruction**. Roughly, it asks for natural classes of interaction laboratories in which exact contextual reduction, interface/object selection, map selection, witness reconstruction, composition, doctrine change, and local-to-global descent are all derived from interaction data, up to unavoidable Cauchy/Morita/doctrine moduli.
+- that bare operational probabilities reconstruct the process grammar;
+- that symmetry breaking by itself selects a unique locality;
+- that an operationally preferred factorization is automatically an ontic microscopic atomization;
+- that interaction hypergraphs are automatically physical spatial metrics;
+- that one scalar response quotient recovers witness multiplicity or higher coherence;
+- that one universal doctrine-free notion of objecthood has been found;
+- that WEIR is proved.
 
-WEIR is **not proved**. It is stated as a falsifiable programme with explicit acceptance gates in [`theory/03-weir.md`](theory/03-weir.md).
+The intended EIG discipline is narrower: identify **the maximal invariant forced by a declared operational doctrine, the residual indistinguishability fibre, and the exact resource required to cross each remaining boundary**, while keeping answer leakage and reconstruction moduli explicit.
 
-## What is not being claimed
-
-EIG does **not** claim that objectless category theory, syntactic monoids, Myhill--Nerode minimization, idempotent splitting, relations-as-primary, allegories, ludics, Geometry of Interaction, Interaction Graphs, or Isbell nuclei are new. Nor does it claim that every mathematical object has been reconstructed from interaction, that one doctrine-free notion of objecthood has been identified, or that scalar response suffices to recover witness multiplicity and higher coherence.
-
-The two-state max-plus theorem is presented at its narrow stated scope. The surrounding two-state identity theory, tropical matrix structure, finitely ambiguous containment theory, cost-register-automata frontiers, the 2025 Big-O/affine-domination theorem, and 2026 tropical determinisation results are prior art and are explicitly separated in [`PRIOR_ART.md`](PRIOR_ART.md).
-
-Boolean Tucker decomposition is established prior work; constrained Tucker decompositions are also known to exhibit non-field-like rank phenomena in other cones, including nonnegative Tucker models. The Boolean case study here records one explicit exact Boolean junction failure and the interaction-first question that exposed it.
+See [`PRIOR_ART.md`](PRIOR_ART.md) and [`CONTEMPORARY_NEIGHBORS.md`](CONTEMPORARY_NEIGHBORS.md).
 
 ## Current epistemic status
 
 | Layer | Status |
 | --- | --- |
-| arbitrary-left / at-most-two-state-right max-plus comparison | public proof in this repository; proves the `d=2` case of the DGM 2017 bounded-state question; no prior resolution identified in the dated review through 2026-09-01 |
-| finite exact residual quotient and elementary factor-rank laws | proved / publicly documented; much of the algebra is classical |
-| exact category reconstruction from untyped consolidation + one-bit continuation success | publicly documented theorem with end-to-end finite regression; classical ingredients |
-| explicit Boolean Tucker `(2,3,3)` junction counterexample and displayed rank region for that tensor | finite exact statement with solver-free exhaustive checker; no historical `first` claim |
-| unpublished structural follow-up to the Boolean Tucker example | **PRIVATE / NOT PUBLICLY VERIFIABLE**; not relied upon for any public theorem claim |
-| binary-Kronecker `5 -> 24` example | project rediscovery with public finite certificate; no theorem-priority claim |
-| source-pair and current search targets | secondary / candidate evidence; scope or novelty review pending |
-| general witness-enriched, doctrine-relative, cross-domain reconstruction | conjectural / open |
+| finite exact residual quotient and elementary factor-rank laws | proved / publicly documented; largely classical mathematics |
+| category reconstruction from totalized untyped execution + one-bit continuation success + witness fibres | publicly documented exact theorem; classical shell |
+| arbitrary-left / at-most-two-state-right max-plus comparison | public proof; resolves the `d=2` case of the DGM 2017 bounded-state question; no prior resolution found in the dated review |
+| explicit Boolean Tucker `(2,3,3)` junction counterexample | finite exact public statement with solver-free checker |
+| binary-Kronecker `5 -> 24` example | project rediscovery / calibration; no novelty claim |
+| general identifiability-boundary / witness-enriched reconstruction schema | programme-level formulation; exact special cases only |
+| WEIR in broad natural doctrine classes | **OPEN / CONJECTURAL** |
 
-The detailed boundary is in [`STATUS.md`](STATUS.md).
+The detailed theorem status remains in [`STATUS.md`](STATUS.md).
 
 ## Read in this order
 
-1. [`EIG_FOUNDATIONAL_DISCLOSURE_20260901.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260901.md) — the strongest dated formulation of what EIG means at this snapshot, with proved/open/prior-art boundaries in one place.
-2. [`FOUNDATIONS.md`](FOUNDATIONS.md) — the minimal interaction-first setup and design constraints.
-3. [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf) — the preferred typeset statement and proof of the strongest current conventional-mathematics theorem arising from the programme.
-4. [`provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md`](provenance/TWO_STATE_MAXPLUS_NOVELTY_AUDIT_20260901.md) — the dated literature review and its conservative priority boundary.
-5. [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md) — a second EIG-to-external-mathematics example.
-6. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — the smallest exact calculus.
-7. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — a full object/typing/Hom reconstruction theorem in the category sector.
-8. [`theory/03-weir.md`](theory/03-weir.md) — the open foundational theorem.
-9. [`PRIOR_ART.md`](PRIOR_ART.md) — where EIG overlaps established mathematics.
-10. [`ROADMAP.md`](ROADMAP.md) — the main open gates.
-11. [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md) — source and process provenance.
+1. [`EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md`](EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md) — current boundary-first formulation.
+2. [`EIG_FOUNDATIONAL_DISCLOSURE_20260901.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260901.md) — preserved dated foundational snapshot.
+3. [`FOUNDATIONS.md`](FOUNDATIONS.md) — minimal setup and proved calibrations.
+4. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — smallest exact calculus.
+5. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — exact object/typing/Hom reconstruction calibration.
+6. [`theory/03-weir.md`](theory/03-weir.md) — open general theorem target.
+7. [`discoveries/two-state-maxplus-comparison.pdf`](discoveries/two-state-maxplus-comparison.pdf) — strongest current conventional-mathematics theorem generated by the programme.
+8. [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md) — exact gluing-failure case study.
+9. [`PRIOR_ART.md`](PRIOR_ART.md) and [`CONTEMPORARY_NEIGHBORS.md`](CONTEMPORARY_NEIGHBORS.md) — novelty and neighbour boundary.
+10. [`ROADMAP.md`](ROADMAP.md) — open gates.
 
 ## Verification
 
@@ -220,37 +208,17 @@ The detailed boundary is in [`STATUS.md`](STATUS.md).
 make verify-all
 ```
 
-The two-state max-plus theorem has a public finite regression:
+The max-plus and Boolean Tucker verifiers are regressions/certificates for the written mathematics, not substitutes for the infinite proofs where an infinite theorem is claimed. See [`verification/README.md`](verification/README.md).
 
-```bash
-python3 verification/verify_two_state_maxplus.py
-```
+## License and provenance
 
-The separate regression checks the closed formulas, the propagate/forget/read-and-forget tail trichotomy (including the all-zero silent-forget case), and `465,831` end-to-end direct-versus-compiled word cases. The infinite decision theorem rests on the written proof, not on finite testing.
+Human-readable mathematical documentation is licensed under **CC BY 4.0** unless otherwise noted. Source code, scripts, build/workflow files, and machine-readable verification certificates are licensed under **Apache License 2.0** unless otherwise noted. See [`LICENSE.md`](LICENSE.md).
 
-The Boolean Tucker case study alone can be checked with
-
-```bash
-python3 verification/verify_boolean_tucker_junction_counterexample.py
-```
-
-See [`verification/README.md`](verification/README.md).
-
-## License
-
-Mathematical notes, theorem/proof text, README files, and other human-readable documentation are licensed under **CC BY 4.0** unless otherwise noted. Source code, scripts, build/workflow files, and machine-readable verification certificates are licensed under the **Apache License 2.0** unless otherwise noted.
-
-See [`LICENSE.md`](LICENSE.md) for the exact scope and license references.
-
-## Research process and provenance
-
-The programme was developed through extended AI-assisted mathematical research, including theorem generation, counterexample search, proof repair, regression testing, and separate model-assisted adversarial review. These activities describe the research process; they are not evidence that a theorem is correct. Public mathematical claims are intended to rest on the proofs, definitions, finite certificates, or regression tests identified for each claim. Failed and superseded formulations remain in Git history and in the original research ledger; this repository keeps only the current public mathematical surface.
-
-See [`provenance/RESEARCH_PROCESS.md`](provenance/RESEARCH_PROCESS.md) and [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md).
+The programme was developed through extended AI-assisted mathematical research. That is process provenance, not evidence of correctness. Public claims are intended to rest on the cited proofs, definitions, certificates, or regressions. See [`provenance/RESEARCH_PROCESS.md`](provenance/RESEARCH_PROCESS.md) and [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md).
 
 ---
 
 **Author:** Keigo Oka  
 **ORCID:** [`0009-0007-8119-9267`](https://orcid.org/0009-0007-8119-9267)  
 **Initial EIG public-foundation snapshot:** 2026-08-31  
-**Historical novelty:** not claimed for classical ingredients; the two-state max-plus manuscript proves the `d=2` case of the published DGM 2017 question, while historical priority is stated only at the scope of the dated literature review.
+**Current formulation:** 2026-09-02
