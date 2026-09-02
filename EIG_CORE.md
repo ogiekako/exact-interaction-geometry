@@ -10,12 +10,12 @@
 
 ## 1. Executive statement
 
-For a fixed interaction doctrine `D`, Exact Interaction Geometry separates four logically different tasks:
+For a fixed interaction doctrine `D`, Exact Interaction Geometry separates four tasks:
 
 1. **contextual separatedification** — erase exactly the distinctions invisible to every admitted context;
 2. **semantic shape generation** — close an intrinsic generic root under the doctrine's actual exact composition and universal constructions;
-3. **local-law compilation** — on cellular doctrines, compile the local comparison laws forced by elementary occurrences and universal properties;
-4. **recognition** — separately test whether the generated arities and laws actually reconstruct the intended world and its operations.
+3. **local-law compilation** — on an explicitly defined cellular subclass, compile the local laws forced by constructor-derived elementary decompositions and universal properties;
+4. **recognition** — separately test whether the generated arities and laws reconstruct the intended world and its operations.
 
 The central object is
 
@@ -28,13 +28,7 @@ The central object is
 }
 \]
 
-In Set-like deterministic sectors, `S_D` is concretely the quotient by a greatest fixed point
-
-\[
-\nu\Phi_D,
-\]
-
-so the slogan becomes
+In Set-like deterministic sectors, `S_D` is concretely the quotient by a greatest fixed point `nu Phi_D`; thus the compact slogan is
 
 \[
 \boxed{
@@ -42,7 +36,7 @@ so the slogan becomes
 }
 \]
 
-The fixed-point construction does **not** by itself imply reconstruction. Density, local nervousness, and operation exactness remain separate recognition gates.
+The fixed-point construction does **not** by itself imply reconstruction. Density, local nervousness, and operation exactness remain recognition gates.
 
 ---
 
@@ -54,13 +48,11 @@ An arity theory/monad is already supplied; one proves a nerve theorem or charact
 
 ### Level 2 — the positive EIG theorem
 
-The world and an exact interaction/composition doctrine are supplied, but the arity/shape theory is not. EIG reconstructs an intrinsic root, closes it under the actual doctrine, and then tests reconstruction.
+A world and an exact interaction/composition doctrine are supplied, but the arity/shape theory is not. EIG extracts an intrinsic root, closes it under the actual doctrine, and then tests reconstruction.
 
 ### Level 3 — false in general
 
-A bare extensional object/map world is asked to select its own interaction doctrine.
-
-This fails in general. The same map-level world can support, for example, a witness-preserving span doctrine or a witness-forgetting relation doctrine. Map data alone does not decide whether witness multiplicity is semantically meaningful.
+A bare extensional object/map world is asked to select its own interaction doctrine. This fails in general: the same map-level world can support, for example, witness-preserving span semantics or witness-forgetting relation semantics. Map data alone does not determine whether witness multiplicity is meaningful.
 
 Hence the canonical object is doctrine-relative:
 
@@ -82,45 +74,40 @@ D=(\mathsf P,\mathcal R,\mathcal S,\mathcal O,\mathcal K,\mathcal U,\mathcal E).
 
 - `P`: profiles/types;
 - `R`: raw family/witness sectors `E_p`;
-- `S`: semantic worlds and their contextual/exact reductions;
+- `S`: semantic worlds together with a **universal contextual/exact separatedification** `S_D` (or the data from which it is independently constructed);
 - `O`: admitted observations and closing contexts;
 - `K`: actual typed constructors, possibly partial, dependent, or profile-changing;
-- `U`: declared exact universal constructions, e.g. image, pullback, tabulation, support reflection, Cech/codescent, free path/Segal completion;
+- `U`: declared exact universal constructions such as image, pullback, tabulation, support reflection, Cech/codescent, or free path/Segal completion;
 - `E`: the honest equivalence notion: isomorphism, equivalence, Cauchy, Morita, or moduli-valued.
 
-The current fixed-point theorem assumes:
+The separatedification is not an arbitrary chosen quotient. It must be characterized by the universal property of making exactly the contextually sound identifications.
 
-- all relevant profiles, root data, constructor families, and finite comparison schemes are set-sized in a fixed universe;
-- constructors and universal diagrams are finitary;
-- semantic reduction is characterized by a universal property, not an arbitrary chosen embedding;
-- retract splitting and equivalence closure stay inside the declared universe.
-
-For the local-law compiler, a further **cellular/occurrence-equipped** hypothesis is required; see Section 7.
+The fixed-point theorem assumes a fixed universe in which the relevant profile/root/constructor data are set-sized and the semantic shape classes form the required complete lattice. The Kleene `omega`-iteration formula requires the additional continuity hypothesis stated below.
 
 ---
 
 ## 4. Contextual separatedification
 
-The general object is a contextual separatedification/reflection
+The general object is a doctrine-appropriate contextual separatedification
 
 \[
 S_D:\mathcal R_D\longrightarrow\mathcal S_D^{\mathrm{sep}},
 \]
 
-characterized by the universal requirement that it performs the largest identification sound under all admitted contexts.
+characterized by the largest identification sound under all admitted contexts.
 
 ### 4.1 Set-like deterministic realization
 
-In a many-sorted Set-like sector, let `Rel_D` be the complete lattice of typed relation candidates. Define a monotone operator
+Let `Rel_D` be the complete lattice of typed relation candidates. Define a monotone operator
 
 \[
 \Phi_D:\mathrm{Rel}_D\to\mathrm{Rel}_D
 \]
 
-by declaring `x Phi_D(R) y` iff:
+by requiring that `x Phi_D(R) y` iff:
 
 1. all immediate admitted observations agree;
-2. every admitted one-step partial constructor has the same definedness on the two inputs;
+2. every admitted one-step partial constructor has the same definedness;
 3. corresponding defined continuations have `R`-related outputs.
 
 Knaster-Tarski gives
@@ -139,9 +126,9 @@ x\,R_D^\infty\,y
 
 iff every finite well-typed admitted context gives the same observable response on `x` and `y`.
 
-**Proof.** Fixed-point stability propagates equality through contexts by induction on context depth. Conversely, all-context indistinguishability is a post-fixed point of `Phi_D`, hence lies below its greatest fixed point. The reverse inclusion is the first direction. ∎
+**Proof.** Fixed-point stability propagates through contexts by induction on context depth. Conversely, all-context indistinguishability is a post-fixed point of `Phi_D`, hence is contained in the greatest fixed point. ∎
 
-The higher/enriched theory need not be forced into a Set-valued relation calculus. There `S_D` may be realized by an effective quotient, localization, homotopy image, stack quotient, or another doctrine-appropriate universal separatedification.
+In enriched/higher sectors, `S_D` may instead be an effective quotient, localization, homotopy image, stack quotient, or another universal separatedification. No general Set-valued `nu Phi_D` claim is made there.
 
 ---
 
@@ -163,13 +150,13 @@ For a presheaf category,
 
 Thus equivalent presheaf presentations recover the same root up to Cauchy equivalence.
 
-The doctrine's universal exact reduction/completion sends this raw root to a semantic root
+The doctrine's universal exact reduction/completion sends the raw root to a semantic root
 
 \[
 A_0(D)\subseteq\mathcal S_D^{\mathrm{sep}}.
 \]
 
-The realization must be characterized universally. If literal uniqueness fails, the correct output may be a contractible choice, equivalence class, groupoid, Morita class, or moduli object.
+If literal uniqueness fails, the correct output may be an equivalence class, groupoid, Morita class, or moduli object.
 
 ---
 
@@ -177,26 +164,24 @@ The realization must be characterized universally. If literal uniqueness fails, 
 
 ### 6.1 Exactized constructors
 
-Composition must be read in the target semantic world. Schematically, for a constructor `K`,
+Composition is read in the target semantic world. Schematically,
 
 \[
 \bar K=S_D\circ K,
 \]
 
-with the relevant separated inclusions on its inputs.
+with the relevant separated inclusions on the inputs.
 
-The intended order is:
+The intended order is
 
 ```text
 raw/native composition
   -> target semantic reduction/recanonicalization.
 ```
 
-This matters for partial, profile-changing, or witness-sensitive composition.
-
 ### 6.2 Closure operator
 
-On replete small semantic shape classes define
+On the declared complete lattice of replete semantic shape classes define
 
 \[
 \Psi_D(A)
@@ -211,7 +196,7 @@ Start from `A_0(D)`.
 
 ### Theorem 6.1 — EIG Core existence
 
-If `Psi_D` is monotone on the declared complete shape lattice, then
+If `Psi_D` is monotone, then
 
 \[
 \boxed{
@@ -222,7 +207,7 @@ A_D^{\mathrm{EIG}}
 
 exists and is the least replete, Cauchy-closed semantic shape class containing `A_0(D)` and closed under every declared exact constructor and universal operation.
 
-If, in addition, `Psi_D` preserves the relevant directed unions (in particular in the stated finitary sectors where this is separately verified), then
+If, additionally, `Psi_D` preserves the relevant directed unions, then
 
 \[
 A_D^{\mathrm{EIG}}
@@ -231,21 +216,15 @@ A_D^{\mathrm{EIG}}
 A_{n+1}=\Psi_D(A_n).
 \]
 
-The Tarski existence statement and the Kleene `omega`-iteration statement are therefore logically distinct.
+Thus Tarski existence and the Kleene `omega`-chain formula are separate statements.
 
 ### 6.3 Cauchy closure must be iterative
 
-A final one-shot Karoubi completion can fail.
-
-Take a semantic category containing objects `1,2,3`, with `1` a retract of `2`. Let a partial constructor be defined only on `1`, with `K(1)=3`, and start from `{2}`. Constructor closure before retract splitting never sees `1`; a final Karoubi completion adds `1` but still misses `3`. Stagewise constructor--Kar closure adds `1` and then `3`.
-
-Hence the fixed point must interleave constructor/universal closure with retract closure.
+A final one-shot Karoubi completion can fail. If `1` is a retract of `2`, a partial constructor is defined only on `1`, and `K(1)=3`, then starting from `{2}`, constructor closure followed by one final Karoubi completion adds `1` but misses `3`. Stagewise constructor--Kar closure adds both. Hence retract splitting must participate in the fixed point.
 
 ---
 
-## 7. Associated theory and the cellular law compiler
-
-### 7.1 Full semantic theory
+## 7. Associated theory
 
 After the object class has been generated independently, define
 
@@ -257,35 +236,40 @@ After the object class has been generated independently, define
 }
 \]
 
-using the doctrine's intended structural morphism class when it is narrower than ambient Homs.
+using the doctrine's intended structural morphism class if it is narrower than ambient Homs.
 
-This avoids inventing a free mixed syntax and then separately proving that its hidden equations and Homs coincide with the semantic world.
+The nontrivial extraction is the object/arity class. Once that class is independently fixed, using actual semantic Homs avoids artificial free-mixed-syntax fullness obligations.
 
-### 7.2 Why an extra cellular hypothesis is necessary
+---
 
-A generic semantic shape does **not** canonically determine which maps from Tiny objects count as its elementary occurrences.
+## 8. Cellular local-law compiler
 
-For example, for the free-category shape `[2]`, all semantic maps `[1] -> [2]` include the composite edge `0 -> 2`; the Segal spine should contain only the two immediate edges `0 -> 1` and `1 -> 2`.
+The local-law compiler requires more structure than the generic Level-2 fixed-point theorem.
 
-Therefore the law compiler is not claimed for arbitrary Level-2 doctrines solely from the tuple in Section 3.
+### 8.1 Cellular/occurrence-equipped doctrine
 
-A **cellular/occurrence-equipped Level-2 doctrine** additionally supplies, or functorially derives from independently specified constructor structure:
+A **cellular Level-2 doctrine** additionally provides, or functorially derives from independently specified constructor semantics:
 
-- a subtheory of elementary/generic shapes `A_D^el`;
-- a doctrine-invariant class of inert/occurrence maps into generated shapes;
-- the restriction/overlap maps between such occurrences;
-- coherence ensuring these data are preserved by doctrine equivalence.
+1. a subtheory of elementary/generic shapes `A_D^el`;
+2. a doctrine-invariant class of inert/occurrence maps into generated shapes;
+3. restriction/overlap maps between occurrences;
+4. for every constructor-generated elementary decomposition, a **local decomposition certificate**: a canonical comparison together with the filler/universal-property profile forced by the actual constructor semantics;
+5. coherence and doctrine-equivalence invariance of these data.
 
-This data may be intrinsic to a standard algebraic pattern, polynomial/operadic presentation, globular pasting theory, or a separately audited recurrent occurrence calculus. It must not be reverse-engineered from the desired essential image.
+The fourth item is load-bearing. Occurrence maps alone do not imply a Segal or descent law. The required local profile must come from the universal property of the supplied constructor/decomposition semantics, not from the desired essential image.
 
-For such a doctrine define
+For example, in the free-category row, using all semantic maps `[1] -> [2]` would incorrectly include the composite `0 -> 2`; the doctrine must identify the immediate/inert edge occurrences. The fact that a two-edge path is uniquely assembled from those occurrences is then supplied by the universal property of free path composition, not by naming the Segal condition as an answer.
+
+### 8.2 Elementary core
+
+For a generated shape `T`, define
 
 \[
 \operatorname{Occ}_D(T)
 =(A_D^{el}\downarrow_{\mathrm{occ}}T)
 \]
 
-and the elementary core
+and
 
 \[
 I_D(T)
@@ -294,7 +278,7 @@ I_D(T)
 \longrightarrow y(T).
 \]
 
-### 7.3 Typed defect laws
+### 8.3 Typed defect profile
 
 For a comparison test
 
@@ -302,7 +286,7 @@ For a comparison test
 j_\tau:B_\tau\to C_\tau
 \]
 
-and boundary instance `u:B_tau -> X`, let
+and boundary instance `u:B_tau -> X`, define
 
 \[
 \operatorname{Fill}_\tau(X,u)
@@ -315,27 +299,20 @@ and boundary instance `u:B_tau -> X`, let
 \bigr].
 \]
 
-A law records the required fibre profile, which may be:
+The local decomposition certificate specifies the required profile, e.g.
 
 - nonempty — existence;
 - contractible/singleton — existence and uniqueness;
 - prescribed discrete multiplicity;
-- prescribed isotropy/groupoid;
-- prescribed higher homotopy/coherence type;
+- prescribed groupoid/isotropy;
+- prescribed higher coherence type;
 - a declared universal limit/colimit/tabulation property.
 
 Ordinary orthogonality is only the contractible-filler sector.
 
-### 7.4 Saturation
+### 8.4 Saturation and soundness
 
-Let `ElemCmp_D(A)` consist of the occurrence-core comparisons and the comparisons canonically generated by the doctrine's declared universal properties. Let `Sat_D` close them under exactly the admitted finite operations:
-
-- typed substitution;
-- whiskering and finite pasting;
-- allowed base change;
-- semantic equivalence and retract;
-- actual reassociation/interchange cells;
-- defined composition of filler profiles.
+Let `ElemCmp_D(A)` be the certified occurrence-core comparisons together with comparisons generated by the doctrine's declared universal properties. Let `Sat_D` close these under exactly the admitted finite substitution, whiskering, pasting, base change, semantic equivalence, retract, reassociation/interchange, and defined filler-profile composition operations.
 
 Define
 
@@ -348,11 +325,13 @@ Define
 }
 \]
 
-By construction, this is exactly the finite local comparison theory generated from the independently specified occurrence and universal-property data. If the actual nerve image obeys additional genuinely global restrictions, that is not hidden inside this compiler; it is diagnosed by the local-nervousness gate below.
+Because each elementary generator is certified by actual constructor/universal semantics and the saturation operations preserve validity, every genuine nerve object satisfies `L_D`.
+
+The compiler therefore produces exactly the finite **doctrine-generated local** comparison theory. If genuine nerve objects satisfy additional global restrictions not generated this way, that discrepancy is measured by local nervousness rather than silently inserted into the compiler.
 
 ---
 
-## 8. Recognition is not closure
+## 9. Recognition is not closure
 
 Let
 
@@ -360,25 +339,23 @@ Let
 J_D:\Theta_D^{\mathrm{EIG}}\hookrightarrow\mathcal W_D
 \]
 
-be the generated arity inclusion, and
+be the generated arity inclusion, and let
 
 \[
 N_D(X)=\mathcal W_D(J_D-,X)
 \]
 
-the restricted interaction nerve.
+be the restricted interaction nerve.
 
-### 8.1 Density
+### 9.1 Density
 
 `J_D` is dense iff `N_D` is fully faithful, equivalently iff the density counit is invertible.
 
-An intrinsic root can fail to be dense. For example, embed `Set` into `Set x Set` by `X |-> (X, empty)`. The intrinsic Tiny root maps to `(1,empty)`, whose nerve forgets the entire second component.
+An intrinsic root can fail to be dense. For example, the fully faithful embedding `Set -> Set x Set`, `X |-> (X, empty)`, sends the Tiny root to `(1,empty)`; the resulting nerve forgets the entire second component.
 
-Density is therefore a recognition condition, not a consequence of root canonicality.
+Density is therefore a recognition property, not a consequence of root canonicality.
 
-It also cannot in general be absorbed into an ordinary closure system: dense full subcategories need not be closed under intersection.
-
-### 8.2 Local nervousness
+### 9.2 Local nervousness
 
 A cellular doctrine is **local-nervous** when the restricted nerve itself induces an equivalence
 
@@ -395,9 +372,9 @@ N_D:
 
 or the doctrine-appropriate enriched/higher analogue.
 
-This is stronger than density: it identifies the essential image with the blindly compiled local model theory.
+Thus local nervousness includes density and additionally identifies the essential image with the compiled local model theory.
 
-### 8.3 Operation exactness
+### 9.3 Operation exactness
 
 For an admitted world operation
 
@@ -405,7 +382,7 @@ For an admitted world operation
 K:\mathcal W_1\times\cdots\times\mathcal W_m\to\mathcal W_0
 \]
 
-define its arity module
+define
 
 \[
 M_K(b;a_1,\ldots,a_m)
@@ -413,7 +390,7 @@ M_K(b;a_1,\ldots,a_m)
 \mathcal W_0\bigl(J_0b,K(J_1a_1,\ldots,J_ma_m)\bigr).
 \]
 
-There is a canonical comparison
+The canonical comparison is
 
 \[
 \kappa_{K,\vec X}(b):
@@ -425,137 +402,103 @@ M_K(b;a_1,\ldots,a_m)
 \mathcal W_0(J_0b,K(\vec X)).
 \]
 
-`K` is **arity-exact** iff every such comparison is invertible.
+`K` is **arity-exact** iff every `kappa_K` is invertible.
 
-Density alone does not imply this. `FinSet -> Set` is dense, while the identity functor and the ultrafilter functor agree on finite sets but differ on suitable infinite sets.
+Density alone does not imply this: `FinSet -> Set` is dense, while identity and ultrafilter functors agree on finite sets but differ on suitable infinite sets.
 
-If `M_K` is not representable by an honest arity functor, the canonical answer may still be the module/proarrow itself.
+If `M_K` is not representable by an honest arity functor, the module/proarrow itself may be the correct canonical level.
 
 ---
 
-## 9. EIG-exact doctrines
+## 10. EIG-exact doctrines
 
 A doctrine is **EIG-exact for a claimed reconstruction target** when:
 
-1. the generated arity inclusion is dense;
-2. the restricted nerve is local-nervous with respect to the compiled local law theory;
-3. every claimed admitted external operation is arity-exact;
-4. the declared morphism/base-change structure is coherently reconstructed.
+1. its restricted nerve is local-nervous (hence dense);
+2. every claimed admitted external operation is arity-exact;
+3. the declared morphism/base-change structure is coherently reconstructed.
 
 Then the nerve reconstructs the intended world and its claimed operation structure at the declared equivalence level.
 
-The gates are diagnosed separately. In particular, local nervousness implies density; they are separate tests, not logically independent axioms.
+The conditions remain separately diagnosable even though local nervousness logically implies density.
 
 ---
 
-## 10. Canonicality
+## 11. Canonicality
 
-The canonicality claimed here is not literal uniqueness of a chosen small presentation.
+The canonicality claimed here is not literal uniqueness of a chosen small presentation. The honest endpoint may be equivalence, Cauchy equivalence, Morita/model equivalence, or a groupoid/stack/moduli object.
 
-The honest levels are:
+### Theorem 11.1 — doctrine-equivalence invariance
 
-1. isomorphism/equivalence;
-2. Cauchy equivalence;
-3. Morita/model equivalence;
-4. groupoid/stack/moduli-valued uniqueness when isotropy remains.
-
-### Theorem 10.1 — doctrine-equivalence invariance
-
-Suppose an equivalence of Level-2 doctrines
+Suppose an equivalence
 
 \[
 F:D\simeq D'
 \]
 
-coherently preserves the data used by the construction: profiles, observations, contextual separatedification, Tiny roots, exact reductions, typed constructors, universal operations, and the equivalence/Cauchy/Morita convention. In the cellular subclass, also require preservation of elementary objects, occurrence maps, and filler profiles.
+coherently preserves the data used by the construction: profiles, observations, contextual separatedification, Tiny roots, exact reductions, typed constructors, universal operations, and the declared equivalence convention. In the cellular subclass, also require preservation of elementary objects, occurrence maps, local decomposition certificates, and filler profiles.
 
-Then the induced equivalences intertwine the relevant operators, and therefore carry the contextual separatedification, least semantic fixed point, associated semantic theory, and compiled local law theory to the corresponding outputs for `D'`.
+Then the induced equivalences intertwine the relevant monotone operators and carry the contextual separatedification, least semantic fixed point, associated semantic theory, and compiled local law theory to the corresponding outputs for `D'`.
 
-This is the precise sense in which superficial changes of presentation do not change EIG.
-
----
-
-## 11. Failure coastline
-
-The construction records exact failure modes rather than converting them into hidden choices.
-
-- **F0 doctrine ambiguity:** the bare world does not select a unique interaction doctrine.
-- **F1 root failure:** no essentially small intrinsic Tiny/Cauchy root exists in the declared universe.
-- **F2 reduction failure:** no canonical/universal exact reduction is available.
-- **F3 size/continuity failure:** the required closure escapes the universe or lacks the continuity needed for effective finite-stage generation.
-- **F4 local-nervousness failure:** compiled local models strictly exceed the actual nerve image; a countermodel or essential-image mismatch witnesses the obstruction.
-- **F5 density failure:** the density counit is noninvertible.
-- **F6 operation failure:** some `kappa_K` is noninvertible.
-- **F7 nonrepresentability:** the correct external action exists canonically only as a module/proarrow. This may identify the correct categorical level rather than a failure of EIG.
-- **F8 isotropy/moduli:** literal uniqueness fails but a canonical groupoid, Morita class, or moduli object remains. This is a unicity diagnosis, not necessarily a failure.
+This is the precise presentation-invariant sense in which EIG is canonical.
 
 ---
 
-## 12. Frozen calibrations
+## 12. Failure coastline
 
-The same architecture specializes as follows.
+- **F0 — doctrine ambiguity:** the bare world does not select a unique interaction doctrine.
+- **F1 — root failure:** no essentially small intrinsic Tiny/Cauchy root exists in the declared universe.
+- **F2 — reduction failure:** no canonical/universal contextual or exact reduction is available.
+- **F3 — size/continuity failure:** the required closure escapes the universe or lacks continuity needed for the claimed finite-stage generation.
+- **F4 — local-nervousness failure:** the compiled local model class strictly exceeds the actual nerve image; a countermodel/essential-image mismatch is the witness.
+- **F5 — density failure:** the density counit is noninvertible.
+- **F6 — operation failure:** some `kappa_K` is noninvertible.
+- **F7 — nonrepresentability:** a canonical external action exists only as a module/proarrow; this may diagnose the correct categorical level rather than a failure.
+- **F8 — isotropy/moduli:** literal uniqueness fails while a canonical groupoid, Morita class, or moduli object remains; this is a unicity diagnosis rather than necessarily a failure.
+
+---
+
+## 13. Frozen calibrations
 
 ### Free categories
 
-- raw root: walking vertex and walking edge;
-- composition: free path composition;
-- generated shapes: finite linear paths;
-- associated theory: `Delta`;
-- cellular occurrences: immediate path edges;
-- local laws: simplicial Segal conditions.
+Walking vertex/edge roots plus free path composition generate finite linear paths and the simplex theory. Immediate path edges are the cellular occurrences; the free-composition universal property certifies the simplicial Segal comparison.
 
 ### Fixed-colour nonsymmetric operads
 
-- raw root: generic corollas;
-- composition: operadic substitution;
-- generated shapes: planar rooted trees;
-- cellular occurrences: vertex corollas;
-- local laws: tree Segal-core conditions.
+Generic corollas plus operadic substitution generate planar rooted trees. Vertex corollas are the cellular occurrences; substitution semantics certifies the tree Segal-core comparisons.
 
 ### Strict globular `n`-categories
 
-- raw root: globe cells;
-- composition: strict globular pasting;
-- generated shapes: globular pasting diagrams;
-- associated theory: `Theta_n`-type pasting theory;
-- cellular occurrences: elementary globes/cells;
-- local laws: globular Segal comparisons.
+Globe roots plus strict globular composition generate pasting diagrams and a `Theta_n`-type theory. Elementary globe/cell occurrences and their constructor-derived pasting certificates yield the globular Segal comparisons.
 
 ### Normalized protected recurrent world
 
-- raw root: Tiny boundary/cell family sectors;
-- exact reduction: joint coherent images, witness/storage tabulations, pullbacks, support/context, derived owner geometry;
-- temporal closure: shared-interface ULF/strict-Segal paths;
-- local ledger: image soundness/onto/extensionality, reduced evaluator laws, witness/storage pullback laws, FIX/NULL/EQ/LEGAL, finite context laws, glued strict-Segal path laws;
-- external operations: SYNC, STORE, SPACE, star, observer/public projection are handled by module/comparison exactness rather than forced into one mixed free monad;
-- unicity: model-Morita equivalence is the honest endpoint.
+The root consists of Tiny boundary/cell family sectors. Exact reduction uses joint coherent images, witness/storage tabulations, pullbacks, support/context, and derived owner geometry; temporal closure uses shared-interface ULF/strict-Segal paths. Its separately audited occurrence/decomposition calculus yields the local image/evaluator/storage/context/path ledger. SYNC, STORE, SPACE, star, and observer/public projection live in the external module/comparison layer. The honest unicity endpoint is model-Morita equivalence.
 
-The recurrent row is important because it forces the compiler to distinguish existence, uniqueness, multiplicity, and retained witness geometry rather than collapse everything to ordinary Segal orthogonality.
+The recurrent row is important because it requires existence, uniqueness, multiplicity, and retained witness geometry to remain distinct.
 
 ---
 
-## 13. Meta-EIG
+## 14. Meta-EIG
 
-Meta-EIG is a doctrine-relative discovery formalism, not a doctrine-free selector of all legitimate mathematics.
+Meta-EIG is a doctrine-relative discovery formalism, not a doctrine-free selector of legitimate mathematics.
 
-Fix a meta-doctrine `M` describing which comparison constructions, defect extractions, and universal realizations are admissible.
-
-Let `Sh` and `Law` be set-sized universes of admissible semantic shapes and typed defect tests. A state is
+Fix a meta-doctrine `M` describing which comparison constructions, defect extractions, and universal realizations are admissible. Let `Sh` and `Law` be set-sized universes of admissible semantic shapes and typed defect tests. A state is
 
 \[
 (A,\Lambda)\in\mathcal P(\mathsf{Sh})\times\mathcal P(\mathsf{Law}).
 \]
 
-Define a monotone simultaneous generation operator
+Define a monotone simultaneous operator
 
 \[
 \mathbb F_{D,\mathfrak M}(A,\Lambda)
 =
-\bigl(\Psi_{D,\mathfrak M}(A,\Lambda),
-G_{D,\mathfrak M}(A,\Lambda)\bigr),
+\bigl(\Psi_{D,\mathfrak M}(A,\Lambda),G_{D,\mathfrak M}(A,\Lambda)\bigr),
 \]
 
-where schematically
+schematically by
 
 \[
 \Psi(A,\Lambda)
@@ -564,8 +507,6 @@ where schematically
 \bigl(A_0\cup K(A)\cup U(A)\cup\operatorname{Real}(\Lambda)\bigr),
 \]
 
-and
-
 \[
 G(A,\Lambda)
 =
@@ -573,11 +514,11 @@ G(A,\Lambda)
 \bigl(\Lambda\cup\operatorname{ElemCmp}_{D,\mathfrak M}(A)\bigr).
 \]
 
-`Real(Lambda)` may add a derived semantic sort only when the doctrine/meta-doctrine gives a canonical universal realization; a failing example alone never licenses an arbitrary new object.
+`Real(Lambda)` may add a derived semantic sort only when the doctrine/meta-doctrine gives a canonical universal realization; a failing example alone does not license an arbitrary new object.
 
-### Theorem 13.1 — simultaneous fixed point
+### Theorem 14.1 — simultaneous fixed point
 
-If the two universes are set-sized and `F` is monotone, then
+If the two universes are set-sized and the operator is monotone, then
 
 \[
 \boxed{
@@ -587,27 +528,17 @@ If the two universes are set-sized and `F` is monotone, then
 }
 \]
 
-exists by Knaster-Tarski.
-
-If the generation operator preserves the relevant directed unions, the least fixed point is obtained by its Kleene chain.
+exists by Knaster-Tarski. If the operator preserves the relevant directed unions, its least fixed point is obtained by the Kleene chain.
 
 ### Level-2 triangularization
 
-When the exact interaction/completion doctrine is already supplied, semantic shape generation is independent of newly discovered law data:
+When the exact interaction/completion doctrine is already supplied and shape generation is independent of newly discovered law data,
 
 \[
 \Psi(A,\Lambda)=\Psi_D(A).
 \]
 
-Then the simultaneous fixed point triangularizes: first compute
-
-\[
-a^*=\mu\Psi_D,
-\]
-
-then compute the least law fixed point at `a*`.
-
-This explains the successful Level-2 order:
+Then first compute `a* = mu Psi_D`, and next compute the least law fixed point at `a*`. This explains the successful Level-2 order:
 
 ```text
 contextual separatedification
@@ -619,22 +550,13 @@ contextual separatedification
 
 ---
 
-## 14. What is standard and what is project-specific
+## 15. Prior-art boundary
 
-The following ingredients are standard mathematics in their established scopes:
-
-- Myhill-Nerode / syntactic congruence / coalgebraic behavioral equivalence;
-- Knaster-Tarski and Kleene fixed-point theorems;
-- Tiny/small-projective objects and Karoubi/Cauchy completion;
-- restricted Yoneda, density, nerve-realization adjunctions;
-- monads with arities and associated theories;
-- algebraic patterns and Segal-object formalisms;
-- spans, relations, profunctors, Grothendieck constructions, equipments;
-- Cauchy/Morita completion and moduli-valued unicity.
+The constituent mechanisms include standard mathematics: Myhill-Nerode/syntactic congruence, behavioral equivalence, Knaster-Tarski/Kleene fixed points, Tiny/small-projective objects, Karoubi/Cauchy completion, restricted Yoneda and density, monads with arities, algebraic patterns/Segal objects, spans/relations/profunctors/equipments, and Morita/moduli ideas.
 
 No priority claim is made here for those ingredients.
 
-The project-specific synthesis currently being asserted is the doctrine-indexed architecture
+The project-specific synthesis currently asserted is the doctrine-indexed architecture
 
 \[
 \boxed{
@@ -644,42 +566,36 @@ S_D
 \;\triangleright\;
 \mathcal L_D
 \;\triangleright\;
-\text{density/local-nervousness/operation recognition},
+\text{local-nervousness / operation recognition},
 }
 \]
 
-with typed witness-defect laws, external module actions, and an explicit failure coastline.
+with typed witness-defect profiles, external module actions, and an explicit failure coastline.
 
-Whether this entire combined architecture already exists in the literature under another formulation remains a separate specialist prior-art question. It is not settled merely by the present fixed-point theorem.
+Whether this exact combined architecture already exists in the literature under another formulation is a separate specialist prior-art question.
 
 ---
 
-## 15. Final theorem
+## 16. Final theorem and definition
 
 ### Final Level-2 EIG Core theorem
 
 Let `D` be a small Level-2 exact interaction doctrine satisfying the hypotheses above.
 
-1. A doctrine-appropriate contextual separatedification `S_D` is part of the admissible Level-2 setup; in Set-like deterministic sectors it is computed by the all-context greatest fixed point `nu Phi_D`.
+1. The doctrine has, or independently constructs, a universal contextual separatedification `S_D`; in Set-like deterministic sectors it is computed by the all-context greatest fixed point `nu Phi_D`.
 2. The exactized semantic closure operator has a least fixed point
    \[
    A_D^{\mathrm{EIG}}=\mu\Psi_D.
    \]
 3. The associated interaction theory is the doctrine-appropriate full semantic theory on that independently generated object class.
-4. If `D` is cellular/occurrence-equipped, its doctrine-generated finite local law theory is compiled from elementary occurrence cores and declared universal comparisons, with typed filler profiles.
+4. If `D` is cellular in the strengthened sense of Section 8, the certified elementary decomposition comparisons generate a sound finite local law theory `L_D`.
 5. Equivalent doctrines preserving the relevant structure give equivalent EIG outputs at the declared equivalence/Cauchy/Morita/moduli level.
-6. If the restricted nerve is dense, is local-nervous with respect to the compiled law theory, and every claimed external operation is arity-exact, then the intended world and claimed operation structure are reconstructed.
-7. If recognition or unicity fails, the obstruction is recorded by the appropriate diagnostic F4--F8 rather than repaired by an arbitrary choice.
+6. If the restricted nerve is local-nervous and every claimed external operation is arity-exact, the intended world and claimed operation structure are reconstructed.
+7. If recognition or unicity fails, the obstruction is reported by the relevant diagnostic F4--F8 rather than repaired by an arbitrary choice.
 8. None of this implies doctrine-free Level-3 self-generation; that stronger claim is false in general.
 
----
-
-## 16. Compact definition
-
-The shortest defensible formulation is:
+The shortest defensible definition is:
 
 > **EIG Core is the least exact compositional geometry generated from an intrinsic root inside a contextually separated semantic world, relative to an independently supplied interaction doctrine.**
 
-For cellular doctrines, local exactness laws are then compiled from intrinsic occurrence/universal comparison data. Full reconstruction is a separate theorem, controlled by density, local nervousness, and operation exactness.
-
-This is the canonical Level-2 formulation to use unless a concrete counterexample forces another structural distinction.
+For cellular doctrines, local exactness laws are additionally compiled from independently specified constructor-derived occurrence/decomposition data. Full reconstruction remains a separate theorem controlled by local nervousness and operation exactness.
