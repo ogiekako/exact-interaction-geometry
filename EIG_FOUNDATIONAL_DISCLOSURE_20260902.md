@@ -153,14 +153,15 @@ WEIR remains open.
 
 ## 9. What is publicly established
 
-The 2026-09-02 wording does not change the basic public theorem ledger:
+The 2026-09-02 wording does not change the core public theorem ledger:
 
 - finite exact residual quotients and elementary factor-rank laws are proved, largely as classical mathematics interpreted through EIG;
 - the category calibration gives exact object/typing/Hom reconstruction from supplied totalized execution plus continuation success and witness fibres;
 - the two-state max-plus comparison theorem is a conventional mathematical result with a public proof;
-- the Boolean Tucker junction example is an exact finite counterexample with public verification;
 - binary-Kronecker nonmultiplicativity is only a project rediscovery/calibration, not an EIG novelty claim;
 - general WEIR remains conjectural.
+
+A Boolean Tucker rank-profile example that had briefly been presented as an external EIG case study was removed from the current public claim surface on 2026-09-02. The finite example was formulated against an EIG-generated universal question, but the curation review did not identify a published conjecture or problem asserting that universal property. It is therefore not used here as an external problem resolution.
 
 See [`STATUS.md`](STATUS.md) for the detailed epistemic ledger.
 
