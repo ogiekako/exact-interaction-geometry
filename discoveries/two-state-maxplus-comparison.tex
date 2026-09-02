@@ -28,7 +28,7 @@
 \maketitle
 
 \begin{abstract}
-Daviaud, Guillon, and Merlet proved that comparison of max-plus automata is undecidable under a fixed state bound of 553 and explicitly left the range from 2 to 552 states open. We resolve the two-state endpoint. More strongly, given an arbitrary finite max-plus automaton $A$ and a max-plus automaton $B$ with at most two states, it is decidable whether $\eval{A}(w)\leq \eval{B}(w)$ for every word $w$. The structural reason is a one-dimensional projective normal form for two-state dynamics. Outside an effective bounded region, a transition has one of three tail behaviors: it propagates the unbounded projective gap with gap-independent height increment, forgets the gap with gap-independent height increment, or reads the gap magnitude into the height increment and then forgets it. In particular, any transition whose output depends on the unbounded gap necessarily destroys that gap. This yields an exact one-counter realization of $B$. Effective semilinearity of context-free Parikh images then reduces comparison to Presburger arithmetic. As a consequence, two-state max-plus comparison, equivalence, and positivity are decidable.
+Daviaud, Guillon, and Merlet proved that comparison of max-plus automata is undecidable under a fixed state bound of 553 and explicitly left the range from 2 to 552 states open. We resolve the two-state endpoint. More strongly, given an arbitrary finite max-plus automaton $A$ and a max-plus automaton $B$ with at most two states, it is decidable whether $\eval{A}(w)\leq \eval{B}(w)$ for every word $w$. The structural reason is a one-dimensional projective normal form for two-state dynamics. Outside an effective bounded region, a transition has one of three tail behaviors: it propagates the projective gap magnitude by a fixed affine shift with gap-independent height increment, forgets the gap with gap-independent height increment, or reads the gap magnitude into the height increment and then forgets it. In particular, any transition whose output depends on the unbounded gap necessarily destroys that gap. This yields an exact one-counter realization of $B$. Effective semilinearity of context-free Parikh images then reduces comparison to Presburger arithmetic. As a consequence, two-state max-plus comparison, equivalence, and positivity are decidable.
 \end{abstract}
 
 \section{Introduction}
@@ -158,11 +158,11 @@ Thus there is a genuine third possibility that should not be conflated with read
 \begin{lemma}[Tail trichotomy]\label{lem:tail}
 For every projective state with finite gap magnitude $n=|z|>K$, every nondead letter transition has exactly one of the following forms, with constants determined by the letter and the tail side:
 \begin{enumerate}[label=(\roman*)]
-\item \emph{propagate}: the successor retains an unbounded gap with magnitude $n'=n+s$ for a fixed integer $s$ (and a fixed successor side), while the height increment is a fixed constant $c$;
+\item \emph{propagate}: the successor has a finite gap whose magnitude depends affinely on the old magnitude, $n'=n+s$, for a fixed integer $s$ (and a fixed successor side), while the height increment is a fixed constant $c$;
 \item \emph{forget}: the successor projective state is independent of $n$, while the height increment is a fixed constant $c$;
 \item \emph{read-and-forget}: the successor projective state is independent of $n$, while the height increment is $c-n$.
 \end{enumerate}
-In particular, whenever the height increment depends on the unbounded gap magnitude, that magnitude is not propagated to the successor.
+Here \emph{propagate} refers to preservation of the dependence on $n$: the shifted value $n'=n+s$ may be at most $K$ for a particular input, in which case the successor lies in the bounded region. In particular, whenever the height increment depends on the unbounded gap magnitude, that magnitude is not propagated to the successor.
 \end{lemma}
 
 \begin{proof}
@@ -193,9 +193,9 @@ Finite control stores which coordinate is maximal, whether the projective gap is
 \begin{quote}
 In a bounded-gap or infinite-gap control state the counter is zero. In a tail state the counter equals the exact magnitude $n=|z|>K$.
 \end{quote}
-The initial forward vector contributes its height as a fixed emission and initializes this invariant.
+If the initial forward vector is $(\minf,\minf)$, take $T_B$ to have no successful computation, and there is nothing to prove. Otherwise its height is defined; the initial forward vector contributes that height as a fixed emission and initializes the invariant.
 
-If the current gap is bounded, the exact successor and height increment are obtained from a finite lookup table. If it is infinite, the only surviving current coordinate determines the successor by another finite lookup. Suppose now that the counter stores a tail magnitude $n>K$. Apply Lemma~\ref{lem:tail}.
+If the current gap is bounded, the exact successor and height increment are obtained from a finite lookup table. If the lookup successor is a tail gap of magnitude $n'>K$, load this fixed value from zero by $n'$ unit increments; otherwise the counter remains zero. Because there are only finitely many bounded control states and letters, every such load is a fixed finite macro. If the current gap is infinite, the only surviving current coordinate determines the successor by another finite lookup. Suppose now that the counter stores a tail magnitude $n>K$. Apply Lemma~\ref{lem:tail}.
 
 In a propagate case, emit the fixed constant $c$ and change the counter by the fixed shift $s$. Since $K>|s|$, a tail value cannot cross zero. To determine whether the shifted value has entered the bounded region, perform a deterministic destructive probe of at most $K+1$ decrements: if zero is reached within the first $K$ decrements, record the exact bounded value in finite control and leave the counter at zero; otherwise perform the $(K+1)$st decrement, then restore those $K+1$ units and remain in a tail control state. The probe emits zero, so it does not change the represented height.
 
@@ -215,7 +215,7 @@ First separate support. For a max-plus automaton, the set of words on which the 
 
 Assume now that we work on the common finite support. Construct the functional one-counter transducer $T_B$ from Lemma~\ref{lem:counter}. Synchronize $T_B$ with the finite run graph of $A$. A transition of $T_B$ that consumes an input letter is synchronized with a transition of $A$ carrying the same letter; internal counter operations of $T_B$ leave the $A$-state unchanged. The resulting machine nondeterministically chooses an accepting run $\rho$ of $A$, while the $T_B$ component has only the exact output $\eval{B}(w)$ on the synchronized word.
 
-Give every transition of this product machine a fresh symbol. The set $L$ of successful transition sequences is an effectively given one-counter language and therefore a context-free language. By the effective form of Parikh's theorem \cite{Parikh1966}, the set of transition-count vectors
+Expand the fixed internal macros into unit counter steps and give every transition of this expanded product machine a fresh symbol, including internal counter steps. The set $L$ of successful transition sequences is then accepted by an effectively constructible ordinary one-counter automaton, equivalently a pushdown automaton whose stack has one counter symbol above a bottom marker: increment pushes that symbol, blocking decrement pops it, and zero test checks the bottom marker. Thus a context-free grammar for $L$ can be constructed effectively. By the constructive form of Parikh's theorem \cite{Parikh1966,KopczynskiTo2010}, the set of transition-count vectors
 \[
 \Psi(L)\subseteq\mathbb N^m
 \]
@@ -302,6 +302,12 @@ Laure Daviaud, David Purser, and Marie Tcheng.
 Rohit J. Parikh.
 \newblock On Context-Free Languages.
 \newblock \emph{Journal of the ACM}, 13(4):570--581, 1966.
+
+\bibitem{KopczynskiTo2010}
+Eryk Kopczy\'nski and Anthony Widjaja To.
+\newblock Parikh Images of Grammars: Complexity and Applications.
+\newblock In \emph{LICS 2010}, pp. 80--89, 2010.
+\newblock DOI: \href{https://doi.org/10.1109/LICS.2010.21}{10.1109/LICS.2010.21}.
 
 \end{thebibliography}
 
