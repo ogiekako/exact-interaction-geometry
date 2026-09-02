@@ -190,6 +190,8 @@ See [`PRIOR_ART.md`](PRIOR_ART.md) and [`CONTEMPORARY_NEIGHBORS.md`](CONTEMPORAR
 
 The detailed theorem status remains in [`STATUS.md`](STATUS.md).
 
+A deliberately low-profile physics-facing boundary note is kept in [`EIG_PHYSICS_BOUNDARIES_20260902.md`](EIG_PHYSICS_BOUNDARIES_20260902.md). It is not part of the foundational theorem surface and does not claim that EIG is a physical theory.
+
 ## Read in this order
 
 1. [`EIG_FOUNDATIONAL_DISCLOSURE_20260902.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260902.md) — current precise formulation.
@@ -216,7 +218,7 @@ The max-plus and Boolean Tucker verifiers are regressions/certificates for the w
 
 Human-readable mathematical documentation is licensed under **CC BY 4.0** unless otherwise noted. Source code, scripts, build/workflow files, and machine-readable verification certificates are licensed under **Apache License 2.0** unless otherwise noted. See [`LICENSE.md`](LICENSE.md).
 
-The programme was developed through extended AI-assisted mathematical research. That is process provenance, not evidence of correctness. Public claims are intended to rest on the cited proofs, definitions, certificates, or regressions. See [`provenance/RESEARCH_PROCESS.md`](provenance/RESEARCH_PROCESS.md) and [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md).
+The programme was developed through extended AI-assisted mathematical research. That is process provenance, not evidence of correctness. Public claims are intended to rest on the cited proofs, definitions, certificates, or regressions. **Keigo Oka has not independently rederived or line-by-line audited most of the mathematical content in this repository; authorship and curation should not be read as personal certification of every proof, literature comparison, or generated claim.** Unless a file explicitly records otherwise, readers should independently check the arguments and source claims. See [`provenance/RESEARCH_PROCESS.md`](provenance/RESEARCH_PROCESS.md) and [`provenance/SOURCE_MAP.md`](provenance/SOURCE_MAP.md).
 
 ---
 
