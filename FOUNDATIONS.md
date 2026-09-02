@@ -122,7 +122,27 @@ coherent witness retention and descent.
 
 A quotient should forget exactly what no admitted future interaction can distinguish, and no more.
 
-## 7. Exact interfaces and witness interfaces
+## 7. Why the layers should not be collapsed
+
+EIG distinguishes three reductions that need not coincide:
+
+```text
+future / response minimization,
+lossless interaction / interface reduction,
+witness / presentation reduction.
+```
+
+A response-minimal state may discard information still required for exact gluing or later reopened interaction. Conversely, a lossless interface may retain data that no currently closed observer sees. Distinct witness presentations may also induce the same extensional interaction while differing in multiplicity, provenance, factorization, phase, or coherence.
+
+This separation imposes two design rules.
+
+First, **interface before valuation**: define the exact interaction interface by its compositional or universal property before applying numerical measurements such as cardinality, rank, dimension, width, entropy, or communication cost. Different doctrines may induce different legitimate valuations, and no single scalar is assumed to be universal.
+
+Second, **reconstruction is not yet canonicity**. A chosen dense probe family or a fully faithful nerve can reconstruct a world without being intrinsically selected by that world. A stronger EIG theorem should therefore identify the probe/interface system by an independent doctrine-internal property, or characterize the essential image by a noncircular recognition theorem. Merely constructing a representation and then defining its image to be the admissible class is not enough.
+
+Accordingly, `canonical` should normally be read as **canonical relative to a declared doctrine and up to the strongest equivalence that doctrine cannot distinguish**. The sharp output may be an isomorphism class, Cauchy/Morita class, residual fibre, or moduli/groupoid rather than one preferred representative.
+
+## 8. Exact interfaces and witness interfaces
 
 For a response table `M : X x Y -> K`, a deterministic exact interface is a quotient of `X` through which every response factors. The coarsest such quotient is equality of response rows.
 
@@ -138,7 +158,7 @@ A witness interface instead factors the response through latent witness species.
 
 This is why EIG does not posit a single universal scalar “interaction dimension.”
 
-## 8. Reconstruction architecture
+## 9. Reconstruction architecture
 
 The older linear architecture
 
@@ -158,7 +178,7 @@ CONTEXT / DOCTRINE
 
 Not every application requires every stage.
 
-## 9. The first strong calibration: categories
+## 10. The first strong calibration: categories
 
 The category theorem in [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) deliberately erases all object and endpoint labels from a small category. The primitive data still include the **totalized execution law**: actual composition when defined and an absorbing failure otherwise.
 
@@ -166,7 +186,7 @@ Two-sided continuation success recovers endpoint types from that execution law; 
 
 This shows that “objecthood downstream of interaction” is mathematically exact in at least one broad sector. It does **not** show that execution grammar itself can be reconstructed from bare scalar responses.
 
-## 10. Foundational target
+## 11. Foundational target
 
 The open target is not “delete object symbols from category theory.” That is classical. It is to identify natural interaction laboratories for which a frozen doctrine-relative meta-rule simultaneously accounts for:
 
@@ -178,6 +198,8 @@ The open target is not “delete object symbols from category theory.” That is
 - exact cross-object/cross-process Hom data;
 - doctrine refinement;
 - local-to-global descent and its obstructions;
+- an intrinsic interface/arity selection or essential-image recognition theorem rather than a merely chosen dense presentation;
+- structural interface objects prior to any scalar rank/width valuation;
 - blind calibration in mathematically distant domains without target leakage.
 
 That target is formalized as WEIR in [`theory/03-weir.md`](theory/03-weir.md).
