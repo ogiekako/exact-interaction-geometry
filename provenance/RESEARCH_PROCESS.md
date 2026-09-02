@@ -24,12 +24,14 @@ This repository is not a mirror of the research ledger. The public tree contains
 
 Broader application branches, superseded formulations, failed theorem candidates, and unrelated standalone theorem harvests are left in Git history / the research ledger rather than presented as part of the EIG foundation.
 
-## AI disclosure
+## AI disclosure and personal verification boundary
 
 AI systems, primarily OpenAI reasoning models including GPT-5.6 Sol, materially contributed to theorem discovery, proof drafting, counterexample generation, code generation, literature-search support, and adversarial review. Keigo Oka directed the research programme and maintains the curated mathematical record.
 
+**Keigo Oka has not independently rederived or line-by-line audited most of the mathematical content in the repository.** Direction, authorship, selection, curation, and publication should therefore not be interpreted as personal certification of every proof, literature comparison, or model-generated claim. Unless a file explicitly records a stronger audit status, readers should independently verify the mathematics and source claims.
+
 Model output, agreement between models, internal critique, and regression success are not treated as mathematical certification. Public claims are intended to rest on explicit statements and proofs, or on finite certificates/regression tests where those are the relevant evidence. Historical novelty and priority are separate literature questions.
 
-Keigo Oka is employed by Google. This work was done in a personal capacity; no Google internal resources were used.
+This work was conducted in a personal capacity; no employer-internal resources were used.
 
 The provenance label of a result is distinct from its correctness status. Provenance records how a claim was generated or reviewed; it is not itself evidence that the claim is true.
