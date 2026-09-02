@@ -62,42 +62,24 @@ A dated literature review on 2026-09-01 checked the DGM 2017 problem statement a
 
 The curation therefore uses wording equivalent to **“the manuscript proves the `d=2` case of the published DGM 2017 question; no prior resolution was identified in the dated review”**, not an absolute historical-first claim.
 
-## Boolean Tucker external case study
+## Retired Boolean Tucker calibration
 
-The second external case study is extracted from the 2026-08-31 Boolean junction/Tucker lane in the research ledger.
+The 2026-08-31 research ledger contains a finite Boolean Tucker rank-profile incompatibility example and verifier. The lane was motivated by the EIG-generated question whether independently minimal Boolean unfolding ranks must always be jointly realizable by one exact Tucker core.
 
-Primary internal note:
+It was briefly extracted into the public repository as a “Boolean Tucker junction counterexample.” A later curation review did not identify a published conjecture or problem asserting that universal property. To avoid implying an external problem resolution that had not been established, the note and checker were removed from the current public tree on 2026-09-02.
+
+Git history and the research ledger preserve the material as project calibration/provenance only. This retirement does not assert that the finite calculation was false; it separates an internally generated finite example from a documented external mathematical problem.
+
+Internal provenance files included:
 
 ```text
 docs/EIG_EXTERNAL_BOOLEAN_TUCKER_RANK_REGION_20260831.md
-```
-
-Solver-free internal verifier:
-
-```text
 verification/verify_eig_external_boolean_tucker_rank_region_20260831.py
-```
-
-Unpublished structural follow-up note:
-
-```text
 docs/EIG_EXTERNAL_BOOLEAN_SEMILATTICE_FLATNESS_FORBIDDEN_HOOK_20260831.md
-```
-
-Unpublished follow-up verifier:
-
-```text
 verification/verify_eig_external_boolean_semilattice_flatness_20260831.py
 ```
 
-The public extraction intentionally narrows the story. It presents the explicit `2 x 4 x 4` Boolean Tucker incompatibility, its small blocker certificate, and the EIG question that led to it. It does not rely on a historical `first` claim.
-
-Public files:
-
-- [`../discoveries/boolean-tucker-junction-counterexample.md`](../discoveries/boolean-tucker-junction-counterexample.md)
-- [`../verification/verify_boolean_tucker_junction_counterexample.py`](../verification/verify_boolean_tucker_junction_counterexample.py)
-
-The reduced F/T/three-zero-hook material remains **PRIVATE / NOT PUBLICLY VERIFIABLE** because its supporting proof/checker has not been imported into this repository. It is not relied upon for the public Boolean Tucker theorem statement.
+No current EIG theorem or external novelty claim depends on this lane.
 
 ## Binary-Kronecker calibration and priority correction
 
