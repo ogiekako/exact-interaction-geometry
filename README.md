@@ -10,8 +10,9 @@ An operational interaction doctrine may include execution or pasting laws, admit
 
 The strongest version of the programme remains open. This repository contains a small proved core, exact calibration theorems, conventional mathematical results discovered from the programme, and explicit failure boundaries.
 
-**Current formulation:** [`EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md`](EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md)  
-**Dated foundational snapshot:** [`EIG_FOUNDATIONAL_DISCLOSURE_20260901.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260901.md)
+**Current foundational disclosure:** [`EIG_FOUNDATIONAL_DISCLOSURE_20260902.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260902.md)  
+**Boundary atlas:** [`EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md`](EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md)  
+**Historical snapshot:** [`EIG_FOUNDATIONAL_DISCLOSURE_20260901.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260901.md)
 
 ## The core idea
 
@@ -191,8 +192,8 @@ The detailed theorem status remains in [`STATUS.md`](STATUS.md).
 
 ## Read in this order
 
-1. [`EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md`](EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md) — current boundary-first formulation.
-2. [`EIG_FOUNDATIONAL_DISCLOSURE_20260901.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260901.md) — preserved dated foundational snapshot.
+1. [`EIG_FOUNDATIONAL_DISCLOSURE_20260902.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260902.md) — current precise formulation.
+2. [`EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md`](EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md) — boundary-first viewpoint and output schema.
 3. [`FOUNDATIONS.md`](FOUNDATIONS.md) — minimal setup and proved calibrations.
 4. [`theory/01-finite-exact-interactions.md`](theory/01-finite-exact-interactions.md) — smallest exact calculus.
 5. [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) — exact object/typing/Hom reconstruction calibration.
@@ -201,6 +202,7 @@ The detailed theorem status remains in [`STATUS.md`](STATUS.md).
 8. [`discoveries/boolean-tucker-junction-counterexample.md`](discoveries/boolean-tucker-junction-counterexample.md) — exact gluing-failure case study.
 9. [`PRIOR_ART.md`](PRIOR_ART.md) and [`CONTEMPORARY_NEIGHBORS.md`](CONTEMPORARY_NEIGHBORS.md) — novelty and neighbour boundary.
 10. [`ROADMAP.md`](ROADMAP.md) — open gates.
+11. [`EIG_FOUNDATIONAL_DISCLOSURE_20260901.md`](EIG_FOUNDATIONAL_DISCLOSURE_20260901.md) — preserved historical snapshot.
 
 ## Verification
 
