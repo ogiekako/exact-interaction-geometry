@@ -2,8 +2,8 @@
 
 ## Canonical semantic closure, doctrine dependence, and exact reconstruction boundaries
 
-**Date:** 2026-09-03 JST  
-**Status:** canonical research note  
+**Date:** 2026-09-03 JST
+**Status:** canonical research note
 
 This note states the generic EIG Core / EIG canonicality architecture, its exact hypotheses, reconstruction conditions, and no-go boundaries.
 
@@ -11,68 +11,25 @@ No novelty or priority claim is made for standard constituent category theory, f
 
 ---
 
----
+# 0. Scope and reading path
 
-# 0. Scope and structural synthesis
+This note gives the generic canonicality architecture of Exact Interaction Geometry (EIG). Its fixed-doctrine spine is
 
-## 0.1 Structural conclusions
+```text
+admitted contexts / observations
+        -> contextual reduction
+        -> intrinsic root in the reduced semantic world
+        -> least simultaneous semantic closure
+        -> EIGCore(D).
+```
 
-The framework rests on three structural conclusions:
+Three distinctions organize everything that follows:
 
-1. **fixed-doctrine EIG Core is a simultaneous least semantic closure**, not a well-founded modality-stratified construction;
-2. **doctrine selection and core descent are distinct problems**;
-3. **the doctrine-free endpoint is generally moduli/fibration-valued rather than automatically point-valued**.
+1. **fixed-doctrine Core:** for a declared doctrine `D`, the Core is the least admissible `D`-closed semantic structured subtheory containing the reduced root;
+2. **reconstruction:** density, nerve recognition, operation reconstruction, process realization, and ordered normal forms are additional theorems, not ingredients of Core canonicality;
+3. **doctrine-free canonicality:** selecting a doctrine and descending all doctrine-relative Cores to one semantics-only Core are different universal problems.
 
-These conclusions are kept logically distinct and combined only where their hypotheses are compatible.
-
-### Simultaneous closure and descent
-
-The architecture replaces modality-stratified maximality by an order-independent simultaneous closure, and identifies descent of the doctrine-relative core along the doctrine-forgetful map as the correct doctrine-free question.
-
-The corresponding no-go language is sharpened accordingly: noncontractibility of an undifferentiated solution/moduli space is not by itself an absolute obstruction to a canonical point.
-
-### Closure modality, entailment, functoriality, and operation fibres
-
-The following compatible results are included:
-
-- the **full semantic closure modality** `Cl_D(S)` for arbitrary seeds `S`, with EIG Core as its value at the root;
-- the **exact generation entailment/countermodel theorem**;
-- **lax functoriality** of closure under forward doctrine morphisms, with equivalence invariance as a corollary;
-- the **maximal sound law envelope** in a fixed admissible law language and the exact definability criterion;
-- a useful **operation-restriction fibre** formalism.
-
-The following formulations are excluded:
-
-- obtaining the default semantic root by transporting a raw Tiny root through reduction, since contextual reduction need not preserve Tiny/Cauchy roots;
-- treating raw nonempty noncontractible reconstruction fibres as already giving the exact final no-go;
-- making internal definedness observable in a partial-context theorem unless it is explicitly admitted.
-
-### Canonicality/no-go spine
-
-The canonicality/no-go spine is characterized by:
-
-- imposing the default order **REDUCE → intrinsic root in the reduced world → simultaneous closure**;
-- isolating **root-exactness** as the exact bridge allowing raw-root-first computations;
-- stating the maximally general **Moore-family existence criterion** before the monotone/Tarski specialization;
-- separating internal least semantic closure from an external free algebraic/2-categorical completion;
-- making the **full doctrine fibre**, including noninvertible maps, primary;
-- applying contractibility only to a **fully specified solution problem**;
-- using **problem-level homotopy fixed points/global sections** for genuine invariant-selection no-go theorems;
-- distinguishing doctrine selection from common-core descent;
-- identifying the **core-labelled full doctrine fibration** as the lossless doctrine-free packaging relative to the declared moduli problem;
-- giving the walking-arrow counterexample showing that a noncontractible raw moduli space can nevertheless contain a canonical initial object.
-
-## 0.2 Integration rule
-
-The integration rule is:
-
-> **Use reduced-world root extraction and simultaneous semantic closure as the logical spine. Retain every compatible orthogonal theorem only in a form that preserves that spine, the reduced-root ordering, and the specified-solution/invariant no-go boundary.**
-
-### Reading path
-
-Sections 2–17 form the linear theoretical spine. They introduce the doctrine, contextual reduction, intrinsic reduced root, least simultaneous semantic closure, its functorial and universal properties, doctrine selection/descent, the doctrine-free EIG package, and the matching canonicality/no-go theorem. The appendices contain alternative computations, calibration examples, recognition machinery, the recurrent specialization, counterexamples, prior-art boundaries, and repository/proof metadata. None of those appendices is needed to follow the generic theorem from assumptions to conclusion.
-
-The remainder of the note implements that rule.
+Sections 2–17 form the linear theoretical spine from primitive doctrine data to the final EIG/EIG-Core and no-go theorems. The appendices contain alternative computations, calibrations, reconstruction machinery, the recurrent specialization, counterexamples, prior-art boundaries, and proof/repository metadata. None of those appendices is needed to follow the generic theorem from assumptions to conclusion.
 
 ---
 
@@ -664,8 +621,8 @@ the internal core is generally the replete/Cauchy closure of its semantic image.
 
 Therefore:
 
-> **Strongest unconditional statement:** internal least semantic closure/reflection.  
-> **Stronger external free-algebra/2-categorical completion:** conditional on a separately proved algebraic presentation, existence theorem, and appropriate faithfulness.
+> **Unconditional statement:** internal least semantic closure/reflection.
+> **External free-algebra/2-categorical completion:** requires a separately proved algebraic presentation, existence theorem, and appropriate faithfulness.
 
 ---
 
@@ -753,7 +710,7 @@ $$
 
 be its maximal infinity-groupoid.
 
-### Theorem 12.1 — exact specified-solution trichotomy
+### Theorem 9.1 — exact specified-solution trichotomy
 
 - `Sol(P)^simeq = emptyset` iff no `P`-solution exists.
 - `Sol(P)^simeq` contractible iff the `P`-solution is canonical up to contractible coherent choice.
@@ -761,29 +718,7 @@ be its maximal infinity-groupoid.
 
 The third clause is deliberately local to `P`: a stronger independently justified specification `P'` may still select one point.
 
-## 9.2 Why raw moduli noncontractibility is not an absolute no-go
-
-Let the full candidate category be the walking arrow
-
-$$
-[1]=(0\to1).
-$$
-
-Its maximal subgroupoid is a discrete two-point space, hence noncontractible. Nevertheless `0` is an initial object, and the space of initial objects is contractible.
-
-Therefore:
-
-$$
-\boxed{
-\text{raw noncontractible moduli}
-\centernot\Rightarrow
-\text{no canonical point exists}.
-}
-$$
-
-Passing immediately to the maximal subgroupoid can erase the noninvertible arrows that witness universal canonicality.
-
-## 9.3 Problem-level invariance
+## 9.2 Problem-level invariance
 
 Fix a category/infinity-category `M` of declared reconstruction problems and their equivalences. If solution spaces vary functorially over `M`, automorphisms of a problem act on its specified solution space.
 
@@ -796,6 +731,8 @@ $$
 If this invariant-solution space is empty, there is a sharp symmetry no-go.
 
 Across noninvertible maps of problems, the exact naturality condition is a global section of the universal solution fibration, not merely objectwise fixed points.
+
+---
 
 ---
 
@@ -880,6 +817,8 @@ Call it a stack only after descent for a specified topology is proved.
 
 # 11. Core descent: exact doctrine-free EIG Core theorem
 
+
+
 ## 11.1 Doctrine-relative core functor
 
 On the category of doctrine morphisms for which Section 6 functoriality is established, define
@@ -927,67 +866,13 @@ $$
 
 ## 11.4 Selection and descent are independent
 
-A doctrine section `s` yields a selected core `Ks`, but does not imply
+A doctrine section `s` yields a selected core `Ks`, but does not imply a factorization
 
 $$
-\bar K U\simeq K
+ar K U\simeq K.
 $$
 
-for **all** doctrines. Conversely, all doctrine cores may descend even when no doctrine can be selected.
-
-Hence:
-
-$$
-\boxed{
-\text{doctrine noncanonical}
-\centernot\Rightarrow
-\text{EIG Core noncanonical},
-}
-$$
-
-and
-
-$$
-\boxed{
-\text{canonical doctrine selector}
-\centernot\Rightarrow
-\text{common-core descent}.
-}
-$$
-
-This is the exact correction to the slogan that “Level 2 is the irreducible core boundary.”
-
-The two nonimplications have separate witnesses. CE7 witnesses doctrine nonselection with contractible core descent. For the converse, let
-
-$$
-U:[1]\to *
-$$
-
-be the unique functor and let `K:[1]->[1]` be the identity. The section category is `[1]`; its initial section selects `0`, so the specified **initial-section** selection problem is contractibly canonical. But any `bar K:*->[1]` is constant, and no constant functor is naturally equivalent to `id_[1]` because `0` and `1` are not equivalent in `[1]`. Hence `Desc_U(K)` is empty. Thus a canonical specified doctrine selector still need not imply common-core descent.
-
-## 11.5 Coherent isotropy can obstruct descent
-
-A representative obstruction is the inclusion
-
-$$
-BC_3\to BS_3
-$$
-
-and `K:BC_3->BC_3` induced by the identity of `C_3`. A descent would require a homomorphism `S_3->C_3` restricting to the identity on `A_3=C_3`, but every homomorphism from `S_3` to an abelian group factors through `S_3^{ab}=C_2` and kills `A_3`. Hence `Desc_U(K)` is empty.
-
-This is a genuine descent obstruction, not merely failure to choose a representative.
-
-## 11.6 Kan-extension shadows
-
-If `C` has the required limits/colimits, one can form
-
-$$
-\mathrm{Ran}_U K,
-\qquad
-\mathrm{Lan}_U K.
-$$
-
-These are canonical invariant/coinvariant **shadows** at lower semantics, with universal comparison maps to/from `K`. They are not common-core descent unless the relevant comparison is an equivalence.
+Conversely, a common-Core factorization can exist even when no invariant doctrine selector exists. Thus doctrine selection and Core descent are logically independent universal problems. Appendix G.16 and Appendix G.7 give explicit witnesses in the two directions.
 
 ---
 
@@ -1138,7 +1023,7 @@ $$
    \pi_P:\int_{\mathcal M}\mathrm{Sol}_P\to\mathcal M.
 $$
 
-## Theorem 16.1 — canonicality boundary
+## Theorem 14.1 — canonicality boundary
 
 Then:
 
@@ -1756,6 +1641,20 @@ A process/model reconstruction theorem is downstream of:
 
 Failure of a recognition gate does not refute fixed-doctrine EIG Core canonicality.
 
+
+## E.3 Kan-extension shadows
+
+If `C` has the required limits/colimits, one can form
+
+$$
+\mathrm{Ran}_U K,
+\qquad
+\mathrm{Lan}_U K.
+$$
+
+These are canonical invariant/coinvariant **shadows** at lower semantics, with universal comparison maps to/from `K`. They are not common-core descent unless the relevant comparison is an equivalence.
+
+---
 ---
 
 # Appendix F. Protected recurrent EIG specialization
@@ -1866,55 +1765,55 @@ The downstream process nerve remains noncircular only if:
 
 The following examples prevent every tempting stronger generic theorem.
 
-## CE1. REDUCE does not commute with Tiny
+## G.1 REDUCE does not commute with Tiny
 
 The `Arr(Set)->Set` reflection sends the Tiny arrow `emptyset->1` to non-Tiny `emptyset`. Therefore root-exactness is real content.
 
-## CE2. Pairwise distributive laws do not by themselves establish coherent triple composition
+## G.2 Pairwise distributive laws do not by themselves establish coherent triple composition
 
 The iterated-distributive-law theorem requires the pairwise laws to satisfy Yang-Baxter. This is a **standard/dependent boundary**, not a writer-monad counterexample proved in this note; concrete iterated-composition obstructions are supplied by the cited no-go literature.
 
-## CE3. Distributive laws may not exist
+## G.3 Distributive laws may not exist
 
 Published no-go examples show that separate modalities need not admit any ordinary distributive law.
 
-## CE4. Same lower map semantics, inequivalent interaction doctrines
+## G.4 Same lower map semantics, inequivalent interaction doctrines
 
 `Span` and `Rel` share the ordinary function/map locus in the standard sense but differ in loose interactions: a span `1 <- A -> 1` retains witness multiplicity and automorphisms while its image relation records only truth. Bare extensional maps do not determine witness doctrine.
 
-## CE5. Symmetry can forbid invariant root/doctrine selection
+## G.5 Symmetry can forbid invariant root/doctrine selection
 
 For an unlabelled two-point set, the fibre of pointings is a two-element discrete set with transitive `S_2` action. Its homotopy-fixed-point space is empty.
 
-## CE6. Two compatible doctrines may exist but no invariant selector
+## G.6 Two compatible doctrines may exist but no invariant selector
 
 For a terminal semantic base with a discrete two-doctrine fibre `{d0,d1}`, a problem automorphism swapping them makes the invariant selector space empty.
 
-## CE7. Doctrine noncanonical, core canonical
+## G.7 Doctrine noncanonical, core canonical
 
 In the same symmetric two-doctrine problem, take the core functor constant at a terminal object. Doctrine selection has no invariant point, while core descent is contractible.
 
-## CE8. Pointwise cores may fail coherent descent
+## G.8 Pointwise cores may fail coherent descent
 
-`BC_3 -> BS_3` with identity core label on `BC_3` has no descent, by the homomorphism obstruction of Section 11.5.
+`BC_3 -> BS_3` with identity core label on `BC_3` has no descent, by the homomorphism obstruction of Appendix G.17.
 
-## CE9. Intrinsic root need not be dense
+## G.9 Intrinsic root need not be dense
 
 The ordinary all-small-colimit Tiny root of `Ab` is empty, so intrinsic root canonicality does not imply reconstruction.
 
-## CE10. One final Cauchy completion can miss generated outputs
+## G.10 One final Cauchy completion can miss generated outputs
 
 A retract appearing only after completion may activate a partial constructor, so final-only `Kar` is insufficient.
 
-## CE11. Single-monad packaging can be nonunique
+## G.11 Single-monad packaging can be nonunique
 
 The same pair of writer modalities can combine to `C_6` or `S_3` under different actions.
 
-## CE12. Higher coherence can be nonunique
+## G.12 Higher coherence can be nonunique
 
 Cocycle-twisted associators produce inequivalent coherent structures with the same lower binary skeleton.
 
-## CE13. Noncontractible raw moduli can still contain a canonical point; selection need not imply descent
+## G.13 Noncontractible raw moduli can still contain a canonical point; selection need not imply descent
 
 The walking-arrow category `[1]` has a noncontractible maximal groupoid but a canonical initial object. Therefore raw noncontractibility is not an absolute canonicality no-go.
 
@@ -1926,11 +1825,85 @@ $$
 
 and `K=id_[1]`. The section category of `U` is `[1]`, whose initial section is the choice of `0`; hence the specified initial-section problem is contractibly canonical. A factorization `bar K U ~= K`, however, would make `id_[1]` naturally equivalent to a constant functor, which is impossible because `0` and `1` are not equivalent. Thus **canonical specified doctrine selection need not imply common-core descent**.
 
-## CE14. Non-Moore choice rules can destroy least closure
+## G.14 Non-Moore choice rules can destroy least closure
 
 On `P({a,b})`, declare a class closed iff it contains exactly one of `a,b`. The closed extensions `{a}` and `{b}` have nonclosed intersection and neither is least. Thus a point-valued least core need not exist for genuinely exclusive/negative generation constraints.
 
-## G.15 Scope limits
+## G.15 Why raw moduli noncontractibility is not an absolute no-go
+
+Let the full candidate category be the walking arrow
+
+$$
+[1]=(0\to1).
+$$
+
+Its maximal subgroupoid is a discrete two-point space, hence noncontractible. Nevertheless `0` is an initial object, and the space of initial objects is contractible.
+
+Therefore:
+
+$$
+\boxed{
+\text{raw noncontractible moduli}
+\centernot\Rightarrow
+\text{no canonical point exists}.
+}
+$$
+
+Passing immediately to the maximal subgroupoid can erase the noninvertible arrows that witness universal canonicality.
+
+## G.16 Selection and descent are independent
+
+A doctrine section `s` yields a selected core `Ks`, but does not imply
+
+$$
+\bar K U\simeq K
+$$
+
+for **all** doctrines. Conversely, all doctrine cores may descend even when no doctrine can be selected.
+
+Hence:
+
+$$
+\boxed{
+\text{doctrine noncanonical}
+\centernot\Rightarrow
+\text{EIG Core noncanonical},
+}
+$$
+
+and
+
+$$
+\boxed{
+\text{canonical doctrine selector}
+\centernot\Rightarrow
+\text{common-core descent}.
+}
+$$
+
+This is the exact correction to the slogan that “Level 2 is the irreducible core boundary.”
+
+The two nonimplications have separate witnesses. CE7 witnesses doctrine nonselection with contractible core descent. For the converse, let
+
+$$
+U:[1]\to *
+$$
+
+be the unique functor and let `K:[1]->[1]` be the identity. The section category is `[1]`; its initial section selects `0`, so the specified **initial-section** selection problem is contractibly canonical. But any `bar K:*->[1]` is constant, and no constant functor is naturally equivalent to `id_[1]` because `0` and `1` are not equivalent in `[1]`. Hence `Desc_U(K)` is empty. Thus a canonical specified doctrine selector still need not imply common-core descent.
+
+## G.17 Coherent isotropy can obstruct descent
+
+A representative obstruction is the inclusion
+
+$$
+BC_3\to BS_3
+$$
+
+and `K:BC_3->BC_3` induced by the identity of `C_3`. A descent would require a homomorphism `S_3->C_3` restricting to the identity on `A_3=C_3`, but every homomorphism from `S_3` to an abelian group factors through `S_3^{ab}=C_2` and kills `A_3`. Hence `Desc_U(K)` is empty.
+
+This is a genuine descent obstruction, not merely failure to choose a representative.
+
+## G.18 Scope limits
 
 The generic theorem does not assert the following without the additional hypotheses identified elsewhere in this note.
 
@@ -2257,7 +2230,7 @@ A row is not “fully canonical” merely because its fixed-doctrine closure is 
 
 ---
 
-# Appendix C. Meta-EIG under the same canonicality discipline
+# Appendix L. Meta-EIG under the same canonicality discipline
 
 A meta-discovery envelope is mathematically legitimate only if it obeys the same separation principles.
 
