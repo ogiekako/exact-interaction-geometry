@@ -28,7 +28,7 @@ change frequently.
 
 ## Current beyond-Core status
 
-**TWO QUOTIENT/TRUNCATION BOUNDARIES PROVED.**
+**THREE QUOTIENT/TRUNCATION BOUNDARIES PROVED.**
 
 The first symmetry/cancellation stress test is in
 `theory/03-quotient-factorization-boundary.md`. Let `q:A*->M` be a surjective monoid quotient and
@@ -74,6 +74,19 @@ theorem. This is **PRIOR ART / STANDARD species and homotopy-quotient machinery*
 coherence. Gaunt-valued functorial probes see only `pi_0`; richer targets such as `Set` can detect
 group actions.
 
+The smallest interchange/PROP test is closed in `theory/05-interchange-reduction.md`. Two total
+unital operations on one carrier satisfying strict interchange coincide and form a commutative
+monoid by Eckmann--Hilton **[PRIOR ART / PROVED]**. In a genuine PROP this applies only to the
+scalar sector `P(0,0)`: tensor sends `P(1,1)^2` to `P(2,2)`, and the free PROP on two unary
+generators has noncommuting `P(1,1)` while satisfying interchange. Thus an untyped PROP test is
+pre-collapsed to the earlier `CommMon` lane and is not discriminating.
+
+For the typed `2 x 2` grid, interchange identifies a serial-root/parallel-children term with a
+parallel-root/serial-children term, so representative-selected top hierarchy does not descend
+**[PROVED / DIRECT]**. Saturating to both layouts repeats the earlier quotient-saturation pattern;
+retaining a comparison witness repeats the truncation/isotropy issue. No specifically
+two-dimensional invariant has yet been extracted.
+
 No general beyond-Core extraction theorem follows. The full semantic factorization family is the
 ordinary bar/nerve multiplication fibre of the quotient monoid and is therefore **PRIOR-ART
 FRAMEWORK / ABSORBED**, not a newly extracted arity pattern or an algebra-recognition theorem.
@@ -91,7 +104,8 @@ FRAMEWORK / ABSORBED**, not a newly extracted arity pattern or an algebra-recogn
   coherent identification witnesses—must be derived or declared.
 - **H4 — absorption: supported for the positive saturation.** Once `M` and its multiplication are
   supplied, `Fact_r^M` is standard nerve/bar data. The project-level content is currently the
-  anti-tautology/no-go boundary, not new downstream geometry.
+  anti-tautology/no-go boundary, not new downstream geometry. The smallest strict-interchange
+  test is likewise absorbed by Eckmann--Hilton plus standard PROP typing.
 - **H5 — restricted/effective: supported as a target.** Factorization-lifting/ULF quotients form a
   sharply restricted positive class; whether a natural weaker interaction input forces that
   exactness remains open.
@@ -125,12 +139,11 @@ to prove, refute, or separate the live hypotheses.
    (rather than merely distinguish it once `Set`- or groupoid-valued probes are admitted)?
 2. Is there a natural nontrivial class of interaction quotients for which factorization lifting
    (or ULF with provenance) follows from weaker observable semantics?
-3. Does interchange in the smallest PROP example produce a genuinely new coherence obstruction,
-   or only the same saturation/ULF boundary in two directions?
+3. Can wire-count/input-output profile grading be recovered from continuation semantics before a
+   PROP is supplied, or is the grading itself irreducible arity input?
 
-Current exact blocker: none. The next attack should test the two-dimensional interchange analogue
-or formulate a minimal non-gaunt observation theorem, not repeat another free-pasting positive
-control.
+Current exact blocker: none. The next attack should target profile/typing recovery or formulate a
+minimal non-gaunt observation theorem, not repeat an untyped interchange or free-pasting control.
 
 Verification for the current theorem is by the explicit proof and examples in the theory note;
 no finite script is needed. Repository regressions should still pass with `make verify-all`.
