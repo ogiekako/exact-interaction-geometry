@@ -290,7 +290,7 @@ $$
 objects `P` for which `Hom(P,-)` preserves all small colimits are exactly retracts of representables. Therefore
 
 $$
-\operatorname{Tiny}(\widehat C)\simeq\operatorname{Kar}(C).
+\mathrm{Tiny}(\widehat C)\simeq\mathrm{Kar}(C).
 $$
 
 This is equivalence-invariant in the ordinary presheaf sector.
@@ -326,7 +326,7 @@ A raw root, when independently meaningful, is a separate object
 $$
 R_D^{\rm raw}:=\mathsf{RootSpec}_{\rm raw}(\mathcal E_{\rm raw}),
 \qquad
-R_D^{\rm tr}:=\operatorname{Cauchy/Repl}(qR_D^{\rm raw}).
+R_D^{\rm tr}:=\mathrm{Cauchy/Repl}(qR_D^{\rm raw}).
 $$
 
 There is no default equality
@@ -340,7 +340,7 @@ $$
 Consider the reflection
 
 $$
-L:\operatorname{Arr}(\mathbf{Set})\to\mathbf{Set},
+L:\mathrm{Arr}(\mathbf{Set})\to\mathbf{Set},
 \qquad
 (X\to Y)\mapsto X,
 $$
@@ -360,7 +360,7 @@ Therefore reflective reduction alone does not justify raw-root-first semantics.
 Call `q` **root-exact** when the canonical comparison
 
 $$
-\operatorname{Cauchy/Repl}(qR_D^{\rm raw})
+\mathrm{Cauchy/Repl}(qR_D^{\rm raw})
 \longrightarrow
 R_D^{\rm red}
 $$
@@ -396,7 +396,7 @@ The strongest fixed-doctrine object is not only one root-generated class. It is 
 Fix a complete or meet-complete admissible lattice `Sub_D`. Let `Closed_D` be the family of admissible `D`-closed elements. For any seed `S`, let
 
 $$
-\mathcal M_D(S)=\{B\in\operatorname{Closed}_D:S\le B\}.
+\mathcal M_D(S)=\{B\in\mathrm{Closed}_D:S\le B\}.
 $$
 
 Assume:
@@ -408,7 +408,7 @@ Define
 
 $$
 \boxed{
-\operatorname{Cl}_D(S):=\bigwedge\mathcal M_D(S).
+\mathrm{Cl}_D(S):=\bigwedge\mathcal M_D(S).
 }
 $$
 
@@ -449,9 +449,9 @@ An admissible structured subtheory `A` is **D-stable** if it is:
 2. closed under the declared Cauchy/split-retract completion;
 3. closed under every actual Core-generating semantic instance:
 $$
-   \operatorname{supp}(\xi)\le A
+   \mathrm{supp}(\xi)\le A
    \Rightarrow
-   \operatorname{out}(\xi)\in_{\operatorname{sort}(\xi)} A.
+   \mathrm{out}(\xi)\in_{\mathrm{sort}(\xi)} A.
 $$
 
 Root containment is deliberately not part of “stable”.
@@ -466,7 +466,7 @@ Under the Moore-family hypotheses of Section 5.1, for every admissible seed `S i
 
 $$
 \boxed{
-\operatorname{Cl}_D(S)
+\mathrm{Cl}_D(S)
 =
 \bigwedge\{B\in\mathsf{Sub}_D:S\le B,\ B\text{ is D-stable}\}.
 }
@@ -475,19 +475,19 @@ $$
 It is the unique least `D`-stable semantic structured subtheory above `S`, and
 
 $$
-S\le\operatorname{Cl}_D(S),
+S\le\mathrm{Cl}_D(S),
 $$
 
 $$
 S\le T
 \Rightarrow
-\operatorname{Cl}_D(S)\le\operatorname{Cl}_D(T),
+\mathrm{Cl}_D(S)\le\mathrm{Cl}_D(T),
 $$
 
 $$
-\operatorname{Cl}_D(\operatorname{Cl}_D(S))
+\mathrm{Cl}_D(\mathrm{Cl}_D(S))
 =
-\operatorname{Cl}_D(S).
+\mathrm{Cl}_D(S).
 $$
 
 Thus a fixed doctrine canonically determines an idempotent semantic closure modality, not merely a single preferred class.
@@ -495,7 +495,7 @@ Thus a fixed doctrine canonically determines an idempotent semantic closure moda
 In the ordinary powerset-like/many-sorted inclusion presentation of Section 5.2, the meet is componentwise literal intersection, so the same formula may be written
 
 $$
-\operatorname{Cl}_D(S)
+\mathrm{Cl}_D(S)
 =
 \bigcap\{B:S\subseteq B,\ B\text{ is D-stable}\}.
 $$
@@ -508,9 +508,9 @@ The EIG Core is
 
 $$
 \boxed{
-\operatorname{EIGCore}(D)
+\mathrm{EIGCore}(D)
 :=
-\operatorname{Cl}_D(R_D),
+\mathrm{Cl}_D(R_D),
 }
 $$
 
@@ -519,7 +519,7 @@ where `R_D` is the intrinsic **reduced** root.
 Equivalently, in the admissible structured lattice,
 
 $$
-\operatorname{EIGCore}(D)
+\mathrm{EIGCore}(D)
 =
 \bigwedge
 \{B\in\mathsf{Sub}_D:R_D\le B,\ B\text{ is D-stable}\}.
@@ -535,7 +535,7 @@ For any admissible seed `S`, any generated Core sort `sigma`, and any semantic e
 
 $$
 \boxed{
-x\in_\sigma\operatorname{Cl}_D(S)
+x\in_\sigma\mathrm{Cl}_D(S)
 \iff
 \forall B\in\mathsf{Sub}_D\,[S\le B\land B\text{ D-stable}\Rightarrow x\in_\sigma B].
 }
@@ -545,7 +545,7 @@ Therefore
 
 $$
 \boxed{
-x\notin_\sigma\operatorname{Cl}_D(S)
+x\notin_\sigma\mathrm{Cl}_D(S)
 \iff
 \exists B\in\mathsf{Sub}_D\text{ with }S\le B,\ B\text{ D-stable, and }x\notin_\sigma B.
 }
@@ -583,14 +583,14 @@ Then
 
 $$
 \boxed{
-\operatorname{Cl}_D(S)=\mu\Gamma_{D,S}.
+\mathrm{Cl}_D(S)=\mu\Gamma_{D,S}.
 }
 $$
 
 In particular,
 
 $$
-\operatorname{EIGCore}(D)=\mu\Gamma_{D,R_D}.
+\mathrm{EIGCore}(D)=\mu\Gamma_{D,R_D}.
 $$
 
 In a powerset-like inclusion realization, the joins above are the corresponding typed unions. No modality order, well-founded dependency relation, or separately postulated cyclic fixed point is needed.
@@ -651,7 +651,7 @@ For every admissible structured seed/subtheory `A in Sub_D`, assume the image ad
 $$
 F_\sharp(A)
 :=
-\operatorname{AdmHull}_{D'}(F_W(A))
+\mathrm{AdmHull}_{D'}(F_W(A))
 \in\mathsf{Sub}_{D'}.
 $$
 
@@ -664,7 +664,7 @@ The forward-morphism hypotheses are:
 5. all typing, domains, incidences, and coherence required for this transport are preserved;
 6. for the root-specific theorem,
 $$
-   F_\sharp(R_D)\le \operatorname{Cl}_{D'}(R_{D'}).
+   F_\sharp(R_D)\le \mathrm{Cl}_{D'}(R_{D'}).
 $$
 
 For arbitrary-seed functoriality, condition 6 is unnecessary. Conditions 2–3 are the admissibility hypotheses that make both sides of the comparison and the inverse-image proof well typed; they are not implied by preservation of equivalences alone.
@@ -675,9 +675,9 @@ For every admissible seed `S in Sub_D`,
 
 $$
 \boxed{
-F_\sharp(\operatorname{Cl}_D(S))
+F_\sharp(\mathrm{Cl}_D(S))
 \le
-\operatorname{Cl}_{D'}(F_\sharp(S)).
+\mathrm{Cl}_{D'}(F_\sharp(S)).
 }
 $$
 
@@ -686,7 +686,7 @@ $$
 Let
 
 $$
-C=\operatorname{Cl}_{D'}(F_\sharp(S)),
+C=\mathrm{Cl}_{D'}(F_\sharp(S)),
 \qquad
 B=F_W^{-1}(C).
 $$
@@ -696,15 +696,15 @@ By hypothesis 3, `B` is an admissible replete/Cauchy-closed element of `Sub_D`. 
 If a source Core-generating instance has typed support in `B`, hypothesis 4 transports it to a target instance with support in `C`; target stability puts its output in `C`, hence the source output lies in `B`. Therefore `B` is `D`-stable. Leastness gives
 
 $$
-\operatorname{Cl}_D(S)\le B.
+\mathrm{Cl}_D(S)\le B.
 $$
 
 Applying `F_W`, its image lies in `C`; by leastness of the target admissible hull,
 
 $$
-F_\sharp(\operatorname{Cl}_D(S))\le C
+F_\sharp(\mathrm{Cl}_D(S))\le C
 =
-\operatorname{Cl}_{D'}(F_\sharp(S)).
+\mathrm{Cl}_{D'}(F_\sharp(S)).
 $$
 
 This is the claimed typed forward comparison. ∎
@@ -715,22 +715,22 @@ If `F` also satisfies the root condition 6 above, then
 
 $$
 \boxed{
-F_\sharp(\operatorname{EIGCore}(D))
+F_\sharp(\mathrm{EIGCore}(D))
 \le
-\operatorname{EIGCore}(D').
+\mathrm{EIGCore}(D').
 }
 $$
 
 Indeed, Section 6.2 gives
 
 $$
-F_\sharp(\operatorname{Cl}_D(R_D))
+F_\sharp(\mathrm{Cl}_D(R_D))
 \le
-\operatorname{Cl}_{D'}(F_\sharp(R_D))
+\mathrm{Cl}_{D'}(F_\sharp(R_D))
 \le
-\operatorname{Cl}_{D'}(\operatorname{EIGCore}(D'))
+\mathrm{Cl}_{D'}(\mathrm{EIGCore}(D'))
 =
-\operatorname{EIGCore}(D').
+\mathrm{EIGCore}(D').
 $$
 
 Thus on the category of forward doctrine morphisms satisfying these hypotheses, EIG Core is a typed lax-functorial assignment rather than merely an equivalence invariant.
@@ -740,18 +740,18 @@ Thus on the category of forward doctrine morphisms satisfying these hypotheses, 
 If `F` is an equivalence of primitive coherent doctrines with a structure-preserving quasi-inverse satisfying the same admissibility/transport hypotheses, the two lax comparisons yield
 
 $$
-F_\sharp(\operatorname{Cl}_D(S))
+F_\sharp(\mathrm{Cl}_D(S))
 \simeq
-\operatorname{Cl}_{D'}(F_\sharp(S)),
+\mathrm{Cl}_{D'}(F_\sharp(S)),
 $$
 
 and in particular
 
 $$
 \boxed{
-\operatorname{EIGCore}(D)
+\mathrm{EIGCore}(D)
 \simeq
-\operatorname{EIGCore}(D').
+\mathrm{EIGCore}(D').
 }
 $$
 
@@ -775,7 +775,7 @@ This prevents descent notation from silently assuming stronger functoriality tha
 Let
 
 $$
-\operatorname{Comp}_D(R_D)
+\mathrm{Comp}_D(R_D)
 $$
 
 be the declared category/2-category/infinity-category of admissible coherent `D`-closed realizations receiving `R_D`.
@@ -791,8 +791,8 @@ This is the strongest construction-independent statement. It does not itself pro
 Inside the semantic world, let `RootSub_D(W_D)` be admissible rooted subtheories and `Closed_D(W_D)` its full subposet of `D`-closed subtheories. Then
 
 $$
-\operatorname{Cl}_D\dashv
-\bigl(\operatorname{Closed}_D(W_D)\hookrightarrow\operatorname{RootSub}_D(W_D)\bigr).
+\mathrm{Cl}_D\dashv
+\bigl(\mathrm{Closed}_D(W_D)\hookrightarrow\mathrm{RootSub}_D(W_D)\bigr).
 $$
 
 Equivalently, `EIGCore(D)=Cl_D(R_D)` is initial among **internal semantic** `D`-closed subtheories receiving the root.
@@ -933,7 +933,7 @@ $$
 \boxed{
 \Theta_D
 :=
-\mathcal W_D^{\rm str}\big|_{\operatorname{EIGCore}(D)}.
+\mathcal W_D^{\rm str}\big|_{\mathrm{EIGCore}(D)}.
 }
 $$
 
@@ -962,7 +962,7 @@ Let `Lambda_0` be all elementary laws certified by these data and `Sat_D` the le
 $$
 \mathcal L_D^{\rm comp}
 :=
-\operatorname{Sat}_D(\Lambda_0).
+\mathrm{Sat}_D(\Lambda_0).
 $$
 
 Every genuine restricted-nerve object satisfies every law in `L_D^comp` by induction on certified derivations.
@@ -974,13 +974,13 @@ This compiler is constructive and provenance-controlled. It must not be declared
 Fix independently an admissible law language `Law_D` and satisfaction relation `X |= ell`. For classes `S` and law sets `Lambda`, define
 
 $$
-\operatorname{Th}_D(S)
+\mathrm{Th}_D(S)
 :=
 \{\ell\in\mathsf{Law}_D:\forall X\in S,\ X\models\ell\},
 $$
 
 $$
-\operatorname{Mod}_D(\Lambda)
+\mathrm{Mod}_D(\Lambda)
 :=
 \{X:\forall\ell\in\Lambda,\ X\models\ell\}.
 $$
@@ -988,9 +988,9 @@ $$
 Then
 
 $$
-\Lambda\subseteq\operatorname{Th}_D(S)
+\Lambda\subseteq\mathrm{Th}_D(S)
 \iff
-S\subseteq\operatorname{Mod}_D(\Lambda),
+S\subseteq\mathrm{Mod}_D(\Lambda),
 $$
 
 the standard antitone theory/model Galois connection.
@@ -1000,7 +1000,7 @@ the standard antitone theory/model Galois connection.
 Let
 
 $$
-G_D:=\operatorname{EssIm}(N_D)
+G_D:=\mathrm{EssIm}(N_D)
 $$
 
 be the genuine restricted-nerve image, whenever the nerve is defined. Set
@@ -1009,7 +1009,7 @@ $$
 \boxed{
 \mathcal L_D^{\max}
 :=
-\operatorname{Th}_D(G_D).
+\mathrm{Th}_D(G_D).
 }
 $$
 
@@ -1028,9 +1028,9 @@ This semantic maximum is a ceiling/diagnostic, not a construction of the EIG Cor
 Define
 
 $$
-\operatorname{Def}_D(S)
+\mathrm{Def}_D(S)
 :=
-\operatorname{Mod}_D(\operatorname{Th}_D(S)).
+\mathrm{Mod}_D(\mathrm{Th}_D(S)).
 $$
 
 This is the smallest class containing `S` that is definable by arbitrary law sets in `Law_D`.
@@ -1041,9 +1041,9 @@ $$
 \boxed{
 G_D
 =
-\operatorname{Def}_D(G_D)
+\mathrm{Def}_D(G_D)
 =
-\operatorname{Mod}_D(\mathcal L_D^{\max}).
+\mathrm{Mod}_D(\mathcal L_D^{\max}).
 }
 $$
 
@@ -1052,9 +1052,9 @@ $$
 If `G_D=Mod_D(Lambda)`, then `Lambda subseteq Th_D(G_D)`, hence
 
 $$
-\operatorname{Mod}_D(\operatorname{Th}_D(G_D))
+\mathrm{Mod}_D(\mathrm{Th}_D(G_D))
 \subseteq
-\operatorname{Mod}_D(\Lambda)=G_D.
+\mathrm{Mod}_D(\Lambda)=G_D.
 $$
 
 The reverse inclusion always holds. Conversely, if `G_D=Mod_D(Th_D(G_D))`, the maximal sound theory defines the image. ∎
@@ -1066,7 +1066,7 @@ If
 $$
 G_D
 \subsetneq
-\operatorname{Def}_D(G_D),
+\mathrm{Def}_D(G_D),
 $$
 
 then **no law set in the chosen admissible language** exactly characterizes the genuine nerve image.
@@ -1108,7 +1108,7 @@ At a fixed law language, exact local recognition requires at least:
 If the **constructive compiler itself** is claimed to present the image, additionally require
 
 $$
-\operatorname{Mod}_D(\mathcal L_D^{\rm comp})=G_D.
+\mathrm{Mod}_D(\mathcal L_D^{\rm comp})=G_D.
 $$
 
 ## 11.3 Operation restriction map
@@ -1118,15 +1118,15 @@ Let `Op_D` be the declared category/infinity-category of admissible external/wor
 Define
 
 $$
-\operatorname{Res}_J:\operatorname{Op}_D\to\operatorname{Data}_J.
+\mathrm{Res}_J:\mathrm{Op}_D\to\mathrm{Data}_J.
 $$
 
 For data `d`, let
 
 $$
-\operatorname{Fib}_J(d)
+\mathrm{Fib}_J(d)
 :=
-\operatorname{hofib}_d(\operatorname{Res}_J).
+\mathrm{hofib}_d(\mathrm{Res}_J).
 $$
 
 ## 11.4 Corrected operation-identifiability theorem
@@ -1218,7 +1218,7 @@ The slogan “canonicality is contractibility of the reconstruction fibre” bec
 For a declared mathematical problem `P`, let
 
 $$
-\operatorname{Sol}(P)
+\mathrm{Sol}(P)
 $$
 
 be the full category/infinity-category of solutions satisfying **all** conditions that define the requested object, including initiality, terminality, minimality, reflection, exactness, or any other independently justified universal property.
@@ -1226,7 +1226,7 @@ be the full category/infinity-category of solutions satisfying **all** condition
 Let
 
 $$
-\operatorname{Sol}(P)^{\simeq}
+\mathrm{Sol}(P)^{\simeq}
 $$
 
 be its maximal infinity-groupoid.
@@ -1268,7 +1268,7 @@ Fix a category/infinity-category `M` of declared reconstruction problems and the
 On a connected equivalence component, an **equivalence-invariant** specified solution is a homotopy fixed point
 
 $$
-\operatorname{Sol}(P)^{\simeq,h\operatorname{Aut}_{\mathcal M}(P)}.
+\mathrm{Sol}(P)^{\simeq,h\mathrm{Aut}_{\mathcal M}(P)}.
 $$
 
 If this invariant-solution space is empty, there is a sharp symmetry no-go.
@@ -1325,7 +1325,7 @@ On the equivalence component of `X`, equivalent to `B Aut(X)`, the space of **ba
 
 $$
 \boxed{
-\mathfrak F_X^{h\operatorname{Aut}(X)}.
+\mathfrak F_X^{h\mathrm{Aut}(X)}.
 }
 $$
 
@@ -1336,7 +1336,7 @@ This classifies bare equivalence-invariant choices on that component. It does no
 For an invariant selection property `P` — e.g. pointwise initial, reflective, minimal under an independently defined order, or exact in a specified sense — let
 
 $$
-\operatorname{Sel}_P(U)
+\mathrm{Sel}_P(U)
 $$
 
 be the space of coherent sections satisfying `P`.
@@ -1365,7 +1365,7 @@ On the category of doctrine morphisms for which Section 6 functoriality is estab
 $$
 K:\mathcal D_2\to\mathcal C,
 \qquad
-K(D)=\operatorname{EIGCore}(D),
+K(D)=\mathrm{EIGCore}(D),
 $$
 
 where `C` is the category/infinity-category/localization of shape theories at the declared equivalence level.
@@ -1387,7 +1387,7 @@ $$
 with coherently compatible morphisms. Define
 
 $$
-\operatorname{Desc}_U(K):=\operatorname{Fact}_U(K)^{\simeq}.
+\mathrm{Desc}_U(K):=\mathrm{Fact}_U(K)^{\simeq}.
 $$
 
 ## 14.3 Exact common-core criterion **[DIRECT / PROVED as mapping-space formulation]**
@@ -1400,7 +1400,7 @@ $$
 For a specified descent property `P`, apply the trichotomy to
 
 $$
-\operatorname{Desc}_{U,P}(K).
+\mathrm{Desc}_{U,P}(K).
 $$
 
 ## 14.4 Selection and descent are independent **[PROVED]**
@@ -1460,9 +1460,9 @@ This is a genuine descent obstruction, not merely failure to choose a representa
 If `C` has the required limits/colimits, one can form
 
 $$
-\operatorname{Ran}_U K,
+\mathrm{Ran}_U K,
 \qquad
-\operatorname{Lan}_U K.
+\mathrm{Lan}_U K.
 $$
 
 These are canonical invariant/coinvariant **shadows** at lower semantics, with universal comparison maps to/from `K`. They are not common-core descent unless the relevant comparison is an equivalence.
@@ -1483,8 +1483,8 @@ $$
 \bigl(
 q_D,
 R_D,
-\operatorname{Cl}_D,
-\operatorname{EIGCore}(D),
+\mathrm{Cl}_D,
+\mathrm{EIGCore}(D),
 \Theta_D
 \bigr),
 $$
@@ -1573,11 +1573,11 @@ Fix:
 6. the category `M` of doctrine/core problems whose equivalences/noninvertible maps define what “invariant” means;
 7. whenever a global naturality statement is invoked, a functorial specified-solution assignment
 $$
-   \operatorname{Sol}_P:\mathcal M^{op}\to\mathbf{Spc}
+   \mathrm{Sol}_P:\mathcal M^{op}\to\mathbf{Spc}
 $$
    (or an appropriate `\mathbf{Cat}_\infty`-valued assignment followed by maximal groupoids), together with its unstraightening/universal solution fibration
 $$
-   \pi_P:\int_{\mathcal M}\operatorname{Sol}_P\to\mathcal M.
+   \pi_P:\int_{\mathcal M}\mathrm{Sol}_P\to\mathcal M.
 $$
 
 ## Theorem 16.1 — canonicality boundary **[PROVED/DIRECT synthesis]**
@@ -1680,7 +1680,7 @@ No result established here upgrades this generically to literal equality or to a
 Let `c_SS`, `c_SPACE`, `c_SEQ` be the corresponding closures **in the reduced recurrent semantic world**. The desired historical formula
 
 $$
-\operatorname{EIGCore}(D_{\rm rec})
+\mathrm{EIGCore}(D_{\rm rec})
 \simeq
 c_{\rm SEQ}c_{\rm SPACE}c_{\rm SS}(R_{\rm rec})
 $$
@@ -1989,7 +1989,7 @@ No recognition theorem is used to define the root or closure. No modality factor
 >
 > \[
 > \boxed{
-> \operatorname{Cl}_D(S)
+> \mathrm{Cl}_D(S)
 > =
 > \bigwedge\{B\in\mathsf{Sub}_D:S\le B,\ B\text{ is }D\text{-closed}\}
 > }
@@ -1998,21 +1998,21 @@ No recognition theorem is used to define the root or closure. No modality factor
 > for every admissible seed `S in Sub_D`. In the monotone complete-lattice presentation,
 >
 > \[
-> \operatorname{Cl}_D(S)=\mu\Gamma_{D,S}.
+> \mathrm{Cl}_D(S)=\mu\Gamma_{D,S}.
 > \]
 >
 > The EIG Core is
 >
 > \[
 > \boxed{
-> \operatorname{EIGCore}(D)=\operatorname{Cl}_D(R_D).
+> \mathrm{EIGCore}(D)=\mathrm{Cl}_D(R_D).
 > }
 > \]
 >
 > It is the initial/least internal semantic `D`-closed structured subtheory receiving `R_D`; the space of solutions to that fully specified internal least-closure problem is contractible. For every generated Core sort `sigma` and every semantic element `x` of that sort,
 >
 > \[
-> x\in_\sigma\operatorname{Cl}_D(S)
+> x\in_\sigma\mathrm{Cl}_D(S)
 > \iff
 > x\text{ belongs in sort }\sigma\text{ to every }D\text{-closed upper bound of }S,
 > \]
@@ -2020,9 +2020,9 @@ No recognition theorem is used to define the root or closure. No modality factor
 > so nonmembership has an exact stable countermodel. Forward doctrine morphisms satisfying the explicit admissible-hull, inverse-image, generation, and root transport conditions induce canonical typed lax comparisons
 >
 > \[
-> F_\sharp\operatorname{Cl}_D(S)
+> F_\sharp\mathrm{Cl}_D(S)
 > \le
-> \operatorname{Cl}_{D'}(F_\sharp S),
+> \mathrm{Cl}_{D'}(F_\sharp S),
 > \]
 >
 > and doctrine equivalences induce equivalences of the entire closure modality and of EIG Core.
@@ -2044,8 +2044,8 @@ The statement is made for the **entire seed-wise closure modality**, not only th
 > \[
 > \mathsf{EIG}(D)
 > =
-> (q_D,R_D,\operatorname{Cl}_D,
-> \operatorname{EIGCore}(D),\Theta_D),
+> (q_D,R_D,\mathrm{Cl}_D,
+> \mathrm{EIGCore}(D),\Theta_D),
 > \]
 >
 > supplemented only by independently certified density, law-recognition, operation-exactness, descent, and realization data.
@@ -2202,7 +2202,7 @@ Reduction is root-exact exactly when the transported raw root and intrinsic redu
 Under the closure hypotheses,
 
 $$
-\operatorname{EIGCore}(D)=\operatorname{Cl}_D(R_D)
+\mathrm{EIGCore}(D)=\mathrm{Cl}_D(R_D)
 $$
 
 with exact stable-countermodel semantics. This is the generic fixed-doctrine exactness that is always present once the hypotheses of Section 5 hold.
@@ -2216,7 +2216,7 @@ Semantic objects/morphisms are recoverable from arity observations only after de
 For fixed law language,
 
 $$
-G_D=\operatorname{Def}_D(G_D)
+G_D=\mathrm{Def}_D(G_D)
 $$
 
 is the exact criterion for some theory in that language to define the genuine nerve image.
@@ -2226,7 +2226,7 @@ is the exact criterion for some theory in that language to define the genuine ne
 If the certified compiler itself is claimed to present the image, require
 
 $$
-\operatorname{Mod}_D(\mathcal L_D^{\rm comp})=G_D.
+\mathrm{Mod}_D(\mathcal L_D^{\rm comp})=G_D.
 $$
 
 This is stronger than language recognizability.
@@ -2343,8 +2343,8 @@ When shape generation is independent of newly generated laws, the system triangu
 
 $$
 R_D
-\xrightarrow{\operatorname{Cl}_D}
-\operatorname{EIGCore}(D)
+\xrightarrow{\mathrm{Cl}_D}
+\mathrm{EIGCore}(D)
 $$
 
 first, followed by law saturation/recognition. This triangular form is preferable because it guarantees that a stronger law theory cannot retroactively redefine the already maximal fixed-doctrine Core.
