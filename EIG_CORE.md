@@ -734,8 +734,6 @@ Across noninvertible maps of problems, the exact naturality condition is a globa
 
 ---
 
----
-
 # 10. Doctrine fibres: exact selection theorem
 
 ## 10.1 Forgetful doctrine fibration
@@ -816,8 +814,6 @@ Call it a stack only after descent for a specified topology is proved.
 ---
 
 # 11. Core descent: exact doctrine-free EIG Core theorem
-
-
 
 ## 11.1 Doctrine-relative core functor
 
@@ -1654,7 +1650,6 @@ $$
 
 These are canonical invariant/coinvariant **shadows** at lower semantics, with universal comparison maps to/from `K`. They are not common-core descent unless the relevant comparison is an equivalence.
 
----
 ---
 
 # Appendix F. Protected recurrent EIG specialization
