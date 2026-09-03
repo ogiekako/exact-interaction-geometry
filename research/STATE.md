@@ -28,37 +28,56 @@ change frequently.
 
 ## Current beyond-Core status
 
-**SEED / PROGRAMME INITIALIZATION.**
+**FIRST QUOTIENT BOUNDARY PROVED.**
 
-No general beyond-Core extraction theorem is accepted merely because the programme proposes one.
-The candidate chain
+The first symmetry/cancellation stress test is in
+`theory/03-quotient-factorization-boundary.md`. Let `q:A*->M` be a surjective monoid quotient and
+let `Cut_r^q(w)` be the semantic images of the contiguous `r`-block cuts of `w`. Then
 
-```math
-D \to T_D \to \mathsf{Pat}_D \to \mathsf{Seg}(\mathsf{Pat}_D)
-\simeq \operatorname{Alg}(T_D)
+```text
+union_{q(w)=m} Cut_r^q(w) = Fact_r^M(m).
 ```
 
-is a hypothesis under test.
+This gives an exact theorem **[PROVED / ELEMENTARY]**:
 
-The leading suspected information boundary is the passage from free composition to semantic
-identification: symmetry, cancellation, interchange, observational quotient, and higher
-coherence. This suspicion is also provisional.
+- representative cut images descend literally through `q` iff every representative of `m`
+  lifts every semantic factorization of `m`;
+- `Fact_r^M(m)` is the least representative-independent enlargement preserving all cuts;
+- the intersection over all representatives is the greatest representative-independent
+  contraction;
+- retaining actual cut witnesses strengthens existence of lifts to the standard ULF/Conduche
+  bijectivity condition.
+
+The commutativity quotient fails literal ordered cut descent at `ab~ba`, and still fails after
+quotienting binary factor slots at `aab~aba`. There is no relabelling-equivariant section of the
+Parikh quotient on two or more letters. The cancellation quotient `{x,xbar}*->Z` fails at
+`epsilon~x xbar`, and its saturated binary factorization geometry at `0` is infinite although
+each representative has finitely many cuts.
+
+Two further cancellation boundaries are proved: every additive `N`-valued arity on a group is
+zero, while finite reduced-word/geodesic cuts of a free group depend on a supplied basis and are
+not recoverable from the abstract quotient group.
+
+No general beyond-Core extraction theorem follows. The full semantic factorization family is the
+ordinary bar/nerve multiplication fibre of the quotient monoid and is therefore **PRIOR-ART
+FRAMEWORK / ABSORBED**, not a newly extracted arity pattern or an algebra-recognition theorem.
 
 ## Live structural hypotheses
 
-Keep at least these alternatives live until evidence separates them.
-
-- **H1 — shape-first:** primitive interaction determines a useful shape category, from which laws
-  can be recovered with little additional data.
-- **H2 — pattern-first:** bare shape is insufficient, but interaction canonically determines an
-  algebraic/decomposition pattern supporting a generic Segal/nerve theorem.
-- **H3 — quotient-first:** the essential theory is free composition followed by semantic
-  reduction, whose output is a pattern, a coherent family/moduli, or an obstruction.
-- **H4 — absorption:** after an honest input audit, the extractor contributes no substantial
-  content beyond existing monads-with-arities / polynomial-monad / algebraic-pattern / Feynman-
-  category / related machinery.
-- **H5 — restricted/effective:** a broad categorical theory is too weak or tautological, but a
-  nontrivial theorem exists on a sharply defined effective/finitely presented class.
+- **H1 — shape-first: weakened.** Unqualified preservation of free path/cut geometry is disproved
+  by both symmetry and cancellation. A replacement needs a factorization-lifting hypothesis or a
+  declared loss/completion policy.
+- **H2 — pattern-first: open.** Nothing yet selects a unique algebraic/decomposition pattern or
+  proves a Segal/nerve recognition theorem from the quotient data.
+- **H3 — quotient-first: sharpened, not validated wholesale.** Quotienting canonically produces
+  an exact descent test and extremal contraction/saturation shadows. It does not select between
+  them or force a unique groupoidal/higher repair.
+- **H4 — absorption: supported for the positive saturation.** Once `M` and its multiplication are
+  supplied, `Fact_r^M` is standard nerve/bar data. The project-level content is currently the
+  anti-tautology/no-go boundary, not new downstream geometry.
+- **H5 — restricted/effective: supported as a target.** Factorization-lifting/ULF quotients form a
+  sharply restricted positive class; whether a natural weaker interaction input forces that
+  exactness remains open.
 
 Add, merge, or delete hypotheses when mathematics justifies it. Do not preserve this list for
 sentimental reasons.
@@ -82,6 +101,22 @@ New doctrine          prospective prediction test
 
 This is not a queue. Each session should choose the experiment with the largest expected ability
 to prove, refute, or separate the live hypotheses.
+
+## Highest-information unresolved questions
+
+1. Does replacing equality descent by an action-groupoid/homotopy quotient make the commutative
+   factorization geometry coherently canonical, and exactly which symmetry/coherence data must be
+   supplied rather than recovered?
+2. Is there a natural nontrivial class of interaction quotients for which factorization lifting
+   (or ULF with provenance) follows from weaker observable semantics?
+3. Does interchange in the smallest PROP example produce a genuinely new coherence obstruction,
+   or only the same saturation/ULF boundary in two directions?
+
+Current exact blocker: none. The next attack should test the groupoidal symmetry repair or the
+two-dimensional interchange analogue, not repeat another free-pasting positive control.
+
+Verification for the current theorem is by the explicit proof and examples in the theory note;
+no finite script is needed. Repository regressions should still pass with `make verify-all`.
 
 ## Mandatory comparison set
 

@@ -173,6 +173,28 @@ Yoneda density, presheaf reconstruction, monads with arities, nervous monads, Gr
 
 EIG may use these as representation machinery. It must not count their existence as evidence that the **correct process-generated or interaction-generated arities were derived rather than supplied**.
 
+Specific boundaries relevant to the beyond-Core quotient programme are:
+
+- Gálvez-Carrillo--Kock--Tonks, [*Decomposition Spaces, Incidence Algebras and Möbius
+  Inversion*](https://arxiv.org/abs/1404.3202): decomposition spaces and conservative ULF maps
+  provide established factorization-exactness machinery.
+- Berger--Melliès--Weber, [*Monads with arities and their associated
+  theories*](https://arxiv.org/abs/1101.3064): a monad with supplied arities has an associated
+  theory/dense algebra generator; their free-groupoid application recovers the symmetric
+  simplicial nerve characterization.
+- Bourke--Garner, [*Monads and theories*](https://arxiv.org/abs/1805.04346): nervousness states
+  precisely when the conclusions of an arity-based nerve theorem hold for fixed arities.
+- Chu--Haugseng, [*Homotopy-coherent algebra via Segal
+  conditions*](https://arxiv.org/abs/1907.03977): an algebraic pattern already includes a
+  factorization system and elementary objects, and suitable polynomial monads yield canonical
+  extendable patterns with the expected Segal-algebra equivalence.
+
+Accordingly, the semantic factorization fibres of one quotient monoid are only the ordinary nerve
+of that quotient object. They are not by themselves a pattern recognizing all algebras of a
+quotient doctrine. The open upstream question is whether thinner interaction semantics force the
+arity, nervousness/polynomiality, factorization system, elementary objects, and coherence that the
+downstream theorems require.
+
 ## What remains distinctive in the present EIG formulation
 
 After these exclusions, the strongest current EIG target is not any single slogan above. It is the simultaneous package formalized as WEIR:
