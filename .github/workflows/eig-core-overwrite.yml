@@ -22,8 +22,8 @@ jobs:
         run: |
           set -euo pipefail
           count=$(find .eig-upload -maxdepth 1 -type f -name 'part-*' 2>/dev/null | wc -l || true)
-          if [ "$count" -ne 12 ]; then
-            echo "Waiting for all chunks: $count/12"
+          if [ "$count" -ne 7 ]; then
+            echo "Waiting for all chunks: $count/7"
             exit 0
           fi
           cat .eig-upload/part-* | base64 -d > EIG_CORE.md
