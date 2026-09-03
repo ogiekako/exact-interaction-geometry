@@ -4,29 +4,12 @@ on:
   push:
   pull_request:
 
-permissions:
-  contents: write
-
 jobs:
   exact-regression:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: staging/eig-core-canonical
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Normalize canonical-note presentation
-        if: github.event_name == 'push'
-        run: |
-          python .github/cleanup_eig_presentation.py
-          git diff --check
-          if ! git diff --quiet -- EIG_CORE.md README.md; then
-            git config user.name 'Keigo Oka'
-            git config user.email 'ogiekako@users.noreply.github.com'
-            git add EIG_CORE.md README.md
-            git commit -m 'Remove research-progress markers from canonical notes'
-            git push origin HEAD:staging/eig-core-canonical
-          fi
       - run: make verify-all
