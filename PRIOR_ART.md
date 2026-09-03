@@ -195,6 +195,18 @@ quotient doctrine. The open upstream question is whether thinner interaction sem
 arity, nervousness/polynomiality, factorization system, elementary objects, and coherence that the
 downstream theorems require.
 
+The 0-truncation/isotropy boundary is likewise established categorification and species
+machinery. Kock, [*Data types with symmetries and polynomial functors over
+groupoids*](https://arxiv.org/abs/1210.0828), uses finite sets and bijections as multiset shapes
+and distinguishes homotopy quotients from naive orbit quotients. Baez--Dolan,
+[*From Finite Sets to Feynman Diagrams*](https://arxiv.org/abs/math/0004133), gives older
+finite-set groupoid/species context. Elgueta, [*The groupoid of finite sets is biinitial in the
+2-category of rig categories*](https://arxiv.org/abs/2004.08684), explicitly contrasts the
+finite-set groupoid and discrete natural numbers as inequivalent categorifications of the same
+rig. EIG therefore claims no novelty for retaining permutation isotropy once coherent symmetry
+is supplied; the beyond-Core issue is whether such witnesses and coherence were derived or
+silently added after an orbit-set quotient.
+
 ## What remains distinctive in the present EIG formulation
 
 After these exclusions, the strongest current EIG target is not any single slogan above. It is the simultaneous package formalized as WEIR:

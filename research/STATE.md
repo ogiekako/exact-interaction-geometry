@@ -28,7 +28,7 @@ change frequently.
 
 ## Current beyond-Core status
 
-**FIRST QUOTIENT BOUNDARY PROVED.**
+**TWO QUOTIENT/TRUNCATION BOUNDARIES PROVED.**
 
 The first symmetry/cancellation stress test is in
 `theory/03-quotient-factorization-boundary.md`. Let `q:A*->M` be a surjective monoid quotient and
@@ -58,6 +58,22 @@ Two further cancellation boundaries are proved: every additive `N`-valued arity 
 zero, while finite reduced-word/geodesic cuts of a free group depend on a supplied basis and are
 not recoverable from the abstract quotient group.
 
+The 0-truncation stress test is in `theory/04-symmetry-isotropy-boundary.md`. The discrete
+symmetric monoidal groupoid on `N^(A)` and the groupoid `FinBij_A` of finite `A`-labelled sets and
+bijections have the same component monoid and primitive classes, but at `2a` their automorphism
+groups are respectively trivial and `S_2`. Therefore component semantics cannot losslessly
+reconstruct symmetry witnesses **[PROVED / DIRECT]**. More sharply, the component projection
+`FinBij_A->Disc(N^(A))` has no strong symmetric-monoidal section. A canonical discrete lift still
+exists, while the free-symmetric-monoidal universal property canonically selects `FinBij_A`; they
+solve different specified problems.
+
+When coherent permutation data is supplied, the ordered `r`-decomposition groupoid is canonical:
+its components are multiplicity matrices/factorizations `m=m_1+...+m_r`, and the isotropy at
+`(m_i)` is `product_{a,i} S_{m_i(a)}`. Its component set is exactly the saturation from the first
+theorem. This is **PRIOR ART / STANDARD species and homotopy-quotient machinery**, not recovered
+coherence. Gaunt-valued functorial probes see only `pi_0`; richer targets such as `Set` can detect
+group actions.
+
 No general beyond-Core extraction theorem follows. The full semantic factorization family is the
 ordinary bar/nerve multiplication fibre of the quotient monoid and is therefore **PRIOR-ART
 FRAMEWORK / ABSORBED**, not a newly extracted arity pattern or an algebra-recognition theorem.
@@ -71,7 +87,8 @@ FRAMEWORK / ABSORBED**, not a newly extracted arity pattern or an algebra-recogn
   proves a Segal/nerve recognition theorem from the quotient data.
 - **H3 — quotient-first: sharpened, not validated wholesale.** Quotienting canonically produces
   an exact descent test and extremal contraction/saturation shadows. It does not select between
-  them or force a unique groupoidal/higher repair.
+  them or force a unique groupoidal/higher repair. Even the truncation level—equations versus
+  coherent identification witnesses—must be derived or declared.
 - **H4 — absorption: supported for the positive saturation.** Once `M` and its multiplication are
   supplied, `Fact_r^M` is standard nerve/bar data. The project-level content is currently the
   anti-tautology/no-go boundary, not new downstream geometry.
@@ -104,16 +121,16 @@ to prove, refute, or separate the live hypotheses.
 
 ## Highest-information unresolved questions
 
-1. Does replacing equality descent by an action-groupoid/homotopy quotient make the commutative
-   factorization geometry coherently canonical, and exactly which symmetry/coherence data must be
-   supplied rather than recovered?
+1. Can a strictly weaker operational observation doctrine force the coherent permutation action
+   (rather than merely distinguish it once `Set`- or groupoid-valued probes are admitted)?
 2. Is there a natural nontrivial class of interaction quotients for which factorization lifting
    (or ULF with provenance) follows from weaker observable semantics?
 3. Does interchange in the smallest PROP example produce a genuinely new coherence obstruction,
    or only the same saturation/ULF boundary in two directions?
 
-Current exact blocker: none. The next attack should test the groupoidal symmetry repair or the
-two-dimensional interchange analogue, not repeat another free-pasting positive control.
+Current exact blocker: none. The next attack should test the two-dimensional interchange analogue
+or formulate a minimal non-gaunt observation theorem, not repeat another free-pasting positive
+control.
 
 Verification for the current theorem is by the explicit proof and examples in the theory note;
 no finite script is needed. Repository regressions should still pass with `make verify-all`.
