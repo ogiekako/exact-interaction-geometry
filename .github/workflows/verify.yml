@@ -23,6 +23,7 @@ jobs:
         run: |
           set -euo pipefail
           python .github/polish_eig_core_spine.py
+          sed -i 's/[[:space:]]\+$//' EIG_CORE.md
           git diff --check
           if ! git diff --quiet -- EIG_CORE.md; then
             git config user.name 'Keigo Oka'
