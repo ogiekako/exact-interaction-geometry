@@ -6,11 +6,11 @@ This repository is a public mathematical research repository. Before making subs
 
 Read these files before substantive mathematical or conceptual work:
 
-1. **`EIG_PHASE_I_IX.md`** — the audited Phase I–IX history and theorem/failure chronology. This is the required historical baseline. Its dated historical status statements must be read together with its incorporated 2026-09-03 Level-2 correction.
+1. **`EIG_PHASE_I_IX.md`** — the required historical and mathematical baseline. It records the Phase I–IX North Stars, theorem stacks, counterexamples, proof mechanisms, failed routes, and the sequence by which the EIG object became visible. **Its scope ends at Phase IX. Do not use later results to rewrite its Phase-IX-cutoff statuses.**
 2. **`EIG_FOUNDATIONAL_DISCLOSURE_20260902.md`** — the current public foundational formulation on `main` at the time this history branch was created.
 3. **`EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md`** — the boundary-first formulation: maximal identifiable invariant, residual fibre/moduli, and extra-resource boundary.
 4. **`FOUNDATIONS.md`** — minimal setup and publicly documented exact foundational calibrations.
-5. **`STATUS.md`** — public epistemic ledger. Treat it conservatively; where a later explicitly audited document changes a scoped result, state the date and scope rather than silently replacing history.
+5. **`STATUS.md`** — public epistemic ledger for current public claims. Do not use it to silently alter historical statuses inside `EIG_PHASE_I_IX.md`.
 6. **`ROADMAP.md`** — open foundational gates and the intended standard for future claims.
 7. **`PRIOR_ART.md`** — required before novelty, priority, or “new framework” claims.
 
@@ -18,21 +18,25 @@ For work that touches a specific theorem, application, or discovery, also read t
 
 ## Historical reading rule
 
-`EIG_PHASE_I_IX.md` is a reconstruction of how the programme actually developed. Preserve the distinction between:
+`EIG_PHASE_I_IX.md` is a frozen reconstruction of how the programme actually developed through Phase IX. Preserve the distinction between:
 
 - the agenda and success criteria that existed before a result;
 - the theorem/counterexample history that actually occurred;
-- later textbook or Core reinterpretation.
+- the mathematical defect that forced the next phase;
+- the state of the programme at the Phase-IX cutoff.
 
-Later vocabulary must not be projected backward as though it had been present from the start. A later correction may supersede a mathematical status without changing the fact that an earlier question was genuinely open at the historical cutoff.
+Later vocabulary must not be projected backward as though it had been present from the start. Later work may solve, reformulate, or supersede an open Phase-I–IX problem, but that does not change the historical fact that the problem was open at this cutoff.
 
-In particular, the 2026-09-03 Level-2 semantic-closure correction closes the original Phase-VIII-X target only when an exact interaction/composition doctrine is independently supplied and the stated recognition gates hold. It does **not** revive a doctrine-free map
+In particular, when reading or editing `EIG_PHASE_I_IX.md`:
 
 ```text
-bare extensional world -> unique interaction doctrine.
+STOP AT PHASE IX.
+DO NOT IMPORT LATER PHASE-VIII-X CLOSURES.
+DO NOT IMPORT LATER EIG CORE CANONICALITY RESULTS.
+DO NOT IMPORT OPERATIONAL-ENVELOPE OR BEYOND-CORE RESULTS.
 ```
 
-That stronger Level-3 claim remains false in general.
+The purpose of that file is to preserve the mathematical discovery path, including mistakes and failed conjectures, not to provide the latest theorem ledger.
 
 ## Claim discipline
 
@@ -71,4 +75,4 @@ Do not call a construction doctrine-free if the target grammar, arities, maps, w
 
 Keep the repository compact and readable. Prefer one canonical exposition over many near-duplicate research notes. Put exploratory or superseded material on staging/research branches unless it has clear long-term provenance value.
 
-Before promoting a claim to `main`, check consistency with the mandatory reading above and make the status boundary explicit. Preserve important refutations and scope corrections rather than deleting them from the historical record.
+Before promoting a current claim to `main`, check consistency with the mandatory reading above and make the status boundary explicit. Preserve important refutations and scope corrections rather than deleting them from the historical record.
