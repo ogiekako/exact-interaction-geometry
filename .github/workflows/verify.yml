@@ -17,18 +17,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Restructure EIG Core for linear reading
+      - name: Polish EIG Core theorem spine
         if: github.event_name == 'push'
         shell: bash
         run: |
           set -euo pipefail
-          python .github/restructure_eig_core.py
+          python .github/polish_eig_core_spine.py
           git diff --check
           if ! git diff --quiet -- EIG_CORE.md; then
             git config user.name 'Keigo Oka'
             git config user.email 'ogiekako@users.noreply.github.com'
             git add EIG_CORE.md
-            git commit -m 'Reorganize EIG Core around the theorem spine'
+            git commit -m 'Polish EIG Core theorem spine'
             git push origin HEAD:staging/eig-core-canonical
           fi
       - run: make verify-all
