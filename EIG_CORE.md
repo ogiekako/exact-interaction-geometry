@@ -52,7 +52,7 @@ When this note uses “strongest” or “maximal,” it is relative to the decl
 
 ## 2.1 Rebuilt coherent interaction doctrine
 
-Fix a categorical level: ordinary, enriched, indexed, bicategorical/equipment-valued, or infinity-categorical. A coherent Level-2 EIG doctrine is schematically
+Fix a categorical level: ordinary, enriched, indexed, bicategorical/equipment-valued, or infinity-categorical. A coherent EIG doctrine is schematically
 
 $$
 D=(\mathcal E_{\rm raw},\mathsf{Ctx},\mathsf{Obs},q,
@@ -569,7 +569,7 @@ No separate preservation axiom for a genuinely derived reduced root or core is n
 
 ## 6.5 Exact functoriality boundary
 
-If the doctrine category contains maps that do **not** preserve generation instances, roots, or coherence sufficiently to define the comparison, no generic noninvertible-map functor `K:D_2->C` has been proved. In every later descent theorem, use:
+If the doctrine category contains maps that do **not** preserve generation instances, roots, or coherence sufficiently to define the comparison, no generic noninvertible-map functor `K:D->C` has been proved. In every later descent theorem, use:
 
 - the full forward-morphism category when this functoriality has been established;
 - otherwise the maximal subgroupoids/equivalence cores.
@@ -630,7 +630,7 @@ Therefore:
 
 > ## THEOREM — Fixed-doctrine EIG Core closure theorem
 >
-> Fix an output-free coherent Level-2 interaction doctrine `D` at a declared categorical/equivalence level. Assume:
+> Fix an output-free coherent interaction doctrine `D` at a declared categorical/equivalence level. Assume:
 >
 > 1. admitted contexts/observations determine a universal contextual reduction/exactification `q:E_raw->W_D`, or equivalent reduced semantic data are explicitly supplied;
 > 2. an invariant root specification applies **in the reduced world**, producing `R_D`;
@@ -741,15 +741,15 @@ Across noninvertible maps of problems, the exact naturality condition is a globa
 Let
 
 $$
-U:\mathcal D_2\to\mathcal S_1
+U:\mathcal D\to\mathcal S
 $$
 
-forget coherent Level-2 interaction structure down to an admissible lower semantic base. Restrict `S_1` to objects admitting at least one compatible doctrine and maps along which the selected variance supports reindexing.
+forget coherent interaction structure down to an admissible lower semantic base. Restrict the semantic-base category to objects admitting at least one compatible doctrine and maps along which the selected variance supports reindexing.
 
 In the contravariant convention, model `U` as a cartesian fibration classified by
 
 $$
-\mathcal F:\mathcal S_1^{op}\to\mathbf{Cat}_\infty.
+\mathcal F:\mathcal S^{op}\to\mathbf{Cat}_\infty.
 $$
 
 Write
@@ -767,9 +767,9 @@ The **full fibre** `F_X`, not only its groupoid core, is primary because noninve
 A coherent doctrine selector is exactly a cartesian section
 
 $$
-s:\mathcal S_1\to\mathcal D_2,
+s:\mathcal S\to\mathcal D,
 \qquad
-Us\simeq1_{\mathcal S_1},
+Us\simeq1_{\mathcal S},
 $$
 
 or cocartesian section in the covariant convention.
@@ -820,14 +820,14 @@ Call it a stack only after descent for a specified topology is proved.
 On the category of doctrine morphisms for which Section 6 functoriality is established, define
 
 $$
-K:\mathcal D_2\to\mathcal C,
+K:\mathcal D\to\mathcal C,
 \qquad
 K(D)=\mathrm{EIGCore}(D),
 $$
 
 where `C` is the category/infinity-category/localization of shape theories at the declared equivalence level.
 
-If only equivalence transport is proved, replace `D_2,S_1` by their equivalence cores for this theorem.
+If only equivalence transport is proved, replace the doctrine and semantic-base categories by their equivalence cores for this theorem.
 
 ## 11.2 Factorization category
 
@@ -836,7 +836,7 @@ Let `Fact_U(K)` have objects
 $$
 (\bar K,\eta),
 \qquad
-\bar K:\mathcal S_1\to\mathcal C,
+\bar K:\mathcal S\to\mathcal C,
 \qquad
 \eta:\bar K U\simeq K,
 $$
@@ -926,7 +926,7 @@ $$
 Globally this is the information carried by
 
 $$
-(U,K):\mathcal D_2\to\mathcal S_1\times\mathcal C.
+(U,K):\mathcal D\to\mathcal S\times\mathcal C.
 $$
 
 It retains every compatible doctrine, noninvertible doctrine map, core label, equivalence, isotropy, and reindexing map. It is therefore a **lossless doctrine-free packaging relative to the fixed moduli problem `(U,K)`**: the packaging is simply the supplied doctrine fibration together with the proved core label, so no doctrine/core information present in `(U,K)` is discarded.
@@ -984,7 +984,7 @@ This hierarchy explains why EIG Core can be canonical at a thinner level than fu
 > After forgetting the doctrine along
 >
 > $$
-> U:\mathcal D_2\to\mathcal S_1,
+> U:\mathcal D\to\mathcal S,
 > $$
 >
 > an always-defined lossless doctrine-free packaging is therefore not generally one point-valued shape theory. It is the full doctrine fibration labelled by the EIG outputs established under their stated hypotheses, in particular the core-labelled fibre
@@ -1004,8 +1004,8 @@ This hierarchy explains why EIG Core can be canonical at a thinner level than fu
 
 Fix:
 
-1. an admissible lower semantic base `S_1`;
-2. a coherent doctrine fibration `U:D_2->S_1` with declared variance;
+1. an admissible lower semantic-base category;
+2. a coherent doctrine fibration `U` over that base, with declared variance;
 3. a declared equivalence notion;
 4. the doctrine-relative core functor `K` at the functorial level actually proved;
 5. any explicitly stated output-free selection/descent specification `P`;
@@ -1670,7 +1670,7 @@ The recurrent specialization is organized as follows.
 
 ## F.1 RAW
 
-Native occurrences, owners, witnesses, leaf identities, storage labels, and private projections are primitive Level-2 presentation/doctrine data unless independently reconstructed.
+Native occurrences, owners, witnesses, leaf identities, storage labels, and private projections are primitive presentation/doctrine data unless independently reconstructed.
 
 ## F.2 SYNC
 
@@ -2243,7 +2243,7 @@ The substantive obligations are:
 
 1. every generated shape/law is independently admissible;
 2. the meta-operator is invariant under the declared equivalences;
-3. when a Level-2 semantic doctrine is already fixed, the shape component agrees with the semantic closure modality `Cl_D` rather than defining a competing weaker core;
+3. when a semantic doctrine is already fixed, the shape component agrees with the semantic closure modality `Cl_D` rather than defining a competing weaker core;
 4. the law component is compared against the maximal sound theory `Th_D(G_D)`;
 5. any newly generated semantic realization is selected by a fully specified universal solution problem or retained as moduli;
 6. any claim of primitive-level canonicality is evaluated through section/descent/invariant-solution machinery.
