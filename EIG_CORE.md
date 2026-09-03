@@ -545,7 +545,7 @@ $$
 
 Thus on the category of forward doctrine morphisms satisfying these hypotheses, EIG Core is a typed lax-functorial assignment rather than merely an equivalence invariant.
 
-## 6.4 Equivalence invariance **[COROLLARY]**
+## 6.4 Equivalence invariance
 
 If `F` is an equivalence of primitive coherent doctrines with a structure-preserving quasi-inverse satisfying the same admissibility/transport hypotheses, the two lax comparisons yield
 
