@@ -204,7 +204,7 @@ The detailed theorem, counterexample, and scope boundaries are in [`EIG_CORE.md`
 | doctrine selection | exact section/selection problem; not generically point-valued |
 | common doctrine-free Core | exact descent/factorization problem; not automatic |
 | density, recognition, operation exactness, realization | downstream theorems with their own hypotheses |
-| recurrent historical ordered factorization | optional ordered presentation under the Section 17.10 factorization hypotheses in `EIG_CORE.md` |
+| recurrent historical ordered factorization | optional ordered presentation under the Appendix F.10 factorization hypotheses in `EIG_CORE.md` |
 | two-state max-plus comparison | public proof resolving the `d=2` case of the DGM 2017 bounded-state question |
 | binary-Kronecker `5 -> 24` | project rediscovery / calibration; no novelty claim |
 
