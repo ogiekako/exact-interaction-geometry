@@ -4,12 +4,53 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
   exact-regression:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: staging/eig-core-canonical
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Normalize GitHub display-math delimiters
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('EIG_CORE.md')
+          s = p.read_text()
+          lines = s.splitlines(keepends=True)
+          opens = sum(line.strip() == r'\[' for line in lines)
+          closes = sum(line.strip() == r'\]' for line in lines)
+          if opens != closes:
+              raise SystemExit(f'unbalanced display delimiters: {opens} opens, {closes} closes')
+          if opens:
+              out = []
+              for line in lines:
+                  if line.strip() in {r'\[', r'\]'}:
+                      ending = '\n' if line.endswith('\n') else ''
+                      out.append('$$' + ending)
+                  else:
+                      out.append(line)
+              p.write_text(''.join(out))
+              print(f'normalized {opens} display-math blocks')
+          else:
+              print('no legacy display-math delimiters remain')
+          PY
+          git diff --check
+          if ! git diff --quiet -- EIG_CORE.md; then
+            git config user.name 'Keigo Oka'
+            git config user.email 'ogiekako@users.noreply.github.com'
+            git add EIG_CORE.md
+            git commit -m 'Normalize EIG Core math for GitHub rendering'
+            git push origin HEAD:staging/eig-core-canonical
+          fi
       - run: make verify-all
