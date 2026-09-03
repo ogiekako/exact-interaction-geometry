@@ -6,7 +6,7 @@ This repository is a public mathematical research repository. Before making subs
 
 Read these files before substantive mathematical or conceptual work:
 
-1. **`EIG_PHASE_I_IX.md`** — the audited Phase I–IX history and theorem/failure chronology. This is the required historical baseline. Its dated historical status statements must be read together with its 2026-09-03 postscript.
+1. **`EIG_PHASE_I_IX.md`** — the audited Phase I–IX history and theorem/failure chronology. This is the required historical baseline. Its dated historical status statements must be read together with its incorporated 2026-09-03 Level-2 correction.
 2. **`EIG_FOUNDATIONAL_DISCLOSURE_20260902.md`** — the current public foundational formulation on `main` at the time this history branch was created.
 3. **`EIG_IDENTIFIABILITY_BOUNDARIES_20260902.md`** — the boundary-first formulation: maximal identifiable invariant, residual fibre/moduli, and extra-resource boundary.
 4. **`FOUNDATIONS.md`** — minimal setup and publicly documented exact foundational calibrations.
