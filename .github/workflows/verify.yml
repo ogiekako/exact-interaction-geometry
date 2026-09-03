@@ -4,59 +4,12 @@ on:
   push:
   pull_request:
 
-permissions:
-  contents: write
-
 jobs:
   exact-regression:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: staging/eig-core-canonical
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Normalize unsupported GitHub math macros
-        if: github.event_name == 'push'
-        shell: bash
-        run: |
-          set -euo pipefail
-          python - <<'PY'
-          from pathlib import Path
-          import re
-
-          changed = []
-          total = 0
-          pattern = re.compile(r'\\operatorname\{([^{}]+)\}')
-          for p in Path('.').rglob('*.md'):
-              if '.git' in p.parts:
-                  continue
-              s = p.read_text()
-              ns, n = pattern.subn(lambda m: r'\mathrm{' + m.group(1) + '}', s)
-              if n:
-                  p.write_text(ns)
-                  changed.append((str(p), n))
-                  total += n
-          for path, n in changed:
-              print(f'{path}: {n}')
-          print(f'total replacements: {total}')
-          remaining = []
-          for p in Path('.').rglob('*.md'):
-              if '.git' in p.parts:
-                  continue
-              s = p.read_text()
-              if r'\operatorname' in s:
-                  remaining.append(str(p))
-          if remaining:
-              raise SystemExit('unsupported \\operatorname remains in: ' + ', '.join(remaining))
-          PY
-          git diff --check
-          if ! git diff --quiet -- '*.md'; then
-            git config user.name 'Keigo Oka'
-            git config user.email 'ogiekako@users.noreply.github.com'
-            git add -- '*.md'
-            git commit -m 'Normalize GitHub math operator names'
-            git push origin HEAD:staging/eig-core-canonical
-          fi
       - run: make verify-all
