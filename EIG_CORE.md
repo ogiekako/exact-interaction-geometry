@@ -5,7 +5,7 @@
 **Date:** 2026-09-03 JST  
 **Status:** canonical research note  
 
-This note states the generic EIG Core / EIG canonicality architecture, its exact hypotheses, reconstruction gates, and no-go boundaries.
+This note states the generic EIG Core / EIG canonicality architecture, its exact hypotheses, reconstruction conditions, and no-go boundaries.
 
 No novelty or priority claim is made for standard constituent category theory, fixed-point theory, enriched Cauchy theory, distributive-law theory, descent theory, or higher-categorical section machinery.
 
@@ -1603,7 +1603,7 @@ RAW(SYNC + protected STORE)
   -> observer/public projection.
 ```
 
-The strongest safe classification is as follows.
+The recurrent specialization is organized as follows.
 
 ## 17.1 RAW
 
@@ -1635,7 +1635,7 @@ is derived when raw composition respects contextual equivalence. Invertibility i
 
 ## 17.6 owner-Cech SPACE
 
-The owner cover is primitive unless an earlier theorem derives it. Given the cover, its Cech nerve/codescent is derived when it exists. Effectivity and Beck-Chevalley/base-change preservation remain separate gates.
+The owner cover is primitive unless an earlier theorem derives it. Given the cover, its Cech nerve/codescent is derived when it exists. Effectivity and Beck-Chevalley/base-change preservation are separate conditions.
 
 ## 17.7 strict-Segal SEQ
 
@@ -1645,7 +1645,7 @@ Free finite-word/path generation is an object-generating constructor when indepe
 
 These are naturally external operations/modules/valuations unless represented by internal semantic objects and explicitly included among the object-generating rules.
 
-## 17.9 Strongest historical equivalence endpoint
+## 17.9 Historical equivalence endpoint
 
 For the recurrent specialization, the retained equivalence endpoint is
 
@@ -1657,7 +1657,7 @@ $$
 }
 $$
 
-followed by the previously audited process-nerve equivalence on its stated essential image.
+followed by the process-nerve equivalence on its stated essential image used in the recurrent specialization.
 
 No result established here upgrades this generically to literal equality or to a stronger equivalence level.
 
@@ -1867,9 +1867,9 @@ A0  declare categorical level, equivalence, size universe
                 |
                 +--> B3  restricted nerve N_D
                        |
-                       +--> B4 density gate
-                       +--> B5 maximal law envelope / definability gate
-                       +--> B6 operation restriction / exactness gate
+                       +--> B4 density condition
+                       +--> B5 maximal law envelope / definability condition
+                       +--> B6 operation restriction / exactness condition
 
 C0  choose doctrine-moduli problem U:D2->S1
  |
@@ -1924,47 +1924,47 @@ After forgetting doctrine data, the generic result is therefore formulated as th
 >
 > Then the doctrine determines a canonical closure modality
 >
-> \[
+> $$
 > \boxed{
 > \mathrm{Cl}_D(S)
 > =
 > \bigwedge\{B\in\mathsf{Sub}_D:S\le B,\ B\text{ is }D\text{-closed}\}
 > }
-> \]
+> $$
 >
 > for every admissible seed `S in Sub_D`. In the monotone complete-lattice presentation,
 >
-> \[
+> $$
 > \mathrm{Cl}_D(S)=\mu\Gamma_{D,S}.
-> \]
+> $$
 >
 > The EIG Core is
 >
-> \[
+> $$
 > \boxed{
 > \mathrm{EIGCore}(D)=\mathrm{Cl}_D(R_D).
 > }
-> \]
+> $$
 >
 > It is the initial/least internal semantic `D`-closed structured subtheory receiving `R_D`; the space of solutions to that fully specified internal least-closure problem is contractible. For every generated Core sort `sigma` and every semantic element `x` of that sort,
 >
-> \[
+> $$
 > x\in_\sigma\mathrm{Cl}_D(S)
 > \iff
 > x\text{ belongs in sort }\sigma\text{ to every }D\text{-closed upper bound of }S,
-> \]
+> $$
 >
 > so nonmembership has an exact stable countermodel. Forward doctrine morphisms satisfying the explicit admissible-hull, inverse-image, generation, and root transport conditions induce canonical typed lax comparisons
 >
-> \[
+> $$
 > F_\sharp\mathrm{Cl}_D(S)
 > \le
 > \mathrm{Cl}_{D'}(F_\sharp S),
-> \]
+> $$
 >
 > and doctrine equivalences induce equivalences of the entire closure modality and of EIG Core.
 >
-> No modality order or well-foundedness is required. Any historical/modality-stratified construction is only a factorization theorem for this closure and is correct exactly under the corresponding preservation/distributive/coherence hypotheses. Density, nervousness, law definability, operation exactness, and process/model reconstruction are downstream gates and do not weaken the fixed-doctrine canonicality theorem.
+> No modality order or well-foundedness is required. Any historical/modality-stratified construction is only a factorization theorem for this closure and is correct exactly under the corresponding preservation/distributive/coherence hypotheses. Density, nervousness, law definability, operation exactness, and process/model reconstruction are downstream conditions and do not weaken the fixed-doctrine canonicality theorem.
 
 ### Scope
 
@@ -1978,31 +1978,31 @@ The statement is made for the **entire seed-wise closure modality**, not only th
 >
 > For each coherent doctrine `D`, the mandatory generic EIG package determined by the theory is
 >
-> \[
+> $$
 > \mathsf{EIG}(D)
 > =
 > (q_D,R_D,\mathrm{Cl}_D,
 > \mathrm{EIGCore}(D),\Theta_D),
-> \]
+> $$
 >
-> supplemented only by independently certified density, law-recognition, operation-exactness, descent, and realization data.
+> supplemented, where available, by separately stated density, law-recognition, operation-exactness, descent, and realization data.
 >
 > Across structure-preserving doctrine maps, the closure/core component is lax-functorial; across doctrine equivalences it is invariant at the declared equivalence level. A full richer package is functorial only to the extent that its additional certificates are themselves transported.
 >
 > After forgetting the doctrine along
 >
-> \[
+> $$
 > U:\mathcal D_2\to\mathcal S_1,
-> \]
+> $$
 >
-> an always-defined lossless doctrine-free packaging is therefore not generally one point-valued shape theory. It is the full doctrine fibration labelled by the EIG outputs that have actually been proved, in particular the core-labelled fibre
+> an always-defined lossless doctrine-free packaging is therefore not generally one point-valued shape theory. It is the full doctrine fibration labelled by the EIG outputs established under their stated hypotheses, in particular the core-labelled fibre
 >
-> \[
+> $$
 > \boxed{
 > X\longmapsto
 > (\mathcal F_X,K_X:\mathcal F_X\to\mathcal C).
 > }
-> \]
+> $$
 >
 > A selected doctrine/full EIG package is a section/selection problem. A common EIG Core is the separate descent/factorization problem `bar K U ~= K`. A common full EIG package would require descent of the richer package and is strictly stronger. Thus EIG Core may canonically descend even while EIG retains irreducible doctrine/witness/coherence moduli.
 
@@ -2027,7 +2027,7 @@ The statement is made for the **entire seed-wise closure modality**, not only th
 > - bare arity-only operation reconstruction is the restriction-fibre problem;
 > - coherent mixed packaging is a distributive/coherence solution problem.
 >
-> The full labelled doctrine fibration remains the uncollapsed canonical output when point selection/descent is not established. Empty invariant-solution spaces are genuine no-go theorems. Raw noncontractibility by itself is not.
+> The full labelled doctrine fibration remains the uncollapsed canonical output when point selection/descent is not determined by the declared problem. Empty invariant-solution spaces are genuine no-go theorems. Raw noncontractibility by itself is not.
 
 ---
 
@@ -2100,12 +2100,12 @@ A public-facing EIG Core should state the theory in this order:
 7. State forward lax functoriality and equivalence invariance.
 8. Only then state optional modality-factorization theorems.
 9. Define the associated structural theory Theta_D.
-10. Separately audit density, law recognition, operation exactness, and process realization.
+10. State density, law recognition, operation exactness, and process realization separately, with their own hypotheses.
 11. Introduce the doctrine fibration U and core functor K.
 12. State doctrine selection as a section problem and common Core as a descent problem.
 13. State specified-solution/problem-level invariance as the exact canonicality/no-go language.
 14. Use the labelled doctrine fibration as the lossless doctrine-free packaging relative to the declared moduli problem.
-15. Present the recurrent SYNC/STORE/SPACE/SEQ row as a specialization whose ordered factorization remains conditional until its exact lemma is proved.
+15. Present the recurrent SYNC/STORE/SPACE/SEQ row as a specialization, and assert its ordered factorization only under the Section 17.10 factorization hypotheses.
 ```
 
 This order makes every strong claim downstream of exactly the hypotheses that justify it, and prevents recognition or historical presentation choices from contaminating the maximal fixed-doctrine theorem.
