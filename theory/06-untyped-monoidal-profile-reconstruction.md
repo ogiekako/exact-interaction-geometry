@@ -324,3 +324,7 @@ not necessarily the wire profile: it is the coherent selection of permutation/in
 witnesses and, beyond that, the arity/recognition structure. A stronger EIG theorem must either
 derive those witnesses from observations capable of distinguishing them or explicitly retain
 them as doctrine input.
+
+`theory/07-parallel-profile-boundary.md` weakens the retained tensor table to continuation-success
+rows. Those rows still recover its complete endpoint/object profile, but two inequivalent strict
+symmetric arrow tensors can induce the same rows.
