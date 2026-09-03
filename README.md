@@ -52,9 +52,7 @@ The order matters. In general one may not extract a raw root first and assume th
 For an admissible seed `S`, the closure is characterized abstractly by
 
 $$
-\mathrm{Cl}_D(S)
-=
-\bigwedge\{B : S\le B,\; B\text{ is }D\text{-closed}\}.
+\mathrm{Cl}_D(S)　=　\bigwedge \\{ B : S\le B,\; B\text{ is }D\text{-closed} \\} .
 $$
 
 Thus an element belongs to the closure exactly when it belongs to every admissible `D`-closed upper model of the seed. Nonmembership therefore has an exact stable countermodel. No preferred order of semantic generators is required for existence of the Core; an ordered or staged construction is an additional factorization theorem and needs its own preservation and coherence hypotheses.
