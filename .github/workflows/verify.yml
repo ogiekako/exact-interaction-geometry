@@ -4,29 +4,12 @@ on:
   push:
   pull_request:
 
-permissions:
-  contents: write
-
 jobs:
   exact-regression:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: staging/eig-core-canonical
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Final canonical-note presentation cleanup
-        if: github.event_name == 'push'
-        run: |
-          python .github/cleanup_eig_presentation2.py
-          git diff --check
-          if ! git diff --quiet -- EIG_CORE.md; then
-            git config user.name 'Keigo Oka'
-            git config user.email 'ogiekako@users.noreply.github.com'
-            git add EIG_CORE.md
-            git commit -m 'Polish canonical note presentation'
-            git push origin HEAD:staging/eig-core-canonical
-          fi
       - run: make verify-all
