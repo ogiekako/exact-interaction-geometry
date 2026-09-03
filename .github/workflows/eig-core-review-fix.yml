@@ -1,0 +1,38 @@
+name: EIG Core proof-audit apply
+
+on:
+  push:
+    branches:
+      - staging/eig-core-canonical
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: staging/eig-core-canonical
+          fetch-depth: 0
+
+      - name: Reconstruct and verify audited EIG Core
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .eig-review-upload/part-* | base64 -d | gzip -d > EIG_CORE.md
+          printf '%s  %s\n' 'c266bdb019900391defe7ea1530b1a9d132ecc8e9e76505d3fdbe7a8519f6d55' 'EIG_CORE.md' | sha256sum -c -
+          test "$(git hash-object EIG_CORE.md)" = 'da45a39b16d8f9d68cf057676c063a6953f0c5ac'
+
+      - name: Commit audited theorem-stack repair and clean transfer artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .eig-review-upload .eig-review-trigger .github/workflows/eig-core-review-fix.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Address EIG Core proof audit'
+          git push origin HEAD:staging/eig-core-canonical
