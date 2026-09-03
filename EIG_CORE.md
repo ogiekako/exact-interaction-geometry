@@ -1,42 +1,37 @@
-# Exact Interaction Geometry — Maximal Proof Stack
+# Exact Interaction Geometry — Core Canonicality and Reconstruction
 
-## Strongest currently defensible EIG Core / EIG canonicality architecture assembled from the three 2026-09-03 reconstructions
+## Canonical semantic closure, doctrine dependence, and exact reconstruction boundaries
 
 **Date:** 2026-09-03 JST  
-**Status:** consolidated theorem stack / strongest defensible synthesis of the supplied reconstructions  
-**Source basis:**
+**Status:** canonical research note  
 
-- `EIG_CORE_MAXIMAL_CANONICALITY_RECONSTRUCTION_20260903.md`
-- `EIG_CORE_MAXIMAL_CANONICALITY_RECONSTRUCTION_20260903(1).md`
-- `EIG_CORE_MAXIMAL_CANONICALITY_RECONSTRUCTION_20260903(4).md`
-
-This document is not a fourth independent architecture. It is a **consolidation**: the maximal-canonicality spine is taken from the strongest corrected reconstruction, while strictly stronger compatible modules from the other reconstructions are retained only after repairing them so that they do not weaken, overstate, or conflict with that spine.
+This note states the generic EIG Core / EIG canonicality architecture, its exact hypotheses, reconstruction gates, and no-go boundaries.
 
 No novelty or priority claim is made for standard constituent category theory, fixed-point theory, enriched Cauchy theory, distributive-law theory, descent theory, or higher-categorical section machinery.
 
 ---
 
-# 0. Executive adjudication of the three source documents
+# 0. Scope and structural synthesis
 
-## 0.1 They are not literally or theorem-theoretically identical
+## 0.1 Structural conclusions
 
-The three reconstructions converge on the same central discovery:
+The framework rests on three structural conclusions:
 
 1. **fixed-doctrine EIG Core is a simultaneous least semantic closure**, not a well-founded modality-stratified construction;
 2. **doctrine selection and core descent are distinct problems**;
 3. **the doctrine-free endpoint is generally moduli/fibration-valued rather than automatically point-valued**.
 
-But they do **not** reach exactly the same strongest theorem package.
+These conclusions are kept logically distinct and combined only where their hypotheses are compatible.
 
-### The unnumbered reconstruction
+### Simultaneous closure and descent
 
-It establishes the crucial replacement of modality-stratified maximality by an order-independent simultaneous closure, and it identifies descent of the doctrine-relative core along the doctrine-forgetful map as the correct doctrine-free question. It is therefore a decisive architectural predecessor.
+The architecture replaces modality-stratified maximality by an order-independent simultaneous closure, and identifies descent of the doctrine-relative core along the doctrine-forgetful map as the correct doctrine-free question.
 
-However, several of its no-go statements are stated in a form that is later sharpened: in particular, noncontractibility of an undifferentiated solution/moduli space is not by itself an absolute obstruction to a canonical point.
+The corresponding no-go language is sharpened accordingly: noncontractibility of an undifferentiated solution/moduli space is not by itself an absolute obstruction to a canonical point.
 
-### Reconstruction `(1)`
+### Closure modality, entailment, functoriality, and operation fibres
 
-This version contains several genuine strengthenings that should survive:
+The following compatible results are included:
 
 - the **full semantic closure modality** `Cl_D(S)` for arbitrary seeds `S`, with EIG Core as its value at the root;
 - the **exact generation entailment/countermodel theorem**;
@@ -44,15 +39,15 @@ This version contains several genuine strengthenings that should survive:
 - the **maximal sound law envelope** in a fixed admissible law language and the exact definability criterion;
 - a useful **operation-restriction fibre** formalism.
 
-But it also contains statements that cannot be retained verbatim:
+The following formulations are excluded:
 
-- its default semantic root is obtained by transporting a raw Tiny root through reduction, whereas contextual reduction need not preserve Tiny/Cauchy roots;
-- its broad slogan that raw nonempty noncontractible reconstruction fibres are already the exact final no-go is too strong;
-- its partial-context theorem makes internal definedness observable unless explicitly repaired.
+- obtaining the default semantic root by transporting a raw Tiny root through reduction, since contextual reduction need not preserve Tiny/Cauchy roots;
+- treating raw nonempty noncontractible reconstruction fibres as already giving the exact final no-go;
+- making internal definedness observable in a partial-context theorem unless it is explicitly admitted.
 
-### Reconstruction `(4)`
+### Canonicality/no-go spine
 
-This is the strongest **master canonicality/no-go spine** among the three. It corrects all of the above structural defects by:
+The canonicality/no-go spine is characterized by:
 
 - imposing the default order **REDUCE → intrinsic root in the reduced world → simultaneous closure**;
 - isolating **root-exactness** as the exact bridge allowing raw-root-first computations;
@@ -65,29 +60,29 @@ This is the strongest **master canonicality/no-go spine** among the three. It co
 - identifying the **core-labelled full doctrine fibration** as the maximal uncollapsed doctrine-free output;
 - giving the walking-arrow counterexample showing that a noncontractible raw moduli space can nevertheless contain a canonical initial object.
 
-## 0.2 Consolidation rule
+## 0.2 Integration rule
 
-The strongest defensible combined document is therefore:
+The integration rule is:
 
-> **Use `(4)` as the logical spine. Import from `(1)` every stronger orthogonal theorem that remains valid after replacing raw-root-first semantics, unqualified contractibility claims, and definedness assumptions by the corrected `(4)` architecture. Treat the unnumbered reconstruction as an architectural predecessor whose strongest content is subsumed by this combination.**
+> **Use reduced-world root extraction and simultaneous semantic closure as the logical spine. Retain every compatible orthogonal theorem only in a form that preserves that spine, the reduced-root ordering, and the specified-solution/invariant no-go boundary.**
 
-This document implements exactly that rule.
+The remainder of the note implements that rule.
 
 ---
 
-# 1. Status notation and the meaning of “strongest”
+# 1. Status notation and scope
 
 Every major statement is assigned one of the following statuses.
 
 - **[STANDARD]** — standard prior mathematics.
 - **[DIRECT]** — immediate categorical/order-theoretic consequence of standard results.
-- **[PROVED]** — proved in this stack from explicitly stated hypotheses.
+- **[PROVED]** — proved here from explicitly stated hypotheses.
 - **[CONDITIONAL]** — valid exactly under separately stated additional hypotheses.
 - **[DEPENDENT]** — relies on a prior EIG result audited elsewhere but not reproved here.
 - **[OPEN]** — a precise remaining lemma is isolated.
 - **[FALSE]** — a stronger tempting statement is ruled out.
 
-“Strongest” means the following.
+When this note uses “strongest” or “maximal,” it means the following.
 
 1. We first maximize the **positive theorem** without importing unproved structure.
 2. We then maximize the matching **negative theorem** by identifying exact solution/section/descent spaces and genuine symmetry obstructions.
@@ -194,7 +189,7 @@ This provenance condition is external to the fixed-point mathematics but is nece
 
 ---
 
-# 3. Contextual reduction: strongest Set-like theorem and higher-level boundary
+# 3. Contextual reduction: Set-like theorem and higher-level boundary
 
 ## 3.1 All-context observational equivalence
 
@@ -603,7 +598,7 @@ Every intermediate object lies in every stable upper bound, hence in `Cl_D(S)`; 
 
 # 6. Functoriality: stronger than equivalence invariance
 
-The strongest compatible result imported from reconstruction `(1)` is a **forward functoriality theorem** for the closure modality. It strengthens the equivalence-only transport theorem without altering the `(4)` maximality boundary.
+A **forward functoriality theorem** for the closure modality strengthens equivalence-only transport without altering the fixed-doctrine maximality boundary.
 
 ## 6.1 Forward doctrine morphism
 
@@ -1090,7 +1085,7 @@ If a stronger independently justified universal condition `P_op` is part of what
 
 If the declared whole operation-reconstruction problem has an automorphism action and the corresponding specified invariant-solution space/homotopy-fixed-point space is empty, no equivalence-invariant reconstruction exists from that declared problem.
 
-This repairs the overstrong claim in reconstruction `(1)` while preserving its useful restriction-fibre formalism.
+This is the specified-solution form of the operation-restriction fibre statement.
 
 ## 11.5 Fully faithful restriction **[SUFFICIENT]**
 
@@ -1144,9 +1139,9 @@ Failure of a recognition gate does not refute fixed-doctrine EIG Core canonicali
 
 ---
 
-# 12. Universal canonicality principle — corrected strongest form
+# 12. Universal canonicality principle
 
-The slogan from reconstruction `(1)`, “canonicality is contractibility of the reconstruction fibre,” becomes exactly correct only after the **entire requested universal property has been built into the solution problem**.
+The slogan “canonicality is contractibility of the reconstruction fibre” becomes exactly correct only after the **entire requested universal property has been built into the solution problem**.
 
 ## 12.1 Specified solution category
 
@@ -1522,7 +1517,7 @@ No stronger unconditional trichotomy follows from raw fibre noncontractibility a
 
 ---
 
-# 17. Protected recurrent EIG: strongest currently justified specialization
+# 17. Protected recurrent EIG: currently justified specialization
 
 The historical recurrent row is
 
@@ -1592,7 +1587,7 @@ The strongest already audited endpoint remains
 
 followed by the previously audited process-nerve equivalence on its stated essential image.
 
-No result in the three reconstructions upgrades this generically to literal equality or to a stronger equivalence level.
+No result established here upgrades this generically to literal equality or to a stronger equivalence level.
 
 ## 17.10 Exact remaining factorization lemma **[OPEN/DEPENDENT]**
 
@@ -1692,7 +1687,7 @@ On `P({a,b})`, declare a class closed iff it contains exactly one of `a,b`. The 
 
 # 19. Prior-art boundary and what is project-specific
 
-This proof stack intentionally separates standard machinery from the project-specific synthesis.
+This note intentionally separates standard machinery from the project-specific synthesis.
 
 ## 19.1 Standard constituent machinery
 
@@ -1747,7 +1742,7 @@ forward doctrine functoriality
   -> full labelled doctrine fibration as maximal uncollapsed output.
 ```
 
-The source documents correctly refrain from claiming that this whole synthesis already has an established literature-priority status. A dedicated exact-isomorphism/prior-art search is a separate task from proving the internal theorem stack.
+This note does not claim that this whole synthesis already has an established literature-priority status. A dedicated exact-isomorphism/prior-art search is separate from proving the internal theorem stack.
 
 ---
 
@@ -1880,7 +1875,7 @@ No recognition theorem is used to define the root or closure. No modality factor
 
 ---
 
-# 22. Strongest boxed theorem for EIG Core
+# 22. Main theorem for EIG Core
 
 > ## THEOREM — Maximal fixed-doctrine EIG Core
 >
@@ -1936,13 +1931,13 @@ No recognition theorem is used to define the root or closure. No modality factor
 >
 > No modality order or well-foundedness is required. Any historical/modality-stratified construction is only a factorization theorem for this closure and is correct exactly under the corresponding preservation/distributive/coherence hypotheses. Density, nervousness, law definability, operation exactness, and process/model reconstruction are downstream gates and do not weaken the fixed-doctrine canonicality theorem.
 
-### Strength statement
+### Scope
 
-This is stronger than the boxed positive theorem of `(4)` in one compatible direction: it promotes the root-specific least closure to the **entire seed-wise closure modality**, adds exact generation entailment, and adds forward lax functoriality. It does **not** weaken `(4)`'s reduced-root ordering, Moore-family existence boundary, internal-vs-external free distinction, or exact doctrine-free no-go architecture.
+The statement is made for the **entire seed-wise closure modality**, not only the root-specific least closure, and includes exact generation entailment and forward lax functoriality. It preserves the reduced-root ordering, Moore-family existence boundary, internal-vs-external free distinction, and exact doctrine-free no-go architecture.
 
 ---
 
-# 23. Strongest boxed theorem for EIG as a whole
+# 23. Main theorem for EIG as a whole
 
 > ## THEOREM — Maximal doctrine-indexed EIG
 >
@@ -1978,7 +1973,7 @@ This is stronger than the boxed positive theorem of `(4)` in one compatible dire
 
 ---
 
-# 24. Strongest boxed impossibility theorem
+# 24. Canonicality/no-go theorem
 
 > ## THEOREM — Exact specified-solution / invariant no-go ceiling
 >
@@ -2033,7 +2028,7 @@ Thus the fixed-doctrine positive theorem and doctrine-free no-go ceiling are not
 
 # 26. What cannot currently be strengthened without new mathematics
 
-The following stronger claims are **not** supported by the three reconstructions and should not appear in EIG Core as established results.
+The following stronger claims are **not established here** and should not appear in EIG Core as established results.
 
 1. Bare lower/extensional semantics canonically determine a unique interaction doctrine.
 2. Level 2 is always the exact irreducible boundary for the Core.
@@ -2056,7 +2051,7 @@ Each item has either an explicit counterexample in the stack or a precise additi
 
 ---
 
-# 27. Recommended canonical repository formulation
+# 27. Canonical repository formulation
 
 A public-facing EIG Core should state the theory in this order:
 
@@ -2082,17 +2077,17 @@ This order makes every strong claim downstream of exactly the hypotheses that ju
 
 ---
 
-# 28. Final consolidated statement
+# 28. Summary statement
 
 **EIG Core.** For every independently meaningful coherent interaction doctrine, first pass to the contextually reduced semantic world, extract its intrinsic reduced root, and then apply the doctrine’s full simultaneous semantic closure modality. Under the maximally general Moore-family hypothesis — in particular under the complete-lattice/monotone-generator hypotheses — this yields the unique least internal semantic subtheory closed under every actual doctrine operation. EIG Core is the value of that closure modality at the reduced root. It is order-independent, admits cyclic generation, is an internal reflection/free semantic closure, has an exact generation-countermodel semantics, is lax-functorial under forward doctrine maps satisfying the stated transport conditions, and is invariant under doctrine equivalence. Stratified modality orders are optional computation/factorization theorems only.
 
 **EIG.** The generic discipline is doctrine-indexed: reduction, root, closure modality, Core, associated structural theory, and only those recognition/operation layers separately certified. From thinner lower semantics, the strongest always-defined information-preserving object is the full compatible-doctrine fibration labelled by these outputs. A point-valued doctrine is a section/selection theorem; a doctrine-independent common Core is a distinct descent/factorization theorem; full-EIG descent is stronger still. Canonicality is tested only after the requested universal property has been included in the solution problem. Contractible specified solution spaces give coherent uniqueness; empty invariant-solution spaces give exact no-go theorems; noncontractible raw moduli by themselves do not rule out canonical initial, terminal, minimal, or reflective selections.
 
-This is the strongest combined form presently supported by the three supplied reconstruction documents without adding unproved hypotheses or weakening the maximality boundary.
+This is the form established here under the stated hypotheses, without adding unproved assumptions or weakening the maximality boundary.
 
 ---
 
-# Appendix A. EIG-exactness labels: strongest nonconflating form
+# Appendix A. EIG-exactness labels: nonconflating form
 
 The term **EIG-exact** should never be used without naming the target layer.
 
@@ -2223,7 +2218,7 @@ A row is not “fully canonical” merely because its fixed-doctrine closure is 
 
 ---
 
-# Appendix C. Meta-EIG after maximal-canonicality repair
+# Appendix C. Meta-EIG under the same canonicality discipline
 
 A meta-discovery envelope is mathematically legitimate only if it obeys the same separation principles.
 
