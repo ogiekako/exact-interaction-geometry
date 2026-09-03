@@ -62,6 +62,12 @@ On a bare start-or-continue instruction, act rather than requesting scope.
 10. Commit and push coherent units. If more useful work fits in the current run, choose the next
     highest-information unit and continue.
 
+Use available subagents, parallel agents, delegated searches/reviews, or similar agentic tools
+when you judge that they materially improve speed, independence, coverage, or adversarial checking.
+This is permission, not a prescribed workflow: decide for yourself whether to use them, how many,
+and for what purpose. Do not spawn agents ceremonially, and reconcile their outputs yourself
+before promoting or pushing a result.
+
 ## 3. Research posture
 
 Be adversarial toward EIG and toward this programme.
