@@ -26,9 +26,22 @@ Recovering typed corners `fPe` from idempotents of an untyped monoid/semigroup i
 
 Categories admit object-free/arrow-only presentations. Semigroup theory also studies the **consolidation** of a category: adjoin zero and send noncomposable products to zero. Restriction-semigroup and related constructions give exact correspondences in important classes.
 
+Specific references include Cranch--Doherty--Struth,
+[*Relational Semigroups and Object-Free Categories*](https://arxiv.org/abs/2001.11895), which
+compares partial-semigroup, multiple-unit, and source/target formulations and discusses adjoining
+zero, and Kostin--Novikov, [*On categorical
+semigroups*](https://arxiv.org/abs/1312.1511), on semigroups categorical at zero.
+
 Abramsky's **Interaction Categories** work beginning in 1993 is an additional important warning against broad terminology claims: interaction and process composition are central there, with specifications serving as objects and suitable processes as morphisms.
 
 The theorem in [`theory/02-category-reconstruction.md`](theory/02-category-reconstruction.md) uses a classical consolidation shell. Its EIG role is narrower: freeze the observation to one-bit composition success, take its full two-sided contextual quotient, identify quotient classes with endpoint types, then retain the prequotient arrows as witness fibres to reconstruct Hom sets. EIG does not claim that categories of interacting processes are new.
+
+The strict-monoidal extension in
+[`theory/06-untyped-monoidal-profile-reconstruction.md`](theory/06-untyped-monoidal-profile-reconstruction.md)
+retains the complete arrow-level tensor table and its conditional bifunctoriality, then recovers
+its hidden object tensor and profiles from the reconstructed identities. This is an operational
+profile calibration, not a claim to derive monoidal composition or PROP symmetry from scalar
+responses.
 
 ## 5. Relations, Chu-style observation, allegories, ludics, and Geometry of Interaction
 

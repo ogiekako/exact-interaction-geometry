@@ -166,6 +166,10 @@ separate a specifically two-dimensional invariant. A genuinely new result must u
 multi-boundary structure or nontrivial coherence in a way not reducible to commutative collapse,
 syntax saturation, or 0-truncation.
 
+The follow-up `theory/06-untyped-monoidal-profile-reconstruction.md` recovers this typing from
+serial continuation success when the complete raw tensor table and its exact laws are retained.
+It does not recover symmetry or weaken the supplied parallel-composition input.
+
 ## 5. Input/output audit
 
 ### Supplied in the untyped theorem
