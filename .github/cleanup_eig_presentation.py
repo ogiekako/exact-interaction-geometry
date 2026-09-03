@@ -1,0 +1,118 @@
+from pathlib import Path
+import re
+
+p = Path('EIG_CORE.md')
+s = p.read_text()
+
+section1 = '''# 1. Scope and canonicality convention
+
+This note states each result together with the hypotheses under which it holds. Research-progress labels are not part of the mathematical presentation: standard inputs are identified in the text or references, statements that need additional assumptions state those assumptions directly, and stronger excluded claims are recorded as scope limits or counterexamples.
+
+The word **canonical** will mean only one of:
+
+- characterized by an explicit universal property;
+- invariant under the declared equivalences of primitive input;
+- unique through a contractible space of coherent choices;
+- or, when no point is justified, canonically **moduli/fibration-valued**.
+
+When this note uses “strongest” or “maximal,” it is relative to the declared universal problem, hypotheses, and equivalence level. It is not a novelty or priority claim.
+
+---
+
+# 2.'''
+s, n = re.subn(r'# 1\. Status notation and scope\n.*?\n---\n\n# 2\.', section1, s, count=1, flags=re.S)
+if n != 1:
+    raise SystemExit('failed to replace Section 1 status taxonomy')
+
+s = s.replace('## 17.10 Exact remaining factorization lemma', '## 17.10 Historical ordered factorization')
+s = s.replace('The desired historical formula', 'The historical factorization formula')
+s = s.replace('is a theorem exactly after proving:', 'holds under the following factorization hypotheses:')
+s = s.replace(
+    'Until this package is assembled, the historical order is a **candidate factorization/normal form** of the already-canonical simultaneous closure, not the foundation of canonicality.',
+    'Under these hypotheses, the historical order is a factorization/normal-form presentation of the already-canonical simultaneous closure. Without them, the simultaneous closure remains the definition and no ordered presentation is asserted.'
+)
+s = s.replace('## 17.11 VIII-U noncircularity gate', '## 17.11 Reconstruction noncircularity')
+s = s.replace('                      [OPEN/DEPENDENT]', '                      (under the Section 17.10 factorization hypotheses)')
+
+section21 = '''# 21. Scope summary
+
+The generic fixed-doctrine result is the least-closure theorem of Section 22. Once the reduced semantic world, intrinsic root, admissible Moore environment, Core-generating semantic operations and coherence, structural theory, and equivalence level are fixed as specified, the closure modality `Cl_D` and the Core `EIGCore(D)` are determined by the least-closure universal property.
+
+Density, nerve or essential-image recognition, operation reconstruction, process/model realization, historical ordered factorizations, and doctrine-free point selection are separate statements with the additional hypotheses given in their respective sections. None of them is used to define or prove the fixed-doctrine Core.
+
+After forgetting doctrine data, the generic result is therefore formulated as the exact section/selection and descent/factorization problems, together with the full labelled doctrine fibration when no point-valued selection or descent is justified. For the recurrent specialization, the ordered row is an optional factorization presentation under Section 17.10; the simultaneous closure remains primary.
+
+---
+
+# 22.'''
+s, n = re.subn(r'# 21\. Exact status ledger\n.*?\n---\n\n# 22\.', section21, s, count=1, flags=re.S)
+if n != 1:
+    raise SystemExit('failed to replace Section 21 status ledger')
+
+s = s.replace('# 26. What cannot currently be strengthened without new mathematics', '# 26. Scope limits')
+s = s.replace(
+    'The following stronger claims are **not established here** and should not appear in EIG Core as established results.',
+    'The generic theorem does not assert the following without the additional hypotheses identified elsewhere in this note.'
+)
+s = s.replace(
+    '13. The recurrent target-first order has already been proved to equal the global simultaneous closure without the closure-factorization lemma.',
+    '13. The recurrent target-first order equals the global simultaneous closure without the Section 17.10 factorization hypotheses.'
+)
+s = s.replace(
+    '14. The recurrent model-Morita/indexed-equipment endpoint has been upgraded to literal equality or a stronger equivalence.',
+    '14. The recurrent model-Morita/indexed-equipment endpoint is literal equality or a stronger equivalence without an additional theorem.'
+)
+
+marker = re.compile(r'\s*\*\*\[(?:STANDARD|DIRECT|PROVED|CONDITIONAL|DEPENDENT|OPEN|FALSE|NOT ESTABLISHED)[^\]]*\]\*\*')
+s = marker.sub('', s)
+plain_marker = re.compile(r'\s*\[(?:STANDARD|DIRECT|PROVED|CONDITIONAL|DEPENDENT|OPEN|FALSE|NOT ESTABLISHED)[^\]]*\]')
+s = plain_marker.sub('', s)
+s = s.replace('The strongest already audited endpoint remains', 'For the recurrent specialization, the retained equivalence endpoint is')
+
+bad = re.findall(r'\[(?:STANDARD|DIRECT|PROVED|CONDITIONAL|DEPENDENT|OPEN|FALSE|NOT ESTABLISHED)[^\]]*\]', s)
+if bad:
+    raise SystemExit(f'residual status markers in EIG_CORE.md: {bad[:10]}')
+if '# 21. Exact status ledger' in s or '# 1. Status notation and scope' in s or 'remaining factorization lemma' in s.lower():
+    raise SystemExit('residual audit/progress section wording')
+p.write_text(s)
+
+r = Path('README.md')
+t = r.read_text()
+t = t.replace('The detailed theorem, counterexample, and status boundaries are in [`EIG_CORE.md`](EIG_CORE.md).',
+              'The detailed theorem, counterexample, and scope boundaries are in [`EIG_CORE.md`](EIG_CORE.md).')
+old = '''## Current public surface
+
+| Item | Status |
+| --- | --- |
+| fixed-doctrine EIG Core as least simultaneous semantic closure | **PROVED** under the stated Moore-family / generation hypotheses |
+| exact generation entailment and stable countermodels | **PROVED** |
+| doctrine-morphism lax closure comparison | **PROVED** under explicit transport hypotheses |
+| doctrine-equivalence invariance | **COROLLARY** |
+| doctrine selection | exact section/selection problem; not generically point-solvable |
+| common doctrine-free Core | exact descent/factorization problem; not automatic |
+| density, recognition, operation exactness, realization | downstream, separately certified |
+| recurrent historical ordered factorization | **OPEN / CONDITIONAL** on the stated factorization lemma |
+| two-state max-plus comparison | public proof; resolves the `d=2` case of the DGM 2017 bounded-state question |
+| binary-Kronecker `5 -> 24` | project rediscovery / calibration; no novelty claim |
+'''
+new = '''## Current public surface
+
+| Item | Role / scope |
+| --- | --- |
+| fixed-doctrine EIG Core | least simultaneous semantic closure under the stated Moore-family / generation hypotheses |
+| exact generation entailment | membership in every closed upper model, with stable countermodels for nonmembership |
+| doctrine-morphism comparison | canonical lax closure comparison under the explicit transport hypotheses |
+| doctrine-equivalence invariance | equivalence of the closure modality and Core at the declared level |
+| doctrine selection | exact section/selection problem; not generically point-valued |
+| common doctrine-free Core | exact descent/factorization problem; not automatic |
+| density, recognition, operation exactness, realization | downstream theorems with their own hypotheses |
+| recurrent historical ordered factorization | optional ordered presentation under the Section 17.10 factorization hypotheses in `EIG_CORE.md` |
+| two-state max-plus comparison | public proof resolving the `d=2` case of the DGM 2017 bounded-state question |
+| binary-Kronecker `5 -> 24` | project rediscovery / calibration; no novelty claim |
+'''
+if old not in t:
+    raise SystemExit('README current-public-surface block not found')
+t = t.replace(old, new)
+if re.search(r'\[(?:PROVED|CONDITIONAL|DEPENDENT|OPEN|FALSE|STANDARD|DIRECT)[^\]]*\]', t):
+    raise SystemExit('residual progress marker in README.md')
+r.write_text(t)
