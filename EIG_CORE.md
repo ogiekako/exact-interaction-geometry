@@ -70,25 +70,9 @@ The remainder of the note implements that rule.
 
 ---
 
-# 1. Status notation and scope
+# 1. Scope and canonicality convention
 
-Every major statement is assigned one of the following statuses.
-
-- **[STANDARD]** — standard prior mathematics.
-- **[DIRECT]** — immediate categorical/order-theoretic consequence of standard results.
-- **[PROVED]** — proved here from explicitly stated hypotheses.
-- **[CONDITIONAL]** — valid exactly under separately stated additional hypotheses.
-- **[DEPENDENT]** — relies on a prior EIG result audited elsewhere but not reproved here.
-- **[OPEN]** — a precise remaining lemma is isolated.
-- **[FALSE]** — a stronger tempting statement is ruled out.
-
-When this note uses “strongest” or “maximal,” it means the following.
-
-1. We first maximize the **positive theorem** without importing unproved structure.
-2. We then maximize the matching **negative theorem** by identifying exact solution/section/descent spaces and genuine symmetry obstructions.
-3. We do not call an ambient raw moduli space a no-go when a stronger intrinsic universal property inside the same supplied problem could still select an initial, terminal, reflective, or minimal point.
-4. We do not weaken EIG Core merely to make a historical factorization or presentation convenient.
-5. Every lower-level component theorem is formulated at the strongest level that remains compatible with the maximal EIG/EIG-Core theorem.
+This note states each result together with the hypotheses under which it holds. Research-progress labels are not part of the mathematical presentation: standard inputs are identified in the text or references, statements that need additional assumptions state those assumptions directly, and stronger excluded claims are recorded as scope limits or counterexamples.
 
 The word **canonical** will mean only one of:
 
@@ -96,6 +80,8 @@ The word **canonical** will mean only one of:
 - invariant under the declared equivalences of primitive input;
 - unique through a contractible space of coherent choices;
 - or, when no point is justified, canonically **moduli/fibration-valued**.
+
+When this note uses “strongest” or “maximal,” it is relative to the declared universal problem, hypotheses, and equivalence level. It is not a novelty or priority claim.
 
 ---
 
@@ -205,7 +191,7 @@ $$
 
 If failure is an admitted result, it participates in the comparison. If failure is hidden, internal definedness is **not** silently added to `Obs`.
 
-## 3.2 Universal contextual quotient **[DIRECT / PROVED under quotientability]**
+## 3.2 Universal contextual quotient
 
 Assume `~_D` is a typed congruence in the selected partial-algebra/restriction sense and the quotient exists:
 
@@ -253,7 +239,7 @@ These are different factorization directions and should never be merged under on
 
 If an admitted closing context distinguishes `x` and `y`, every context-faithful quotient/interface must keep them distinct. Hence in the Set-like quotientable sector, positive separatedification and negative identifiability are exact dual sides of the same contextual relation.
 
-## 3.4 Failure-observable totalization **[PROVED]**
+## 3.4 Failure-observable totalization
 
 When failure is public, replace every sort `X` by
 
@@ -263,11 +249,11 @@ $$
 
 and every partial context by a total map sending undefined execution to `bot`. Then equality of all totalized closing observations is exactly equality of success/failure and, upon success, the observed value. This converts the partial observational theory to an ordinary total congruence problem without smuggling definedness.
 
-## 3.5 Hidden-failure alternative **[CONDITIONAL]**
+## 3.5 Hidden-failure alternative
 
 When failure is not public, no such totalization may be used without changing the doctrine. Work instead with an explicit category of partial maps/restriction categories or partial algebras, choose the morphism notion, and prove contextual equivalence is a congruence there.
 
-## 3.6 Greatest-fixed-point computation **[CONDITIONAL]**
+## 3.6 Greatest-fixed-point computation
 
 In a step-generated **failure-observable totalized** setting, define the standard relation transformer requiring equality of primitive outputs and recursive relatedness of step outputs. Its greatest fixed point is contained in all-closing-context equivalence; equality holds under the usual closing-viability hypothesis that every reachable step output admits an admitted finite closing continuation capable of exposing a difference. The direct all-context relation remains primary when that hypothesis is absent.
 
@@ -279,7 +265,7 @@ In higher settings replace the Set quotient by the correct localization, coinver
 
 # 4. Intrinsic roots: reduced-world first, with an exact bridge theorem
 
-## 4.1 Ordinary presheaf root **[STANDARD]**
+## 4.1 Ordinary presheaf root
 
 For a small ordinary category `C`, in
 
@@ -295,11 +281,11 @@ $$
 
 This is equivalence-invariant in the ordinary presheaf sector.
 
-## 4.2 Enriched root **[STANDARD / CONDITIONAL ON BASE]**
+## 4.2 Enriched root
 
 For a suitable symmetric monoidal closed base `V`, the correct enriched replacement is the Cauchy/absolute-weight completion `Q(C)` inside `[C^op,V]`. Ordinary `Kar(C)` language is insufficient in general.
 
-## 4.3 Indexed/equipment roots **[CONDITIONAL]**
+## 4.3 Indexed/equipment roots
 
 Fibrewise roots must be preserved pseudonaturally by reindexing. In equipment/AVDC settings, the correct atomic/Cauchy notion may involve absolute modules, adjoint modules, representable proarrows, or collage-atomic objects. No theorem identifies arbitrary equipment roots with ordinary objectwise Tiny objects.
 
@@ -335,7 +321,7 @@ $$
 R_D^{\rm tr}\simeq R_D^{\rm red}.
 $$
 
-## 4.5 REDUCE need not preserve Tiny **[PROVED counterexample]**
+## 4.5 REDUCE need not preserve Tiny
 
 Consider the reflection
 
@@ -391,7 +377,7 @@ Raw-root-first is a derived computational shortcut only after root-exactness is 
 
 The strongest fixed-doctrine object is not only one root-generated class. It is the **entire closure modality** on all admissible seed subtheories. EIG Core is one distinguished value of this modality.
 
-## 5.1 Moore-family existence theorem **[PROVED]**
+## 5.1 Moore-family existence theorem
 
 Fix a complete or meet-complete admissible lattice `Sub_D`. Let `Closed_D` be the family of admissible `D`-closed elements. For any seed `S`, let
 
@@ -460,7 +446,7 @@ In the ordinary inclusion-realized presentation, meets in `Sub_D` are computed c
 
 Law-producing rules are not silently folded into this semantic membership relation. They feed the separate `Law_D` / theory-model layer of Section 10 unless the doctrine has explicitly declared laws themselves to be a Core-generating semantic sort.
 
-## 5.3 Closure modality theorem **[PROVED]**
+## 5.3 Closure modality theorem
 
 Under the Moore-family hypotheses of Section 5.1, for every admissible seed `S in Sub_D`,
 
@@ -529,7 +515,7 @@ In the inclusion-realized presentation this meet is the corresponding componentw
 
 This formulation is stronger than a root-specific fixed point because it remembers the whole modality `Cl_D`, while retaining the same core as its root value.
 
-## 5.5 Exact generation entailment / countermodel theorem **[PROVED]**
+## 5.5 Exact generation entailment / countermodel theorem
 
 For any admissible seed `S`, any generated Core sort `sigma`, and any semantic element `x` of sort `sigma`,
 
@@ -555,7 +541,7 @@ When `x` is outside the closure, `Cl_D(S)` itself is a countermodel.
 
 This is an **exact no-go ceiling for generation by the declared D-stability rules on the declared Core sorts**. It must not be overread as saying that `x` cannot be canonically defined by some different, independently supplied structure.
 
-## 5.6 Tarski operator form **[PROVED / STANDARD]**
+## 5.6 Tarski operator form
 
 Let
 
@@ -595,7 +581,7 @@ $$
 
 In a powerset-like inclusion realization, the joins above are the corresponding typed unions. No modality order, well-founded dependency relation, or separately postulated cyclic fixed point is needed.
 
-## 5.7 Transfinite and finitary computation **[STANDARD / CONDITIONAL]**
+## 5.7 Transfinite and finitary computation
 
 Let
 
@@ -614,7 +600,7 @@ $$
 
 One final `Kar` after constructor generation is not sound for partial/domain-sensitive constructors. A retract may appear only after Cauchy closure and then activate a constructor that must be revisited. Therefore Cauchy/retract closure belongs in `C_D` at every stage or, equivalently, in the definition of the admissible closed lattice.
 
-## 5.9 Schedule independence **[PROVED]**
+## 5.9 Schedule independence
 
 Any generation schedule that:
 
@@ -669,7 +655,7 @@ $$
 
 For arbitrary-seed functoriality, condition 6 is unnecessary. Conditions 2–3 are the admissibility hypotheses that make both sides of the comparison and the inverse-image proof well typed; they are not implied by preservation of equivalences alone.
 
-## 6.2 Lax naturality of closure **[PROVED]**
+## 6.2 Lax naturality of closure
 
 For every admissible seed `S in Sub_D`,
 
@@ -780,13 +766,13 @@ $$
 
 be the declared category/2-category/infinity-category of admissible coherent `D`-closed realizations receiving `R_D`.
 
-### Theorem 7.1 — abstract maximal criterion **[STANDARD / DIRECT]**
+### Theorem 7.1 — abstract maximal criterion
 
 A free coherent completion exists **iff** `Comp_D(R_D)` has an initial object. When it exists, the infinity-groupoid of initial objects is contractible.
 
 This is the strongest construction-independent statement. It does not itself prove existence.
 
-## 7.2 Internal reflection theorem **[PROVED]**
+## 7.2 Internal reflection theorem
 
 Inside the semantic world, let `RootSub_D(W_D)` be admissible rooted subtheories and `Closed_D(W_D)` its full subposet of `D`-closed subtheories. Then
 
@@ -814,7 +800,7 @@ Therefore:
 > **Strongest unconditional statement:** internal least semantic closure/reflection.  
 > **Stronger external free-algebra/2-categorical completion:** conditional on a separately proved algebraic presentation, existence theorem, and appropriate faithfulness.
 
-## 7.4 Accessible monadic/2-monadic completion **[CONDITIONAL]**
+## 7.4 Accessible monadic/2-monadic completion
 
 If the doctrine is presented by a suitable accessible monad, 2-monad, pseudomonad, relative pseudomonad, or sketch on a locally presentable ambient setting, the corresponding forgetful functor may admit a left adjoint/free completion. KZ/lax-idempotence is a further theorem, not a consequence of the word “completion”.
 
@@ -832,7 +818,7 @@ $$
 
 Let `c_vee` denote the least common closure.
 
-## 8.2 Ordered factorization theorem **[PROVED]**
+## 8.2 Ordered factorization theorem
 
 If for every `i<j`, the later closure `c_j` preserves `c_i`-closed objects, equivalently
 
@@ -887,21 +873,21 @@ Universal properties can force representing objects and canonical comparison map
 
 Each such strengthening is an independent exactness/coherence theorem.
 
-## 9.2 Distributive laws may fail to exist **[STANDARD]**
+## 9.2 Distributive laws may fail to exist
 
 There are pairs of ordinary monads with no distributive law; published no-go results include the failure of the list monad to distribute over itself in the required sense. Therefore a mixed-monad package cannot be presumed from the separate existence of two modalities.
 
-## 9.3 Pairwise laws require independent Yang-Baxter coherence **[STANDARD / DEPENDENT]**
+## 9.3 Pairwise laws require independent Yang-Baxter coherence
 
 For three or more monads, the standard iterated-distributive-law theorem requires the pairwise distributive laws to satisfy the Yang-Baxter equations. Pairwise law existence by itself is therefore not a theorem of coherent triple composition; Yang-Baxter is separate coherence data.
 
 This note does **not** claim the earlier writer-monad “noncommuting actions” slogan as a proof-complete calibration. For writer monads arising from monoids, the modern monadic-container characterization identifies writer-writer distributive laws with **matching pairs of monoid actions**, not one undifferentiated naive action datum. The exact boundary used here is imported from the standard iterated-distributive-law and no-go literature: Cheng proves composition from pairwise laws satisfying Yang-Baxter, while Zwart–Marsden give obstructions showing that proposed iterated compositions can fail. Section 19.4 records the references.
 
-## 9.4 Higher coherence may be nonunique **[STANDARD calibration]**
+## 9.4 Higher coherence may be nonunique
 
 `G`-graded vector spaces admit associators twisted by inequivalent normalized `3`-cocycles. Thus identical object labels and binary tensor skeletons can support inequivalent higher coherence.
 
-## 9.5 Coherent mixed packages may be nonunique **[STANDARD/PROVED calibration]**
+## 9.5 Coherent mixed packages may be nonunique
 
 Trivial versus inversion actions of `C_2` on `C_3` yield distinct semidirect composites (`C_6` versus `S_3`) from the same constituent writer modalities.
 
@@ -947,7 +933,7 @@ $$
 
 be the arity inclusion.
 
-## 10.2 Certified cellular law compiler **[CONDITIONAL ON CERTIFICATES]**
+## 10.2 Certified cellular law compiler
 
 Suppose a calibration supplies, independently of the desired recognition result:
 
@@ -995,7 +981,7 @@ $$
 
 the standard antitone theory/model Galois connection.
 
-## 10.4 Maximal sound law theory **[DIRECT]**
+## 10.4 Maximal sound law theory
 
 Let
 
@@ -1023,7 +1009,7 @@ $$
 
 This semantic maximum is a ceiling/diagnostic, not a construction of the EIG Core and not a license to smuggle the desired essential image into the doctrine.
 
-## 10.5 Definability closure and exact law-language recognition **[PROVED]**
+## 10.5 Definability closure and exact law-language recognition
 
 Define
 
@@ -1161,7 +1147,7 @@ This is the specified-solution form of the operation-restriction fibre statement
 
 If `Res_J` is fully faithful on a subcategory of admissible operations, the operation and its morphisms/coherences are identifiable there from arity data.
 
-## 11.6 Coend/module reconstruction **[CONDITIONAL SUFFICIENT THEOREM]**
+## 11.6 Coend/module reconstruction
 
 For an operation
 
@@ -1231,7 +1217,7 @@ $$
 
 be its maximal infinity-groupoid.
 
-### Theorem 12.1 — exact specified-solution trichotomy **[DIRECT]**
+### Theorem 12.1 — exact specified-solution trichotomy
 
 - `Sol(P)^simeq = emptyset` iff no `P`-solution exists.
 - `Sol(P)^simeq` contractible iff the `P`-solution is canonical up to contractible coherent choice.
@@ -1305,7 +1291,7 @@ $$
 
 The **full fibre** `F_X`, not only its groupoid core, is primary because noninvertible maps can encode refinement, localization, reflection, initiality, or terminality.
 
-## 13.2 Doctrine selection = section **[STANDARD/DIRECT]**
+## 13.2 Doctrine selection = section
 
 A coherent doctrine selector is exactly a cartesian section
 
@@ -1319,7 +1305,7 @@ or cocartesian section in the covariant convention.
 
 The category of sections is the corresponding limit of the fibre functor.
 
-## 13.3 Equivalence component = homotopy fixed points **[STANDARD/DIRECT]**
+## 13.3 Equivalence component = homotopy fixed points
 
 On the equivalence component of `X`, equivalent to `B Aut(X)`, the space of **bare** doctrine selections is
 
@@ -1390,7 +1376,7 @@ $$
 \mathrm{Desc}_U(K):=\mathrm{Fact}_U(K)^{\simeq}.
 $$
 
-## 14.3 Exact common-core criterion **[DIRECT / PROVED as mapping-space formulation]**
+## 14.3 Exact common-core criterion
 
 - `Desc_U(K)` is nonempty iff `K` factors coherently through `U`.
 - If the **bare factorization problem** is the full requested problem, contractibility means the common semantics-only core is unique up to contractible choice.
@@ -1403,7 +1389,7 @@ $$
 \mathrm{Desc}_{U,P}(K).
 $$
 
-## 14.4 Selection and descent are independent **[PROVED]**
+## 14.4 Selection and descent are independent
 
 A doctrine section `s` yields a selected core `Ks`, but does not imply
 
@@ -1455,7 +1441,7 @@ and `K:BC_3->BC_3` induced by the identity of `C_3`. A descent would require a h
 
 This is a genuine descent obstruction, not merely failure to choose a representative.
 
-## 14.6 Kan-extension shadows **[STANDARD / CONDITIONAL]**
+## 14.6 Kan-extension shadows
 
 If `C` has the required limits/colimits, one can form
 
@@ -1580,7 +1566,7 @@ $$
    \pi_P:\int_{\mathcal M}\mathrm{Sol}_P\to\mathcal M.
 $$
 
-## Theorem 16.1 — canonicality boundary **[PROVED/DIRECT synthesis]**
+## Theorem 16.1 — canonicality boundary
 
 Then:
 
@@ -1659,9 +1645,9 @@ Free finite-word/path generation is an object-generating constructor when indepe
 
 These are naturally external operations/modules/valuations unless represented by internal semantic objects and explicitly included among the object-generating rules.
 
-## 17.9 Strongest historical equivalence endpoint **[DEPENDENT]**
+## 17.9 Strongest historical equivalence endpoint
 
-The strongest already audited endpoint remains
+For the recurrent specialization, the retained equivalence endpoint is
 
 $$
 \boxed{
@@ -1675,9 +1661,9 @@ followed by the previously audited process-nerve equivalence on its stated essen
 
 No result established here upgrades this generically to literal equality or to a stronger equivalence level.
 
-## 17.10 Exact remaining factorization lemma **[OPEN/DEPENDENT]**
+## 17.10 Historical ordered factorization
 
-Let `c_SS`, `c_SPACE`, `c_SEQ` be the corresponding closures **in the reduced recurrent semantic world**. The desired historical formula
+Let `c_SS`, `c_SPACE`, `c_SEQ` be the corresponding closures **in the reduced recurrent semantic world**. The historical factorization formula
 
 $$
 \mathrm{EIGCore}(D_{\rm rec})
@@ -1685,7 +1671,7 @@ $$
 c_{\rm SEQ}c_{\rm SPACE}c_{\rm SS}(R_{\rm rec})
 $$
 
-is a theorem exactly after proving:
+holds under the following factorization hypotheses:
 
 1. all three are closure operators on one common admissible Cauchy lattice;
 2. `c_SPACE` preserves `c_SS`-closed objects;
@@ -1694,9 +1680,9 @@ is a theorem exactly after proving:
 5. these closures exhaust every global object-generating rule;
 6. if a raw-root presentation is used, REDUCE is root-exact and commutes with the required generation steps.
 
-Until this package is assembled, the historical order is a **candidate factorization/normal form** of the already-canonical simultaneous closure, not the foundation of canonicality.
+Under these hypotheses, the historical order is a factorization/normal-form presentation of the already-canonical simultaneous closure. Without them, the simultaneous closure remains the definition and no ordered presentation is asserted.
 
-## 17.11 VIII-U noncircularity gate **[CONDITIONAL]**
+## 17.11 Reconstruction noncircularity
 
 The downstream process nerve remains noncircular only if:
 
@@ -1907,69 +1893,20 @@ D0  recurrent specialization
         +--> D2 preservation + coherence + exhaustion
                |
                +--> D3 historical ordered factorization = global Core
-                      [OPEN/DEPENDENT]
+                      (under the Section 17.10 factorization hypotheses)
 ```
 
 No recognition theorem is used to define the root or closure. No modality factorization is used to prove existence of the global core. No doctrine-free selection is used to prove fixed-doctrine canonicality.
 
 ---
 
-# 21. Exact status ledger
+# 21. Scope summary
 
-| Claim | Strongest current status |
-|---|---|
-| universal contextual quotient in the context-quotientable Set-like sector | **PROVED/DIRECT** |
-| coarsest faithful surjective-interface characterization | **PROVED/DIRECT** |
-| failure totalization when failure is admitted | **PROVED** |
-| hidden-failure handled by the same total theorem | **FALSE** |
-| ordinary presheaf Tiny = Cauchy representables / `Kar(C)` | **STANDARD** |
-| arbitrary REDUCE preserves Tiny/root | **FALSE** |
-| raw-root-first = reduce-then-root | **CONDITIONAL on root-exactness** |
-| every seed has a least closure under Moore-family hypotheses | **PROVED** |
-| monotone complete-lattice semantic generation has least fixed point | **STANDARD/PROVED application** |
-| full closure modality `Cl_D` exists for positive EIG generation | **PROVED** |
-| EIG Core is `Cl_D(R_D)` | **PROVED definition + universal theorem** |
-| exact generation membership = truth in every stable upper model | **PROVED** |
-| nonmembership has a stable countermodel | **PROVED** |
-| modality order required for existence | **FALSE** |
-| ordered modality closure computes the core | **CONDITIONAL on preservation/coherence** |
-| cyclic modalities require an assumed external fixed point | **FALSE under Moore/Tarski hypotheses** |
-| one final `Kar` always suffices | **FALSE** |
-| forward doctrine maps induce lax closure comparisons | **PROVED under explicit transport hypotheses** |
-| doctrine equivalences transport the whole closure modality/core | **COROLLARY** |
-| internal closure is a reflection / free internal semantic completion | **PROVED** |
-| internal closure is always an external free algebra/2-completion | **FALSE/CONDITIONAL** |
-| every EIG completion is KZ | **NOT ESTABLISHED / CONDITIONAL** |
-| universality supplies canonical mates/comparisons | **STANDARD when constructions exist** |
-| universality makes all BC/interchange comparisons invertible | **FALSE** |
-| pairwise distributive laws by themselves imply Yang-Baxter/coherent triple composition | **FALSE; Yang-Baxter is separate standard coherence data** |
-| every pair of modalities admits a distributive law | **FALSE** |
-| heterogeneous variance forbids all monadic packaging | **FALSE** |
-| constructor list forces a unique homogeneous monad | **FALSE** |
-| associated theory must use all ambient Homs | **FALSE** |
-| closure implies density | **FALSE** |
-| maximal sound law theory in fixed language is `Th(G_D)` | **DIRECT** |
-| exact recognition in fixed language iff `G_D=Mod(Th(G_D))` | **PROVED** |
-| compiler completeness follows from compiler soundness | **FALSE** |
-| bare arity restriction uniquely identifies operation iff bare solution fibre is contractible | **DIRECT for the bare problem** |
-| noncontractible raw operation fibre forbids every canonical operation | **FALSE** |
-| fully faithful operation restriction is sufficient for identifiability | **STANDARD/DIRECT** |
-| invertible coend comparison is a strong operation reconstruction theorem | **CONDITIONAL** |
-| coherent doctrine selection is a section of `U` | **STANDARD/DIRECT** |
-| bare selection on an equivalence component is a homotopy-fixed-point space | **STANDARD/DIRECT** |
-| objectwise HFPs suffice over noninvertible semantic maps | **FALSE** |
-| noncontractible raw doctrine moduli alone forbids a canonical doctrine | **FALSE** |
-| specified contractible solution space gives canonicality | **DIRECT** |
-| empty problem-level invariant solution space gives symmetry no-go | **DIRECT** |
-| common semantics-only EIG Core exists exactly as factorization of `K` through `U` | **DIRECT exact criterion** |
-| doctrine nonselection implies core non-descent | **FALSE** |
-| canonical doctrine selection implies common-core descent | **FALSE** |
-| left/right Kan extensions are canonical lower-level shadows | **STANDARD/CONDITIONAL on limits/colimits** |
-| existence of Kan shadows implies descent | **FALSE** |
-| full core-labelled doctrine fibration is lossless relative to `(U,K)` | **DIRECT as information-preserving packaging** |
-| recurrent structural theorems survive at model-Morita/indexed-equipment endpoint | **DEPENDENT on prior audits** |
-| historical recurrent order computes global closure | **OPEN/CONDITIONAL** |
-| recurrent endpoint generically upgrades beyond that equivalence level | **NOT ESTABLISHED** |
+The generic fixed-doctrine result is the least-closure theorem of Section 22. Once the reduced semantic world, intrinsic root, admissible Moore environment, Core-generating semantic operations and coherence, structural theory, and equivalence level are fixed as specified, the closure modality `Cl_D` and the Core `EIGCore(D)` are determined by the least-closure universal property.
+
+Density, nerve or essential-image recognition, operation reconstruction, process/model realization, historical ordered factorizations, and doctrine-free point selection are separate statements with the additional hypotheses given in their respective sections. None of them is used to define or prove the fixed-doctrine Core.
+
+After forgetting doctrine data, the generic result is therefore formulated as the exact section/selection and descent/factorization problems, together with the full labelled doctrine fibration when no point-valued selection or descent is justified. For the recurrent specialization, the ordered row is an optional factorization presentation under Section 17.10; the simultaneous closure remains primary.
 
 ---
 
@@ -2124,9 +2061,9 @@ Thus the fixed-doctrine positive theorem and doctrine-free no-go ceiling are not
 
 ---
 
-# 26. What cannot currently be strengthened without new mathematics
+# 26. Scope limits
 
-The following stronger claims are **not established here** and should not appear in EIG Core as established results.
+The generic theorem does not assert the following without the additional hypotheses identified elsewhere in this note.
 
 1. Bare lower/extensional semantics canonically determine a unique interaction doctrine.
 2. Level 2 is always the exact irreducible boundary for the Core.
@@ -2140,8 +2077,8 @@ The following stronger claims are **not established here** and should not appear
 10. A canonical doctrine selector implies common-core descent.
 11. Failure to select a doctrine implies failure of Core descent.
 12. A Kan-extension aggregate is automatically the common EIG Core.
-13. The recurrent target-first order has already been proved to equal the global simultaneous closure without the closure-factorization lemma.
-14. The recurrent model-Morita/indexed-equipment endpoint has been upgraded to literal equality or a stronger equivalence.
+13. The recurrent target-first order equals the global simultaneous closure without the Section 17.10 factorization hypotheses.
+14. The recurrent model-Morita/indexed-equipment endpoint is literal equality or a stronger equivalence without an additional theorem.
 15. The law compiler is complete merely because it is sound.
 16. Failure of one coend reconstruction proves abstract operation non-identifiability.
 

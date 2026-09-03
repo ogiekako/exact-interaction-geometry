@@ -191,21 +191,21 @@ In particular, EIG does **not** claim generically that:
 - forgetting the doctrine leaves one canonical point-valued Core;
 - an interaction structure automatically determines physical locality, microscopic atomization, or metric geometry.
 
-The detailed theorem, counterexample, and status boundaries are in [`EIG_CORE.md`](EIG_CORE.md).
+The detailed theorem, counterexample, and scope boundaries are in [`EIG_CORE.md`](EIG_CORE.md).
 
 ## Current public surface
 
-| Item | Status |
+| Item | Role / scope |
 | --- | --- |
-| fixed-doctrine EIG Core as least simultaneous semantic closure | **PROVED** under the stated Moore-family / generation hypotheses |
-| exact generation entailment and stable countermodels | **PROVED** |
-| doctrine-morphism lax closure comparison | **PROVED** under explicit transport hypotheses |
-| doctrine-equivalence invariance | **COROLLARY** |
-| doctrine selection | exact section/selection problem; not generically point-solvable |
+| fixed-doctrine EIG Core | least simultaneous semantic closure under the stated Moore-family / generation hypotheses |
+| exact generation entailment | membership in every closed upper model, with stable countermodels for nonmembership |
+| doctrine-morphism comparison | canonical lax closure comparison under the explicit transport hypotheses |
+| doctrine-equivalence invariance | equivalence of the closure modality and Core at the declared level |
+| doctrine selection | exact section/selection problem; not generically point-valued |
 | common doctrine-free Core | exact descent/factorization problem; not automatic |
-| density, recognition, operation exactness, realization | downstream, separately certified |
-| recurrent historical ordered factorization | **OPEN / CONDITIONAL** on the stated factorization lemma |
-| two-state max-plus comparison | public proof; resolves the `d=2` case of the DGM 2017 bounded-state question |
+| density, recognition, operation exactness, realization | downstream theorems with their own hypotheses |
+| recurrent historical ordered factorization | optional ordered presentation under the Section 17.10 factorization hypotheses in `EIG_CORE.md` |
+| two-state max-plus comparison | public proof resolving the `d=2` case of the DGM 2017 bounded-state question |
 | binary-Kronecker `5 -> 24` | project rediscovery / calibration; no novelty claim |
 
 A conservative physics-facing note is kept in [`EIG_PHYSICS_BOUNDARIES_20260902.md`](EIG_PHYSICS_BOUNDARIES_20260902.md). It is not part of the generic foundation and does not claim that EIG is a physical theory.
