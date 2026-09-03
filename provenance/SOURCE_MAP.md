@@ -11,14 +11,13 @@ References to the ledger below describe research provenance. They are not valida
 
 ## Foundational extraction
 
-The finite response calculus, interaction-first objecthood formulation, and category-reconstruction theorem were extracted from EIG material developed on 2026-08-30/31. Public files:
+The finite response calculus and category-reconstruction theorem were extracted from EIG material developed on 2026-08-30/31. The current canonical EIG Core formulation was reconstructed and audited separately on 2026-09-03. Public files:
 
+- [`../EIG_CORE.md`](../EIG_CORE.md)
 - [`../theory/01-finite-exact-interactions.md`](../theory/01-finite-exact-interactions.md)
-- [`../FOUNDATIONS.md`](../FOUNDATIONS.md)
 - [`../theory/02-category-reconstruction.md`](../theory/02-category-reconstruction.md)
-- [`../theory/03-weir.md`](../theory/03-weir.md)
 
-The larger research ledger is intentionally not mirrored here. Newer results are imported only when they improve the public mathematical surface without importing unresolved dependencies or programme history.
+Earlier programme-level foundation, boundary-atlas, WEIR, roadmap, and status documents are preserved in Git history rather than kept as competing current formulations. The larger research ledger is intentionally not mirrored here.
 
 ## Two-state max-plus comparison theorem
 
