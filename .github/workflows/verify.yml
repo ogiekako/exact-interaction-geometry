@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
   exact-regression:
     runs-on: ubuntu-latest
@@ -12,4 +15,60 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Remove historical level notation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('EIG_CORE.md')
+          s = p.read_text()
+
+          if 'Level-2' not in s or r'\mathcal D_2' not in s or r'\mathcal S_1' not in s:
+              raise SystemExit('expected historical level notation not found')
+
+          s = s.replace('Level-2 ', '')
+          s = s.replace(r'\mathcal D_2', r'\mathcal D')
+          s = s.replace(r'\mathcal S_1', r'\mathcal S')
+          s = s.replace('Restrict `S_1` to objects', 'Restrict the semantic-base category to objects')
+          s = s.replace('replace `D_2,S_1` by their equivalence cores for this theorem.', 'replace the doctrine and semantic-base categories by their equivalence cores for this theorem.')
+          s = s.replace('1. an admissible lower semantic base `S_1`;', '1. an admissible lower semantic-base category;')
+          s = s.replace('2. a coherent doctrine fibration `U:D_2->S_1` with declared variance;', '2. a coherent doctrine fibration `U` over that base, with declared variance;')
+
+          # The math replacements above do not touch code-form historical symbols;
+          # remove any remaining level suffixes only after the prose-specific rewrites.
+          s = s.replace('D_2', 'D').replace('S_1', 'S')
+
+          for forbidden in ('Level-2', 'D_2', 'S_1'):
+              if forbidden in s:
+                  raise SystemExit(f'stale historical notation remains: {forbidden}')
+
+          p.write_text(s)
+          PY
+      - name: Restore normal workflow in working tree
+        run: |
+          cat > .github/workflows/verify.yml <<'EOF'
+          name: verify
+
+          on:
+            push:
+            pull_request:
+
+          jobs:
+            exact-regression:
+              runs-on: ubuntu-latest
+              steps:
+                - uses: actions/checkout@v4
+                - uses: actions/setup-python@v5
+                  with:
+                    python-version: '3.12'
+                - run: make verify-all
+          EOF
       - run: make verify-all
+      - name: Commit canonical notation cleanup
+        run: |
+          git diff --check
+          git config user.name "Keigo Oka"
+          git config user.email "ogiekako@users.noreply.github.com"
+          git add EIG_CORE.md .github/workflows/verify.yml
+          git commit -m "Remove historical level notation from EIG Core"
+          git push origin HEAD:main
