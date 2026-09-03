@@ -57,7 +57,7 @@ The canonicality/no-go spine is characterized by:
 - applying contractibility only to a **fully specified solution problem**;
 - using **problem-level homotopy fixed points/global sections** for genuine invariant-selection no-go theorems;
 - distinguishing doctrine selection from common-core descent;
-- identifying the **core-labelled full doctrine fibration** as the maximal uncollapsed doctrine-free output;
+- identifying the **core-labelled full doctrine fibration** as the lossless doctrine-free packaging relative to the declared moduli problem;
 - giving the walking-arrow counterexample showing that a noncontractible raw moduli space can nevertheless contain a canonical initial object.
 
 ## 0.2 Integration rule
@@ -108,7 +108,7 @@ Fix a categorical level: ordinary, enriched, indexed, bicategorical/equipment-va
 \[
 D=(\mathcal E_{\rm raw},\mathsf{Ctx},\mathsf{Obs},q,
 \mathcal W_D,\mathsf{RootSpec},\mathsf{Op},\mathsf{Coh},
-\mathcal W_D^{\rm str},\mathcal L_D,\simeq_D).
+\mathcal W_D^{\rm str},\mathsf{Sub}_D,\simeq_D).
 \]
 
 The components have distinct logical roles.
@@ -142,6 +142,8 @@ These cases must not be conflated.
 
 `Op` specifies each genuine semantic constructor with its arity, variance, domain, parameters, and whether it generates objects, cells, laws, or merely external valuations.
 
+The semantic closure defining EIG Core acts only on the declared **Core-generating semantic sorts** — objects, cells, or higher cells that are components of an admissible structured subtheory. Law-producing operations are handled by the separate law layer of Section 10, and external valuations by the downstream operation/observation layer, unless a doctrine explicitly internalizes either as a semantic Core sort.
+
 ### P7. Non-forced coherence
 
 `Coh` contains every distributive/interchange law, associator, descent datum, or higher coherence not uniquely forced by an already stated universal property.
@@ -152,7 +154,7 @@ These cases must not be conflated.
 
 ### P9. Admissible-subtheory universe
 
-`L_D` is a set-sized complete lattice, or more generally a meet-complete Moore environment, of admissible replete/Cauchy-closed semantic subtheories/structured subobjects.
+`Sub_D` is a set-sized complete lattice, or more generally a meet-complete Moore environment, of admissible replete/Cauchy-closed semantic subtheories/structured subobjects. This notation is reserved for semantic subtheories and is distinct from the law theories `L_D^comp` and `L_D^max` introduced in Section 10.
 
 ### P10. Equivalence level
 
@@ -385,13 +387,13 @@ Raw-root-first is a derived computational shortcut only after root-exactness is 
 
 ---
 
-# 5. The maximal fixed-doctrine invariant: the full semantic closure modality
+# 5. The fixed-doctrine invariant: the full semantic closure modality
 
 The strongest fixed-doctrine object is not only one root-generated class. It is the **entire closure modality** on all admissible seed subtheories. EIG Core is one distinguished value of this modality.
 
-## 5.1 Maximally general Moore-family existence theorem **[PROVED]**
+## 5.1 Moore-family existence theorem **[PROVED]**
 
-Fix a complete or meet-complete admissible lattice `L_D`. Let `Closed_D` be the family of admissible `D`-closed elements. For any seed `S`, let
+Fix a complete or meet-complete admissible lattice `Sub_D`. Let `Closed_D` be the family of admissible `D`-closed elements. For any seed `S`, let
 
 \[
 \mathcal M_D(S)=\{B\in\operatorname{Closed}_D:S\le B\}.
@@ -400,7 +402,7 @@ Fix a complete or meet-complete admissible lattice `L_D`. Let `Closed_D` be the 
 Assume:
 
 1. `M_D(S)` is nonempty; and
-2. it is closed under arbitrary meets in `L_D`.
+2. it is closed under arbitrary meets in `Sub_D`.
 
 Define
 
@@ -422,53 +424,64 @@ Meet-closure makes `∧M_D(S)` itself closed. It contains `S` and is below every
 
 This is more general than Tarski. It also shows what can fail: negative/exclusive choice rules need not define a Moore family, and then a least point-valued core need not exist.
 
-## 5.2 Positive semantic generation instance formulation
+## 5.2 Positive many-sorted semantic generation instance formulation
 
-For the ordinary EIG situation, let `Inst_D` be the universe-bounded family of all actual object-generating semantic instances in the **reduced** world. An instance `xi` has:
+Let `Sort_D^core` be the declared family of semantic sorts that participate in EIG Core closure. These may include objects, cells, and higher cells, with the incidence/domain/codomain structure required by `W_D^str`. An admissible element
 
-- a set-sized support `supp(xi)`;
+\[
+A\in\mathsf{Sub}_D
+\]
+
+is therefore a structured family of components `A_sigma` for `sigma in Sort_D^core`, not merely an object class.
+
+Let `Inst_D` be the universe-bounded family of all actual **Core-generating** positive semantic instances in the reduced world. An instance `xi` has:
+
+- a set-sized typed support `supp(xi)`;
 - any fixed structural diagram/parameters required by the doctrine;
-- an output `out(xi)`.
+- an output sort `sort(xi) in Sort_D^core`;
+- an output `out(xi)` of that sort.
 
-Admissibility of an instance is doctrine data and does not depend on the candidate closed class; a candidate class only determines whether its support is present.
+Admissibility of an instance is doctrine data and does not depend on the candidate closed structured subtheory. A candidate `A` only determines whether every typed entry of `supp(xi)` is present, with the required incidences landing in `A`.
 
-A class/subtheory `A` is **D-stable** if it is:
+An admissible structured subtheory `A` is **D-stable** if it is:
 
 1. replete under the declared equivalence;
 2. closed under the declared Cauchy/split-retract completion;
-3. closed under every actual semantic generation instance:
+3. closed under every actual Core-generating semantic instance:
    \[
-   \operatorname{supp}(\xi)\subseteq A
+   \operatorname{supp}(\xi)\le A
    \Rightarrow
-   \operatorname{out}(\xi)\in A.
+   \operatorname{out}(\xi)\in_{\operatorname{sort}(\xi)} A.
    \]
 
 Root containment is deliberately not part of “stable”.
 
-Intersections of such stable classes are stable, so they form a Moore family.
+In the ordinary inclusion-realized presentation, meets in `Sub_D` are computed componentwise on the declared semantic sorts. Hence arbitrary meets/intersections of `D`-stable structured subtheories are again `D`-stable: if a typed support lies in the meet, it lies in every factor, so the typed output lies in every factor and therefore in the meet.
+
+Law-producing rules are not silently folded into this semantic membership relation. They feed the separate `Law_D` / theory-model layer of Section 10 unless the doctrine has explicitly declared laws themselves to be a Core-generating semantic sort.
 
 ## 5.3 Closure modality theorem **[PROVED]**
 
-For every seed `S`,
+Under the Moore-family hypotheses of Section 5.1, for every admissible seed `S in Sub_D`,
 
 \[
 \boxed{
 \operatorname{Cl}_D(S)
 =
-\bigcap\{B:S\subseteq B,\ B\text{ is D-stable}\}.
+\bigwedge\{B\in\mathsf{Sub}_D:S\le B,\ B\text{ is D-stable}\}.
 }
 \]
 
-It is the unique least `D`-stable semantic subtheory containing `S`, and
+It is the unique least `D`-stable semantic structured subtheory above `S`, and
 
 \[
-S\subseteq\operatorname{Cl}_D(S),
+S\le\operatorname{Cl}_D(S),
 \]
 
 \[
-S\subseteq T
+S\le T
 \Rightarrow
-\operatorname{Cl}_D(S)\subseteq\operatorname{Cl}_D(T),
+\operatorname{Cl}_D(S)\le\operatorname{Cl}_D(T),
 \]
 
 \[
@@ -479,7 +492,17 @@ S\subseteq T
 
 Thus a fixed doctrine canonically determines an idempotent semantic closure modality, not merely a single preferred class.
 
-## 5.4 EIG Core — strongest fixed-doctrine definition
+In the ordinary powerset-like/many-sorted inclusion presentation of Section 5.2, the meet is componentwise literal intersection, so the same formula may be written
+
+\[
+\operatorname{Cl}_D(S)
+=
+\bigcap\{B:S\subseteq B,\ B\text{ is D-stable}\}.
+\]
+
+The meet formula is primary in the general structured lattice.
+
+## 5.4 EIG Core — fixed-doctrine definition
 
 The EIG Core is
 
@@ -493,26 +516,28 @@ The EIG Core is
 
 where `R_D` is the intrinsic **reduced** root.
 
-Equivalently,
+Equivalently, in the admissible structured lattice,
 
 \[
 \operatorname{EIGCore}(D)
 =
-\bigcap
-\{B:R_D\subseteq B,\ B\text{ is D-stable}\}.
+\bigwedge
+\{B\in\mathsf{Sub}_D:R_D\le B,\ B\text{ is D-stable}\}.
 \]
+
+In the inclusion-realized presentation this meet is the corresponding componentwise intersection.
 
 This formulation is stronger than a root-specific fixed point because it remembers the whole modality `Cl_D`, while retaining the same core as its root value.
 
 ## 5.5 Exact generation entailment / countermodel theorem **[PROVED]**
 
-For any seed `S` and semantic object/cell `x` of the generated sort,
+For any admissible seed `S`, any generated Core sort `sigma`, and any semantic element `x` of sort `sigma`,
 
 \[
 \boxed{
-x\in\operatorname{Cl}_D(S)
+x\in_\sigma\operatorname{Cl}_D(S)
 \iff
-\forall B\,[S\subseteq B\land B\text{ D-stable}\Rightarrow x\in B].
+\forall B\in\mathsf{Sub}_D\,[S\le B\land B\text{ D-stable}\Rightarrow x\in_\sigma B].
 }
 \]
 
@@ -520,21 +545,28 @@ Therefore
 
 \[
 \boxed{
-x\notin\operatorname{Cl}_D(S)
+x\notin_\sigma\operatorname{Cl}_D(S)
 \iff
-\exists B\supseteq S\text{ D-stable with }x\notin B.}
+\exists B\in\mathsf{Sub}_D\text{ with }S\le B,\ B\text{ D-stable, and }x\notin_\sigma B.
+}
 \]
 
 When `x` is outside the closure, `Cl_D(S)` itself is a countermodel.
 
-This is an **exact no-go ceiling for generation by the declared D-stability rules**. It must not be overread as saying that `x` cannot be canonically defined by some different, independently supplied structure.
+This is an **exact no-go ceiling for generation by the declared D-stability rules on the declared Core sorts**. It must not be overread as saying that `x` cannot be canonically defined by some different, independently supplied structure.
 
 ## 5.6 Tarski operator form **[PROVED / STANDARD]**
 
-Let `C_D` be repletion plus the declared Cauchy closure. For each generating rule `rho`, let
+Let
 
 \[
-G_\rho:\mathcal L_D\to\mathcal L_D
+C_D:\mathsf{Sub}_D\to\mathsf{Sub}_D
+\]
+
+be the closure operator implementing repletion plus the declared Cauchy closure. For each Core-generating rule `rho`, let
+
+\[
+G_\rho:\mathsf{Sub}_D\to\mathsf{Sub}_D
 \]
 
 be monotone. Define, for seed `S`,
@@ -543,7 +575,7 @@ be monotone. Define, for seed `S`,
 \Gamma_{D,S}(A)
 =
 C_D\left(
-S\cup A\cup\bigcup_{\rho}G_\rho(A)
+S\vee A\vee\bigvee_{\rho}G_\rho(A)
 \right).
 \]
 
@@ -561,7 +593,7 @@ In particular,
 \operatorname{EIGCore}(D)=\mu\Gamma_{D,R_D}.
 \]
 
-No modality order, well-founded dependency relation, or separately postulated cyclic fixed point is needed.
+In a powerset-like inclusion realization, the joins above are the corresponding typed unions. No modality order, well-founded dependency relation, or separately postulated cyclic fixed point is needed.
 
 ## 5.7 Transfinite and finitary computation **[STANDARD / CONDITIONAL]**
 
@@ -611,70 +643,106 @@ F:D\to D'
 contains a semantic structural functor/cell map
 
 \[
-F_W:\mathcal W_D^{\rm str}\to\mathcal W_{D'}^{\rm str}
+F_W:\mathcal W_D^{\rm str}\to\mathcal W_{D'}^{\rm str}.
 \]
 
-such that:
+For every admissible structured seed/subtheory `A in Sub_D`, assume the image admits a least target-admissible hull
+
+\[
+F_\sharp(A)
+:=
+\operatorname{AdmHull}_{D'}(F_W(A))
+\in\mathsf{Sub}_{D'}.
+\]
+
+The forward-morphism hypotheses are:
 
 1. declared equivalences are preserved;
-2. for the root-specific theorem, `F_W(R_D)` lies in the repletion/closure of `R_{D'}`;
-3. every source generation instance transports to an admissible target generation instance with transported support and equivalent transported output;
-4. all typing, domains, and coherence required for this transport are preserved.
+2. the admissible hulls `F_sharp(A)` required above exist;
+3. for every `D'`-closed admissible `B in Sub_{D'}`, the structured inverse image `F_W^{-1}(B)` is an admissible replete/Cauchy-closed element of `Sub_D`;
+4. every source Core-generating semantic instance transports to an admissible target Core-generating instance with transported support and equivalent transported output;
+5. all typing, domains, incidences, and coherence required for this transport are preserved;
+6. for the root-specific theorem,
+   \[
+   F_\sharp(R_D)\le \operatorname{Cl}_{D'}(R_{D'}).
+   \]
 
-For arbitrary-seed functoriality, condition 2 is unnecessary.
+For arbitrary-seed functoriality, condition 6 is unnecessary. Conditions 2–3 are the admissibility hypotheses that make both sides of the comparison and the inverse-image proof well typed; they are not implied by preservation of equivalences alone.
 
 ## 6.2 Lax naturality of closure **[PROVED]**
 
-For every seed `S`,
+For every admissible seed `S in Sub_D`,
 
 \[
 \boxed{
-F_W(\operatorname{Cl}_D(S))
-\subseteq
-\operatorname{Cl}_{D'}(F_W(S))
+F_\sharp(\operatorname{Cl}_D(S))
+\le
+\operatorname{Cl}_{D'}(F_\sharp(S)).
 }
 \]
-
-up to target repletion.
 
 ### Proof
 
 Let
 
 \[
-B=F_W^{-1}(\operatorname{Cl}_{D'}(F_W(S))).
+C=\operatorname{Cl}_{D'}(F_\sharp(S)),
+\qquad
+B=F_W^{-1}(C).
 \]
 
-`B` is replete because `F_W` preserves declared equivalence. It is retract/Cauchy closed under the stated transport assumptions. If a source generation instance has support in `B`, its transported target instance has support in the target closure, so its output lies there; hence the source output lies in `B`. Therefore `B` is `D`-stable and contains `S`. Leastness gives
+By hypothesis 3, `B` is an admissible replete/Cauchy-closed element of `Sub_D`. Since `F_W(S)` lies in its admissible hull `F_sharp(S)`, and `F_sharp(S) <= C`, we have `S <= B`.
+
+If a source Core-generating instance has typed support in `B`, hypothesis 4 transports it to a target instance with support in `C`; target stability puts its output in `C`, hence the source output lies in `B`. Therefore `B` is `D`-stable. Leastness gives
 
 \[
-\operatorname{Cl}_D(S)\subseteq B,
+\operatorname{Cl}_D(S)\le B.
 \]
 
-which is the claimed forward inclusion. ∎
+Applying `F_W`, its image lies in `C`; by leastness of the target admissible hull,
+
+\[
+F_\sharp(\operatorname{Cl}_D(S))\le C
+=
+\operatorname{Cl}_{D'}(F_\sharp(S)).
+\]
+
+This is the claimed typed forward comparison. ∎
 
 ## 6.3 Core functoriality
 
-If `F` also preserves the root in the above sense,
+If `F` also satisfies the root condition 6 above, then
 
 \[
 \boxed{
-F_W(\operatorname{EIGCore}(D))
-\subseteq
+F_\sharp(\operatorname{EIGCore}(D))
+\le
 \operatorname{EIGCore}(D').
 }
 \]
 
-Thus on the category of forward doctrine morphisms satisfying these hypotheses, EIG Core is a functorial/lax-functorial assignment rather than merely an equivalence invariant.
+Indeed, Section 6.2 gives
+
+\[
+F_\sharp(\operatorname{Cl}_D(R_D))
+\le
+\operatorname{Cl}_{D'}(F_\sharp(R_D))
+\le
+\operatorname{Cl}_{D'}(\operatorname{EIGCore}(D'))
+=
+\operatorname{EIGCore}(D').
+\]
+
+Thus on the category of forward doctrine morphisms satisfying these hypotheses, EIG Core is a typed lax-functorial assignment rather than merely an equivalence invariant.
 
 ## 6.4 Equivalence invariance **[COROLLARY]**
 
-If `F` is an equivalence of primitive coherent doctrines with a structure-preserving quasi-inverse, the two lax comparisons yield
+If `F` is an equivalence of primitive coherent doctrines with a structure-preserving quasi-inverse satisfying the same admissibility/transport hypotheses, the two lax comparisons yield
 
 \[
-F_W(\operatorname{Cl}_D(S))
+F_\sharp(\operatorname{Cl}_D(S))
 \simeq
-\operatorname{Cl}_{D'}(F_W(S)),
+\operatorname{Cl}_{D'}(F_\sharp(S)),
 \]
 
 and in particular
@@ -687,7 +755,7 @@ and in particular
 }
 \]
 
-No separate preservation axiom for a genuinely derived reduced root or core is needed once the primitive selector/reduction data are transported.
+No separate preservation axiom for a genuinely derived reduced root or core is needed once the primitive selector/reduction data and admissible-subtheory structure are transported.
 
 ## 6.5 Exact functoriality boundary
 
@@ -759,7 +827,7 @@ If the doctrine is presented by a suitable accessible monad, 2-monad, pseudomona
 Suppose modalities determine closure operators
 
 \[
-c_1,\ldots,c_n:\mathcal L_D\to\mathcal L_D.
+c_1,\ldots,c_n:\mathsf{Sub}_D\to\mathsf{Sub}_D.
 \]
 
 Let `c_vee` denote the least common closure.
@@ -823,9 +891,11 @@ Each such strengthening is an independent exactness/coherence theorem.
 
 There are pairs of ordinary monads with no distributive law; published no-go results include the failure of the list monad to distribute over itself in the required sense. Therefore a mixed-monad package cannot be presumed from the separate existence of two modalities.
 
-## 9.3 Pairwise laws may fail Yang-Baxter **[PROVED calibration]**
+## 9.3 Pairwise laws require independent Yang-Baxter coherence **[STANDARD / DEPENDENT]**
 
-Writer monads associated to suitable monoids admit pairwise distributive laws induced by actions, while noncommuting actions produce distinct two routes around the Yang-Baxter hexagon. Hence pairwise comparison data do not suffice for coherent triple composition.
+For three or more monads, the standard iterated-distributive-law theorem requires the pairwise distributive laws to satisfy the Yang-Baxter equations. Pairwise law existence by itself is therefore not a theorem of coherent triple composition; Yang-Baxter is separate coherence data.
+
+This note does **not** claim the earlier writer-monad “noncommuting actions” slogan as a proof-complete calibration. For writer monads arising from monoids, the modern monadic-container characterization identifies writer-writer distributive laws with **matching pairs of monoid actions**, not one undifferentiated naive action datum. The exact boundary used here is imported from the standard iterated-distributive-law and no-go literature: Cheng proves composition from pairwise laws satisfying Yang-Baxter, while Zwart–Marsden give obstructions showing that proposed iterated compositions can fail. Section 19.4 records the references.
 
 ## 9.4 Higher coherence may be nonunique **[STANDARD calibration]**
 
@@ -1273,7 +1343,7 @@ be the space of coherent sections satisfying `P`.
 
 Then the exact trichotomy of Section 12 applies. For the **whole problem** `(U,P)`, the problem-level homotopy-fixed-point/global-section criterion supplies the exact invariant-selection no-go.
 
-## 13.5 Strongest always-defined doctrine output
+## 13.5 Always-defined doctrine output
 
 Even without a section, the doctrine fibration `U` itself is canonical relative to the fixed moduli problem. Fibrewise it retains:
 
@@ -1365,6 +1435,14 @@ and
 
 This is the exact correction to the slogan that “Level 2 is the irreducible core boundary.”
 
+The two nonimplications have separate witnesses. CE7 witnesses doctrine nonselection with contractible core descent. For the converse, let
+
+\[
+U:[1]\to *
+\]
+
+be the unique functor and let `K:[1]->[1]` be the identity. The section category is `[1]`; its initial section selects `0`, so the specified **initial-section** selection problem is contractibly canonical. But any `bar K:*->[1]` is constant, and no constant functor is naturally equivalent to `id_[1]` because `0` and `1` are not equivalent in `[1]`. Hence `Desc_U(K)` is empty. Thus a canonical specified doctrine selector still need not imply common-core descent.
+
 ## 14.5 Coherent isotropy can obstruct descent
 
 A representative obstruction is the inclusion
@@ -1391,7 +1469,7 @@ These are canonical invariant/coinvariant **shadows** at lower semantics, with u
 
 ---
 
-# 15. Strongest doctrine-free EIG object: the full labelled fibration
+# 15. Doctrine-free EIG object: the full labelled fibration
 
 EIG is richer than EIG Core. A fixed doctrine carries not only `Core(D)` but the reduction, root-selector value, full closure modality, structural arity theory, and any separately certified recognition/operation layers.
 
@@ -1425,9 +1503,9 @@ These optional layers are included only with their actual status; closure does n
 
 Across forward doctrine maps preserving the relevant structure, the closure/core layer is functorial by Section 6. Other package components are functorial only when their own transport hypotheses are proved.
 
-Thus the strongest unconditional cross-doctrine object is not a fictitious strict functor containing every optional layer, but a **doctrine-indexed system with a proved core functor and separately certified extensions**.
+Thus the unconditional cross-doctrine object justified by the generic theory is not a fictitious strict functor containing every optional layer, but a **doctrine-indexed system with a proved core functor and separately certified extensions**.
 
-## 15.3 Maximal uncollapsed doctrine-free core object
+## 15.3 Lossless doctrine-free core packaging
 
 At lower semantic object `X`, define the core-labelled full doctrine fibre
 
@@ -1448,11 +1526,11 @@ Globally this is the information carried by
 (U,K):\mathcal D_2\to\mathcal S_1\times\mathcal C.
 \]
 
-It retains every compatible doctrine, noninvertible doctrine map, core label, equivalence, isotropy, and reindexing map. It is therefore the **maximal uncollapsed doctrine-free output relative to the fixed moduli problem `(U,K)`**.
+It retains every compatible doctrine, noninvertible doctrine map, core label, equivalence, isotropy, and reindexing map. It is therefore a **lossless doctrine-free packaging relative to the fixed moduli problem `(U,K)`**: the packaging is simply the supplied doctrine fibration together with the proved core label, so no doctrine/core information present in `(U,K)` is discarded.
 
-“Maximal” here means information-preserving: no compatible doctrine/core information supplied by `(U,K)` is discarded. It does **not** say that no further canonical aggregate can ever be extracted. Any such aggregate is a new universal problem whose solution space must be audited.
+This is an information-preservation statement, not a terminal/initial maximality theorem in a category of all possible doctrine-free outputs. Any further canonical aggregate is a new universal problem whose solution space must be audited.
 
-## 15.4 Maximal uncollapsed full-EIG object
+## 15.4 Lossless full-EIG packaging
 
 Where the richer fixed-doctrine package has been proved functorial, label the same doctrine fibre by that package rather than only by its core:
 
@@ -1467,7 +1545,7 @@ D\mapsto\mathsf{EIG}(D)
 }
 \]
 
-This is the strongest honest doctrine-free form of **EIG itself**. It is generally richer than a semantics-only core because doctrine ambiguity may survive in witness structure, coherence, law/operation data, or presentation even when the core descends.
+This is the corresponding lossless doctrine-indexed form of **EIG itself** relative to the proved package data. It is generally richer than a semantics-only core because doctrine ambiguity may survive in witness structure, coherence, law/operation data, or presentation even when the core descends.
 
 ## 15.5 Exact hierarchy of possible point-valued outputs
 
@@ -1483,7 +1561,7 @@ This hierarchy explains why EIG Core can be canonical at a thinner level than fu
 
 ---
 
-# 16. Corrected maximal canonicality/no-go theorem
+# 16. Canonicality/no-go theorem
 
 Fix:
 
@@ -1492,9 +1570,17 @@ Fix:
 3. a declared equivalence notion;
 4. the doctrine-relative core functor `K` at the functorial level actually proved;
 5. any explicitly stated output-free selection/descent specification `P`;
-6. the category of doctrine/core problems whose equivalences/noninvertible maps define what “invariant” means.
+6. the category `M` of doctrine/core problems whose equivalences/noninvertible maps define what “invariant” means;
+7. whenever a global naturality statement is invoked, a functorial specified-solution assignment
+   \[
+   \operatorname{Sol}_P:\mathcal M^{op}\to\mathbf{Spc}
+   \]
+   (or an appropriate `\mathbf{Cat}_\infty`-valued assignment followed by maximal groupoids), together with its unstraightening/universal solution fibration
+   \[
+   \pi_P:\int_{\mathcal M}\operatorname{Sol}_P\to\mathcal M.
+   \]
 
-## Theorem 16.1 — maximal canonicality boundary **[PROVED/DIRECT synthesis]**
+## Theorem 16.1 — canonicality boundary **[PROVED/DIRECT synthesis]**
 
 Then:
 
@@ -1502,8 +1588,8 @@ Then:
 2. semantics-only cores agreeing with all compatible doctrine-relative cores are exactly objects of `Fact_U(K)`;
 3. a specified doctrine/core extraction is canonical up to contractible coherent choice exactly when its **specified** solution space is contractible;
 4. on an equivalence component of the whole problem category, equivalence-invariant extractions are exactly homotopy fixed points of that specified solution space under problem automorphisms;
-5. over noninvertible maps of problems, invariant extraction is exactly a global section of the universal solution fibration;
-6. regardless of point selection, the full core-labelled doctrine fibration `M_K` is the always-defined uncollapsed core output relative to `(U,K)`.
+5. under hypothesis 7, over noninvertible maps of problems, invariant extraction is exactly a global section of the universal solution fibration `\pi_P`;
+6. regardless of point selection, the full core-labelled doctrine fibration `M_K` is the always-defined lossless core packaging relative to `(U,K)`.
 
 ### Exact impossibility tests
 
@@ -1629,9 +1715,9 @@ The following examples prevent every tempting stronger generic theorem.
 
 The `Arr(Set)->Set` reflection sends the Tiny arrow `emptyset->1` to non-Tiny `emptyset`. Therefore root-exactness is real content.
 
-## CE2. Pairwise distributive laws do not imply coherent triple composition
+## CE2. Pairwise distributive laws do not by themselves establish coherent triple composition
 
-Writer-monad actions can exist pairwise while noncommuting actions violate Yang-Baxter.
+The iterated-distributive-law theorem requires the pairwise laws to satisfy Yang-Baxter. This is a **standard/dependent boundary**, not a writer-monad counterexample proved in this note; concrete iterated-composition obstructions are supplied by the cited no-go literature.
 
 ## CE3. Distributive laws may not exist
 
@@ -1673,11 +1759,17 @@ The same pair of writer modalities can combine to `C_6` or `S_3` under different
 
 Cocycle-twisted associators produce inequivalent coherent structures with the same lower binary skeleton.
 
-## CE13. Noncontractible raw moduli can still contain a canonical point
+## CE13. Noncontractible raw moduli can still contain a canonical point; selection need not imply descent
 
 The walking-arrow category `[1]` has a noncontractible maximal groupoid but a canonical initial object. Therefore raw noncontractibility is not an absolute canonicality no-go.
 
-Moreover, taking `K:[1]->[1]` to be the identity shows that **canonical doctrine selection still need not imply common-core descent**.
+For the selection/descent independence witness, take the unique
+
+\[
+U:[1]\to *
+\]
+
+and `K=id_[1]`. The section category of `U` is `[1]`, whose initial section is the choice of `0`; hence the specified initial-section problem is contractibly canonical. A factorization `bar K U ~= K`, however, would make `id_[1]` naturally equivalent to a constant functor, which is impossible because `0` and `1` are not equivalent. Thus **canonical specified doctrine selection need not imply common-core descent**.
 
 ## CE14. Non-Moore choice rules can destroy least closure
 
@@ -1739,10 +1831,16 @@ forward doctrine functoriality
   -> doctrine fibration
   -> exact section / specified-selection problem
   -> exact core factorization/descent problem
-  -> full labelled doctrine fibration as maximal uncollapsed output.
+  -> full labelled doctrine fibration as lossless doctrine-free packaging relative to `(U,K)`.
 ```
 
 This note does not claim that this whole synthesis already has an established literature-priority status. A dedicated exact-isomorphism/prior-art search is separate from proving the internal theorem stack.
+
+## 19.4 Selected references for the distributive-law boundary
+
+- Eugenia Cheng, **“Iterated distributive laws,”** *Mathematical Proceedings of the Cambridge Philosophical Society* 150(3), 459–487 (2011), DOI `10.1017/S0305004110000599`. This is the standard source for composing multiple monads from pairwise distributive laws satisfying Yang-Baxter coherence.
+- Maaike Zwart and Dan Marsden, **“No-Go Theorems for Distributive Laws,”** *Logical Methods in Computer Science* 18(1):13 (2022), DOI `10.46298/lmcs-18(1:13)2022`. Besides pairwise no-go theorems, its iterated-distributive-law discussion gives concrete obstructions to proposed Yang-Baxter-compatible iteration; it also proves that the list monad does not distribute over itself.
+- Chris Purdy and Stefania Damato, **“Distributive Laws of Monadic Containers,”** CALCO 2025, LIPIcs 342, Article 4, DOI `10.4230/LIPIcs.CALCO.2025.4`. This provides a modern explicit characterization of distributive laws for monadic containers; in particular, writer-writer distributive laws correspond to matching pairs of monoid actions.
 
 ---
 
@@ -1800,7 +1898,7 @@ C0  choose doctrine-moduli problem U:D2->S1
         |      +--> C6 specified descent space
         |             +--> C7 invariant HFP/global-section test
         |
-        +--> C8 maximal uncollapsed core-labelled doctrine fibration M_K
+        +--> C8 lossless core-labelled doctrine packaging M_K
 
 D0  recurrent specialization
  |
@@ -1844,7 +1942,7 @@ No recognition theorem is used to define the root or closure. No modality factor
 | every EIG completion is KZ | **NOT ESTABLISHED / CONDITIONAL** |
 | universality supplies canonical mates/comparisons | **STANDARD when constructions exist** |
 | universality makes all BC/interchange comparisons invertible | **FALSE** |
-| pairwise distributive laws imply Yang-Baxter | **FALSE** |
+| pairwise distributive laws by themselves imply Yang-Baxter/coherent triple composition | **FALSE; Yang-Baxter is separate standard coherence data** |
 | every pair of modalities admits a distributive law | **FALSE** |
 | heterogeneous variance forbids all monadic packaging | **FALSE** |
 | constructor list forces a unique homogeneous monad | **FALSE** |
@@ -1868,7 +1966,7 @@ No recognition theorem is used to define the root or closure. No modality factor
 | canonical doctrine selection implies common-core descent | **FALSE** |
 | left/right Kan extensions are canonical lower-level shadows | **STANDARD/CONDITIONAL on limits/colimits** |
 | existence of Kan shadows implies descent | **FALSE** |
-| full core-labelled doctrine fibration is maximal uncollapsed output relative to `(U,K)` | **PROVED as information-preserving formulation** |
+| full core-labelled doctrine fibration is lossless relative to `(U,K)` | **DIRECT as information-preserving packaging** |
 | recurrent structural theorems survive at model-Morita/indexed-equipment endpoint | **DEPENDENT on prior audits** |
 | historical recurrent order computes global closure | **OPEN/CONDITIONAL** |
 | recurrent endpoint generically upgrades beyond that equivalence level | **NOT ESTABLISHED** |
@@ -1877,14 +1975,14 @@ No recognition theorem is used to define the root or closure. No modality factor
 
 # 22. Main theorem for EIG Core
 
-> ## THEOREM — Maximal fixed-doctrine EIG Core
+> ## THEOREM — Fixed-doctrine EIG Core closure theorem
 >
 > Fix an output-free coherent Level-2 interaction doctrine `D` at a declared categorical/equivalence level. Assume:
 >
 > 1. admitted contexts/observations determine a universal contextual reduction/exactification `q:E_raw->W_D`, or equivalent reduced semantic data are explicitly supplied;
 > 2. an invariant root specification applies **in the reduced world**, producing `R_D`;
-> 3. the admissible replete/Cauchy semantic subtheories form a set-sized environment in which the `D`-closed upper bounds of every seed form a nonempty Moore family — in particular, it suffices that a complete lattice and monotone positive generation operators are given;
-> 4. every actual semantic object/cell generator is typed and its non-forced comparison/higher coherence is included in the doctrine;
+> 3. the admissible replete/Cauchy semantic structured subtheories form a set-sized environment `Sub_D` in which the `D`-closed upper bounds of every admissible seed form a nonempty Moore family — in particular, it suffices that a complete lattice and monotone positive generation operators are given;
+> 4. every actual Core-generating semantic object/cell/higher-cell generator is typed, its output sort is declared, and its non-forced comparison/higher coherence is included in the doctrine; law-producing rules and external valuations are kept in their separately typed downstream layers unless explicitly internalized as Core sorts;
 > 5. the structural Hom/cell doctrine and equivalence localization are declared.
 >
 > Then the doctrine determines a canonical closure modality
@@ -1893,11 +1991,11 @@ No recognition theorem is used to define the root or closure. No modality factor
 > \boxed{
 > \operatorname{Cl}_D(S)
 > =
-> \bigwedge\{B:S\le B,\ B\text{ is }D\text{-closed}\}
+> \bigwedge\{B\in\mathsf{Sub}_D:S\le B,\ B\text{ is }D\text{-closed}\}
 > }
 > \]
 >
-> for every admissible seed `S`. In the monotone complete-lattice presentation,
+> for every admissible seed `S in Sub_D`. In the monotone complete-lattice presentation,
 >
 > \[
 > \operatorname{Cl}_D(S)=\mu\Gamma_{D,S}.
@@ -1911,20 +2009,20 @@ No recognition theorem is used to define the root or closure. No modality factor
 > }
 > \]
 >
-> It is the initial/least internal semantic `D`-closed subtheory receiving `R_D`; the space of solutions to that fully specified internal least-closure problem is contractible. For every object `x`,
+> It is the initial/least internal semantic `D`-closed structured subtheory receiving `R_D`; the space of solutions to that fully specified internal least-closure problem is contractible. For every generated Core sort `sigma` and every semantic element `x` of that sort,
 >
 > \[
-> x\in\operatorname{Cl}_D(S)
+> x\in_\sigma\operatorname{Cl}_D(S)
 > \iff
-> x\text{ belongs to every }D\text{-closed upper bound of }S,
+> x\text{ belongs in sort }\sigma\text{ to every }D\text{-closed upper bound of }S,
 > \]
 >
-> so nonmembership has an exact stable countermodel. Forward doctrine morphisms satisfying the explicit generation/root transport conditions induce canonical lax comparisons
+> so nonmembership has an exact stable countermodel. Forward doctrine morphisms satisfying the explicit admissible-hull, inverse-image, generation, and root transport conditions induce canonical typed lax comparisons
 >
 > \[
-> F\operatorname{Cl}_D(S)
-> \subseteq
-> \operatorname{Cl}_{D'}(FS),
+> F_\sharp\operatorname{Cl}_D(S)
+> \le
+> \operatorname{Cl}_{D'}(F_\sharp S),
 > \]
 >
 > and doctrine equivalences induce equivalences of the entire closure modality and of EIG Core.
@@ -1939,9 +2037,9 @@ The statement is made for the **entire seed-wise closure modality**, not only th
 
 # 23. Main theorem for EIG as a whole
 
-> ## THEOREM — Maximal doctrine-indexed EIG
+> ## THEOREM — Doctrine-indexed EIG and lossless doctrine-free packaging
 >
-> For each coherent doctrine `D`, the strongest mandatory EIG package determined by the generic theory is
+> For each coherent doctrine `D`, the mandatory generic EIG package determined by the theory is
 >
 > \[
 > \mathsf{EIG}(D)
@@ -1960,7 +2058,7 @@ The statement is made for the **entire seed-wise closure modality**, not only th
 > U:\mathcal D_2\to\mathcal S_1,
 > \]
 >
-> the strongest always-defined doctrine-free EIG output is therefore not generally one point-valued shape theory. It is the full doctrine fibration labelled by the EIG outputs that have actually been proved, in particular the core-labelled fibre
+> an always-defined lossless doctrine-free packaging is therefore not generally one point-valued shape theory. It is the full doctrine fibration labelled by the EIG outputs that have actually been proved, in particular the core-labelled fibre
 >
 > \[
 > \boxed{
@@ -1983,7 +2081,7 @@ The statement is made for the **entire seed-wise closure modality**, not only th
 > 2. If it is contractible, the requested solution is canonical up to contractible coherent choice.
 > 3. If it is nonempty and noncontractible, the conditions stated in `P` do not determine a unique solution; this alone does **not** forbid a stronger independently justified universal specification.
 > 4. If equivalence invariance of the whole problem is required, the exact local criterion on a connected problem component is the corresponding problem-level homotopy-fixed-point space. If that invariant-solution space is empty, no equivalence-invariant point can be extracted from the declared problem.
-> 5. Across noninvertible maps of problems, the exact naturality criterion is a global section of the universal solution fibration.
+> 5. Across noninvertible maps of problems, **when the specified solution spaces assemble functorially over the declared problem category**, the exact naturality criterion is a global section of the corresponding unstraightened universal solution fibration.
 >
 > In particular:
 >
@@ -2069,7 +2167,7 @@ A public-facing EIG Core should state the theory in this order:
 11. Introduce the doctrine fibration U and core functor K.
 12. State doctrine selection as a section problem and common Core as a descent problem.
 13. State specified-solution/problem-level invariance as the exact canonicality/no-go language.
-14. Use the labelled doctrine fibration as the maximal uncollapsed doctrine-free output.
+14. Use the labelled doctrine fibration as the lossless doctrine-free packaging relative to the declared moduli problem.
 15. Present the recurrent SYNC/STORE/SPACE/SEQ row as a specialization whose ordered factorization remains conditional until its exact lemma is proved.
 ```
 
@@ -2079,9 +2177,9 @@ This order makes every strong claim downstream of exactly the hypotheses that ju
 
 # 28. Summary statement
 
-**EIG Core.** For every independently meaningful coherent interaction doctrine, first pass to the contextually reduced semantic world, extract its intrinsic reduced root, and then apply the doctrine’s full simultaneous semantic closure modality. Under the maximally general Moore-family hypothesis — in particular under the complete-lattice/monotone-generator hypotheses — this yields the unique least internal semantic subtheory closed under every actual doctrine operation. EIG Core is the value of that closure modality at the reduced root. It is order-independent, admits cyclic generation, is an internal reflection/free semantic closure, has an exact generation-countermodel semantics, is lax-functorial under forward doctrine maps satisfying the stated transport conditions, and is invariant under doctrine equivalence. Stratified modality orders are optional computation/factorization theorems only.
+**EIG Core.** For every independently meaningful coherent interaction doctrine, first pass to the contextually reduced semantic world, extract its intrinsic reduced root, and then apply the doctrine’s full simultaneous semantic closure modality. Under the Moore-family hypothesis — in particular under the complete-lattice/monotone-generator hypotheses — this yields the unique least internal semantic structured subtheory closed under every actual Core-generating semantic operation. EIG Core is the value of that closure modality at the reduced root. It is order-independent, admits cyclic generation, is an internal reflection/free semantic closure, has an exact generation-countermodel semantics, is lax-functorial under forward doctrine maps satisfying the stated transport conditions, and is invariant under doctrine equivalence. Stratified modality orders are optional computation/factorization theorems only.
 
-**EIG.** The generic discipline is doctrine-indexed: reduction, root, closure modality, Core, associated structural theory, and only those recognition/operation layers separately certified. From thinner lower semantics, the strongest always-defined information-preserving object is the full compatible-doctrine fibration labelled by these outputs. A point-valued doctrine is a section/selection theorem; a doctrine-independent common Core is a distinct descent/factorization theorem; full-EIG descent is stronger still. Canonicality is tested only after the requested universal property has been included in the solution problem. Contractible specified solution spaces give coherent uniqueness; empty invariant-solution spaces give exact no-go theorems; noncontractible raw moduli by themselves do not rule out canonical initial, terminal, minimal, or reflective selections.
+**EIG.** The generic discipline is doctrine-indexed: reduction, root, closure modality, Core, associated structural theory, and only those recognition/operation layers separately certified. From thinner lower semantics, an always-defined lossless information-preserving packaging is the full compatible-doctrine fibration labelled by these outputs. A point-valued doctrine is a section/selection theorem; a doctrine-independent common Core is a distinct descent/factorization theorem; full-EIG descent is stronger still. Canonicality is tested only after the requested universal property has been included in the solution problem. Contractible specified solution spaces give coherent uniqueness; empty invariant-solution spaces give exact no-go theorems; noncontractible raw moduli by themselves do not rule out canonical initial, terminal, minimal, or reflective selections.
 
 This is the form established here under the stated hypotheses, without adding unproved assumptions or weakening the maximality boundary.
 
