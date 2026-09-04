@@ -1,0 +1,37 @@
+name: build paper
+
+on:
+  push:
+    paths:
+      - paper/two-state-maxplus-comparison.tex
+      - .github/workflows/build-paper.yml
+  pull_request:
+    paths:
+      - paper/two-state-maxplus-comparison.tex
+      - .github/workflows/build-paper.yml
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-base texlive-latex-recommended texlive-latex-extra
+
+      - name: Compile
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/.build/two-state-maxplus"
+          latexmk -pdf -interaction=nonstopmode -halt-on-error \
+            -outdir="$GITHUB_WORKSPACE/.build/two-state-maxplus" \
+            paper/two-state-maxplus-comparison.tex
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: two-state-maxplus-comparison
+          path: .build/two-state-maxplus/two-state-maxplus-comparison.pdf

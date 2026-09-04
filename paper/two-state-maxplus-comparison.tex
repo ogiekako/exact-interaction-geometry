@@ -21,14 +21,14 @@
 \newcommand{\eval}[1]{[\![#1]\!]}
 
 \title{Two-State Max-Plus Comparison Is Decidable}
-\author{Keigo Oka\thanks{Google. Work done in a personal capacity; no Google internal resources were used. Email: \href{mailto:ogiekako@gmail.com}{ogiekako@gmail.com}. ORCID: \href{https://orcid.org/0009-0007-8119-9267}{0009-0007-8119-9267}.}}
+\author{Keigo Oka\thanks{Email: \href{mailto:ogiekako@gmail.com}{ogiekako@gmail.com}. ORCID: \href{https://orcid.org/0009-0007-8119-9267}{0009-0007-8119-9267}.}}
 \date{September 1, 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Daviaud, Guillon, and Merlet proved that comparison of max-plus automata is undecidable under a fixed state bound of 553 and explicitly left the range from 2 to 552 states open. We resolve the two-state endpoint. More strongly, given an arbitrary finite max-plus automaton $A$ and a max-plus automaton $B$ with at most two states, it is decidable whether $\eval{A}(w)\leq \eval{B}(w)$ for every word $w$. The structural reason is a one-dimensional projective normal form for two-state dynamics. Outside an effective bounded region, a transition has one of three tail behaviors: it propagates the projective gap magnitude by a fixed affine shift with gap-independent height increment, forgets the gap with gap-independent height increment, or reads the gap magnitude into the height increment and then forgets it. In particular, any transition whose output depends on the unbounded gap necessarily destroys that gap. This yields an exact one-counter realization of $B$. Effective semilinearity of context-free Parikh images then reduces comparison to Presburger arithmetic. As a consequence, two-state max-plus comparison, equivalence, and positivity are decidable.
+Given an arbitrary finite max-plus automaton $A$ and a max-plus automaton $B$ with at most two states, it is decidable whether $\eval{A}(w)\leq \eval{B}(w)$ for every word $w$. The proof uses a one-dimensional projective normal form for two-state dynamics. Outside an effective bounded region, a transition has one of three tail behaviors: it propagates the projective gap magnitude by a fixed shift with gap-independent height increment, forgets the gap with gap-independent height increment, or reads the gap magnitude into the height increment and then forgets it. In particular, any transition whose output depends on the unbounded gap destroys that gap. This yields an exact one-counter realization of $B$. Effective semilinearity of context-free Parikh images then reduces comparison to Presburger arithmetic. As a consequence, comparison, equivalence, and positivity for two-state max-plus automata are decidable.
 \end{abstract}
 
 \section{Introduction}
@@ -47,8 +47,6 @@ The exact comparison problem asks, for two automata $A,B$, whether
 \[
 \eval{A}(w)\leq \eval{B}(w)\qquad\text{for all }w\in\Sigma^*.
 \]
-It is undecidable in general. Daviaud, Guillon, and Merlet \cite{DGM2017} proved undecidability already with a bounded number of states: their published bound is 553 states. They explicitly asked what happens between 2 and 552 states, noting that even the two-state case appeared difficult.
-
 We prove the following.
 
 \begin{theorem}[Two-state right-hand comparison]\label{thm:main}
@@ -59,20 +57,18 @@ Let $A$ be an arbitrary finite max-plus automaton over $\Zmax$, and let $B$ be a
 \]
 \end{theorem}
 
-This is stronger than merely resolving the two-state bounded-state endpoint, because only the right-hand automaton is required to have at most two states.
-
 \begin{corollary}\label{cor:basic}
 The following problems are decidable:
 \begin{enumerate}[label=(\roman*)]
 \item comparison of two max-plus automata with at most two states;
 \item equivalence of two max-plus automata with at most two states;
-\item $\mathrm{Pos}^2_k(\Zmax)$ for every finite alphabet size $k$.
+\item positivity of a max-plus automaton with at most two states over any finite alphabet.
 \end{enumerate}
 \end{corollary}
 
-The proof is elementary apart from one standard formal-language theorem. A two-state forward vector has only one unbounded projective coordinate, namely the difference of its two entries. For sufficiently large absolute difference, each letter has a fixed tail form. The essential property is one-way: if the current height increment depends on the magnitude of the unbounded projective gap, then the successor projective state no longer depends on that magnitude. A step that propagates the gap has a gap-independent height increment. This no-read-while-propagating property permits exact simulation by one nonnegative counter. The accepting transition language of the synchronized simulation is context-free, so effective Parikh semilinearity \cite{Parikh1966} reduces the existence of a comparison violation to Presburger arithmetic.
+The proof uses one standard formal-language theorem. A two-state forward vector has only one unbounded projective coordinate, namely the difference of its two entries. For sufficiently large absolute difference, each letter has a fixed tail form. The essential property is one-way: if the current height increment depends on the magnitude of the unbounded projective gap, then the successor projective state no longer depends on that magnitude. A step that propagates the gap has a gap-independent height increment. This permits exact simulation by one nonnegative counter. The accepting transition language of the synchronized simulation is context-free, so effective Parikh semilinearity \cite{Parikh1966,KopczynskiTo2010} reduces the existence of a comparison violation to Presburger arithmetic.
 
-We use slightly more general conventions than \cite{DGM2017}: arbitrary max-plus initial and final weights and words in $\Sigma^*$ are allowed here. The MFCS 2017 formulation uses Boolean-valued initial/final vectors and nonempty words. Restricting to that convention only simplifies the construction; excluding the empty word can also be enforced by one bit of finite control.
+We allow arbitrary max-plus initial and final weights and words in $\Sigma^*$.
 
 No complexity bound is claimed here.
 
@@ -115,8 +111,8 @@ Write
 \[
 A_M=\max(a,b),\qquad C_M=\max(c,d).
 \]
-Subtracting the input height gives the height cocycle
-\begin{equation}\label{eq:cocycle}
+Subtracting the input height gives the height increment
+\begin{equation}\label{eq:increment}
 \delta_M(z)=
 \begin{cases}
 \max(A_M,C_M-z), & z\geq0,\\
@@ -151,7 +147,7 @@ $a=b=\minf$ & fixed by $(c,d)$, independent of $z$ & $C_M-z$ & read-and-forget \
 \label{tab:tail}
 \end{table}
 
-For completeness, if $a$ is finite then $z>|c-a|$ forces $z+a>c$; if $a=\minf$, the first successor coordinate is $c$. The same statement holds for $b,d$. If both $a,b$ are finite, both successor coordinates come from the active row, so the gap is the fixed value $a-b$ and $\delta_M(z)=\max(a,b)$. If exactly one of $a,b$ is finite, the active successor coordinate is $H$ plus a fixed weight. The other coordinate is either absent, giving an infinite gap, or comes from the inactive row and differs by $n+s$ for a fixed integer $s$; in either case the height increment is constant. Finally, if $a=b=\minf$, both successor coordinates come from the inactive row, so their projective class is independent of $z$ while \eqref{eq:cocycle} gives $\delta_M(z)=C_M-z$.
+For completeness, if $a$ is finite then $z>|c-a|$ forces $z+a>c$; if $a=\minf$, the first successor coordinate is $c$. The same statement holds for $b,d$. If both $a,b$ are finite, both successor coordinates come from the active row, so the gap is the fixed value $a-b$ and $\delta_M(z)=\max(a,b)$. If exactly one of $a,b$ is finite, the active successor coordinate is $H$ plus a fixed weight. The other coordinate is either absent, giving an infinite gap, or comes from the inactive row and differs by $n+s$ for a fixed integer $s$; in either case the height increment is constant. Finally, if $a=b=\minf$, both successor coordinates come from the inactive row, so their projective class is independent of $z$ while \eqref{eq:increment} gives $\delta_M(z)=C_M-z$.
 
 Thus there is a genuine third possibility that should not be conflated with reading: a step may forget the gap without using its magnitude in the height increment.
 
@@ -175,7 +171,7 @@ For example, the all-zero matrix has a silent forget tail: for every sufficientl
 \end{remark}
 
 \begin{remark}
-The statement is specific to the one-dimensional projective geometry of two states. With three states, two independent projective differences can coexist, and an update can read one combination while retaining another.
+The statement is specific to the one-dimensional projective state of two states. With three states, two independent projective differences can coexist, and an update can read one combination while retaining another.
 \end{remark}
 
 \section{Exact compilation to one counter}
@@ -278,55 +274,17 @@ Comparison follows immediately when both automata have at most two states. Equiv
 if and only if $\eval{B}(w)\geq0$ for every word $w$.
 \end{proof}
 
-\section{Position relative to prior work}
+\section{Implementation check}
 
-Daviaud, Guillon, and Merlet \cite{DGM2017} established the bounded-state undecidability frontier at 553 states and explicitly identified the interval $2,\ldots,552$ as open. Theorem~\ref{thm:main} closes its two-state endpoint. Daviaud and Johnson \cite{DJ2017} studied the same two-state max-plus model but addressed semigroup identities rather than positivity or comparison. Daviaud's survey \cite{Daviaud2020} reviews containment and equivalence for weighted automata and records no two-state solution. More recently, Daviaud, Purser, and Tcheng \cite{DPT2025} proved the Big-O (affine-domination) problem decidable and PSPACE-complete; their problem is explicitly a relaxation of exact containment, which remains undecidable in general.
+The companion script \texttt{checks/check\_two\_state\_maxplus.py} checks the projective formulas, exhaustively classifies a finite family of letter tails into propagate / forget / read-and-forget, and compares direct and projective evaluators on finite test families. The theorem rests on the proof above, not on finite enumeration.
 
-The proof mechanism here is different from nearby decidable restrictions such as finitely ambiguous classes, unary-alphabet tropical automata, or determinisability problems: the alphabet and left-hand automaton are unrestricted, while the right-hand automaton has only two states. The decisive structure is the exact one-counter reduction furnished by Lemmas~\ref{lem:tail} and \ref{lem:counter}.
+\section*{Research provenance}
 
-A targeted literature review conducted through September 1, 2026 did not identify an earlier resolution of the two-state comparison case or an equivalent arbitrary-left/two-state-right containment theorem. Bibliographic search cannot certify absolute historical absence, so this note makes no stronger priority claim than that dated search result.
-
-\section{Reproducibility and provenance}
-
-A maintained version of this manuscript, the public regression code, and the dated literature review are available in the Exact Interaction Geometry research repository:
-\[
-\text{\url{https://github.com/ogiekako/exact-interaction-geometry}}.
-\]
-The result arose within the EIG research programme: its residual/interface viewpoint led to isolating the one-dimensional projective gap and asking whether one transition can both expose an unbounded residual magnitude and preserve it for future computation. The theorem itself is ordinary weighted-automata mathematics and does not depend on EIG.
-
-The companion regression script checks the projective formulas, exhaustively classifies a finite family of letter tails into propagate / forget / read-and-forget (including the all-zero silent-forget case), and compares direct max-plus evaluation with a separately coded projective/counter evaluator on hundreds of thousands of finite words. The infinite theorem rests on the proof above, not on finite enumeration.
-
-\section*{AI-assisted research disclosure}
-
-This work was developed through AI-assisted mathematical research. OpenAI reasoning models, including GPT-5.6 Sol, materially contributed to theorem discovery, proof drafting, verifier generation, and literature-review support. The author directed the research programme and takes responsibility for the manuscript. Separate model-assisted review was used during drafting, but that review is provenance rather than mathematical evidence. The result is intended to stand on the written proof above; the public regression code is a finite regression of its algebraic mechanism and does not independently establish the theorem or its historical priority.
+This is an unrefereed preprint. AI systems materially assisted in finding and drafting the argument and in writing the code. The written proof should be checked on its own; model agreement and the finite regression are not independent mathematical evidence.
 
 \begin{thebibliography}{9}
 \small
 \setlength{\itemsep}{0.35em}
-
-\bibitem{DGM2017}
-Laure Daviaud, Pierre Guillon, and Glenn Merlet.
-\newblock Comparison of Max-Plus Automata and Joint Spectral Radius of Tropical Matrices.
-\newblock In \emph{MFCS 2017}, LIPIcs 83, Article 19, 2017.
-\newblock DOI: \href{https://doi.org/10.4230/LIPIcs.MFCS.2017.19}{10.4230/LIPIcs.MFCS.2017.19}.
-
-\bibitem{DJ2017}
-Laure Daviaud and Marianne Johnson.
-\newblock The Shortest Identities for Max-Plus Automata with Two States.
-\newblock In \emph{MFCS 2017}, LIPIcs 83, Article 48, 2017.
-\newblock DOI: \href{https://doi.org/10.4230/LIPIcs.MFCS.2017.48}{10.4230/LIPIcs.MFCS.2017.48}.
-
-\bibitem{Daviaud2020}
-Laure Daviaud.
-\newblock Containment and Equivalence of Weighted Automata: Probabilistic and Max-Plus Cases.
-\newblock In \emph{LATA 2020}, LNCS 12038, pp. 17--32, 2020.
-\newblock DOI: \href{https://doi.org/10.1007/978-3-030-40608-0_2}{10.1007/978-3-030-40608-0\_2}.
-
-\bibitem{DPT2025}
-Laure Daviaud, David Purser, and Marie Tcheng.
-\newblock The Big-O Problem for Max-Plus Automata is Decidable (PSPACE-Complete).
-\newblock \emph{Logical Methods in Computer Science}, 21(3), 3:1--3:35, 2025.
-\newblock DOI: \href{https://doi.org/10.46298/lmcs-21(3:3)2025}{10.46298/lmcs-21(3:3)2025}.
 
 \bibitem{Parikh1966}
 Rohit J. Parikh.

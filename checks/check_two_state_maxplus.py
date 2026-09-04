@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Solver-free regression for the two-state max-plus tail theorem.
 
-This is not the proof. It independently checks the closed forms, the exact
+This is not the proof. It directly checks the closed forms, the exact
 tail trichotomy (propagate / forget / read-and-forget), and an exact
 counter-state evaluator against direct max-plus semantics on exhaustive finite
 test families. In particular it contains the all-zero letter as an explicit
@@ -153,7 +153,7 @@ def value_compiled(I, mats, F, word):
     return H - n + other
 
 
-def audit_closed_forms():
+def check_closed_forms():
     count = 0
     for M in product(ENTRIES, repeat=4):
         a, b, c, d = M
@@ -174,7 +174,7 @@ def audit_closed_forms():
                     else mp_max(NEG if A is NEG else A + z, C)
                 )
                 if delta != pred:
-                    fail(("cocycle", M, z, delta, pred))
+                    fail(("height increment", M, z, delta, pred))
             count += 1
     return count
 
@@ -219,7 +219,7 @@ def classify_tail(M, side):
     fail(("tail trichotomy violation", M, side, K, seq))
 
 
-def audit_tail():
+def check_tail():
     count = 0
     kinds = {"death": 0, "propagate": 0, "forget": 0, "read-and-forget": 0}
     for M in product(ENTRIES, repeat=4):
@@ -228,7 +228,7 @@ def audit_tail():
             kinds[kind] += 1
             count += len(ns)
 
-    # Explicit regression for the case missed by the superseded dichotomy.
+    # Explicitly check the silent-forget case.
     for side in (1, 2):
         kind, _, _, _ = classify_tail((0, 0, 0, 0), side)
         if kind != "forget":
@@ -237,7 +237,7 @@ def audit_tail():
     return count, kinds
 
 
-def audit_compiler():
+def check_compiler():
     count = 0
     mats1 = list(product(SMALL, repeat=4))
     vectors = list(product(SMALL, repeat=2))
@@ -280,9 +280,9 @@ def audit_compiler():
 
 
 def main():
-    c1 = audit_closed_forms()
-    c2, kinds = audit_tail()
-    c3 = audit_compiler()
+    c1 = check_closed_forms()
+    c2, kinds = check_tail()
+    c3 = check_compiler()
     print("PASS two-state max-plus tail/compiler regression")
     print("closed-form cases:", c1)
     print("tail cases:", c2, kinds)

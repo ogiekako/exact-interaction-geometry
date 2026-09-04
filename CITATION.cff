@@ -1,19 +1,14 @@
 cff-version: 1.2.0
-message: "If you use this research programme or its verification code, please cite this repository and the specific theorem note you rely on."
-title: "Exact Interaction Geometry"
+message: "Please cite the manuscript if you use this result or its accompanying code."
+title: "Two-State Max-Plus Comparison Is Decidable"
 type: software
 authors:
   - family-names: "Oka"
     given-names: "Keigo"
     email: "ogiekako@gmail.com"
     orcid: "https://orcid.org/0009-0007-8119-9267"
-repository-code: "https://github.com/ogiekako/exact-interaction-geometry"
-url: "https://github.com/ogiekako/exact-interaction-geometry"
 keywords:
-  - exact interaction geometry
-  - interaction-first foundations
-  - contextual equivalence
-  - objecthood reconstruction
-  - compositional semantics
-  - witness reconstruction
-  - category theory
+  - max-plus automata
+  - weighted automata
+  - one-counter automata
+  - semilinear sets

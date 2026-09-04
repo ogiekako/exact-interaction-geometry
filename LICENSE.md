@@ -8,9 +8,9 @@ Mathematical notes, theorem and proof text, README files, explanatory prose, and
 
 License notice and canonical legal-code link: [`LICENSES/CC-BY-4.0.md`](LICENSES/CC-BY-4.0.md).
 
-## Code and verification artifacts
+## Code
 
-Source code, executable scripts, build and workflow files, and machine-readable verification certificates are licensed under the **Apache License, Version 2.0**.
+Source code, executable scripts, and build and workflow files are licensed under the **Apache License, Version 2.0**.
 
 A copy of the Apache License 2.0 is provided at [`LICENSES/Apache-2.0.txt`](LICENSES/Apache-2.0.txt).
 
